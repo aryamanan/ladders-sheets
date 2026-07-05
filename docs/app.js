@@ -1,0 +1,443 @@
+import { firebaseConfig } from "./firebase-config.js";
+
+const LOCAL_KEY = "practice-tracker-solved-v1";
+const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.13.0";
+
+const appEl = document.getElementById("app");
+const syncStatusEl = document.getElementById("sync-status");
+const signinBtn = document.getElementById("signin-btn");
+const progressBarWrap = document.getElementById("sheet-progress");
+const progressBarFill = document.getElementById("sheet-progress-fill");
+
+let data = { sheets: [] };
+let solved = loadLocalSolved();
+
+// Firebase (optional; app fully works without it via localStorage only)
+let auth = null;
+let db = null;
+let googleProvider = null;
+let fsMod = null;
+let authMod = null;
+let user = null;
+let firstSnapshotHandled = false;
+let unsubscribeSnapshot = null;
+let writeTimer = null;
+
+function loadLocalSolved() {
+  try {
+    return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveLocalSolved() {
+  localStorage.setItem(LOCAL_KEY, JSON.stringify(solved));
+}
+
+function isPlaceholderConfig() {
+  return !firebaseConfig.apiKey || firebaseConfig.apiKey.startsWith("YOUR_");
+}
+
+async function initFirebase() {
+  if (isPlaceholderConfig()) {
+    syncStatusEl.textContent = "Cloud sync not configured";
+    signinBtn.disabled = true;
+    signinBtn.title = "Add your Firebase config to docs/firebase-config.js to enable cross-device sync.";
+    return;
+  }
+  try {
+    const [appMod, aMod, fMod] = await Promise.all([
+      import(`${FIREBASE_SDK}/firebase-app.js`),
+      import(`${FIREBASE_SDK}/firebase-auth.js`),
+      import(`${FIREBASE_SDK}/firebase-firestore.js`),
+    ]);
+    authMod = aMod;
+    fsMod = fMod;
+    const app = appMod.initializeApp(firebaseConfig);
+    auth = authMod.getAuth(app);
+    googleProvider = new authMod.GoogleAuthProvider();
+    db = fsMod.getFirestore(app);
+    authMod.onAuthStateChanged(auth, onAuthChanged);
+    syncStatusEl.textContent = "Not signed in — saved to this browser only";
+  } catch (e) {
+    console.warn("Firebase init failed", e);
+    syncStatusEl.textContent = "Cloud sync unavailable";
+    signinBtn.disabled = true;
+  }
+}
+
+function onAuthChanged(u) {
+  user = u;
+  if (unsubscribeSnapshot) {
+    unsubscribeSnapshot();
+    unsubscribeSnapshot = null;
+  }
+  firstSnapshotHandled = false;
+  if (user) {
+    signinBtn.textContent = "Sign out";
+    syncStatusEl.textContent = `Syncing as ${user.email || user.displayName}`;
+    subscribeToCloud(user.uid);
+  } else {
+    signinBtn.textContent = "Sign in with Google";
+    syncStatusEl.textContent = "Not signed in — saved to this browser only";
+  }
+}
+
+function subscribeToCloud(uid) {
+  const ref = fsMod.doc(db, "users", uid);
+  unsubscribeSnapshot = fsMod.onSnapshot(
+    ref,
+    (snap) => {
+      const remote = snap.exists() ? snap.data().solved || {} : {};
+      if (!firstSnapshotHandled) {
+        firstSnapshotHandled = true;
+        solved = { ...remote, ...solved };
+        saveLocalSolved();
+        writeCloudNow();
+      } else {
+        solved = remote;
+        saveLocalSolved();
+      }
+      refreshAllCounts();
+    },
+    (err) => {
+      console.warn("Cloud sync error", err);
+      syncStatusEl.textContent = "Sync error — using local copy";
+    }
+  );
+}
+
+function scheduleCloudWrite() {
+  if (!user) return;
+  clearTimeout(writeTimer);
+  writeTimer = setTimeout(writeCloudNow, 400);
+}
+
+function writeCloudNow() {
+  if (!user || !db) return;
+  fsMod
+    .setDoc(fsMod.doc(db, "users", user.uid), { solved, updatedAt: Date.now() })
+    .catch((e) => console.warn("Cloud write failed", e));
+}
+
+signinBtn.addEventListener("click", async () => {
+  if (isPlaceholderConfig() || !auth) return;
+  if (user) {
+    await authMod.signOut(auth);
+  } else {
+    try {
+      await authMod.signInWithPopup(auth, googleProvider);
+    } catch (e) {
+      console.warn("Sign-in failed", e);
+      syncStatusEl.textContent = "Sign-in failed — try again";
+    }
+  }
+});
+
+// ---------- Data loading ----------
+
+async function loadData() {
+  const res = await fetch("data.json", { cache: "no-store" });
+  data = await res.json();
+}
+
+function findSheet(id) {
+  return data.sheets.find((s) => s.id === id);
+}
+
+function sheetStats(sheet) {
+  let total = 0;
+  let done = 0;
+  for (const sec of sheet.sections) {
+    for (const g of sec.groups) {
+      for (const it of g.items) {
+        total++;
+        if (solved[it.id]) done++;
+      }
+    }
+  }
+  return { total, done };
+}
+
+function sectionStats(section) {
+  let total = 0;
+  let done = 0;
+  for (const g of section.groups) {
+    for (const it of g.items) {
+      total++;
+      if (solved[it.id]) done++;
+    }
+  }
+  return { total, done };
+}
+
+// ---------- Routing ----------
+
+function parseHash() {
+  const h = location.hash.replace(/^#\/?/, "");
+  if (h.startsWith("sheet/")) {
+    return { view: "sheet", id: h.slice("sheet/".length) };
+  }
+  return { view: "home" };
+}
+
+function render() {
+  const route = parseHash();
+  if (route.view === "sheet" && findSheet(route.id)) {
+    progressBarWrap.hidden = false;
+    renderSheet(findSheet(route.id));
+  } else {
+    progressBarWrap.hidden = true;
+    renderHome();
+  }
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("hashchange", render);
+
+// ---------- Home view ----------
+
+function renderHome() {
+  const categories = [
+    { key: "dsa", label: "DSA Ladders" },
+    { key: "system-design", label: "System Design Ladders" },
+  ];
+
+  const parts = [];
+  parts.push(`
+    <div class="hero">
+      <h1>Your practice sheets</h1>
+      <p>Click a sheet, check items off as you solve them. Progress is saved to this browser automatically, and to your account when signed in.</p>
+    </div>
+  `);
+
+  for (const cat of categories) {
+    const sheets = data.sheets.filter((s) => s.category === cat.key);
+    if (!sheets.length) continue;
+    parts.push(`<h2 class="category-heading">${escapeHtml(cat.label)}</h2>`);
+    parts.push(`<div class="sheet-grid">`);
+    for (const sheet of sheets) {
+      const { total, done } = sheetStats(sheet);
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      parts.push(`
+        <a class="sheet-card" href="#/sheet/${sheet.id}" data-sheet-card="${sheet.id}">
+          <h3>${escapeHtml(sheet.title)}</h3>
+          <p>${escapeHtml(sheet.description || "")}</p>
+          <div class="card-progress-track"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+          <div class="card-progress-label">${done} / ${total} solved</div>
+        </a>
+      `);
+    }
+    parts.push(`</div>`);
+  }
+
+  appEl.innerHTML = parts.join("");
+}
+
+function refreshHomeCards() {
+  for (const sheet of data.sheets) {
+    const card = appEl.querySelector(`[data-sheet-card="${sheet.id}"]`);
+    if (!card) continue;
+    const { total, done } = sheetStats(sheet);
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    card.querySelector(".card-progress-fill").style.width = pct + "%";
+    card.querySelector(".card-progress-label").textContent = `${done} / ${total} solved`;
+  }
+}
+
+// ---------- Sheet view ----------
+
+let currentSheetId = null;
+let hideSolved = false;
+let searchQuery = "";
+
+function renderSheet(sheet) {
+  currentSheetId = sheet.id;
+  hideSolved = false;
+  searchQuery = "";
+
+  const { total, done } = sheetStats(sheet);
+
+  const parts = [];
+  parts.push(`
+    <div class="sheet-header">
+      <a class="back-link" href="#/">&larr; All sheets</a>
+      <h1>${escapeHtml(sheet.title)}</h1>
+      <div class="desc">${escapeHtml(sheet.description || "")}</div>
+      <div class="sheet-stats">
+        <span><strong id="sheet-done-count">${done}</strong> / ${total} solved</span>
+        <button class="btn btn-small" id="expand-all">Expand all</button>
+        <button class="btn btn-small" id="collapse-all">Collapse all</button>
+        <button class="btn btn-small btn-danger" id="reset-progress">Reset this sheet</button>
+      </div>
+    </div>
+    <div class="controls">
+      <input class="search-input" id="search-input" type="search" placeholder="Filter items in this sheet…" />
+      <label class="check-label"><input type="checkbox" id="hide-solved" /> Hide solved</label>
+    </div>
+    <div id="sections"></div>
+  `);
+  appEl.innerHTML = parts.join("");
+
+  const sectionsEl = document.getElementById("sections");
+  sectionsEl.innerHTML = sheet.sections.map((sec) => renderSection(sec)).join("");
+
+  document.getElementById("search-input").addEventListener("input", (e) => {
+    searchQuery = e.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+  document.getElementById("hide-solved").addEventListener("change", (e) => {
+    hideSolved = e.target.checked;
+    applyFilters();
+  });
+  document.getElementById("expand-all").addEventListener("click", () => {
+    sectionsEl.querySelectorAll("details.section").forEach((d) => (d.open = true));
+  });
+  document.getElementById("collapse-all").addEventListener("click", () => {
+    sectionsEl.querySelectorAll("details.section").forEach((d) => (d.open = false));
+  });
+  document.getElementById("reset-progress").addEventListener("click", () => {
+    if (!confirm(`Reset all progress for "${sheet.title}"? This can't be undone.`)) return;
+    for (const sec of sheet.sections) {
+      for (const g of sec.groups) {
+        for (const it of g.items) delete solved[it.id];
+      }
+    }
+    saveLocalSolved();
+    scheduleCloudWrite();
+    renderSheet(sheet);
+  });
+
+  sectionsEl.addEventListener("change", (e) => {
+    if (e.target.matches(".item-checkbox")) {
+      toggleItem(e.target.dataset.id);
+    }
+  });
+
+  updateProgressBar(sheet);
+}
+
+function renderSection(section) {
+  const { total, done } = sectionStats(section);
+  const groupsHtml = section.groups
+    .map((g) => {
+      const rows = g.items.map((it) => renderItemRow(it)).join("");
+      const titleHtml = g.title ? `<div class="group-title">${escapeHtml(g.title)}</div>` : "";
+      return titleHtml + rows;
+    })
+    .join("");
+  return `
+    <details class="section" open data-section-total="${total}">
+      <summary>
+        <span>${escapeHtml(section.title)}</span>
+        <span class="section-count" data-section-count>${done} / ${total}</span>
+      </summary>
+      <div class="section-body">${groupsHtml}</div>
+    </details>
+  `;
+}
+
+function renderItemRow(item) {
+  const isSolved = !!solved[item.id];
+  const textHtml = item.url
+    ? `<a class="item-text" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.text)} <span class="ext-icon">↗</span></a>`
+    : `<span class="item-text plain">${escapeHtml(item.text)}</span>`;
+  const tagHtml = item.tag ? `<span class="item-tag">${escapeHtml(item.tag)}</span>` : "";
+  return `
+    <div class="item-row${isSolved ? " is-solved" : ""}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + (item.tag || "")).toLowerCase())}">
+      <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
+      ${textHtml}
+      ${tagHtml}
+    </div>
+  `;
+}
+
+function toggleItem(id) {
+  if (solved[id]) delete solved[id];
+  else solved[id] = true;
+  saveLocalSolved();
+  scheduleCloudWrite();
+
+  const row = document.querySelector(`[data-item-row="${id}"]`);
+  if (row) row.classList.toggle("is-solved", !!solved[id]);
+
+  const sheet = findSheet(currentSheetId);
+  if (sheet) {
+    document.getElementById("sheet-done-count").textContent = sheetStats(sheet).done;
+    document.querySelectorAll(".section[data-section-total]").forEach((detailsEl, idx) => {
+      const sec = sheet.sections[idx];
+      if (!sec) return;
+      const { total, done } = sectionStats(sec);
+      const countEl = detailsEl.querySelector("[data-section-count]");
+      if (countEl) countEl.textContent = `${done} / ${total}`;
+    });
+    updateProgressBar(sheet);
+  }
+}
+
+function applyFilters() {
+  document.querySelectorAll(".item-row").forEach((row) => {
+    const matchesSearch = !searchQuery || row.dataset.search.includes(searchQuery);
+    const matchesSolved = !hideSolved || !row.classList.contains("is-solved");
+    row.classList.toggle("is-hidden", !(matchesSearch && matchesSolved));
+  });
+}
+
+function updateProgressBar(sheet) {
+  const { total, done } = sheetStats(sheet);
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  progressBarFill.style.width = pct + "%";
+}
+
+function refreshAllCounts() {
+  const route = parseHash();
+  if (route.view === "sheet") {
+    const sheet = findSheet(route.id);
+    if (sheet) {
+      document.querySelectorAll(".item-checkbox").forEach((cb) => {
+        const isSolved = !!solved[cb.dataset.id];
+        cb.checked = isSolved;
+        const row = cb.closest(".item-row");
+        if (row) row.classList.toggle("is-solved", isSolved);
+      });
+      const doneEl = document.getElementById("sheet-done-count");
+      if (doneEl) doneEl.textContent = sheetStats(sheet).done;
+      document.querySelectorAll(".section[data-section-total]").forEach((detailsEl, idx) => {
+        const sec = sheet.sections[idx];
+        if (!sec) return;
+        const { done, total } = sectionStats(sec);
+        const countEl = detailsEl.querySelector("[data-section-count]");
+        if (countEl) countEl.textContent = `${done} / ${total}`;
+      });
+      updateProgressBar(sheet);
+      applyFilters();
+    }
+  } else {
+    refreshHomeCards();
+  }
+}
+
+// ---------- Utilities ----------
+
+function escapeHtml(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[c]));
+}
+
+function escapeAttr(s) {
+  return escapeHtml(s);
+}
+
+// ---------- Boot ----------
+
+(async function main() {
+  await loadData();
+  render();
+  initFirebase();
+})();

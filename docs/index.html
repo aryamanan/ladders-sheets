@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interview Practice Tracker</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#/">Interview Practice Tracker</a>
+      <div class="topbar-right">
+        <span id="sync-status" class="sync-status">Checking sync…</span>
+        <button id="signin-btn" class="btn btn-ghost" type="button">Sign in with Google</button>
+      </div>
+    </div>
+    <div id="sheet-progress" class="sheet-progress-bar" hidden>
+      <div id="sheet-progress-fill" class="sheet-progress-fill"></div>
+    </div>
+  </header>
+
+  <main id="app" class="app"></main>
+
+  <footer class="site-footer">
+    <p>Progress saves automatically to this browser, and to your account when signed in.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
