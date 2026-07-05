@@ -57,12 +57,44 @@ EXCLUDE_HEADINGS = [
     "understand it means",
     "variant ladder",
     "what you must be able to explain",
+    "source basis",
+    "what counts as a question",
+    "repetition protocol",
+    "progression",
+    "where to go after this",
+    "section counts",
+    "totals",
+]
+
+# Headings excluded only on an exact (case-insensitive) full-title match --
+# use this instead of EXCLUDE_HEADINGS when the phrase is short enough that
+# it could be a substring of an unrelated, legitimate longer heading (e.g.
+# CSES's bare "Repetition Schedule" vs. the concept ladders' "System Design
+# Repetition Schedule", which has real checkable content).
+EXCLUDE_HEADINGS_EXACT = [
+    "repetition schedule",
 ]
 
 HEADING_RE = re.compile(r"^(#{1,3})\s+(.*)$")
 LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+(.+?)\s*$")
-LABEL_LINE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9 ,/\-']{0,45}):\s*$")
+# Matches both a bare "Label:" line (group 2 empty) and an inline
+# "Label: rest of line" (group 2 non-empty), e.g. "Frontier unlock: [X](url)"
+# or "Technique family: binary search" (no link -> treated as ignorable
+# metadata, see the label handling below).
+LABEL_LINE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9 ,/\-'()—.]{0,90}):\s*(.*)$")
 LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
+
+# Labels whose inline (same-line, no-link) content is pure descriptive
+# metadata to drop -- e.g. "Technique family: binary search". This must stay
+# a narrow allowlist: plenty of ordinary checklist items also look like
+# "Label: rest of sentence" (e.g. "Load balancing: L4 vs L7.") and those must
+# still be kept as plain checkable items, not silently swallowed.
+IGNORABLE_METADATA_LABELS = {
+    "technique family",
+    "why this matters",
+    "baseline concepts",
+    "unlock idea",
+}
 
 
 def strip_links(text):
@@ -71,6 +103,8 @@ def strip_links(text):
 
 def is_excluded(title):
     t = title.lower()
+    if t in EXCLUDE_HEADINGS_EXACT:
+        return True
     return any(kw in t for kw in EXCLUDE_HEADINGS)
 
 
@@ -135,13 +169,51 @@ def parse_file(path):
             {"id": item_id, "text": item_text, "url": url, "tag": tag}
         )
 
+    def handle_labelish(text):
+        """Try to interpret `text` as a "Label:" or "Label: rest" line,
+        whether it arrived as a bare paragraph or the body of a bullet/
+        numbered list item. Returns True if it was label-shaped (and has
+        already been fully handled), False if the caller should fall back to
+        treating `text` as an ordinary item/paragraph.
+        """
+        nonlocal cur_label
+        m = LABEL_LINE_RE.match(text.strip())
+        if not m:
+            return False
+        label, rest = m.group(1).strip(), m.group(2).strip()
+        if not rest:
+            # Bare "Label:" -- tags whatever list follows underneath it
+            # (including indented sub-bullets on later lines).
+            cur_label = label
+            return True
+        links = LINK_RE.findall(rest)
+        if links:
+            # "Label: [X](url), [Y](url)" -- each link is its own checkable
+            # item tagged with this label; doesn't change cur_label so it
+            # can't leak onto unrelated later items.
+            saved_label, cur_label = cur_label, label
+            for link_text, url in links:
+                add_item(link_text, url)
+            cur_label = saved_label
+            return True
+        if label.lower() in IGNORABLE_METADATA_LABELS:
+            # e.g. "Technique family: binary search" -- descriptive context,
+            # not a checkable task.
+            return True
+        # An ordinary checklist item that happens to contain a colon (e.g.
+        # "Load balancing: L4 vs L7."). Not our concern -- let the caller
+        # fall back to treating it as plain text.
+        return False
+
     for raw_line in lines:
         line = raw_line.rstrip("\n")
         heading_match = HEADING_RE.match(line)
 
         if heading_match:
             level = len(heading_match.group(1))
-            title = heading_match.group(2).strip()
+            raw_title = heading_match.group(2).strip()
+            title = strip_links(raw_title)
+            heading_links = LINK_RE.findall(raw_title)
             table_header = None
             awaiting_separator = False
             cur_label = None
@@ -161,11 +233,15 @@ def parse_file(path):
                 cur_h3 = None
                 cur_h3_excluded = False
                 cur_group = None
+                for link_text, url in heading_links:
+                    add_item(link_text, url)
                 continue
             if level == 3:
                 cur_h3 = title
                 cur_h3_excluded = is_excluded(title)
                 cur_group = None
+                for link_text, url in heading_links:
+                    add_item(link_text, url)
                 continue
 
         if not line.strip():
@@ -222,17 +298,23 @@ def parse_file(path):
         list_match = LIST_ITEM_RE.match(line)
         if list_match:
             item_text = list_match.group(1)
+            if handle_labelish(item_text):
+                continue
             links = LINK_RE.findall(item_text)
             if links:
-                for link_text, url in links:
-                    add_item(link_text, url)
+                # Keep the whole line (link syntax stripped) as the item
+                # text, not just the linked fragment's anchor text -- a
+                # quote like `"..." -- Author, [Article](url)` must not lose
+                # everything outside the brackets. For the common simple
+                # case (`- [Problem](url)` with nothing else on the line)
+                # this reduces to exactly the old behavior since
+                # strip_links(item_text) == the link's own anchor text.
+                add_item(strip_links(item_text), links[0][1])
             else:
                 add_item(strip_links(item_text), None)
             continue
 
-        label_match = LABEL_LINE_RE.match(line.strip())
-        if label_match:
-            cur_label = label_match.group(1).strip()
+        if handle_labelish(line):
             continue
         # otherwise: plain prose paragraph, ignored
 

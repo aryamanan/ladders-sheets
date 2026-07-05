@@ -126,7 +126,136 @@ End with:
 3. What would you change at 10x scale?
 4. What metrics prove the system works?
 
+## Methodology
+
+How the primary sources themselves say to study this material — no video courses; reading,
+practicing, and solving only. Every line below is a real citation, not paraphrase.
+
+### Why practice beats passive consumption
+
+- ["Great systems design is based on practice, not watching videos."](https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/) — Gergely Orosz, The Pragmatic Engineer
+- "Books are the best price-for-value preparation resource: the information is much more dense than with video courses, while the price of books is lower than any course subscriptions." — same source
+- "Take notes, go one step at a time, jump between pages, and take your time to learn the concepts they teach." — same source
+- "Mock systems design interviews make an incredible difference." — same source
+- ["Aim to draw out how you would design the system before reading how the author tackled the problem."](https://blog.pragmaticengineer.com/system-design-interview-an-insiders-guide-review/) — Gergely Orosz, reviewing Alex Xu's book, The Pragmatic Engineer
+
+### Alex Xu's own stated method (verified against the actual Volume 1 book text)
+
+- "The objective of this book is to provide a reliable strategy to approach the system design questions... With constant practice, you will be well-equipped to tackle system design interview questions." — Alex Xu, *System Design Interview* (Vol. 1), Forward
+- "DON'T be like Jimmy... In a system design interview, giving out an answer quickly without thinking gives you no bonus points... Slow down. Think deeply and ask questions to clarify requirements and assumptions." — Alex Xu, *System Design Interview* (Vol. 1), Chapter 3
+- "If you are going to interview with a company, it is a great idea to read their engineering blogs and get familiar with technologies and systems adopted and implemented there." — Alex Xu, *System Design Interview* (Vol. 1), Chapter 16 / Afterword
+
+### Building intuition rather than memorizing technologies
+
+- "Although the landscape of technologies for processing and storing data is diverse and fast-changing, the underlying principles endure. If you understand those principles, you're in a position to see where each tool fits in." — Martin Kleppmann, [*Designing Data-Intensive Applications*, Preface](https://newsletter.pragmaticengineer.com/p/designing-data-intensive-applications-book-excerpt)
+
+### Foundation-then-drill sequencing
+
+- ["Passively consuming content is good, but you'll retain 10x more information by actually doing."](https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare) — Hello Interview
+- "Only after you have tried to answer the question, read the answer key to see how your answer compares." — Hello Interview
+- "A common failure mode for candidates is to have consumed a lot of material but stumble when it comes time to actually apply it." — Hello Interview, ["System Design in a Hurry — Introduction"](https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction)
+
+### The four-step loop to run on every practice problem
+
+- ["Outline use cases, constraints, and assumptions" — gather requirements, scope the problem](https://github.com/donnemartin/system-design-primer#how-to-approach-a-system-design-interview-question)
+- "Create a high level design" — sketch main components, justify ideas
+- "Design core components" — go deep on each major element
+- "Scale the design" — identify bottlenecks, address them
+
 ## Core System Design Concepts
+
+Each concept below is grounded in a direct, verified quote — from Alex Xu's *System Design
+Interview* (Vol. 1, checked against the actual book text), Martin Kleppmann's *Designing
+Data-Intensive Applications*, the Google SRE Book, original papers (Raft, consistent hashing,
+CAP/PACELC), and primary engineering sources — plus one free article per concept.
+
+### 1. Requirements clarification
+
+- "DON'T be like Jimmy... Answering without a thorough understanding of the requirements is a huge red flag as the interview is not a trivia contest... Slow down. Think deeply and ask questions to clarify requirements and assumptions." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 3, Step 1
+- [System Design Primer — "How to approach a system design interview question"](https://github.com/donnemartin/system-design-primer#how-to-approach-a-system-design-interview-question)
+
+### 2. Back-of-envelope capacity estimation
+
+- "Back-of-the-envelope estimation is all about the process. Solving the problem is more important than obtaining results... Practice makes perfect." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 2
+- [Latency Numbers Every Programmer Should Know (interactive)](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
+
+### 3. API design and idempotency
+
+- "Idempotency means that they can be called any number of times while guaranteeing that side effects only occur once... a client... can continue to retry until it verifiably succeeds." — Stripe Engineering, ["Designing robust and predictable APIs with idempotency"](https://stripe.com/blog/idempotency)
+- [AWS Builders' Library — "Making retries safe with idempotent APIs"](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)
+
+### 4. Data modeling and access patterns
+
+- "Data models are perhaps the most important part of developing software, because they have such a profound effect: not only on how the software is written, but also on how we think about the problem that we are solving." — Martin Kleppmann, [*Designing Data-Intensive Applications*, Ch. 2](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch06.html)
+- [AWS Prescriptive Guidance — "Step 3. Identify your data access patterns"](https://docs.aws.amazon.com/prescriptive-guidance/latest/dynamodb-data-modeling/step3.html)
+
+### 5. Caching strategies
+
+- "After receiving a request, a web server first checks if the cache has the available response... This caching strategy is called a read-through cache... Least-recently-used (LRU) is the most popular cache eviction policy." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 1
+- [System Design Primer — "Cache" section](https://github.com/donnemartin/system-design-primer#cache)
+
+### 6. CDN and edge caching
+
+- "A CDN is a network of geographically dispersed servers used to deliver static content... The origin returns image.png to the CDN server, which includes optional HTTP header Time-to-Live (TTL)." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 1
+- [MDN Web Docs Glossary: CDN](https://developer.mozilla.org/en-US/docs/Glossary/CDN)
+
+### 7. Load balancing (L4 vs L7)
+
+- "A load balancer evenly distributes incoming traffic among web servers that are defined in a load-balanced set... For better security, private IPs are used for communication between servers." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 1
+- ["Layer 4 load balancers look at info at the transport layer... Layer 7 load balancers look at the application layer... contents of the header, message, and cookies."](https://github.com/donnemartin/system-design-primer#load-balancer) — System Design Primer
+
+### 8. Database sharding / partitioning
+
+- "For very large datasets, or very high query throughput, [replication alone] is not sufficient: we need to break the data up into partitions, also known as sharding... The main reason for wanting to partition data is scalability." — Martin Kleppmann, [*Designing Data-Intensive Applications*, Ch. 6](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch06.html)
+
+### 9. Database replication and consistency models
+
+- ["Weak Consistency: After a write, reads may or may not see it... Eventual Consistency: After a write, reads will eventually see it (typically within milliseconds)... Strong Consistency: After a write, reads will see it. Data is replicated synchronously."](https://github.com/donnemartin/system-design-primer#consistency-patterns) — System Design Primer
+- "Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves)." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 1
+
+### 10. Consistent hashing
+
+- "Consistent hashing is a special kind of hashing such that when a hash table is re-sized... only k/n keys need to be remapped on average... In contrast, in most traditional hash tables, a change in the number of array slots causes nearly all keys to be remapped." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 5
+- ["Our caching protocols are based on a special kind of hashing that we call consistent hashing... A consistent hash function is one which changes minimally as the range of the function changes."](https://courses.cs.duke.edu/fall25/compsci512/internal/readings/ConsistentHashing.pdf) — Karger et al., original 1997 paper
+
+### 11. Message queues and stream processing
+
+- ["Event streaming is the practice of capturing data in real-time from event sources... storing these event streams durably for later retrieval; manipulating, processing, and reacting to the event streams in real-time as well as retrospectively; and routing the event streams to different destination technologies as needed."](https://kafka.apache.org/intro) — Apache Kafka Documentation
+
+### 12. Rate limiting algorithms
+
+- "A rate limiter is used to control the rate of traffic sent by a client or a service... If the API request count exceeds the threshold defined by the rate limiter, all the excess calls are blocked." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 4
+- [Kong Engineering — "How to Design a Scalable Rate Limiting Algorithm"](https://konghq.com/blog/engineering/how-to-design-a-scalable-rate-limiting-algorithm)
+
+### 13. Search indexing / inverted index
+
+- "We keep a dictionary of terms... Then for each term, we have a list that records which documents the term occurs in... The list is then called a postings list (or inverted list)." — Manning, Raghavan, Schütze, [*Introduction to Information Retrieval*, Ch. 1](https://nlp.stanford.edu/IR-book/pdf/01bool.pdf)
+- [Elastic Blog — "Elasticsearch from the Bottom Up, Part 1"](https://www.elastic.co/blog/found-elasticsearch-from-the-bottom-up)
+
+### 14. Feed generation / fanout
+
+- "Fanout is the process of delivering a post to all friends... fanout on write (push model) and fanout on read (pull model)... We adopt a hybrid approach... we use a push model for the majority of users. For celebrities... we let followers pull news content on-demand." — Alex Xu, *System Design Interview* (Vol. 1), Ch. 11
+- [HdM Stuttgart — "How to Scale: Real-time Tweet Delivery Architecture at Twitter"](https://blog.mi.hdm-stuttgart.de/index.php/2021/03/10/how-to-scale-real-time-tweet-delivery-architecture-at-twitter/)
+
+### 15. Distributed consensus basics
+
+- "Consensus algorithms allow a collection of machines to work as a coherent group that can survive the failures of some of its members." — Ongaro & Ousterhout, [Raft paper](https://raft.github.io/raft.pdf)
+- [The Raft Consensus Algorithm — official site with interactive visualization](https://raft.github.io/)
+
+### 16. Observability: metrics, logs, traces, SLOs
+
+- "Latency... Traffic... Errors... Saturation — the Four Golden Signals. Monitoring and alerting enables a system to tell us when it's broken, or perhaps to tell us what's about to break." — Google, [*Site Reliability Engineering*, Ch. 6](https://sre.google/sre-book/monitoring-distributed-systems/)
+- ["An SLI is a service level indicator... An SLO is a service level objective... SLAs are service level agreements."](https://sre.google/sre-book/service-level-objectives/) — Google SRE Book, Ch. 4
+
+### 17. Failure handling: retries, timeouts, circuit breakers
+
+- "To build resilient systems, we employ three essential tools: timeouts, retries, and backoff... a best practice is designing APIs to be idempotent... To avoid [synchronized retries], we employ jitter." — Marc Brooker, [AWS Builders' Library, "Timeouts, retries, and backoff with jitter"](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
+- "A cascading failure is a failure that grows over time as a result of positive feedback." — Google, [*Site Reliability Engineering*, Ch. 22](https://sre.google/sre-book/addressing-cascading-failures/)
+
+### 18. CAP theorem / PACELC
+
+- ["Any networked shared-data system can have at most two of three desirable properties: consistency (C)... high availability (A)... and tolerance to network partitions (P)."](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/) — Eric Brewer, "CAP Twelve Years Later"
+- ["If there is a partition (P), how does the system tradeoff between availability and consistency; else (E), how does the system tradeoff between latency (L) and consistency (C)?"](http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html) — Daniel Abadi, original PACELC post
 
 ### Networking and Edge
 
@@ -330,71 +459,75 @@ Questions to practice:
 
 For every prompt, practice requirements, APIs, schema, architecture, scaling, bottlenecks, failure modes, and monitoring.
 
+Each prompt below links to a real, verified reference case study — the actual company
+engineering blog/paper describing that system (or the closest available free, in-depth
+breakdown where no primary source survives). Solve it yourself first, then compare.
+
 ### Classic Product Systems
 
-1. Design a URL shortener.
-2. Design Twitter/X timeline.
-3. Design Instagram.
-4. Design Facebook News Feed.
-5. Design Reddit.
-6. Design YouTube.
-7. Design Netflix.
-8. Design TikTok short-video feed.
-9. Design WhatsApp.
-10. Design Slack.
-11. Design Discord voice/text.
-12. Design Gmail.
-13. Design Google Calendar.
-14. Design Google Drive.
-15. Design Dropbox.
-16. Design Google Docs collaborative editing.
-17. Design Google Photos.
-18. Design Spotify.
-19. Design Uber.
-20. Design DoorDash.
-21. Design Airbnb.
-22. Design Ticketmaster.
-23. Design Amazon product page.
-24. Design Amazon cart and checkout.
-25. Design payment processing.
-26. Design Stripe-like payment API.
-27. Design stock trading platform.
-28. Design Robinhood watchlist and quotes.
-29. Design LinkedIn people search.
-30. Design job matching.
+1. [Design a URL shortener](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) (Hello Interview breakdown — no dedicated Bitly engineering post exists)
+2. [Design Twitter/X timeline](https://blog.x.com/engineering/en_us/topics/infrastructure/2017/the-infrastructure-behind-twitter-scale) (Twitter/X Engineering)
+3. [Design Instagram](https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/) (Meta Engineering)
+4. [Design Facebook News Feed](https://engineering.fb.com/2021/01/26/ml-applications/news-feed-ranking/) (Meta Engineering)
+5. Design Reddit ranking (see News Feed case study above — same ranking-aggregator problem shape)
+6. [Design YouTube](https://blog.youtube/inside-youtube/new-era-video-infrastructure/) (Official YouTube Blog)
+7. Design Netflix (see Recommendation System case study below — Netflix's own architecture post)
+8. [Design TikTok short-video feed](https://arxiv.org/abs/2209.07663) (ByteDance, "Monolith" paper, ACM RecSys 2022)
+9. [Design WhatsApp](https://discord.com/blog/how-discord-stores-trillions-of-messages) (closest verified primary source: Discord Engineering on message storage at trillion-message scale)
+10. Design Slack (see WhatsApp/Discord case study above — same chat-storage problem shape)
+11. Design Discord voice/text (see WhatsApp/Discord case study above — this is the exact Discord post)
+12. Design Gmail (no primary-source engineering post found — solve from first principles)
+13. [Design Google Calendar](https://www.hellointerview.com/community/questions/calendar-free-busy/cm8c1h59t005n8pgzdq4ynqjo) (Hello Interview — no primary Google Calendar backend post found)
+14. [Design Google Drive](https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system) (Google Cloud Blog on Colossus, which explicitly underpins Drive)
+15. [Design Dropbox](https://dropbox.tech/infrastructure/inside-the-magic-pocket) (Dropbox Tech Blog, "Inside the Magic Pocket")
+16. [Design Google Docs collaborative editing](https://drive.googleblog.com/2010/09/whats-different-about-new-google-docs.html) (Official Google Drive Blog, on the OT engine behind Docs)
+17. Design Google Photos (no primary-source engineering post found — solve from first principles)
+18. Design Spotify (no primary-source engineering post found — solve from first principles)
+19. [Design Uber](https://www.uber.com/en-CA/blog/engineering-routing-engine/) (Uber Engineering, routing/ETA feeding dispatch)
+20. [Design DoorDash](https://doordash.engineering/2014/09/12/designing-an-on-demand-logistics-system/) (DoorDash Engineering)
+21. Design Airbnb (no primary-source engineering post found — solve from first principles)
+22. [Design Ticketmaster](https://www.hellointerview.com/learn/system-design/answer-keys/ticketmaster) (Hello Interview — seat-locking, virtual queues, overselling prevention)
+23. [Design Amazon product page / search](https://www.amazon.science/publications/amazon-search-the-joy-of-ranking-products) (Amazon Science, on Amazon Search's ranking)
+24. Design Amazon cart and checkout (no primary-source engineering post found — solve from first principles; see Payment System case study below for the checkout/idempotency half)
+25. [Design payment processing](https://stripe.com/blog/idempotency) (Stripe Engineering, canonical idempotency-key post)
+26. Design a Stripe-like payment API (see payment processing case study above — this is the exact Stripe post)
+27. [Design a stock trading platform](https://lmax-exchange.github.io/disruptor/disruptor.html) (LMAX Exchange, lock-free matching-engine architecture)
+28. Design Robinhood watchlist and quotes (see stock trading platform case study above — same matching-engine/quotes problem family)
+29. Design LinkedIn people search (no primary-source engineering post found — solve from first principles)
+30. Design job matching (no primary-source engineering post found — solve from first principles)
 
 ### Infra and Backend Systems
 
-1. Design a rate limiter.
-2. Design an API gateway.
-3. Design a CDN.
-4. Design a distributed cache.
-5. Design a distributed key-value store.
-6. Design a distributed queue.
-7. Design Kafka.
-8. Design a notification system.
-9. Design a logging pipeline.
-10. Design metrics and monitoring.
-11. Design a tracing system.
-12. Design a feature flag system.
-13. Design a configuration service.
-14. Design a service discovery system.
-15. Design a distributed lock service.
-16. Design a cron scheduler.
-17. Design a task queue.
-18. Design an online code judge.
-19. Design a web crawler.
-20. Design a search engine.
-21. Design autocomplete.
-22. Design a recommendation system.
-23. Design ads click tracking.
-24. Design A/B testing platform.
-25. Design fraud detection pipeline.
-26. Design data lake ingestion.
-27. Design real-time analytics dashboard.
-28. Design online leaderboard.
-29. Design multiplayer game state sync.
-30. Design IoT telemetry ingestion.
+1. [Design a rate limiter](https://stripe.com/blog/rate-limiters) (Stripe Engineering, 4 production rate-limiter types)
+2. [Design an API gateway](https://netflixtechblog.com/announcing-zuul-edge-service-in-the-cloud-ab3af5be08ee) (Netflix TechBlog, Zuul)
+3. [Design a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) (Cloudflare Learning Center)
+4. [Design a distributed cache](https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebook/) (Meta Engineering, Memcache at Facebook)
+5. [Design a distributed key-value store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) (Amazon, original Dynamo SOSP 2007 paper)
+6. [Design a distributed queue](https://www.linkedin.com/blog/engineering/open-source/apache-kafka-trillion-messages) (LinkedIn Engineering, Kafka at trillion-message/day scale)
+7. Design Kafka (see distributed queue case study above — this is the exact Kafka-at-LinkedIn post)
+8. [Design a notification system](https://medium.com/pinterest-engineering/nep-notification-system-and-relevance-a7fff21986c7) (Pinterest Engineering)
+9. [Design a logging pipeline](https://netflixtechblog.com/scalable-logging-and-tracking-882bde0ddca2) (Netflix TechBlog)
+10. [Design metrics and monitoring](https://www.uber.com/us/en/blog/m3/) (Uber Engineering, M3/M3DB)
+11. Design a tracing system (no primary-source engineering post found — solve from first principles; the Google SRE Book's monitoring chapter in Core Concepts above is directly relevant)
+12. [Design a feature flag system](https://launchdarkly.com/docs/tutorials/ld-arch-deep-dive) (LaunchDarkly official docs)
+13. Design a configuration service (no primary-source engineering post found — solve from first principles)
+14. Design a service discovery system (no primary-source engineering post found — solve from first principles)
+15. Design a distributed lock service (no primary-source engineering post found — solve from first principles)
+16. [Design a cron scheduler](https://medium.com/airbnb-engineering/chronos-a-replacement-for-cron-f05d7d986a9d) (Airbnb Engineering, Chronos)
+17. Design a task queue (see cron scheduler case study above — same distributed-scheduling problem family)
+18. [Design an online code judge](https://github.com/judge0/judge0) (Judge0, real open-source reference implementation used by production judges)
+19. [Design a web crawler](https://developers.google.com/search/blog/2026/03/crawler-blog-post) (Google Search Central Blog, inside Googlebot)
+20. Design a search engine (no primary-source engineering post found at this scope — solve from first principles; see Search Indexing citation in Core Concepts above)
+21. [Design autocomplete](https://engineering.fb.com/2010/05/17/web/the-life-of-a-typeahead-query/) (Meta Engineering, "The Life of a Typeahead Query")
+22. [Design a recommendation system](https://netflixtechblog.com/system-architectures-for-personalization-and-recommendation-e081aa94b5d8) (Netflix TechBlog)
+23. Design ads click tracking (no primary-source engineering post found — solve from first principles)
+24. [Design A/B testing platform](https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15) (Netflix TechBlog, ABlaze)
+25. [Design fraud detection pipeline](https://stripe.dev/blog/how-we-built-it-stripe-radar) (Stripe Engineering, Radar)
+26. Design data lake ingestion (no primary-source engineering post found — solve from first principles; see IoT telemetry case study below for a related high-volume ingestion pattern)
+27. Design real-time analytics dashboard (no primary-source engineering post found — solve from first principles; see metrics/monitoring case study above)
+28. [Design online leaderboard](https://www.hellointerview.com/community/questions/realtime-game-leaderboard/cm4t0qbr9004988ilmum8jm06) (Hello Interview — Redis sorted sets at 500M DAU scale)
+29. [Design multiplayer game state sync](https://www.riotgames.com/en/news/valorants-128-tick-servers) (Riot Games Technology Blog, VALORANT's tick-rate architecture)
+30. [Design IoT telemetry ingestion](https://aws.amazon.com/blogs/iot/7-patterns-for-iot-data-ingestion-and-visualization-how-to-decide-what-works-best-for-your-use-case/) (AWS IoT Blog)
 
 ### Hard Follow-Up Variants
 
@@ -525,60 +658,235 @@ Must cover:
 
 ### LLD Problem Bank
 
-Practice each as classes, interfaces, APIs, and data structures.
+Implement each one for real in a free, no-signup online compiler
+([OneCompiler](https://onecompiler.com/java) or
+[Programiz](https://www.programiz.com/java-programming/online-compiler/)), then check your
+design against the reference write-up(s) linked below it. Where a genuine free LeetCode
+equivalent exists it's given as the primary link (verified not premium-locked); several
+"obvious"-looking LeetCode matches turned out to be Premium/paywalled or a different problem
+wearing the same name, and are called out as bonus-only for that reason.
 
-1. Design Parking Lot.
-2. Design Elevator System.
-3. Design Vending Machine.
-4. Design ATM.
-5. Design Library Management System.
-6. Design Movie Ticket Booking.
-7. Design Restaurant Reservation.
-8. Design Hotel Booking.
-9. Design Chess.
-10. Design Tic-Tac-Toe.
-11. Design Snake and Ladder.
-12. Design Blackjack.
-13. Design Splitwise.
-14. Design Food Delivery.
-15. Design Ride-Sharing Dispatch.
-16. Design Notification Service.
-17. Design Logging Framework.
-18. Design Rate Limiter.
-19. Design LRU Cache.
-20. Design LFU Cache.
-21. Design In-Memory File System.
-22. Design Unix Find command.
-23. Design Search Autocomplete.
-24. Design Pub/Sub.
-25. Design Task Scheduler.
-26. Design Calendar.
-27. Design Meeting Scheduler.
-28. Design Online Auction.
-29. Design Stock Exchange Order Book.
-30. Design Browser History.
-31. Design Text Editor Undo/Redo.
-32. Design Spreadsheet.
-33. Design File Sync Client.
-34. Design URL Shortener classes.
-35. Design Metrics Aggregator.
+### 1. Parking Lot
 
-### Patterns to Know
+- Reference: [awesome-low-level-design: Parking Lot](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md), [grokking-the-object-oriented-design-interview: Parking Lot](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md)
+- Bonus (free, partial match — tracks slot counts only, not a full OOD): [Design Parking System](https://leetcode.com/problems/design-parking-system/)
 
-1. Strategy.
-2. Factory.
-3. Observer.
-4. Decorator.
-5. Adapter.
-6. Command.
-7. State.
-8. Repository.
-9. Builder.
-10. Singleton, with caveats.
-11. Dependency injection.
-12. Immutable value objects.
+### 2. Elevator System
 
-Do not pattern-dump. Use a pattern only when it makes the design simpler.
+- Reference: [awesome-low-level-design: Elevator System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/elevator-system.md), [kousiknath/LowLevelDesign: elevator](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/elevator)
+
+### 3. Vending Machine
+
+- Reference: [awesome-low-level-design: Vending Machine](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/vending-machine.md)
+
+### 4. ATM
+
+- Solve (free, verified not premium): [Design an ATM Machine](https://leetcode.com/problems/design-an-atm-machine/)
+- Reference (fuller OOD with accounts/cards): [awesome-low-level-design: ATM](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/atm.md), [grokking-the-object-oriented-design-interview: ATM](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-an-atm.md)
+
+### 5. Library Management System
+
+- Reference: [awesome-low-level-design: Library Management System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/library-management-system.md), [grokking-the-object-oriented-design-interview: Library Management System](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-library-management-system.md)
+
+### 6. Movie Ticket Booking
+
+- Reference: [awesome-low-level-design: Movie Ticket Booking System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/movie-ticket-booking-system.md), [grokking-the-object-oriented-design-interview: Movie Ticket Booking System](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-movie-ticket-booking-system.md), [kousiknath/LowLevelDesign: BookMyShow](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/bookmyshow)
+- Bonus (free, different domain — movie rental, not cinema seat booking): [Design Movie Rental System](https://leetcode.com/problems/design-movie-rental-system/)
+
+### 7. Restaurant Reservation
+
+- Reference: [awesome-low-level-design: Restaurant Management System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/restaurant-management-system.md), [grokking-the-object-oriented-design-interview: Restaurant Management System](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-restaurant-management-system.md)
+
+### 8. Hotel Booking
+
+- Reference: [awesome-low-level-design: Hotel Management System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/hotel-management-system.md), [grokking-the-object-oriented-design-interview: Hotel Management System](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-hotel-management-system.md)
+
+### 9. Chess
+
+- Reference: [awesome-low-level-design: Chess Game](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/chess-game.md), [grokking-the-object-oriented-design-interview: Chess](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-chess.md)
+
+### 10. Tic-Tac-Toe
+
+- Reference: [awesome-low-level-design: Tic-Tac-Toe](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/tic-tac-toe.md), [kousiknath/LowLevelDesign: tictactoe](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/tictactoe)
+- Bonus (free, different problem shape — find winner from a moves array, not from-scratch class design): [Find Winner on a Tic Tac Toe Game](https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/)
+- LeetCode's exact-name match, [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) (#348), is confirmed Premium/paywalled — not usable as a free primary link.
+
+### 11. Snake and Ladder
+
+- Reference: [awesome-low-level-design: Snake and Ladder](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/snake-and-ladder.md), [kousiknath/LowLevelDesign: snakeandladder](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/snakeandladder)
+- Bonus (free, pure BFS algorithm, no Player/Board/Dice classes to design): [Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/)
+
+### 12. Blackjack
+
+- Reference: [grokking-the-object-oriented-design-interview: Blackjack and a Deck of Cards](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-blackjack-and-a-deck-of-cards.md), [Superkakayong/Blackjack_Java_Object-oriented](https://github.com/Superkakayong/Blackjack_Java_Object-oriented)
+
+### 13. Splitwise (expense splitting)
+
+- Reference: [awesome-low-level-design: Splitwise](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/splitwise.md)
+
+### 14. Food Delivery
+
+- Reference: [awesome-low-level-design: Food Delivery Service](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/food-delivery-service.md)
+
+### 15. Ride-Sharing Dispatch
+
+- Reference: [awesome-low-level-design: Ride Sharing Service](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/ride-sharing-service.md), [kousiknath/LowLevelDesign: uberdriverdispatch](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/uberdriverdispatch), [grokking-the-object-oriented-design-interview: Design Uber](https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-uber.md)
+
+### 16. Notification Service
+
+- Reference: [kousiknath/LowLevelDesign: notificationsystem](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/notificationsystem)
+
+### 17. Logging Framework
+
+- Reference: [awesome-low-level-design: Logging Framework](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/logging-framework.md)
+- LeetCode's exact-name match, [Design Log Storage System](https://leetcode.com/problems/design-log-storage-system/) (#635), is confirmed Premium/paywalled.
+
+### 18. Rate Limiter
+
+- Reference: [coding-parrot/Low-Level-Design: rate-limiter](https://github.com/coding-parrot/Low-Level-Design/tree/master/rate-limiter), [InterviewReady/Low-Level-Design: rate-limiter](https://github.com/InterviewReady/Low-Level-Design)
+- LeetCode's closest match, [Design Hit Counter](https://leetcode.com/problems/design-hit-counter/) (#362), is confirmed Premium/paywalled, and is a sliding-window counter rather than a full policy-based rate limiter even when free.
+
+### 19. LRU Cache
+
+- Solve (free, verified not premium): [LRU Cache](https://leetcode.com/problems/lru-cache/)
+
+### 20. LFU Cache
+
+- Solve (free, verified not premium): [LFU Cache](https://leetcode.com/problems/lfu-cache/)
+
+### 21. In-Memory File System
+
+- Reference: [Hello Interview: file system design (covers this exact problem)](https://www.hellointerview.com/community/questions/file-system-design/cm5eguhab02gq838obxubceit), [kousiknath/LowLevelDesign: filesystem](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/filesystem)
+- LeetCode's exact-name match, [Design In-Memory File System](https://leetcode.com/problems/design-in-memory-file-system/) (#588), is confirmed Premium/paywalled.
+
+### 22. Unix Find command
+
+- Reference: [dlowrey/find](https://github.com/dlowrey/find), [context: the original Amazon onsite interview thread](https://leetcode.com/discuss/interview-question/369272/Amazon-or-Onsite-or-Linux-Find-Command)
+
+### 23. Search Autocomplete
+
+- Reference: [Hello Interview: Design Search Autocomplete System (covers this exact problem)](https://www.hellointerview.com/community/questions/design-search-autocomplete-system/67257ab0-683b-481d-bfd2-f7e63258056e), [vivekn/autocomplete (Trie-based)](https://github.com/vivekn/autocomplete)
+- LeetCode's exact-name match, [Design Search Autocomplete System](https://leetcode.com/problems/design-search-autocomplete-system/) (#642), is confirmed Premium/paywalled.
+
+### 24. Pub/Sub system
+
+- Reference: [awesome-low-level-design: Pub-Sub System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/pub-sub-system.md)
+
+### 25. Task Scheduler
+
+- Reference: [awesome-low-level-design: Task Management System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/task-management-system.md), [kousiknath/LowLevelDesign: delayedscheduler](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/delayedscheduler)
+- Bonus (free, different problem shape — CPU cooldown scheduling, not an OOD Task/Scheduler class design): [Task Scheduler](https://leetcode.com/problems/task-scheduler/)
+
+### 26. Calendar
+
+- Solve (free, verified not premium — progressive series, double- to triple- to max-k-booking): [My Calendar I](https://leetcode.com/problems/my-calendar-i/), [My Calendar II](https://leetcode.com/problems/my-calendar-ii/), [My Calendar III](https://leetcode.com/problems/my-calendar-iii/)
+
+### 27. Meeting Scheduler
+
+- Reference: [kousiknath/LowLevelDesign: meetingroomscheduler](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/meetingroomscheduler)
+- LeetCode's exact-name match, [Meeting Scheduler](https://leetcode.com/problems/meeting-scheduler/) (#1229), is confirmed Premium/paywalled.
+
+### 28. Online Auction
+
+- Reference: [awesome-low-level-design: Online Auction System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/online-auction-system.md)
+
+### 29. Stock Exchange Order Book
+
+- Reference: [awesome-low-level-design: Online Stock Brokerage System](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/online-stock-brokerage-system.md), [kousiknath/LowLevelDesign: stockbroker](https://github.com/kousiknath/LowLevelDesign/tree/master/src/com/lld/stockbroker)
+- Bonus (free, different focus — tracks price high/low/latest only, no order matching): [Stock Price Fluctuation](https://leetcode.com/problems/stock-price-fluctuation/)
+
+### 30. Browser History
+
+- Solve (free, verified not premium): [Design Browser History](https://leetcode.com/problems/design-browser-history/)
+
+### 31. Text Editor Undo/Redo
+
+- Reference: [vritb/command-pattern-undo-redo](https://github.com/vritb/command-pattern-undo-redo), [write-up: building a text editor with the Command pattern](https://medium.com/@yashodhara.chowkar/building-a-text-editor-with-the-command-design-pattern-955979e77b57)
+- Bonus (free, missing undo/redo — only add/delete/cursor-move): [Design a Text Editor](https://leetcode.com/problems/design-a-text-editor/)
+
+### 32. Spreadsheet
+
+- Solve (free, verified not premium — cell values + `=X+Y` formula evaluation): [Design Spreadsheet](https://leetcode.com/problems/design-spreadsheet/)
+- The more famous namesake, [Design Excel Sum Formula](https://leetcode.com/problems/design-excel-sum-formula/) (#631), is a better conceptual match but confirmed Premium/paywalled.
+
+### 33. File Sync Client
+
+- Reference (HLD-flavored — you still need to turn the components into classes yourself): [Design Dropbox (Watcher/Chunker/Indexer breakdown)](https://astikanand.github.io/techblogs/high-level-system-design/design-dropbox), [System-Design-Case-Studies: dropbox](https://github.com/sjuvekar/System-Design-Case-Studies/blob/master/studies/dropbox.md)
+
+### 34. URL Shortener (OOD version)
+
+- Solve (free, verified not premium — the classic encode/decode class version, not the HLD/sharded-datastore version): [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
+
+### 35. Metrics Aggregator
+
+- Reference: [Hello Interview: Design a Metrics Aggregator (exact match)](https://www.hellointerview.com/community/questions/metrics-aggregator/cm78h7tyk02kgl7b16admv2nz)
+
+## Design Patterns In LLD
+
+Use a pattern only when it makes the design simpler — do not pattern-dump. Reference pages
+below are from [refactoring.guru](https://refactoring.guru/design-patterns), verified live;
+GoF = *Design Patterns: Elements of Reusable Object-Oriented Software* (Gamma, Helm, Johnson,
+Vlissides, 1994).
+
+### Strategy
+
+- Reference: [Strategy (refactoring.guru)](https://refactoring.guru/design-patterns/strategy)
+- GoF citation: Chapter 5, "Behavioral Patterns" — Strategy.
+
+### Factory
+
+- Reference: [Factory Method (refactoring.guru)](https://refactoring.guru/design-patterns/factory-method)
+- GoF citation: Chapter 3, "Creational Patterns" — Factory Method.
+
+### Observer
+
+- Reference: [Observer (refactoring.guru)](https://refactoring.guru/design-patterns/observer)
+- GoF citation: Chapter 5, "Behavioral Patterns" — Observer.
+
+### Decorator
+
+- Reference: [Decorator (refactoring.guru)](https://refactoring.guru/design-patterns/decorator)
+- GoF citation: Chapter 4, "Structural Patterns" — Decorator.
+
+### Adapter
+
+- Reference: [Adapter (refactoring.guru)](https://refactoring.guru/design-patterns/adapter)
+- GoF citation: Chapter 4, "Structural Patterns" — Adapter.
+
+### Command
+
+- Reference: [Command (refactoring.guru)](https://refactoring.guru/design-patterns/command)
+- GoF citation: Chapter 5, "Behavioral Patterns" — Command.
+
+### State
+
+- Reference: [State (refactoring.guru)](https://refactoring.guru/design-patterns/state)
+- GoF citation: Chapter 5, "Behavioral Patterns" — State.
+
+### Repository
+
+- Reference: [Repository (martinfowler.com/eaaCatalog)](https://martinfowler.com/eaaCatalog/repository.html)
+- Not a GoF pattern. Originates from Martin Fowler's "Patterns of Enterprise Application Architecture" (2002); also central to Eric Evans' "Domain-Driven Design" (2003).
+
+### Builder
+
+- Reference: [Builder (refactoring.guru)](https://refactoring.guru/design-patterns/builder)
+- GoF citation: Chapter 3, "Creational Patterns" — Builder.
+
+### Singleton
+
+- Reference: [Singleton (refactoring.guru)](https://refactoring.guru/design-patterns/singleton)
+- GoF citation: Chapter 3, "Creational Patterns" — Singleton. Discuss thread-safety and testability caveats.
+
+### Dependency Injection
+
+- Reference: [Inversion of Control Containers and the Dependency Injection pattern (Martin Fowler, 2004)](https://martinfowler.com/articles/injection.html)
+- Not a GoF pattern. The term was coined in the Fowler article above; the underlying idea (Inversion of Control) predates GoF and isn't one of the 23 GoF patterns.
+
+### Immutable Value Objects
+
+- Reference: [Value Object (Martin Fowler's bliki)](https://martinfowler.com/bliki/ValueObject.html)
+- Not a GoF pattern. Best cited to Eric Evans' "Domain-Driven Design" (2003) for "Value Object," or Joshua Bloch's "Effective Java" Item 17, "Minimize mutability."
 
 ## Database and SQL Interview Prep
 

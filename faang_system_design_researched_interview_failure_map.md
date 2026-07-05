@@ -497,48 +497,51 @@ Killer follow-ups:
 
 ## The 40 Most Important HLD Mocks
 
-Do these in order. They are chosen by pattern coverage, not random popularity.
+Do these in order. They are chosen by pattern coverage, not random popularity. Each links to a
+real, verified reference case study — the actual company engineering post/paper for that
+system, or the best free in-depth breakdown where no primary source survives. Solve it
+yourself first, then compare against the link.
 
-1. URL shortener.
-2. Pastebin.
-3. Rate limiter.
-4. Notification system.
-5. Chat app.
-6. News feed.
-7. Twitter/X.
-8. Instagram.
-9. YouTube.
-10. TikTok.
-11. Search autocomplete.
-12. Product search.
-13. Web crawler.
-14. Distributed cache.
-15. Distributed key-value store.
-16. Kafka-like queue.
-17. Metrics pipeline.
-18. Logging pipeline.
-19. API gateway.
-20. CDN.
-21. Dropbox.
-22. Google Drive.
-23. Collaborative docs.
-24. Calendar.
-25. Uber.
-26. DoorDash.
-27. Nearby friends.
-28. Payment system.
-29. Ticket booking.
-30. Inventory reservation.
-31. Stock trading order book.
-32. Fraud detection pipeline.
-33. A/B testing platform.
-34. Recommendation system.
-35. Real-time leaderboard.
-36. Multiplayer game state sync.
-37. IoT telemetry ingestion.
-38. Feature flag platform.
-39. Distributed scheduler.
-40. Online code judge.
+1. [URL shortener](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) (Hello Interview)
+2. [Pastebin](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md) (system-design-primer)
+3. [Rate limiter](https://stripe.com/blog/rate-limiters) (Stripe Engineering)
+4. [Notification system](https://medium.com/pinterest-engineering/nep-notification-system-and-relevance-a7fff21986c7) (Pinterest Engineering)
+5. [Chat app](https://discord.com/blog/how-discord-stores-trillions-of-messages) (Discord Engineering)
+6. [News feed](https://engineering.fb.com/2021/01/26/ml-applications/news-feed-ranking/) (Meta Engineering)
+7. [Twitter/X](https://blog.x.com/engineering/en_us/topics/infrastructure/2017/the-infrastructure-behind-twitter-scale) (Twitter/X Engineering)
+8. [Instagram](https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/) (Meta Engineering)
+9. [YouTube](https://blog.youtube/inside-youtube/new-era-video-infrastructure/) (Official YouTube Blog)
+10. [TikTok](https://arxiv.org/abs/2209.07663) (ByteDance, "Monolith" paper)
+11. [Search autocomplete](https://engineering.fb.com/2010/05/17/web/the-life-of-a-typeahead-query/) (Meta Engineering)
+12. [Product search](https://www.amazon.science/publications/amazon-search-the-joy-of-ranking-products) (Amazon Science)
+13. [Web crawler](https://developers.google.com/search/blog/2026/03/crawler-blog-post) (Google Search Central)
+14. [Distributed cache](https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebook/) (Meta Engineering)
+15. [Distributed key-value store](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf) (Amazon Dynamo paper, SOSP 2007)
+16. [Kafka-like queue](https://www.linkedin.com/blog/engineering/open-source/apache-kafka-trillion-messages) (LinkedIn Engineering)
+17. [Metrics pipeline](https://www.uber.com/us/en/blog/m3/) (Uber Engineering)
+18. [Logging pipeline](https://netflixtechblog.com/scalable-logging-and-tracking-882bde0ddca2) (Netflix TechBlog)
+19. [API gateway](https://netflixtechblog.com/announcing-zuul-edge-service-in-the-cloud-ab3af5be08ee) (Netflix TechBlog, Zuul)
+20. [CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) (Cloudflare)
+21. [Dropbox](https://dropbox.tech/infrastructure/inside-the-magic-pocket) (Dropbox Tech Blog)
+22. [Google Drive](https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system) (Google Cloud Blog, Colossus)
+23. [Collaborative docs](https://drive.googleblog.com/2010/09/whats-different-about-new-google-docs.html) (Official Google Drive Blog)
+24. [Calendar](https://www.hellointerview.com/community/questions/calendar-free-busy/cm8c1h59t005n8pgzdq4ynqjo) (Hello Interview)
+25. [Uber](https://www.uber.com/en-CA/blog/engineering-routing-engine/) (Uber Engineering)
+26. [DoorDash](https://doordash.engineering/2014/09/12/designing-an-on-demand-logistics-system/) (DoorDash Engineering)
+27. [Nearby friends](https://www.uber.com/us/en/blog/h3/) (Uber Engineering, H3 geospatial index)
+28. [Payment system](https://stripe.com/blog/idempotency) (Stripe Engineering)
+29. [Ticket booking](https://www.hellointerview.com/learn/system-design/answer-keys/ticketmaster) (Hello Interview)
+30. [Inventory reservation](https://shopify.engineering/scaling-inventory-reservations) (Shopify Engineering)
+31. [Stock trading order book](https://lmax-exchange.github.io/disruptor/disruptor.html) (LMAX Exchange)
+32. [Fraud detection pipeline](https://stripe.dev/blog/how-we-built-it-stripe-radar) (Stripe Engineering, Radar)
+33. [A/B testing platform](https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15) (Netflix TechBlog)
+34. [Recommendation system](https://netflixtechblog.com/system-architectures-for-personalization-and-recommendation-e081aa94b5d8) (Netflix TechBlog)
+35. [Real-time leaderboard](https://www.hellointerview.com/community/questions/realtime-game-leaderboard/cm4t0qbr9004988ilmum8jm06) (Hello Interview)
+36. [Multiplayer game state sync](https://www.riotgames.com/en/news/valorants-128-tick-servers) (Riot Games Technology Blog)
+37. [IoT telemetry ingestion](https://aws.amazon.com/blogs/iot/7-patterns-for-iot-data-ingestion-and-visualization-how-to-decide-what-works-best-for-your-use-case/) (AWS IoT Blog)
+38. [Feature flag platform](https://launchdarkly.com/docs/tutorials/ld-arch-deep-dive) (LaunchDarkly official docs)
+39. [Distributed scheduler](https://medium.com/airbnb-engineering/chronos-a-replacement-for-cron-f05d7d986a9d) (Airbnb Engineering, Chronos)
+40. [Online code judge](https://github.com/judge0/judge0) (Judge0, open-source reference implementation)
 
 ## The 20 Hardest Follow-Up Themes
 
