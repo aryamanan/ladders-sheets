@@ -18,6 +18,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "docs" / "data.json"
 
+# Files where the same URL legitimately gets referenced over and over within
+# one section (e.g. every problem in a CSES technique family sharing an
+# identical "external prereqs" list, or ladders whose solidifiers point back
+# at other ladders' own targets) -- dedupe within each section on these.
+DEDUPE_WITHIN_SECTION = {
+    "faang_dsa_cses_complete_map.md",
+}
+
 # Preferred display order; anything not listed falls back to alphabetical.
 SHEET_ORDER = [
     "faang_dsa_gauntlet.md",
@@ -120,6 +128,42 @@ def parse_table_row(line):
 
 def is_separator_row(cells):
     return all(re.match(r"^:?-{2,}:?$", c) or c == "" for c in cells)
+
+
+def dedupe_section(section):
+    """Drop repeat occurrences of the same URL within one section.
+
+    A URL that appears somewhere as a *canonical* item (tag == "", i.e. a
+    problem's own entry rather than someone else's cross-reference to it)
+    keeps only that canonical occurrence -- every tagged reference to it
+    elsewhere in the section is redundant once the reader can already see
+    it as its own item. A URL with no canonical occurrence anywhere in the
+    section (e.g. an external prereq link shared by many problems in the
+    same technique family) keeps just its first occurrence. Items with no
+    URL (plain-text drills etc.) are never deduped.
+    """
+    canonical_urls = set()
+    for g in section["groups"]:
+        for it in g["items"]:
+            if it["url"] and not it["tag"]:
+                canonical_urls.add(it["url"])
+
+    seen = set()
+    for g in section["groups"]:
+        kept = []
+        for it in g["items"]:
+            url = it["url"]
+            if not url:
+                kept.append(it)
+                continue
+            if url in canonical_urls and it["tag"]:
+                continue  # a canonical entry for this URL exists elsewhere
+            if url in seen:
+                continue
+            seen.add(url)
+            kept.append(it)
+        g["items"] = kept
+    section["groups"] = [g for g in section["groups"] if g["items"]]
 
 
 def parse_file(path):
@@ -324,6 +368,11 @@ def parse_file(path):
     for s in sections:
         s["groups"] = [g for g in s["groups"] if g["items"]]
     sections = [s for s in sections if s["groups"]]
+
+    if path.name in DEDUPE_WITHIN_SECTION:
+        for s in sections:
+            dedupe_section(s)
+        sections = [s for s in sections if s["groups"]]
     for s in sections:
         del s["excluded"]
         s["id"] = make_id(path.name, s["title"])
