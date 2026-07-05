@@ -6,10 +6,10 @@
 // Until you fill in a real apiKey, the app runs in localStorage-only mode
 // (no sign-in, no cross-device sync) -- everything else still works.
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyCDxQsT7hh147fWQCCtUpOwPxlRQ0yTHAw",
+  authDomain: "backendmainladder.firebaseapp.com",
+  projectId: "backendmainladder",
+  storageBucket: "backendmainladder.firebasestorage.app",
+  messagingSenderId: "135669766378",
+  appId: "1:135669766378:web:0c06f922e9f6d444095f93",
 };
