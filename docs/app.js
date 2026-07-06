@@ -339,7 +339,9 @@ function renderSection(section) {
 }
 
 function renderGroup(g) {
-  const titleHtml = g.title ? `<div class="group-title">${escapeHtml(g.title)}</div>` : "";
+  const titleHtml = g.title
+    ? `<div class="group-title"><span class="group-eyebrow">Topic</span><span class="group-name">${escapeHtml(g.title)}</span></div>`
+    : "";
   const subHtml = g.subgroups.map((sg) => renderSubgroup(sg)).join("");
   return titleHtml + subHtml;
 }

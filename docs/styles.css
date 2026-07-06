@@ -235,13 +235,34 @@ a:hover { text-decoration: underline; }
 .section-count { font-weight: 400; font-size: 0.8rem; color: var(--fg-muted); white-space: nowrap; }
 .section-body { padding: 4px 0 10px; background: var(--bg); }
 
+/* A group title marks a brand-new topic starting -- it must read as a
+   much bigger deal than a subgroup title, so it gets its own tinted band,
+   a thick top border, and a two-line eyebrow+name layout instead of a
+   single small muted line that used to look like just another label. */
 .group-title {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--fg-muted);
+  padding: 20px 16px 12px;
+  margin-top: 8px;
+  background: var(--bg-alt);
+  border-top: 3px solid var(--accent);
+}
+.group-title:first-of-type {
+  margin-top: 0;
+  border-top: none;
+}
+.group-eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 12px 16px 4px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+.group-name {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--fg);
 }
 
 .subgroup {
