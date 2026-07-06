@@ -151,9 +151,11 @@ function sheetStats(sheet) {
   let done = 0;
   for (const sec of sheet.sections) {
     for (const g of sec.groups) {
-      for (const it of g.items) {
-        total++;
-        if (solved[it.id]) done++;
+      for (const sg of g.subgroups) {
+        for (const it of sg.items) {
+          total++;
+          if (solved[it.id]) done++;
+        }
       }
     }
   }
@@ -164,9 +166,11 @@ function sectionStats(section) {
   let total = 0;
   let done = 0;
   for (const g of section.groups) {
-    for (const it of g.items) {
-      total++;
-      if (solved[it.id]) done++;
+    for (const sg of g.subgroups) {
+      for (const it of sg.items) {
+        total++;
+        if (solved[it.id]) done++;
+      }
     }
   }
   return { total, done };
@@ -301,7 +305,9 @@ function renderSheet(sheet) {
     if (!confirm(`Reset all progress for "${sheet.title}"? This can't be undone.`)) return;
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
-        for (const it of g.items) delete solved[it.id];
+        for (const sg of g.subgroups) {
+          for (const it of sg.items) delete solved[it.id];
+        }
       }
     }
     saveLocalSolved();
@@ -320,13 +326,7 @@ function renderSheet(sheet) {
 
 function renderSection(section) {
   const { total, done } = sectionStats(section);
-  const groupsHtml = section.groups
-    .map((g) => {
-      const rows = g.items.map((it) => renderItemRow(it)).join("");
-      const titleHtml = g.title ? `<div class="group-title">${escapeHtml(g.title)}</div>` : "";
-      return titleHtml + rows;
-    })
-    .join("");
+  const groupsHtml = section.groups.map((g) => renderGroup(g)).join("");
   return `
     <details class="section" open data-section-total="${total}">
       <summary>
@@ -338,7 +338,37 @@ function renderSection(section) {
   `;
 }
 
+function renderGroup(g) {
+  const titleHtml = g.title ? `<div class="group-title">${escapeHtml(g.title)}</div>` : "";
+  const subHtml = g.subgroups.map((sg) => renderSubgroup(sg)).join("");
+  return titleHtml + subHtml;
+}
+
+function renderSubgroup(sg) {
+  // A named sub-pattern gets its own visible heading, distinct from the
+  // (bigger, bolder) group/topic title above it -- this is what lets
+  // "Fast/Slow Pointers" stand out as a title you can actually remember,
+  // instead of being buried as a same-row badge on every item.
+  const titleHtml = sg.title ? `<div class="subgroup-title">${escapeHtml(sg.title)}</div>` : "";
+  const rows = sg.items.map((it) => renderItemRow(it)).join("");
+  return `<div class="subgroup">${titleHtml}${rows}</div>`;
+}
+
 function renderItemRow(item) {
+  // An invariant is a fact to internalize, not a task to complete -- render
+  // it as a distinct callout with no checkbox, so it visually stands apart
+  // from every real, solvable problem row instead of looking like one more
+  // identical checkbox in a long undifferentiated list.
+  const invariantMatch = !item.url && /^Invariant:\s*/i.test(item.text);
+  if (invariantMatch) {
+    const text = item.text.replace(/^Invariant:\s*/i, "");
+    return `
+      <div class="item-row invariant-row" data-search="${escapeAttr(item.text.toLowerCase())}">
+        <span class="invariant-badge">Invariant</span>
+        <span class="invariant-text">${escapeHtml(text)}</span>
+      </div>
+    `;
+  }
   const isSolved = !!solved[item.id];
   const textHtml = item.url
     ? `<a class="item-text" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.text)} <span class="ext-icon">↗</span></a>`

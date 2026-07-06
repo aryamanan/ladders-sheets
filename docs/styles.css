@@ -244,6 +244,26 @@ a:hover { text-decoration: underline; }
   padding: 12px 16px 4px;
 }
 
+.subgroup {
+  border-top: 1px solid var(--border);
+}
+.subgroup:first-of-type, .group-title + .subgroup {
+  border-top: none;
+}
+
+/* The sub-pattern's own title -- deliberately a full heading, not a badge,
+   so it's the thing you actually remember (e.g. "Fast/Slow Pointers"),
+   with the group/topic title above it for context. */
+.subgroup-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--fg);
+  padding: 14px 16px 2px;
+  border-left: 3px solid var(--accent);
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
 .item-row {
   display: flex;
   align-items: center;
@@ -251,9 +271,44 @@ a:hover { text-decoration: underline; }
   padding: 7px 16px;
   border-top: 1px solid var(--border);
 }
-.item-row:first-child, .group-title + .item-row { border-top: none; }
+.item-row:first-child,
+.group-title + .item-row,
+.subgroup-title + .item-row {
+  border-top: none;
+}
 .item-row.is-solved .item-text { color: var(--fg-muted); text-decoration: line-through; }
 .item-row.is-hidden { display: none; }
+
+/* An invariant is a fact to remember, not a task to complete -- visually
+   distinct from every real checkbox row: no checkbox, tinted background,
+   a small labeled pill instead, so it reads as "context" at a glance. */
+.invariant-row {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  margin: 6px 12px 8px;
+  padding: 8px 12px;
+  align-items: flex-start;
+}
+.invariant-badge {
+  flex: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-top: 1px;
+}
+.invariant-text {
+  flex: 1;
+  font-size: 0.87rem;
+  font-style: italic;
+  color: var(--fg);
+  line-height: 1.4;
+}
 
 .item-checkbox {
   width: 18px;

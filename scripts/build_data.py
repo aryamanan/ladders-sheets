@@ -83,7 +83,7 @@ EXCLUDE_HEADINGS_EXACT = [
     "repetition schedule",
 ]
 
-HEADING_RE = re.compile(r"^(#{1,3})\s+(.*)$")
+HEADING_RE = re.compile(r"^(#{1,4})\s+(.*)$")
 LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+(.+?)\s*$")
 # Matches both a bare "Label:" line (group 2 empty) and an inline
 # "Label: rest of line" (group 2 non-empty), e.g. "Frontier unlock: [X](url)"
@@ -144,26 +144,29 @@ def dedupe_section(section):
     """
     canonical_urls = set()
     for g in section["groups"]:
-        for it in g["items"]:
-            if it["url"] and not it["tag"]:
-                canonical_urls.add(it["url"])
+        for sg in g["subgroups"]:
+            for it in sg["items"]:
+                if it["url"] and not it["tag"]:
+                    canonical_urls.add(it["url"])
 
     seen = set()
     for g in section["groups"]:
-        kept = []
-        for it in g["items"]:
-            url = it["url"]
-            if not url:
+        for sg in g["subgroups"]:
+            kept = []
+            for it in sg["items"]:
+                url = it["url"]
+                if not url:
+                    kept.append(it)
+                    continue
+                if url in canonical_urls and it["tag"]:
+                    continue  # a canonical entry for this URL exists elsewhere
+                if url in seen:
+                    continue
+                seen.add(url)
                 kept.append(it)
-                continue
-            if url in canonical_urls and it["tag"]:
-                continue  # a canonical entry for this URL exists elsewhere
-            if url in seen:
-                continue
-            seen.add(url)
-            kept.append(it)
-        g["items"] = kept
-    section["groups"] = [g for g in section["groups"] if g["items"]]
+            sg["items"] = kept
+        g["subgroups"] = [sg for sg in g["subgroups"] if sg["items"]]
+    section["groups"] = [g for g in section["groups"] if g["subgroups"]]
 
 
 def parse_file(path):
@@ -175,9 +178,12 @@ def parse_file(path):
     sections = []
 
     cur_section = None  # dict: {title, excluded, groups: []}
-    cur_group = None  # dict: {title, items: []} -- title is the H3, or None
+    cur_group = None  # dict: {title, subgroups: []} -- title is the H3, or None
+    cur_subgroup = None  # dict: {title, items: []} -- title is the H4, or None
     cur_h3 = None
     cur_h3_excluded = False
+    cur_h4 = None
+    cur_h4_excluded = False
     cur_label = None
     seen_h1 = False
     seen_h2 = False
@@ -187,29 +193,46 @@ def parse_file(path):
     awaiting_separator = False
 
     def current_tag():
-        # Only surface a badge when it adds context beyond the group/section
+        # Only surface a badge when it adds context beyond the group/subgroup
         # heading that's already shown (e.g. "Foundation"/"Boss" within a
-        # concept, or a table row/column label). A bare H3 name would just
-        # repeat the group heading, so it's intentionally not a fallback here.
+        # named sub-pattern, or a table row/column label). A bare H3/H4 name
+        # would just repeat a heading already shown, so it's intentionally
+        # not a fallback here.
         return cur_label or ""
 
     def ensure_group():
         nonlocal cur_group
         if cur_group is None:
-            cur_group = {"title": cur_h3, "items": []}
+            cur_group = {"title": cur_h3, "subgroups": []}
             cur_section["groups"].append(cur_group)
         return cur_group
 
+    def ensure_subgroup():
+        nonlocal cur_subgroup
+        group = ensure_group()
+        if cur_subgroup is None:
+            cur_subgroup = {"title": cur_h4, "items": []}
+            group["subgroups"].append(cur_subgroup)
+        return cur_subgroup
+
     def add_item(item_text, url):
-        if cur_section is None or cur_section["excluded"] or cur_h3_excluded:
+        if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
             return
         item_text = item_text.strip()
         if not item_text:
             return
-        group = ensure_group()
+        subgroup = ensure_subgroup()
         tag = current_tag()
-        item_id = make_id(path.name, cur_section["title"], tag, item_text, url or "")
-        group["items"].append(
+        # Only fold h4 into the hash when it's actually in use, so sheets
+        # that never use a 4th heading level keep byte-identical item ids to
+        # before this feature existed -- otherwise every saved checkmark
+        # across every existing sheet would silently orphan on next build.
+        id_parts = [path.name, cur_section["title"]]
+        if cur_h4:
+            id_parts.append(cur_h4)
+        id_parts += [tag, item_text, url or ""]
+        item_id = make_id(*id_parts)
+        subgroup["items"].append(
             {"id": item_id, "text": item_text, "url": url, "tag": tag}
         )
 
@@ -276,14 +299,27 @@ def parse_file(path):
                 sections.append(cur_section)
                 cur_h3 = None
                 cur_h3_excluded = False
+                cur_h4 = None
+                cur_h4_excluded = False
                 cur_group = None
+                cur_subgroup = None
                 for link_text, url in heading_links:
                     add_item(link_text, url)
                 continue
             if level == 3:
                 cur_h3 = title
                 cur_h3_excluded = is_excluded(title)
+                cur_h4 = None
+                cur_h4_excluded = False
                 cur_group = None
+                cur_subgroup = None
+                for link_text, url in heading_links:
+                    add_item(link_text, url)
+                continue
+            if level == 4:
+                cur_h4 = title
+                cur_h4_excluded = is_excluded(title)
+                cur_subgroup = None
                 for link_text, url in heading_links:
                     add_item(link_text, url)
                 continue
@@ -317,7 +353,7 @@ def parse_file(path):
                     row_label = f"{table_header[0]} {first_cell}"
                 else:
                     row_label = first_cell
-            if cur_section is None or cur_section["excluded"] or cur_h3_excluded:
+            if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
                 continue
             for idx, cell in enumerate(cells):
                 links = LINK_RE.findall(cell)
@@ -327,11 +363,13 @@ def parse_file(path):
                 for link_text, url in links:
                     tag_bits = [b for b in (row_label, col_name) if b]
                     tag = " · ".join(tag_bits) if tag_bits else current_tag()
-                    group = ensure_group()
-                    item_id = make_id(
-                        path.name, cur_section["title"], tag, link_text, url
-                    )
-                    group["items"].append(
+                    subgroup = ensure_subgroup()
+                    id_parts = [path.name, cur_section["title"]]
+                    if cur_h4:
+                        id_parts.append(cur_h4)
+                    id_parts += [tag, link_text, url]
+                    item_id = make_id(*id_parts)
+                    subgroup["items"].append(
                         {"id": item_id, "text": link_text, "url": url, "tag": tag}
                     )
             continue
@@ -364,9 +402,11 @@ def parse_file(path):
 
     sheet_desc = " ".join(desc_lines).strip()
 
-    # prune empty groups, then empty/excluded sections
+    # prune empty subgroups, then empty groups, then empty/excluded sections
     for s in sections:
-        s["groups"] = [g for g in s["groups"] if g["items"]]
+        for g in s["groups"]:
+            g["subgroups"] = [sg for sg in g["subgroups"] if sg["items"]]
+        s["groups"] = [g for g in s["groups"] if g["subgroups"]]
     sections = [s for s in sections if s["groups"]]
 
     if path.name in DEDUPE_WITHIN_SECTION:
@@ -378,10 +418,14 @@ def parse_file(path):
         s["id"] = make_id(path.name, s["title"])
         for g in s["groups"]:
             g["id"] = make_id(path.name, s["title"], g["title"] or "")
+            for sg in g["subgroups"]:
+                sg["id"] = make_id(path.name, s["title"], g["title"] or "", sg["title"] or "")
 
     category = "dsa" if "dsa" in path.stem else "system-design"
     sheet_id = path.stem.replace("_", "-")
-    total_items = sum(len(g["items"]) for s in sections for g in s["groups"])
+    total_items = sum(
+        len(sg["items"]) for s in sections for g in s["groups"] for sg in g["subgroups"]
+    )
 
     return {
         "id": sheet_id,
