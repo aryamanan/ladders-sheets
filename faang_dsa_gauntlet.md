@@ -85,6 +85,12 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 14. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) {Running Max/Min Product}
 15. [Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/) {Prefix Sum + Merge/BIT}
 
+16. [Range Addition](https://www.geeksforgeeks.org/dsa/print-modified-array-multiple-array-range-increment-operations/) {Difference Array}
+17. [Shortest Word Distance](https://www.geeksforgeeks.org/dsa/minimum-distance-between-words-of-a-string/) {Single-Pass Index Tracking}
+18. [Wiggle Sort](https://www.geeksforgeeks.org/dsa/sort-array-wave-form-2/) {Wave Sort - One Pass}
+19. [Missing Ranges](https://www.geeksforgeeks.org/problems/missing-ranges-of-numbers1019/1) {Range Gaps}
+20. [Palindrome Permutation](https://www.geeksforgeeks.org/dsa/check-characters-given-string-can-rearranged-form-palindrome/) {Frequency Parity Check}
+21. [Group Shifted Strings](https://www.geeksforgeeks.org/problems/group-shifted-string/1) {Hashing - Normalized Shift Pattern}
 ### Two Pointers and Sliding Window
 
 1. [3Sum](https://leetcode.com/problems/3sum/) {Two Pointers After Sort}
@@ -101,6 +107,11 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 12. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/) {Monotonic Deque}
 13. [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/) {Monotonic Deque + Prefix Sum}
 
+14. [Longest Substring with At Most Two Distinct Characters](https://www.geeksforgeeks.org/dsa/longest-substring-with-at-most-two-distinct-characters/) {Sliding Window - K Distinct Chars}
+15. [3Sum Smaller](https://www.geeksforgeeks.org/problems/count-triplets-with-sum-smaller-than-x5549/1) {Two Pointers - Count Triplets}
+16. [Max Consecutive Ones II](https://www.geeksforgeeks.org/dsa/max-number-of-one-ii/) {Sliding Window - At Most One Zero}
+17. [Sort Transformed Array](https://www.geeksforgeeks.org/problems/sort-the-given-array-after-applying-the-given-equation0304/1) {Two Pointers - Merge From Sorted Ends}
+18. [Strobogrammatic Number](https://www.geeksforgeeks.org/dsa/strobogrammatic-number/) {Two Pointers - Digit Pair Mapping}
 ### Sorting, Intervals, Sweep Line
 
 1. [Sort Colors](https://leetcode.com/problems/sort-colors/) {Three-Way Partition (Dutch Flag)}
@@ -116,6 +127,8 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 11. [Number of Flowers in Full Bloom](https://leetcode.com/problems/number-of-flowers-in-full-bloom/) {Sweep Line + Binary Search}
 12. [Falling Squares](https://leetcode.com/problems/falling-squares/) {Coordinate Compression + Sweep}
 
+13. [Meeting Rooms](https://www.geeksforgeeks.org/problems/attend-all-meetings/1) {Interval Scheduling}
+14. [Meeting Rooms II](https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1) {Interval Scheduling - Min Rooms}
 ### Binary Search and Parametric Search
 
 1. [Binary Search](https://leetcode.com/problems/binary-search/) {Classic Binary Search}
@@ -184,6 +197,13 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 15. [Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/) {Hash Map + Binary Search on Timestamp}
 16. [Design Twitter](https://leetcode.com/problems/design-twitter/) {Heap + Hash Map Design}
 
+17. [Design Snake Game](https://www.geeksforgeeks.org/advance-java/design-snake-game/) {Design: Simulation/Deque}
+18. [Design Tic-Tac-Toe](https://www.geeksforgeeks.org/system-design/low-level-design-of-tic-tac-toe-system-design/) {Design: O(1) Row/Col/Diagonal Counters}
+19. [Design Hit Counter](https://www.geeksforgeeks.org/system-design/design-a-hit-counter/) {Design: Rolling Buffer}
+20. [Moving Average from Data Stream](https://www.geeksforgeeks.org/dsa/program-find-simple-moving-average/) {Design: Rolling Buffer}
+21. [Shortest Word Distance II](https://www.geeksforgeeks.org/dsa/find-shortest-word-distance-ii/) {Design: Precomputed Index Map}
+22. [Two Sum III - Data structure design](https://www.geeksforgeeks.org/dsa/data-structure-design-for-two-sum-iii/) {Design: HashMap Complement Lookup}
+23. [Zigzag Iterator](https://www.tutorialspoint.com/practice/zigzag-iterator.htm) {Design: Round-Robin Queue Iterator}
 ### Trees, BST, LCA, Serialization
 
 1. [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) {Recursive Swap}
@@ -207,6 +227,7 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 19. [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/) {LCA + Path Reconstruction}
 20. [Maximum Sum BST in Binary Tree](https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/) {Tree DP (Subtree Validity)}
 
+21. [Nested List Weight Sum II](https://www.geeksforgeeks.org/dsa/find-nested-list-weight-sum-ii/) {Nested Structure DFS - Inverse-Depth Weighting}
 ### Tries and String Search
 
 1. [Implement Trie](https://leetcode.com/problems/implement-trie-prefix-tree/) {Trie Basics}
@@ -225,6 +246,8 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 14. [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/) {KMP Failure Function}
 15. [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/) {Binary Search + Rolling Hash}
 
+16. [Encode and Decode Strings](https://www.geeksforgeeks.org/problems/encode-and-decode-strings/1) {Design: Length-Prefixed Serialization}
+17. [One Edit Distance](https://www.geeksforgeeks.org/dsa/check-if-two-given-strings-are-at-edit-distance-one/) {Edit Distance - O(1) Space Check}
 ### Graphs: BFS, DFS, Topological Sort
 
 1. [Number of Islands](https://leetcode.com/problems/number-of-islands/) {Grid Flood Fill}
@@ -273,6 +296,7 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 21. [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/) {Dijkstra + Counting}
 22. [Critical Connections in a Network](https://leetcode.com/problems/critical-connections-in-a-network/) {Bridges (Tarjan)}
 
+23. [Number of Connected Components in an Undirected Graph](https://www.geeksforgeeks.org/problems/connected-components-in-an-undirected-graph/1) {Union-Find - Count Components}
 ### Greedy and Exchange Arguments
 
 1. [Jump Game](https://leetcode.com/problems/jump-game/) {Greedy Reachability}
@@ -290,6 +314,7 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 13. [Patching Array](https://leetcode.com/problems/patching-array/) {Greedy Reach Extension}
 14. [Create Maximum Number](https://leetcode.com/problems/create-maximum-number/) {Greedy Monotonic Stack + Merge}
 
+15. [Find Permutation](https://www.interviewbit.com/problems/find-permutation/) {Greedy - D/I Sequence Reconstruction}
 ### Backtracking and Search
 
 1. [Permutations](https://leetcode.com/problems/permutations/) {Backtracking (Swap/Visited)}
@@ -308,6 +333,7 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 14. [Split Array into Fibonacci Sequence](https://leetcode.com/problems/split-array-into-fibonacci-sequence/) {Backtracking + Overflow Care}
 15. [Verbal Arithmetic Puzzle](https://leetcode.com/problems/verbal-arithmetic-puzzle/) {Backtracking (Digit Assignment)}
 
+16. [Palindrome Permutation II](https://www.geeksforgeeks.org/dsa/print-all-palindrome-permutations-of-a-string/) {Backtracking - Half-String Permutation}
 ### Dynamic Programming: Foundations
 
 1. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) {DP 1D (Fibonacci-Style)}
@@ -323,6 +349,8 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 11. [Decode Ways II](https://leetcode.com/problems/decode-ways-ii/) {DP 1D (Wildcard Segmentation)}
 12. [Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/) {DP 1D (Choice Window)}
 
+13. [Paint House](https://www.geeksforgeeks.org/dsa/minimize-cost-of-painting-n-houses-such-that-adjacent-houses-have-different-colors/) {DP - State Machine Coloring}
+14. [Paint Fence](https://www.geeksforgeeks.org/dsa/painting-fence-algorithm/) {DP - Combinatorics Recurrence}
 ### Dynamic Programming: Knapsack, LIS, Stocks
 
 1. [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/) {0/1 Knapsack (Feasibility)}
@@ -431,6 +459,7 @@ Each round has one "expected" FAANG-style problem and one "pressure" problem.
 19. [Rectangle Area](https://leetcode.com/problems/rectangle-area/) {Geometry (Overlap Area)}
 20. [Erect the Fence](https://leetcode.com/problems/erect-the-fence/) {Convex Hull}
 
+21. [Best Meeting Point](https://www.geeksforgeeks.org/dsa/best-meeting-point-2d-binary-array/) {Median Minimizes Manhattan Distance}
 ## What You Must Be Able to Explain
 
 For every accepted solution, be able to answer:

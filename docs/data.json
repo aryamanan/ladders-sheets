@@ -6,7 +6,7 @@
       "title": "FAANG DSA Gauntlet",
       "description": "This is intentionally overbuilt. No list can guarantee an offer, because real interviews also test communication, speed, debugging, and judgment, but if you can solve this bank cold, explain tradeoffs cleanly, and implement without hints, you are very strongly prepared for FAANG-style DSA rounds. Sources used for calibration: LeetCode Top Interview 150, LeetCode Problemset, NeetCode Roadmap, CSES Problem Set, and cp-algorithms.",
       "category": "dsa",
-      "totalItems": 339,
+      "totalItems": 368,
       "sections": [
         {
           "title": "16 Mock Interview Rounds",
@@ -331,6 +331,48 @@
                       "url": "https://leetcode.com/problems/count-of-range-sum/",
                       "tag": "",
                       "subtag": "Prefix Sum + Merge/BIT"
+                    },
+                    {
+                      "id": "37a4d76b5a73",
+                      "text": "Range Addition",
+                      "url": "https://www.geeksforgeeks.org/dsa/print-modified-array-multiple-array-range-increment-operations/",
+                      "tag": "",
+                      "subtag": "Difference Array"
+                    },
+                    {
+                      "id": "cf5ff0aacf28",
+                      "text": "Shortest Word Distance",
+                      "url": "https://www.geeksforgeeks.org/dsa/minimum-distance-between-words-of-a-string/",
+                      "tag": "",
+                      "subtag": "Single-Pass Index Tracking"
+                    },
+                    {
+                      "id": "8d7e8d81a817",
+                      "text": "Wiggle Sort",
+                      "url": "https://www.geeksforgeeks.org/dsa/sort-array-wave-form-2/",
+                      "tag": "",
+                      "subtag": "Wave Sort - One Pass"
+                    },
+                    {
+                      "id": "bbe5593acdb0",
+                      "text": "Missing Ranges",
+                      "url": "https://www.geeksforgeeks.org/problems/missing-ranges-of-numbers1019/1",
+                      "tag": "",
+                      "subtag": "Range Gaps"
+                    },
+                    {
+                      "id": "6afed75bc065",
+                      "text": "Palindrome Permutation",
+                      "url": "https://www.geeksforgeeks.org/dsa/check-characters-given-string-can-rearranged-form-palindrome/",
+                      "tag": "",
+                      "subtag": "Frequency Parity Check"
+                    },
+                    {
+                      "id": "a46ac133fda6",
+                      "text": "Group Shifted Strings",
+                      "url": "https://www.geeksforgeeks.org/problems/group-shifted-string/1",
+                      "tag": "",
+                      "subtag": "Hashing - Normalized Shift Pattern"
                     }
                   ],
                   "id": "b77179519521"
@@ -434,6 +476,41 @@
                       "url": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
                       "tag": "",
                       "subtag": "Monotonic Deque + Prefix Sum"
+                    },
+                    {
+                      "id": "7e3e0cf74022",
+                      "text": "Longest Substring with At Most Two Distinct Characters",
+                      "url": "https://www.geeksforgeeks.org/dsa/longest-substring-with-at-most-two-distinct-characters/",
+                      "tag": "",
+                      "subtag": "Sliding Window - K Distinct Chars"
+                    },
+                    {
+                      "id": "9f0605b7f67a",
+                      "text": "3Sum Smaller",
+                      "url": "https://www.geeksforgeeks.org/problems/count-triplets-with-sum-smaller-than-x5549/1",
+                      "tag": "",
+                      "subtag": "Two Pointers - Count Triplets"
+                    },
+                    {
+                      "id": "37120eb43822",
+                      "text": "Max Consecutive Ones II",
+                      "url": "https://www.geeksforgeeks.org/dsa/max-number-of-one-ii/",
+                      "tag": "",
+                      "subtag": "Sliding Window - At Most One Zero"
+                    },
+                    {
+                      "id": "8b0e7e070d4d",
+                      "text": "Sort Transformed Array",
+                      "url": "https://www.geeksforgeeks.org/problems/sort-the-given-array-after-applying-the-given-equation0304/1",
+                      "tag": "",
+                      "subtag": "Two Pointers - Merge From Sorted Ends"
+                    },
+                    {
+                      "id": "116015e80aa3",
+                      "text": "Strobogrammatic Number",
+                      "url": "https://www.geeksforgeeks.org/dsa/strobogrammatic-number/",
+                      "tag": "",
+                      "subtag": "Two Pointers - Digit Pair Mapping"
                     }
                   ],
                   "id": "323daa3de3ff"
@@ -530,6 +607,20 @@
                       "url": "https://leetcode.com/problems/falling-squares/",
                       "tag": "",
                       "subtag": "Coordinate Compression + Sweep"
+                    },
+                    {
+                      "id": "90b2a74545dd",
+                      "text": "Meeting Rooms",
+                      "url": "https://www.geeksforgeeks.org/problems/attend-all-meetings/1",
+                      "tag": "",
+                      "subtag": "Interval Scheduling"
+                    },
+                    {
+                      "id": "f61acb044dfc",
+                      "text": "Meeting Rooms II",
+                      "url": "https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1",
+                      "tag": "",
+                      "subtag": "Interval Scheduling - Min Rooms"
                     }
                   ],
                   "id": "b97041c01be0"
@@ -970,6 +1061,55 @@
                       "url": "https://leetcode.com/problems/design-twitter/",
                       "tag": "",
                       "subtag": "Heap + Hash Map Design"
+                    },
+                    {
+                      "id": "f7071d016607",
+                      "text": "Design Snake Game",
+                      "url": "https://www.geeksforgeeks.org/advance-java/design-snake-game/",
+                      "tag": "",
+                      "subtag": "Design: Simulation/Deque"
+                    },
+                    {
+                      "id": "0c4017b30ca7",
+                      "text": "Design Tic-Tac-Toe",
+                      "url": "https://www.geeksforgeeks.org/system-design/low-level-design-of-tic-tac-toe-system-design/",
+                      "tag": "",
+                      "subtag": "Design: O(1) Row/Col/Diagonal Counters"
+                    },
+                    {
+                      "id": "193ddd827b5f",
+                      "text": "Design Hit Counter",
+                      "url": "https://www.geeksforgeeks.org/system-design/design-a-hit-counter/",
+                      "tag": "",
+                      "subtag": "Design: Rolling Buffer"
+                    },
+                    {
+                      "id": "daecb8e7cd5d",
+                      "text": "Moving Average from Data Stream",
+                      "url": "https://www.geeksforgeeks.org/dsa/program-find-simple-moving-average/",
+                      "tag": "",
+                      "subtag": "Design: Rolling Buffer"
+                    },
+                    {
+                      "id": "240d62aaa71b",
+                      "text": "Shortest Word Distance II",
+                      "url": "https://www.geeksforgeeks.org/dsa/find-shortest-word-distance-ii/",
+                      "tag": "",
+                      "subtag": "Design: Precomputed Index Map"
+                    },
+                    {
+                      "id": "925030bad4e3",
+                      "text": "Two Sum III - Data structure design",
+                      "url": "https://www.geeksforgeeks.org/dsa/data-structure-design-for-two-sum-iii/",
+                      "tag": "",
+                      "subtag": "Design: HashMap Complement Lookup"
+                    },
+                    {
+                      "id": "70f2b84bd2ed",
+                      "text": "Zigzag Iterator",
+                      "url": "https://www.tutorialspoint.com/practice/zigzag-iterator.htm",
+                      "tag": "",
+                      "subtag": "Design: Round-Robin Queue Iterator"
                     }
                   ],
                   "id": "d184b1c68ae4"
@@ -1122,6 +1262,13 @@
                       "url": "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/",
                       "tag": "",
                       "subtag": "Tree DP (Subtree Validity)"
+                    },
+                    {
+                      "id": "b26388354e66",
+                      "text": "Nested List Weight Sum II",
+                      "url": "https://www.geeksforgeeks.org/dsa/find-nested-list-weight-sum-ii/",
+                      "tag": "",
+                      "subtag": "Nested Structure DFS - Inverse-Depth Weighting"
                     }
                   ],
                   "id": "83c2010017e6"
@@ -1239,6 +1386,20 @@
                       "url": "https://leetcode.com/problems/longest-duplicate-substring/",
                       "tag": "",
                       "subtag": "Binary Search + Rolling Hash"
+                    },
+                    {
+                      "id": "8f6a55ef22f1",
+                      "text": "Encode and Decode Strings",
+                      "url": "https://www.geeksforgeeks.org/problems/encode-and-decode-strings/1",
+                      "tag": "",
+                      "subtag": "Design: Length-Prefixed Serialization"
+                    },
+                    {
+                      "id": "d580f3e617f9",
+                      "text": "One Edit Distance",
+                      "url": "https://www.geeksforgeeks.org/dsa/check-if-two-given-strings-are-at-edit-distance-one/",
+                      "tag": "",
+                      "subtag": "Edit Distance - O(1) Space Check"
                     }
                   ],
                   "id": "9aa1a6dffb0c"
@@ -1557,6 +1718,13 @@
                       "url": "https://leetcode.com/problems/critical-connections-in-a-network/",
                       "tag": "",
                       "subtag": "Bridges (Tarjan)"
+                    },
+                    {
+                      "id": "06bbb94ea3a4",
+                      "text": "Number of Connected Components in an Undirected Graph",
+                      "url": "https://www.geeksforgeeks.org/problems/connected-components-in-an-undirected-graph/1",
+                      "tag": "",
+                      "subtag": "Union-Find - Count Components"
                     }
                   ],
                   "id": "867b9da2aac9"
@@ -1667,6 +1835,13 @@
                       "url": "https://leetcode.com/problems/create-maximum-number/",
                       "tag": "",
                       "subtag": "Greedy Monotonic Stack + Merge"
+                    },
+                    {
+                      "id": "90fd75f00f2b",
+                      "text": "Find Permutation",
+                      "url": "https://www.interviewbit.com/problems/find-permutation/",
+                      "tag": "",
+                      "subtag": "Greedy - D/I Sequence Reconstruction"
                     }
                   ],
                   "id": "0db6f2b472a0"
@@ -1784,6 +1959,13 @@
                       "url": "https://leetcode.com/problems/verbal-arithmetic-puzzle/",
                       "tag": "",
                       "subtag": "Backtracking (Digit Assignment)"
+                    },
+                    {
+                      "id": "abbeffb8b4b8",
+                      "text": "Palindrome Permutation II",
+                      "url": "https://www.geeksforgeeks.org/dsa/print-all-palindrome-permutations-of-a-string/",
+                      "tag": "",
+                      "subtag": "Backtracking - Half-String Permutation"
                     }
                   ],
                   "id": "db4af665bb91"
@@ -1880,6 +2062,20 @@
                       "url": "https://leetcode.com/problems/minimum-cost-for-tickets/",
                       "tag": "",
                       "subtag": "DP 1D (Choice Window)"
+                    },
+                    {
+                      "id": "b78076c1336f",
+                      "text": "Paint House",
+                      "url": "https://www.geeksforgeeks.org/dsa/minimize-cost-of-painting-n-houses-such-that-adjacent-houses-have-different-colors/",
+                      "tag": "",
+                      "subtag": "DP - State Machine Coloring"
+                    },
+                    {
+                      "id": "eeac41a02f13",
+                      "text": "Paint Fence",
+                      "url": "https://www.geeksforgeeks.org/dsa/painting-fence-algorithm/",
+                      "tag": "",
+                      "subtag": "DP - Combinatorics Recurrence"
                     }
                   ],
                   "id": "ceef92ccdf3c"
@@ -2591,6 +2787,13 @@
                       "url": "https://leetcode.com/problems/erect-the-fence/",
                       "tag": "",
                       "subtag": "Convex Hull"
+                    },
+                    {
+                      "id": "35bf309c52ee",
+                      "text": "Best Meeting Point",
+                      "url": "https://www.geeksforgeeks.org/dsa/best-meeting-point-2d-binary-array/",
+                      "tag": "",
+                      "subtag": "Median Minimizes Manhattan Distance"
                     }
                   ],
                   "id": "7a24e40f2ea2"
@@ -2609,7 +2812,7 @@
       "title": "FAANG DSA Extreme Mastery Map",
       "description": "This is the heavier replacement for a normal DSA list. It is built to cover the interview surface area, not just popular questions. No document can honestly guarantee a 100% pass rate, because interviews also test communication, speed, debugging, and judgment under pressure. But if you can solve this set cold, explain the invariants, and adapt to variants, you should be ready for almost any FAANG-style DSA interview. Primary calibration sources: LeetCode Problemset, LeetCode Top Interview 150, NeetCode Roadmap, CSES Problem Set, and cp-algorithms.",
       "category": "dsa",
-      "totalItems": 831,
+      "totalItems": 857,
       "sections": [
         {
           "title": "30 Brutal Mock Rounds",
@@ -5870,6 +6073,87 @@
                     }
                   ],
                   "id": "39615ffddc71"
+                },
+                {
+                  "title": "N-ary And Threaded Tree Serialization",
+                  "items": [
+                    {
+                      "id": "45a2a9689a9f",
+                      "text": "Invariant: Binary tree serialization uses null markers for missing children, but an n-ary tree has no fixed child count -- it needs an explicit end-of-children marker, and threading a BST into a doubly linked list reuses the same left/right pointers as prev/next in place.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "45e44467df23",
+                      "text": "Serialize and Deserialize N-ary Tree",
+                      "url": "https://www.geeksforgeeks.org/dsa/serialize-deserialize-n-ary-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b80dfdd68234",
+                      "text": "Convert BST to Sorted Doubly Linked List",
+                      "url": "https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "43a4dbdc3438"
+                },
+                {
+                  "title": "BST-Guided Closest Value Search",
+                  "items": [
+                    {
+                      "id": "92bf3663d406",
+                      "text": "Invariant: A BST's ordering lets you discard half the tree at every step when hunting for the single closest value, but hunting for the k closest values needs an in-order walk with a sliding window instead of repeated single-value searches.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "92e9aeea8bb7",
+                      "text": "Closest Binary Search Tree Value",
+                      "url": "https://www.geeksforgeeks.org/dsa/find-closest-element-binary-search-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "819e2d8a0b25",
+                      "text": "Closest Binary Search Tree Value II",
+                      "url": "https://www.geeksforgeeks.org/dsa/find-the-closest-binary-search-tree-value-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "a4476808e229"
+                },
+                {
+                  "title": "Height-Based Leaf Peeling And Consecutive Runs",
+                  "items": [
+                    {
+                      "id": "57b0505bc3a0",
+                      "text": "Invariant: Repeatedly stripping every current leaf layer is really a height computation read backwards, and tracking a consecutive value run down a root-to-leaf path only works if the recursion carries the run's current length as state, not just the running maximum.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c44b4dd63c34",
+                      "text": "Find Leaves of Binary Tree",
+                      "url": "https://www.geeksforgeeks.org/dsa/print-and-remove-leaf-nodes-of-given-binary-tree-on-each-iteration/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "325e43725f3b",
+                      "text": "Binary Tree Longest Consecutive Sequence",
+                      "url": "https://www.geeksforgeeks.org/problems/longest-consecutive-sequence-in-binary-tree/1",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "62217d881dd7"
                 }
               ],
               "id": "de20d8562f96"
@@ -6609,6 +6893,53 @@
                     }
                   ],
                   "id": "fc1368bb1803"
+                },
+                {
+                  "title": "Cycle Detection Meets Connectivity Check",
+                  "items": [
+                    {
+                      "id": "3fd01478b761",
+                      "text": "Invariant: A graph is a valid tree iff it has exactly n-1 edges AND is fully connected -- checking only one half of that lets a disconnected forest or an extra cycle slip through.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ee6ee9030989",
+                      "text": "Graph Valid Tree",
+                      "url": "https://www.geeksforgeeks.org/problems/is-it-a-tree/1",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "96a0779dd579"
+                },
+                {
+                  "title": "Rolling-Ball Maze BFS And Dijkstra",
+                  "items": [
+                    {
+                      "id": "dc91952a80ac",
+                      "text": "Invariant: A ball that keeps rolling until it hits a wall turns each BFS \"move\" into a whole line segment, not one cell -- and once moves have different lengths, plain BFS layers stop being distances and Dijkstra takes over.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "14533d34eaca",
+                      "text": "The Maze",
+                      "url": "https://www.naukri.com/code360/problem-details/ninja-and-the-maze_1262274",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bed7ac984e5f",
+                      "text": "The Maze II",
+                      "url": "https://www.naukri.com/code360/problems/maze-runner_3130881",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "621baf6da47a"
                 }
               ],
               "id": "92fc3fd62d25"
@@ -6792,6 +7123,26 @@
                     }
                   ],
                   "id": "60b229810fb6"
+                },
+                {
+                  "title": "Topological Sort Over Inferred Edges",
+                  "items": [
+                    {
+                      "id": "a267f447d4dc",
+                      "text": "Invariant: The graph's edges are not given -- they must be inferred one at a time from adjacent-word comparisons before any topological sort can run, and a single edge inference bug silently produces a wrong order.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f1391eb4991d",
+                      "text": "Alien Dictionary",
+                      "url": "https://takeuforward.org/data-structure/alien-dictionary-topological-sort-g-26",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "798d2364a951"
                 }
               ],
               "id": "822c7b88a6ae"
@@ -7036,6 +7387,26 @@
                     }
                   ],
                   "id": "1e1864c8dfa1"
+                },
+                {
+                  "title": "Online Connectivity Queries",
+                  "items": [
+                    {
+                      "id": "48f8c669ec52",
+                      "text": "Invariant: When land cells are added one at a time and you must report the live count of connected components after every addition, a fresh BFS per query is too slow -- DSU answers each query in near O(1) by unioning only the new cell with its already-land neighbors.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1d2a4039e49e",
+                      "text": "Number of Islands II",
+                      "url": "https://takeuforward.org/graph/number-of-islands-ii-online-queries-dsu-g-51",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "6b811dfc2652"
                 }
               ],
               "id": "03f5c65f841a"
@@ -7858,6 +8229,66 @@
                     }
                   ],
                   "id": "56dd7f1891c2"
+                },
+                {
+                  "title": "Constraint-Pruned Path Search",
+                  "items": [
+                    {
+                      "id": "963fec9648a6",
+                      "text": "Invariant: A phone-lock pattern's move graph has \"jump\" constraints (2-to-8 is only legal if 5 is already used), so the backtracking check is on the edge, not just the destination cell -- and the board's symmetry lets you compute one corner and multiply.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8ac9b4b394cc",
+                      "text": "Android Unlock Patterns",
+                      "url": "https://www.geeksforgeeks.org/dsa/number-of-ways-to-make-mobile-lock-pattern/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "ed8afddd6cb3"
+                },
+                {
+                  "title": "Greedy Approximation Vs Exact Minimum-Transaction Search",
+                  "items": [
+                    {
+                      "id": "e599ef2985c9",
+                      "text": "Invariant: A greedy match-the-largest-creditor-with-the-largest-debtor pass gives a valid, but not always minimal, transaction count -- the true minimum requires backtracking over which subsets of balances can be zeroed out together.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "21d1edd284d0",
+                      "text": "Optimal Account Balancing",
+                      "url": "https://www.geeksforgeeks.org/dsa/minimize-cash-flow-among-given-set-friends-borrowed-money/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "52ac5931ae36"
+                },
+                {
+                  "title": "Center-Outward Digit Construction",
+                  "items": [
+                    {
+                      "id": "620aea5059cd",
+                      "text": "Invariant: Strobogrammatic strings are built from the center outward in valid digit pairs (0-0, 1-1, 6-9, 8-8, 9-6), so the recursion's base case depends on parity of the remaining length, not just reaching zero.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "32206c48b5a4",
+                      "text": "Strobogrammatic Number II",
+                      "url": "https://www.geeksforgeeks.org/dsa/strobogrammatic-number/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "1137e9ef8b04"
                 }
               ],
               "id": "61556677690b"
@@ -8081,6 +8512,26 @@
                     }
                   ],
                   "id": "03f219cc9468"
+                },
+                {
+                  "title": "Painting With Bounded Adjacent-Color State",
+                  "items": [
+                    {
+                      "id": "f0366058aa8a",
+                      "text": "Invariant: With only 3 colors the DP state can just store the previous house's color, but once there are k colors, only tracking the running min and second-min cost (not all k values) keeps the transition O(1) instead of O(k) per house.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "00cffb5a26c5",
+                      "text": "Paint House II",
+                      "url": "https://www.geeksforgeeks.org/problems/walls-coloring-ii--170647/1",
+                      "tag": "Foundation",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "92aa49cb9042"
                 }
               ],
               "id": "049f56a12254"

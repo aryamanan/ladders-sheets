@@ -1179,6 +1179,42 @@ Boss:
 1. [Second Minimum Node In a Binary Tree](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/)
 
 
+#### N-ary And Threaded Tree Serialization
+
+- Invariant: Binary tree serialization uses null markers for missing children, but an n-ary tree has no fixed child count -- it needs an explicit end-of-children marker, and threading a BST into a doubly linked list reuses the same left/right pointers as prev/next in place.
+
+Foundation:
+
+1. [Serialize and Deserialize N-ary Tree](https://www.geeksforgeeks.org/dsa/serialize-deserialize-n-ary-tree/)
+
+Boss:
+
+1. [Convert BST to Sorted Doubly Linked List](https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1)
+
+#### BST-Guided Closest Value Search
+
+- Invariant: A BST's ordering lets you discard half the tree at every step when hunting for the single closest value, but hunting for the k closest values needs an in-order walk with a sliding window instead of repeated single-value searches.
+
+Foundation:
+
+1. [Closest Binary Search Tree Value](https://www.geeksforgeeks.org/dsa/find-closest-element-binary-search-tree/)
+
+Boss:
+
+1. [Closest Binary Search Tree Value II](https://www.geeksforgeeks.org/dsa/find-the-closest-binary-search-tree-value-ii/)
+
+#### Height-Based Leaf Peeling And Consecutive Runs
+
+- Invariant: Repeatedly stripping every current leaf layer is really a height computation read backwards, and tracking a consecutive value run down a root-to-leaf path only works if the recursion carries the run's current length as state, not just the running maximum.
+
+Foundation:
+
+1. [Find Leaves of Binary Tree](https://www.geeksforgeeks.org/dsa/print-and-remove-leaf-nodes-of-given-binary-tree-on-each-iteration/)
+
+Boss:
+
+1. [Binary Tree Longest Consecutive Sequence](https://www.geeksforgeeks.org/problems/longest-consecutive-sequence-in-binary-tree/1)
+
 ### Tries and Word Search
 
 #### Trie Construction Fundamentals
@@ -1486,6 +1522,26 @@ Boss:
 3. [Labyrinth](https://cses.fi/problemset/task/1193)
 
 
+#### Cycle Detection Meets Connectivity Check
+
+- Invariant: A graph is a valid tree iff it has exactly n-1 edges AND is fully connected -- checking only one half of that lets a disconnected forest or an extra cycle slip through.
+
+Foundation:
+
+1. [Graph Valid Tree](https://www.geeksforgeeks.org/problems/is-it-a-tree/1)
+
+#### Rolling-Ball Maze BFS And Dijkstra
+
+- Invariant: A ball that keeps rolling until it hits a wall turns each BFS "move" into a whole line segment, not one cell -- and once moves have different lengths, plain BFS layers stop being distances and Dijkstra takes over.
+
+Foundation:
+
+1. [The Maze](https://www.naukri.com/code360/problem-details/ninja-and-the-maze_1262274)
+
+Boss:
+
+1. [The Maze II](https://www.naukri.com/code360/problems/maze-runner_3130881)
+
 ### Directed Graphs, Topological Sort, SCC
 
 #### Topological Sort Fundamentals
@@ -1561,6 +1617,14 @@ Boss:
 
 1. [Giant Pizza](https://cses.fi/problemset/task/1684)
 
+
+#### Topological Sort Over Inferred Edges
+
+- Invariant: The graph's edges are not given -- they must be inferred one at a time from adjacent-word comparisons before any topological sort can run, and a single edge inference bug silently produces a wrong order.
+
+Foundation:
+
+1. [Alien Dictionary](https://takeuforward.org/data-structure/alien-dictionary-topological-sort-g-26)
 
 ### DSU, MST, Offline Connectivity
 
@@ -1670,6 +1734,14 @@ Boss:
 1. [Reverse Delete Algorithm for Minimum Spanning Tree](https://practice.geeksforgeeks.org/problems/reverse-delete-algorithm-for-minimum-spanning-tree/0)
 2. [Kruskal's Minimum Spanning Tree Algorithm](https://www.naukri.com/code360/problem-details/kruskal-s-minimum-spanning-tree-algorithm_1082553)
 
+
+#### Online Connectivity Queries
+
+- Invariant: When land cells are added one at a time and you must report the live count of connected components after every addition, a fresh BFS per query is too slow -- DSU answers each query in near O(1) by unioning only the new cell with its already-land neighbors.
+
+Foundation:
+
+1. [Number of Islands II](https://takeuforward.org/graph/number-of-islands-ii-online-queries-dsu-g-51)
 
 ### Shortest Paths
 
@@ -2037,6 +2109,30 @@ Foundation:
 1. [M-Coloring Problem](https://www.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1)
 
 
+#### Constraint-Pruned Path Search
+
+- Invariant: A phone-lock pattern's move graph has "jump" constraints (2-to-8 is only legal if 5 is already used), so the backtracking check is on the edge, not just the destination cell -- and the board's symmetry lets you compute one corner and multiply.
+
+Foundation:
+
+1. [Android Unlock Patterns](https://www.geeksforgeeks.org/dsa/number-of-ways-to-make-mobile-lock-pattern/)
+
+#### Greedy Approximation Vs Exact Minimum-Transaction Search
+
+- Invariant: A greedy match-the-largest-creditor-with-the-largest-debtor pass gives a valid, but not always minimal, transaction count -- the true minimum requires backtracking over which subsets of balances can be zeroed out together.
+
+Foundation:
+
+1. [Optimal Account Balancing](https://www.geeksforgeeks.org/dsa/minimize-cash-flow-among-given-set-friends-borrowed-money/)
+
+#### Center-Outward Digit Construction
+
+- Invariant: Strobogrammatic strings are built from the center outward in valid digit pairs (0-0, 1-1, 6-9, 8-8, 9-6), so the recursion's base case depends on parity of the remaining length, not just reaching zero.
+
+Foundation:
+
+1. [Strobogrammatic Number II](https://www.geeksforgeeks.org/dsa/strobogrammatic-number/)
+
 ### Dynamic Programming Foundations
 
 #### Linear Recurrence Warm-Up
@@ -2133,6 +2229,14 @@ Boss:
 
 1. [Paint House II](https://leetcode.com/problems/paint-house-ii/)
 
+
+#### Painting With Bounded Adjacent-Color State
+
+- Invariant: With only 3 colors the DP state can just store the previous house's color, but once there are k colors, only tracking the running min and second-min cost (not all k values) keeps the transition O(1) instead of O(k) per house.
+
+Foundation:
+
+1. [Paint House II](https://www.geeksforgeeks.org/problems/walls-coloring-ii--170647/1)
 
 ### Knapsack, LIS, Stocks
 
