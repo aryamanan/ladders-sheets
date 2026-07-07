@@ -197,6 +197,46 @@ a:hover { text-decoration: underline; }
 }
 .external-card .ext-icon { font-size: 0.8rem; color: var(--fg-muted); }
 
+/* Gold/silver tiers mark the goldmine-tier external resources (huge,
+   best-in-class problem banks) apart from the merely-good ones -- a faded
+   metallic tint on the card itself, not just a label, so it reads at a
+   glance while scanning the grid. */
+.external-card.tier-gold {
+  border-style: solid;
+  border-color: rgba(212, 175, 55, 0.55);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.03));
+}
+.external-card.tier-gold h3 { color: #b8860b; }
+.external-card.tier-silver {
+  border-style: solid;
+  border-color: rgba(160, 160, 170, 0.55);
+  background: linear-gradient(135deg, rgba(160, 160, 170, 0.14), rgba(160, 160, 170, 0.03));
+}
+.external-card.tier-silver h3 { color: var(--fg-muted); }
+@media (prefers-color-scheme: dark) {
+  .external-card.tier-gold h3 { color: #e0b84a; }
+}
+:root[data-theme="dark"] .external-card.tier-gold h3 { color: #e0b84a; }
+
+/* A multi-link external card (e.g. "tagged archive, or the classic
+   tracker") has no single href of its own -- it's a plain div, with each
+   destination as its own small pill so both stay independently clickable. */
+.external-sublinks {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.external-sublink {
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.external-sublink:hover { border-color: var(--accent); text-decoration: none; }
+
 /* Sheet view */
 .sheet-header { margin-bottom: 18px; }
 .back-link { font-size: 0.85rem; }

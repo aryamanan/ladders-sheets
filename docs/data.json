@@ -43779,7 +43779,7 @@
       "file": "faang_dsa_cses_complete_map.md",
       "title": "CSES Complete Map",
       "description": "This workbook maps every current CSES Problem Set task to a technique family, prerequisite runway, beginner/intermediate/pro solidifiers, and mutation drills. It is meant to help you solve the whole CSES set without treating it as 400 unrelated puzzles. Source catalog: CSES Problem Set. The catalog was scraped during this session from the live task list. Total CSES tasks mapped: 400.",
-      "category": "cp",
+      "category": "deprecated",
       "totalItems": 2442,
       "sections": [
         {

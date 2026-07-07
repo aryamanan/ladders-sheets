@@ -204,28 +204,58 @@ window.addEventListener("hashchange", render);
 
 // Curated links to well-known external sheets -- not parsed from markdown,
 // so they carry no checkable items or progress; just a bookmark card that
-// opens the official resource in a new tab.
+// opens the official resource in a new tab. `tier: "gold"/"silver"` gets a
+// faded metallic treatment for the goldmine-tier resources; `links` (instead
+// of a single `url`) renders a card with more than one clickable target.
 const EXTERNAL_RESOURCES = {
   dsa: [
-    { title: "Blind 75", desc: "The original 75-problem list that started the whole genre.", url: "https://leetcode.com/discuss/post/460599/blind-75-leetcode-questions-by-krishnade-9xev/" },
+    { title: "LeetCode 75", desc: "LeetCode's official 75-problem interview study plan.", url: "https://leetcode.com/studyplan/leetcode-75/" },
     { title: "LeetCode Interview 150", desc: "LeetCode's own curated interview study plan.", url: "https://leetcode.com/studyplan/top-interview-150/" },
     { title: "NeetCode 150", desc: "Blind 75 plus 75 more, each with a free video solution.", url: "https://neetcode.io/practice/practice/neetcode150" },
-    { title: "Sean Prashad's Patterns", desc: "LeetCode problems grouped by the underlying pattern.", url: "https://seanprashad.com/leetcode-patterns/" },
+    { title: "Sean Prashad's Patterns", desc: "LeetCode problems grouped by the underlying pattern.", url: "https://seanprashad.com/leetcode-patterns/", tier: "gold" },
     { title: "Love Babbar 450 (via Codolio)", desc: "The well-known 450 DSA sheet, tracked on Codolio.", url: "https://codolio.com/question-tracker/sheet/love-babbar-sheet" },
-    { title: "Striver's A2Z Sheet", desc: "TakeUForward's structured A-to-Z DSA course sheet.", url: "https://takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z" },
+    { title: "Striver's A2Z Sheet", desc: "TakeUForward's structured A-to-Z DSA course sheet.", url: "https://takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z", tier: "silver" },
+  ],
+  sql: [
+    { title: "practice-sql.com", desc: "Free, browser-run SQL practice problems.", url: "https://www.practice-sql.com/sql-practice" },
+    { title: "StrataScratch", desc: "Real data-interview SQL (and Python) questions from actual companies.", url: "https://platform.stratascratch.com", tier: "gold" },
+    { title: "DataLemur", desc: "SQL interview questions asked at FAANG and top data-eng/analytics teams.", url: "https://datalemur.com", tier: "silver" },
+    { title: "SQLClimber", desc: "Structured SQL assignments building up in difficulty.", url: "https://www.sqlclimber.com/assignments/", tier: "gold" },
+    { title: "InterviewQuery SQL", desc: "SQL questions specifically from data-role interview loops.", url: "https://www.interviewquery.com/questions?tags=SQL" },
   ],
   cp: [
-    { title: "CP-31 Sheet", desc: "TLE Eliminators' 31 hand-picked problems per rating band, 800-1900.", url: "https://www.tle-eliminators.com/cp-sheet" },
-    { title: "A2OJ Ladders", desc: "Classic rating-banded Codeforces practice ladders.", url: "https://earthshakira.github.io/a2oj-clientside/server/Ladders.html" },
-    { title: "AtCoder Problems", desc: "The standard problem tracker and recommender for AtCoder.", url: "https://kenkoooo.com/atcoder/" },
+    { title: "YouKn0wWho's Topic List", desc: "The competitive-programming goldmine: a huge topic-wise curated problem list.", url: "https://youkn0wwho.academy/topic-list", tier: "gold" },
+    { title: "CSES Problem Set", desc: "The classic compact, high-signal CP problem set.", url: "https://cses.fi/problemset/", tier: "gold" },
+    { title: "CP-31 Sheet", desc: "TLE Eliminators' 31 hand-picked problems per rating band, 800-1900.", url: "https://www.tle-eliminators.com/cp-sheet", tier: "silver" },
+    { title: "AtCoder Topic-Wise Sheet", desc: "AtCoder problems organized by topic (Japanese, auto-translatable).", url: "https://atcoder-tags.herokuapp.com/explain" },
+    { title: "CF Tracker", desc: "A Codeforces contest/problem archive and tracker.", url: "https://cftracker.netlify.app/contests" },
+    {
+      title: "AtCoder Problem Archive",
+      desc: "Tagged-by-topic AtCoder archive (preferred), plus the classic AtCoder Problems tracker.",
+      links: [
+        { label: "Tagged archive ↗", url: "https://atcoder-ai-tagged-problem.vercel.app/table" },
+        { label: "AtCoder Problems ↗", url: "https://kenkoooo.com/atcoder/" },
+      ],
+    },
+    { title: "USACO Guide Problems", desc: "The problem index behind the USACO Guide's modules.", url: "https://usaco.guide/problems" },
+    {
+      title: "More Ladders",
+      desc: "A rating-banded topic ladder, plus a general CP blog/problem archive.",
+      links: [
+        { label: "CF Ladder Pro: Greedy ↗", url: "https://cf-ladder-pro.vercel.app/topics/greedy" },
+        { label: "A Coded Daily ↗", url: "https://www.acodedaily.com/" },
+      ],
+    },
   ],
 };
 
 function renderHome() {
   const categories = [
     { key: "dsa", label: "OA + Interview" },
+    { key: "sql", label: "SQL" },
     { key: "cp", label: "Competitive Programming" },
     { key: "system-design", label: "System Design" },
+    { key: "deprecated", label: "Deprecated" },
   ];
 
   const parts = [];
@@ -238,34 +268,50 @@ function renderHome() {
 
   for (const cat of categories) {
     const sheets = data.sheets.filter((s) => s.category === cat.key);
-    if (!sheets.length) continue;
-    parts.push(`<h2 class="category-heading">${escapeHtml(cat.label)}</h2>`);
-    parts.push(`<div class="sheet-grid">`);
-    for (const sheet of sheets) {
-      const { total, done } = sheetStats(sheet);
-      const pct = total ? Math.round((done / total) * 100) : 0;
-      parts.push(`
-        <a class="sheet-card" href="#/sheet/${sheet.id}" data-sheet-card="${sheet.id}">
-          <h3>${escapeHtml(sheet.title)}</h3>
-          <p>${escapeHtml(sheet.description || "")}</p>
-          <div class="card-progress-track"><div class="card-progress-fill" style="width:${pct}%"></div></div>
-          <div class="card-progress-label">${done} / ${total} solved</div>
-        </a>
-      `);
-    }
-    parts.push(`</div>`);
-
     const extResources = EXTERNAL_RESOURCES[cat.key];
-    if (extResources && extResources.length) {
-      parts.push(`<h3 class="external-heading">Popular external sheets</h3>`);
+    if (!sheets.length && !(extResources && extResources.length)) continue;
+    parts.push(`<h2 class="category-heading">${escapeHtml(cat.label)}</h2>`);
+    if (sheets.length) {
       parts.push(`<div class="sheet-grid">`);
-      for (const r of extResources) {
+      for (const sheet of sheets) {
+        const { total, done } = sheetStats(sheet);
+        const pct = total ? Math.round((done / total) * 100) : 0;
         parts.push(`
-          <a class="sheet-card external-card" href="${escapeAttr(r.url)}" target="_blank" rel="noopener">
-            <h3>${escapeHtml(r.title)} <span class="ext-icon">↗</span></h3>
-            <p>${escapeHtml(r.desc)}</p>
+          <a class="sheet-card" href="#/sheet/${sheet.id}" data-sheet-card="${sheet.id}">
+            <h3>${escapeHtml(sheet.title)}</h3>
+            <p>${escapeHtml(sheet.description || "")}</p>
+            <div class="card-progress-track"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+            <div class="card-progress-label">${done} / ${total} solved</div>
           </a>
         `);
+      }
+      parts.push(`</div>`);
+    }
+
+    if (extResources && extResources.length) {
+      if (sheets.length) parts.push(`<h3 class="external-heading">Popular external sheets</h3>`);
+      parts.push(`<div class="sheet-grid">`);
+      for (const r of extResources) {
+        const tierClass = r.tier ? ` tier-${r.tier}` : "";
+        if (r.links) {
+          const linksHtml = r.links
+            .map((l) => `<a class="external-sublink" href="${escapeAttr(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a>`)
+            .join("");
+          parts.push(`
+            <div class="sheet-card external-card${tierClass}">
+              <h3>${escapeHtml(r.title)}</h3>
+              <p>${escapeHtml(r.desc)}</p>
+              <div class="external-sublinks">${linksHtml}</div>
+            </div>
+          `);
+        } else {
+          parts.push(`
+            <a class="sheet-card external-card${tierClass}" href="${escapeAttr(r.url)}" target="_blank" rel="noopener">
+              <h3>${escapeHtml(r.title)} <span class="ext-icon">↗</span></h3>
+              <p>${escapeHtml(r.desc)}</p>
+            </a>
+          `);
+        }
       }
       parts.push(`</div>`);
     }

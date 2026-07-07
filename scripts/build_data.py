@@ -38,7 +38,11 @@ def difficulty_for(url):
 # explicit override (e.g. CSES lives under Competitive Programming even
 # though its filename contains "dsa").
 CATEGORY_OVERRIDES = {
-    "faang_dsa_cses_complete_map.md": "cp",
+    # The Competitive Programming landing section now points at curated
+    # external resources (CP-31, YouKn0wWho, A2OJ, etc.) instead of an
+    # in-repo ladder sheet -- this internal CSES sheet still exists and is
+    # still useful, it's just not the front-line CP recommendation anymore.
+    "faang_dsa_cses_complete_map.md": "deprecated",
 }
 
 # Files where the same URL legitimately gets referenced over and over within
