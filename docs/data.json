@@ -59214,7 +59214,7 @@
       "title": "Intermediate To Frontier: 1000+ High-Return Coding Problem Ladders",
       "description": "This workbook is for someone who is already comfortable with normal LeetCode easy/medium lists and wants the next jump: hard interview patterns, competitive-programming ideas, merged concepts, and problems that unlock whole new families. The document is organized into ladders. Each ladder gives prerequisite problems, one frontier unlock problem, solidifiers, and mutation questions. The goal is not to memorize a title. The goal is to make the underlying pattern survive small changes.",
       "category": "dsa",
-      "totalItems": 1134,
+      "totalItems": 1284,
       "sections": [
         {
           "title": "Ladders",
@@ -68128,6 +68128,1176 @@
                 }
               ],
               "id": "8f60f90b0dc7"
+            },
+            {
+              "title": "Ladder 82: Two Pointers Meets DP",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "e1de56604c02",
+                      "text": "Two Pointer Technique",
+                      "url": "https://www.geeksforgeeks.org/dsa/two-pointer-technique/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e572dd62d167",
+                      "text": "Longest Substring Without Repeating Characters",
+                      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3a9751756a57",
+                      "text": "Minimum Window Substring",
+                      "url": "https://leetcode.com/problems/minimum-window-substring/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2a2beca28b91",
+                      "text": "Longest Repeating Character Replacement",
+                      "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "17bd7fc1b45d",
+                      "text": "Minimum Window Subsequence",
+                      "url": "https://leetcode.com/problems/minimum-window-subsequence/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ade7a58c9bc4",
+                      "text": "Longest Turbulent Subarray",
+                      "url": "https://leetcode.com/problems/longest-turbulent-subarray/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7c555f9aa08a",
+                      "text": "Maximum Points You Can Obtain from Cards",
+                      "url": "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5b6fe127de62",
+                      "text": "Number of Subarrays with Bounded Maximum",
+                      "url": "https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c93b13044003",
+                      "text": "Grumpy Bookstore Owner",
+                      "url": "https://leetcode.com/problems/grumpy-bookstore-owner/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "64779be0ae6d",
+                      "text": "Count Subarrays With Fixed Bound",
+                      "url": "https://leetcode.com/problems/count-subarrays-with-fixed-bound/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9370c69863ba",
+                      "text": "Subarrays with K Different Integers",
+                      "url": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "329b5a913acc",
+                      "text": "Reformulate the window rule when negative numbers are allowed.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "854262ccebbc",
+                      "text": "Track two windows over the same array simultaneously.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "319030470b66",
+                      "text": "Support one insertion or deletion in the middle of the array mid-scan.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b004b0d03422",
+                      "text": "Write the explicit DP recurrence behind the pointer movement and compare its complexity to the two-pointer version.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "36bfc2ef4dc4"
+                }
+              ],
+              "id": "c93f443736c6"
+            },
+            {
+              "title": "Ladder 83: Binary Search Meets DP (Feasibility Check)",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "1229b885ac81",
+                      "text": "Binary Search (cp-algorithms)",
+                      "url": "https://cp-algorithms.com/num_methods/binary_search.html",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2973c498ac8d",
+                      "text": "Koko Eating Bananas",
+                      "url": "https://leetcode.com/problems/koko-eating-bananas/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4a0890b02169",
+                      "text": "Capacity To Ship Packages Within D Days",
+                      "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "46637e49e51f",
+                      "text": "Split Array Largest Sum",
+                      "url": "https://leetcode.com/problems/split-array-largest-sum/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7493bee0d771",
+                      "text": "Divide Chocolate",
+                      "url": "https://leetcode.com/problems/divide-chocolate/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4c85a6c9bc61",
+                      "text": "Minimize Max Distance to Gas Station",
+                      "url": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "389d540b17bd",
+                      "text": "Magnetic Force Between Two Balls",
+                      "url": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bdb411857958",
+                      "text": "Minimum Number of Days to Make m Bouquets",
+                      "url": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f469ba44a398",
+                      "text": "Maximum Tastiness of Candy Basket",
+                      "url": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b1d39b68a223",
+                      "text": "Find the Smallest Divisor Given a Threshold",
+                      "url": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2899e02f1683",
+                      "text": "Nth Magical Number",
+                      "url": "https://leetcode.com/problems/nth-magical-number/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "579defbc3159",
+                      "text": "Make the feasibility check itself a DP instead of a greedy scan.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "268e9bc846d2",
+                      "text": "Support a real-valued (not integer) answer with a precision tolerance.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3fd09207548c",
+                      "text": "Binary search on two coupled variables instead of one.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3c762870f016",
+                      "text": "Flip the problem from maximize-the-minimum to minimize-the-maximum and re-derive the feasibility predicate.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "b73172afbe34"
+                }
+              ],
+              "id": "948976aa488c"
+            },
+            {
+              "title": "Ladder 84: Sliding Window Meets Bitmask",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "a603119e4aad",
+                      "text": "Window Sliding Technique",
+                      "url": "https://www.geeksforgeeks.org/dsa/window-sliding-technique/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7a6cfcfc658c",
+                      "text": "Single Number",
+                      "url": "https://leetcode.com/problems/single-number/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "319ce894bac7",
+                      "text": "Counting Bits",
+                      "url": "https://leetcode.com/problems/counting-bits/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e572dd62d167",
+                      "text": "Longest Substring Without Repeating Characters",
+                      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c77bf5eb5efe",
+                      "text": "Number of Wonderful Substrings",
+                      "url": "https://leetcode.com/problems/number-of-wonderful-substrings/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "acb674660124",
+                      "text": "Find the Longest Substring Containing Vowels in Even Counts",
+                      "url": "https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e71eb5396520",
+                      "text": "Maximum XOR of Two Numbers in an Array",
+                      "url": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "22ba990a90d0",
+                      "text": "Count Number of Maximum Bitwise-OR Subsets",
+                      "url": "https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3110259504d0",
+                      "text": "Minimum XOR Sum of Two Arrays",
+                      "url": "https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4f119c030164",
+                      "text": "Shortest Subarray With OR at Least K II",
+                      "url": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4a26a25d2fdc",
+                      "text": "Maximum XOR After Operations",
+                      "url": "https://leetcode.com/problems/maximum-xor-after-operations/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5db9858bea70",
+                      "text": "Track parity of only 2 specific characters instead of the full alphabet.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d7e2146cbaaa",
+                      "text": "Count exact-length windows instead of all prefixes.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3c7e5a55f10e",
+                      "text": "Allow up to k mismatched parities instead of requiring an exact match.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "62b74bb1bce8",
+                      "text": "Return the actual substring achieving the answer, not just the count.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "2933c8f0e0b1"
+                }
+              ],
+              "id": "183e8857472f"
+            },
+            {
+              "title": "Ladder 85: DSU Meets MST Virtual-Node Tricks",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "b216111ba667",
+                      "text": "Disjoint Set Union (cp-algorithms)",
+                      "url": "https://cp-algorithms.com/data_structures/disjoint_set_union.html",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f31b472a606a",
+                      "text": "Number of Provinces",
+                      "url": "https://leetcode.com/problems/number-of-provinces/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4b593837ccf3",
+                      "text": "Redundant Connection",
+                      "url": "https://leetcode.com/problems/redundant-connection/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b5b026f1c5d4",
+                      "text": "Min Cost to Connect All Points",
+                      "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5a2535b4b44d",
+                      "text": "Optimize Water Distribution in a Village",
+                      "url": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5b8672f3c926",
+                      "text": "Connecting Cities With Minimum Cost",
+                      "url": "https://leetcode.com/problems/connecting-cities-with-minimum-cost/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f485d8dd287e",
+                      "text": "Minimum Cost to Connect Two Groups of Points",
+                      "url": "https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7d15ad2e10fb",
+                      "text": "Checking Existence of Edge Length Limited Paths",
+                      "url": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2943144b07af",
+                      "text": "Number of Operations to Make Network Connected",
+                      "url": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c95048ab2918",
+                      "text": "Remove Max Number of Edges to Keep Graph Fully Traversable",
+                      "url": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1d6abdf6feda",
+                      "text": "Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree",
+                      "url": "https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fe8df158b70b",
+                      "text": "Add a virtual source node whose per-node edge weight varies.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c6bbbb9f3846",
+                      "text": "Support edge removals, not just additions, and recompute the MST.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b7fa74b75a3d",
+                      "text": "Two edge types (shared vs. private) with a priority rule between them.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2072e714c387",
+                      "text": "Minimize the single most expensive edge in the tree instead of the total sum.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "b1cc90283609"
+                }
+              ],
+              "id": "70e5861ad750"
+            },
+            {
+              "title": "Ladder 86: Monotonic Stack Meets Greedy DP",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "4db1e02ee378",
+                      "text": "Next Greater Element",
+                      "url": "https://www.geeksforgeeks.org/dsa/next-greater-element/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "358ba8c9220b",
+                      "text": "Daily Temperatures",
+                      "url": "https://leetcode.com/problems/daily-temperatures/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8bea43981ab6",
+                      "text": "Largest Rectangle in Histogram",
+                      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ff440db418ee",
+                      "text": "Sum of Subarray Minimums",
+                      "url": "https://leetcode.com/problems/sum-of-subarray-minimums/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c1d63f11873e",
+                      "text": "Maximum Score of a Good Subarray",
+                      "url": "https://leetcode.com/problems/maximum-score-of-a-good-subarray/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "76c104c2e61f",
+                      "text": "Constrained Subsequence Sum",
+                      "url": "https://leetcode.com/problems/constrained-subsequence-sum/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2f35fcb8b502",
+                      "text": "Maximum Subarray Min-Product",
+                      "url": "https://leetcode.com/problems/maximum-subarray-min-product/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ffea9c892700",
+                      "text": "Remove Duplicate Letters",
+                      "url": "https://leetcode.com/problems/remove-duplicate-letters/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ddf7a91684b6",
+                      "text": "Sum of Total Strength of Wizards",
+                      "url": "https://leetcode.com/problems/sum-of-total-strength-of-wizards/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d88260e4cd3e",
+                      "text": "Maximum Number of Non-overlapping Substrings",
+                      "url": "https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "82c8d34a511a",
+                      "text": "Minimum Cost Tree From Leaf Values",
+                      "url": "https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3d4eb8bd6da3",
+                      "text": "Track the actual index range achieving the optimum, not just its value.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f4e2290146a3",
+                      "text": "Allow removing at most one element before scoring the window.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9ea28ef47df6",
+                      "text": "Minimize instead of maximize the aggregate.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8beb79975ce2",
+                      "text": "Generalize from a two-pointer expansion to k pointers expanding together.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "7be2f8f3651c"
+                }
+              ],
+              "id": "07bfa52bd8eb"
+            },
+            {
+              "title": "Ladder 87: Heap Meets Binary Search",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "3aa2c7573111",
+                      "text": "Heap Data Structure",
+                      "url": "https://www.geeksforgeeks.org/dsa/heap-data-structure/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "778e71925548",
+                      "text": "Kth Largest Element in an Array",
+                      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "98417a22c869",
+                      "text": "Find K-th Smallest Pair Distance",
+                      "url": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2973c498ac8d",
+                      "text": "Koko Eating Bananas",
+                      "url": "https://leetcode.com/problems/koko-eating-bananas/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "210f0448edc9",
+                      "text": "Kth Smallest Product of Two Sorted Arrays",
+                      "url": "https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9b9b28d61d87",
+                      "text": "Find K Pairs with Smallest Sums",
+                      "url": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e29b9d7686af",
+                      "text": "Median of Two Sorted Arrays",
+                      "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b28fd01a4858",
+                      "text": "Minimize the Maximum Difference of Pairs",
+                      "url": "https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "741b6bb4ba36",
+                      "text": "Smallest Range Covering Elements from K Lists",
+                      "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a3741b54b473",
+                      "text": "Ugly Number II",
+                      "url": "https://leetcode.com/problems/ugly-number-ii/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5efbf2182c1e",
+                      "text": "Kth Smallest Element in a Sorted Matrix",
+                      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "af73494c8759",
+                      "text": "Replace the two merged heaps with a single binary-search predicate and prove it's equivalent.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3c4900a621eb",
+                      "text": "Support duplicate products/sums in the implicit matrix.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c0a7449be575",
+                      "text": "Return the actual achieving pair, not just its value.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d5f013b9a1c6",
+                      "text": "Generalize from 2 sorted arrays to k sorted arrays.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "f26efd6f8250"
+                }
+              ],
+              "id": "62f0b9492e49"
+            },
+            {
+              "title": "Ladder 88: Graph Meets Bitmask DP (Small-N Assignment)",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "03d0bc062739",
+                      "text": "Travelling Salesman Problem using Dynamic Programming",
+                      "url": "https://www.geeksforgeeks.org/dsa/travelling-salesman-problem-using-dynamic-programming/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "035bb0b7b4b7",
+                      "text": "Partition to K Equal Sum Subsets",
+                      "url": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "0bd80af843bc",
+                      "text": "Shortest Path Visiting All Nodes",
+                      "url": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c04a2fa77d39",
+                      "text": "Can I Win",
+                      "url": "https://leetcode.com/problems/can-i-win/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "738f69a68a23",
+                      "text": "Distribute Repeating Integers",
+                      "url": "https://leetcode.com/problems/distribute-repeating-integers/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5392b4c24c35",
+                      "text": "Fair Distribution of Cookies",
+                      "url": "https://leetcode.com/problems/fair-distribution-of-cookies/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "21d94c6bc283",
+                      "text": "Minimum Number of Work Sessions to Finish the Tasks",
+                      "url": "https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7ba251bbf94b",
+                      "text": "Minimum Time to Complete All Tasks",
+                      "url": "https://leetcode.com/problems/minimum-time-to-complete-all-tasks/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2a3a000615fc",
+                      "text": "Maximum Compatibility Score Sum",
+                      "url": "https://leetcode.com/problems/maximum-compatibility-score-sum/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7f50505048c1",
+                      "text": "Number of Ways to Wear Different Hats to Each Other",
+                      "url": "https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "44f731a3fc51",
+                      "text": "Minimum Incompatibility",
+                      "url": "https://leetcode.com/problems/minimum-incompatibility/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fbf3cc6c222a",
+                      "text": "Allow one item to be split across two recipients.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d9efb1dc048b",
+                      "text": "Minimize the maximum load instead of just checking feasibility.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9d5e55236bf9",
+                      "text": "Precompute a compatibility bitmask per item before the DP.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2d6123a6cff1",
+                      "text": "Generalize from 2 groups to k groups.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "9a0764b5da7c"
+                }
+              ],
+              "id": "4e991c4ef5ba"
+            },
+            {
+              "title": "Ladder 89: Tree DP Meets Rerooting Meets Combinatorics",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "97a525f118d0",
+                      "text": "DP on Trees -- Solving For All Roots (USACO Guide)",
+                      "url": "https://usaco.guide/gold/all-roots",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4784485da631",
+                      "text": "Diameter of Binary Tree",
+                      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "882866aa3eeb",
+                      "text": "Binary Tree Maximum Path Sum",
+                      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7e980f998e74",
+                      "text": "House Robber III",
+                      "url": "https://leetcode.com/problems/house-robber-iii/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9b287f772840",
+                      "text": "Sum of Distances in Tree",
+                      "url": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8b3d6986a104",
+                      "text": "Number of Good Leaf Nodes Pairs",
+                      "url": "https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e87be4931192",
+                      "text": "Count Subtrees With Max Distance Between Cities",
+                      "url": "https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d24abf7fa622",
+                      "text": "Minimum Height Trees",
+                      "url": "https://leetcode.com/problems/minimum-height-trees/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c1e568270c1d",
+                      "text": "Number of Nodes in the Sub-Tree With the Same Label",
+                      "url": "https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f3856cfce90c",
+                      "text": "Step-By-Step Directions From a Binary Tree Node to Another",
+                      "url": "https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "751eb6bc08da",
+                      "text": "Binary Tree Cameras",
+                      "url": "https://leetcode.com/problems/binary-tree-cameras/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a3459fbcbf47",
+                      "text": "Reroot with weighted edges instead of unit distance.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "088d268783e4",
+                      "text": "Reroot to find the maximum instead of the sum.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "03b9e398214a",
+                      "text": "Support online edge-weight updates between reroot queries.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "11043aaf308c",
+                      "text": "Count paths of a fixed length from each root instead of summing distances.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "b302bd751e04"
+                }
+              ],
+              "id": "946aff5b53fe"
+            },
+            {
+              "title": "Ladder 90: Interval Scheduling Meets DSU (Next-Available-Slot Trick)",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "edd5862dd515",
+                      "text": "Job Sequencing Problem",
+                      "url": "https://www.geeksforgeeks.org/dsa/job-sequencing-problem/",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "32d4f61d5de0",
+                      "text": "Non-overlapping Intervals",
+                      "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3f5cc5b05c4b",
+                      "text": "Course Schedule III",
+                      "url": "https://leetcode.com/problems/course-schedule-iii/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2b353338433c",
+                      "text": "Merge Intervals",
+                      "url": "https://leetcode.com/problems/merge-intervals/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a201eb37ca45",
+                      "text": "Maximum Number of Events That Can Be Attended",
+                      "url": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "edfb3b739414",
+                      "text": "Maximum Number of Events That Can Be Attended II",
+                      "url": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "acc09f91488c",
+                      "text": "My Calendar I",
+                      "url": "https://leetcode.com/problems/my-calendar-i/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5a6999f6f1b0",
+                      "text": "Describe the Painting",
+                      "url": "https://leetcode.com/problems/describe-the-painting/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3a762380c7f9",
+                      "text": "Data Stream as Disjoint Intervals",
+                      "url": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "0b75885a7169",
+                      "text": "Minimum Number of Arrows to Burst Balloons",
+                      "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fd076ad37217",
+                      "text": "Car Pooling",
+                      "url": "https://leetcode.com/problems/car-pooling/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c8cb529ce22f",
+                      "text": "Give events variable durations instead of single-day slots.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1f3f5722c71a",
+                      "text": "Support cancelling an already-attended event and re-optimizing.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "be8057da4313",
+                      "text": "Make sure the DSU union always points to the next available day, not an arbitrary parent.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2436d8a4783f",
+                      "text": "Generalize from 1 resource to k parallel resources.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "83adac7f3931"
+                }
+              ],
+              "id": "e633cb1728cd"
+            },
+            {
+              "title": "Ladder 91: String Matching Meets DP (Automaton-Guided Counting)",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "a6bd8b58f684",
+                      "text": "Z-Function and its Calculation (cp-algorithms)",
+                      "url": "https://cp-algorithms.com/string/z-function.html",
+                      "tag": "Read first (if confused)",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b5375e6b0c9c",
+                      "text": "Find the Index of the First Occurrence in a String",
+                      "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "593348fc8550",
+                      "text": "Shortest Palindrome",
+                      "url": "https://leetcode.com/problems/shortest-palindrome/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a6c29573a043",
+                      "text": "Longest Happy Prefix",
+                      "url": "https://leetcode.com/problems/longest-happy-prefix/",
+                      "tag": "Baseline before this unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "93b09491ece4",
+                      "text": "Distinct Echo Substrings",
+                      "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+                      "tag": "Frontier unlock",
+                      "subtag": null
+                    },
+                    {
+                      "id": "89a7c62cb1e2",
+                      "text": "Longest Duplicate Substring",
+                      "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b1ee995c8385",
+                      "text": "Count Different Palindromic Subsequences",
+                      "url": "https://leetcode.com/problems/count-different-palindromic-subsequences/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "edade896d806",
+                      "text": "Number of Matching Subsequences",
+                      "url": "https://leetcode.com/problems/number-of-matching-subsequences/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e986637fd8c6",
+                      "text": "Palindrome Pairs",
+                      "url": "https://leetcode.com/problems/palindrome-pairs/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "812d87a16c82",
+                      "text": "Concatenated Words",
+                      "url": "https://leetcode.com/problems/concatenated-words/",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "76eac98955bb",
+                      "text": "String Matching",
+                      "url": "https://cses.fi/problemset/task/1753",
+                      "tag": "Solidifiers",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6c0b1f5591ea",
+                      "text": "Count occurrences of the pattern instead of just checking existence.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1db9ee4c644f",
+                      "text": "Support a wildcard character in the pattern.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "59013d0d68c8",
+                      "text": "Build the automaton once and answer many queries against it.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    },
+                    {
+                      "id": "370cddb539de",
+                      "text": "Switch from a single rolling hash to a double hash to eliminate collision risk.",
+                      "url": null,
+                      "tag": "Mutation questions",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "11cc24f14b02"
+                }
+              ],
+              "id": "8280f82e6c80"
             }
           ],
           "id": "e6320942e6f8"

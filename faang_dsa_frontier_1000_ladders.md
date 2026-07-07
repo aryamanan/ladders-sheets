@@ -31,7 +31,7 @@ Each ladder has 14 directed reps:
 3. 6 solidifier questions.
 4. 4 mutation questions.
 
-With 81 ladders, that is 1134 directed questions/reps.
+With 91 ladders, that is 1274 directed questions/reps.
 
 ## Repetition Protocol
 
@@ -2325,12 +2325,312 @@ Mutation questions:
 3. Mask represents completed strings/skills/cells.
 4. Remove dominated inputs before DP.
 
+### Ladder 82: Two Pointers Meets DP
+
+Read first (if confused): [Two Pointer Technique](https://www.geeksforgeeks.org/dsa/two-pointer-technique/)
+
+Unlock idea: Some problems look like a normal sliding window, but the value inside the window depends on more than just a running sum, so the window's contraction rule is really a DP transition in disguise.
+
+Baseline before this unlock:
+
+1. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+2. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+3. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+
+Frontier unlock: [Minimum Window Subsequence](https://leetcode.com/problems/minimum-window-subsequence/)
+
+Solidifiers:
+
+1. [Longest Turbulent Subarray](https://leetcode.com/problems/longest-turbulent-subarray/)
+2. [Maximum Points You Can Obtain from Cards](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)
+3. [Number of Subarrays with Bounded Maximum](https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/)
+4. [Grumpy Bookstore Owner](https://leetcode.com/problems/grumpy-bookstore-owner/)
+5. [Count Subarrays With Fixed Bound](https://leetcode.com/problems/count-subarrays-with-fixed-bound/)
+6. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/)
+
+Mutation questions:
+
+1. Reformulate the window rule when negative numbers are allowed.
+2. Track two windows over the same array simultaneously.
+3. Support one insertion or deletion in the middle of the array mid-scan.
+4. Write the explicit DP recurrence behind the pointer movement and compare its complexity to the two-pointer version.
+
+### Ladder 83: Binary Search Meets DP (Feasibility Check)
+
+Read first (if confused): [Binary Search (cp-algorithms)](https://cp-algorithms.com/num_methods/binary_search.html)
+
+Unlock idea: Binary search on the answer only works once you can answer "is X feasible?" in one pass -- and for a large family of problems, that feasibility check is itself a small DP or greedy simulation, not a simple counting loop.
+
+Baseline before this unlock:
+
+1. [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+2. [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+3. [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)
+
+Frontier unlock: [Divide Chocolate](https://leetcode.com/problems/divide-chocolate/)
+
+Solidifiers:
+
+1. [Minimize Max Distance to Gas Station](https://leetcode.com/problems/minimize-max-distance-to-gas-station/)
+2. [Magnetic Force Between Two Balls](https://leetcode.com/problems/magnetic-force-between-two-balls/)
+3. [Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+4. [Maximum Tastiness of Candy Basket](https://leetcode.com/problems/maximum-tastiness-of-candy-basket/)
+5. [Find the Smallest Divisor Given a Threshold](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)
+6. [Nth Magical Number](https://leetcode.com/problems/nth-magical-number/)
+
+Mutation questions:
+
+1. Make the feasibility check itself a DP instead of a greedy scan.
+2. Support a real-valued (not integer) answer with a precision tolerance.
+3. Binary search on two coupled variables instead of one.
+4. Flip the problem from maximize-the-minimum to minimize-the-maximum and re-derive the feasibility predicate.
+
+### Ladder 84: Sliding Window Meets Bitmask
+
+Read first (if confused): [Window Sliding Technique](https://www.geeksforgeeks.org/dsa/window-sliding-technique/)
+
+Unlock idea: When a window's validity depends on parity or presence/absence of a small alphabet, the window state compresses into a bitmask, and window transitions become XOR/OR operations instead of counter increments.
+
+Baseline before this unlock:
+
+1. [Single Number](https://leetcode.com/problems/single-number/)
+2. [Counting Bits](https://leetcode.com/problems/counting-bits/)
+3. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
+Frontier unlock: [Number of Wonderful Substrings](https://leetcode.com/problems/number-of-wonderful-substrings/)
+
+Solidifiers:
+
+1. [Find the Longest Substring Containing Vowels in Even Counts](https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/)
+2. [Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)
+3. [Count Number of Maximum Bitwise-OR Subsets](https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/)
+4. [Minimum XOR Sum of Two Arrays](https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/)
+5. [Shortest Subarray With OR at Least K II](https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/)
+6. [Maximum XOR After Operations](https://leetcode.com/problems/maximum-xor-after-operations/)
+
+Mutation questions:
+
+1. Track parity of only 2 specific characters instead of the full alphabet.
+2. Count exact-length windows instead of all prefixes.
+3. Allow up to k mismatched parities instead of requiring an exact match.
+4. Return the actual substring achieving the answer, not just the count.
+
+### Ladder 85: DSU Meets MST Virtual-Node Tricks
+
+Read first (if confused): [Disjoint Set Union (cp-algorithms)](https://cp-algorithms.com/data_structures/disjoint_set_union.html)
+
+Unlock idea: Some MST problems are not "connect these given edges" but "invent a virtual node" (a shared water source, a free base cost) whose edges to every real node must be added before Kruskal's even starts.
+
+Baseline before this unlock:
+
+1. [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)
+2. [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
+3. [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/)
+
+Frontier unlock: [Optimize Water Distribution in a Village](https://leetcode.com/problems/optimize-water-distribution-in-a-village/)
+
+Solidifiers:
+
+1. [Connecting Cities With Minimum Cost](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)
+2. [Minimum Cost to Connect Two Groups of Points](https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/)
+3. [Checking Existence of Edge Length Limited Paths](https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/)
+4. [Number of Operations to Make Network Connected](https://leetcode.com/problems/number-of-operations-to-make-network-connected/)
+5. [Remove Max Number of Edges to Keep Graph Fully Traversable](https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/)
+6. [Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
+
+Mutation questions:
+
+1. Add a virtual source node whose per-node edge weight varies.
+2. Support edge removals, not just additions, and recompute the MST.
+3. Two edge types (shared vs. private) with a priority rule between them.
+4. Minimize the single most expensive edge in the tree instead of the total sum.
+
+### Ladder 86: Monotonic Stack Meets Greedy DP
+
+Read first (if confused): [Next Greater Element](https://www.geeksforgeeks.org/dsa/next-greater-element/)
+
+Unlock idea: A monotonic stack finds boundaries in O(n), but the payoff at each boundary is sometimes a DP-style aggregate (a sum, a product, a count) that has to be maintained incrementally as the stack pops, not recomputed from scratch.
+
+Baseline before this unlock:
+
+1. [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+2. [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+3. [Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/)
+
+Frontier unlock: [Maximum Score of a Good Subarray](https://leetcode.com/problems/maximum-score-of-a-good-subarray/)
+
+Solidifiers:
+
+1. [Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/)
+2. [Maximum Subarray Min-Product](https://leetcode.com/problems/maximum-subarray-min-product/)
+3. [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)
+4. [Sum of Total Strength of Wizards](https://leetcode.com/problems/sum-of-total-strength-of-wizards/)
+5. [Maximum Number of Non-overlapping Substrings](https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/)
+6. [Minimum Cost Tree From Leaf Values](https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/)
+
+Mutation questions:
+
+1. Track the actual index range achieving the optimum, not just its value.
+2. Allow removing at most one element before scoring the window.
+3. Minimize instead of maximize the aggregate.
+4. Generalize from a two-pointer expansion to k pointers expanding together.
+
+### Ladder 87: Heap Meets Binary Search
+
+Read first (if confused): [Heap Data Structure](https://www.geeksforgeeks.org/dsa/heap-data-structure/)
+
+Unlock idea: "Find the kth value" over an implicitly generated, sorted-ish space can be brute-forced with a heap in O(k log n), but the frontier move is replacing the heap with a binary search over the *value* plus a linear-time counting pass -- same answer, no heap at all.
+
+Baseline before this unlock:
+
+1. [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+2. [Find K-th Smallest Pair Distance](https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
+3. [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+
+Frontier unlock: [Kth Smallest Product of Two Sorted Arrays](https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/)
+
+Solidifiers:
+
+1. [Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
+2. [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+3. [Minimize the Maximum Difference of Pairs](https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/)
+4. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
+5. [Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)
+6. [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+
+Mutation questions:
+
+1. Replace the two merged heaps with a single binary-search predicate and prove it's equivalent.
+2. Support duplicate products/sums in the implicit matrix.
+3. Return the actual achieving pair, not just its value.
+4. Generalize from 2 sorted arrays to k sorted arrays.
+
+### Ladder 88: Graph Meets Bitmask DP (Small-N Assignment)
+
+Read first (if confused): [Travelling Salesman Problem using Dynamic Programming](https://www.geeksforgeeks.org/dsa/travelling-salesman-problem-using-dynamic-programming/)
+
+Unlock idea: When N is small (usually <= 20) and the problem is "assign/visit/cover every item exactly once at minimum cost," the state is not the item index -- it's the *set* of items handled so far, and that set is a bitmask.
+
+Baseline before this unlock:
+
+1. [Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/)
+2. [Shortest Path Visiting All Nodes](https://leetcode.com/problems/shortest-path-visiting-all-nodes/)
+3. [Can I Win](https://leetcode.com/problems/can-i-win/)
+
+Frontier unlock: [Distribute Repeating Integers](https://leetcode.com/problems/distribute-repeating-integers/)
+
+Solidifiers:
+
+1. [Fair Distribution of Cookies](https://leetcode.com/problems/fair-distribution-of-cookies/)
+2. [Minimum Number of Work Sessions to Finish the Tasks](https://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/)
+3. [Minimum Time to Complete All Tasks](https://leetcode.com/problems/minimum-time-to-complete-all-tasks/)
+4. [Maximum Compatibility Score Sum](https://leetcode.com/problems/maximum-compatibility-score-sum/)
+5. [Number of Ways to Wear Different Hats to Each Other](https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/)
+6. [Minimum Incompatibility](https://leetcode.com/problems/minimum-incompatibility/)
+
+Mutation questions:
+
+1. Allow one item to be split across two recipients.
+2. Minimize the maximum load instead of just checking feasibility.
+3. Precompute a compatibility bitmask per item before the DP.
+4. Generalize from 2 groups to k groups.
+
+### Ladder 89: Tree DP Meets Rerooting Meets Combinatorics
+
+Read first (if confused): [DP on Trees -- Solving For All Roots (USACO Guide)](https://usaco.guide/gold/all-roots)
+
+Unlock idea: A tree DP computed once, rooted arbitrarily, only answers the question for that root. Rerooting lets you reuse the first pass's work to answer the same question for every node as root in one more linear pass, instead of re-running the DP N times.
+
+Baseline before this unlock:
+
+1. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+2. [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+3. [House Robber III](https://leetcode.com/problems/house-robber-iii/)
+
+Frontier unlock: [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree/)
+
+Solidifiers:
+
+1. [Number of Good Leaf Nodes Pairs](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/)
+2. [Count Subtrees With Max Distance Between Cities](https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/)
+3. [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/)
+4. [Number of Nodes in the Sub-Tree With the Same Label](https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/)
+5. [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/)
+6. [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/)
+
+Mutation questions:
+
+1. Reroot with weighted edges instead of unit distance.
+2. Reroot to find the maximum instead of the sum.
+3. Support online edge-weight updates between reroot queries.
+4. Count paths of a fixed length from each root instead of summing distances.
+
+### Ladder 90: Interval Scheduling Meets DSU (Next-Available-Slot Trick)
+
+Read first (if confused): [Job Sequencing Problem](https://www.geeksforgeeks.org/dsa/job-sequencing-problem/)
+
+Unlock idea: Greedily assigning each job to the latest still-free slot before its deadline is an O(n^2) simulation unless you maintain "the next free slot at or before day d" with a DSU, collapsing each simulation step to near O(1).
+
+Baseline before this unlock:
+
+1. [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+2. [Course Schedule III](https://leetcode.com/problems/course-schedule-iii/)
+3. [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+
+Frontier unlock: [Maximum Number of Events That Can Be Attended](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/)
+
+Solidifiers:
+
+1. [Maximum Number of Events That Can Be Attended II](https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/)
+2. [My Calendar I](https://leetcode.com/problems/my-calendar-i/)
+3. [Describe the Painting](https://leetcode.com/problems/describe-the-painting/)
+4. [Data Stream as Disjoint Intervals](https://leetcode.com/problems/data-stream-as-disjoint-intervals/)
+5. [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
+6. [Car Pooling](https://leetcode.com/problems/car-pooling/)
+
+Mutation questions:
+
+1. Give events variable durations instead of single-day slots.
+2. Support cancelling an already-attended event and re-optimizing.
+3. Make sure the DSU union always points to the next available day, not an arbitrary parent.
+4. Generalize from 1 resource to k parallel resources.
+
+### Ladder 91: String Matching Meets DP (Automaton-Guided Counting)
+
+Read first (if confused): [Z-Function and its Calculation (cp-algorithms)](https://cp-algorithms.com/string/z-function.html)
+
+Unlock idea: Once a string-matching automaton (KMP failure links, a Z-array, a rolling hash table) exists, many "count the ways" problems become a DP whose state is a position in the automaton, not a position in the raw string.
+
+Baseline before this unlock:
+
+1. [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+2. [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+3. [Longest Happy Prefix](https://leetcode.com/problems/longest-happy-prefix/)
+
+Frontier unlock: [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
+
+Solidifiers:
+
+1. [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/)
+2. [Count Different Palindromic Subsequences](https://leetcode.com/problems/count-different-palindromic-subsequences/)
+3. [Number of Matching Subsequences](https://leetcode.com/problems/number-of-matching-subsequences/)
+4. [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)
+5. [Concatenated Words](https://leetcode.com/problems/concatenated-words/)
+6. [String Matching](https://cses.fi/problemset/task/1753)
+
+Mutation questions:
+
+1. Count occurrences of the pattern instead of just checking existence.
+2. Support a wildcard character in the pattern.
+3. Build the automaton once and answer many queries against it.
+4. Switch from a single rolling hash to a double hash to eliminate collision risk.
+
 ## Totals
 
-- Ladders: 81
-- Directed questions/reps: 1134
-- Linked platform problems: 810
-- Custom mutation questions: 324
+- Ladders: 91
+- Directed questions/reps: 1274
+- Linked platform problems: 910
+- Custom mutation questions: 364
 
 ## Where To Go After This
 
