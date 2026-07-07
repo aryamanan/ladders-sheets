@@ -375,9 +375,13 @@ function renderItemRow(item) {
   const textHtml = item.url
     ? `<a class="item-text" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.text)} <span class="ext-icon">↗</span></a>`
     : `<span class="item-text plain">${escapeHtml(item.text)}</span>`;
-  const tagHtml = item.tag ? `<span class="item-tag">${escapeHtml(item.tag)}</span>` : "";
+  // `tag` (Foundation/Boss/Round labels) and `subtag` (a cosmetic per-item
+  // technique badge, e.g. "Frequency Map") are never both present on the
+  // same item in practice, but show both if they ever are.
+  const badgeText = [item.tag, item.subtag].filter(Boolean).join(" · ");
+  const tagHtml = badgeText ? `<span class="item-tag">${escapeHtml(badgeText)}</span>` : "";
   return `
-    <div class="item-row${isSolved ? " is-solved" : ""}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + (item.tag || "")).toLowerCase())}">
+    <div class="item-row${isSolved ? " is-solved" : ""}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText).toLowerCase())}">
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
       ${tagHtml}

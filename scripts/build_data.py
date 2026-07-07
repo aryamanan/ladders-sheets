@@ -85,6 +85,11 @@ EXCLUDE_HEADINGS_EXACT = [
 
 HEADING_RE = re.compile(r"^(#{1,4})\s+(.*)$")
 LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+(.+?)\s*$")
+# A trailing `{Some Tag}` on a list item is a purely cosmetic per-item badge
+# (e.g. "Frequency Map") -- deliberately kept OUT of the id hash (unlike
+# `tag`/cur_label) so retrofitting badges onto a sheet's existing items never
+# changes their ids and never orphans saved checkmarks.
+SUBTAG_RE = re.compile(r"^(.*\S)\s*\{([^{}]{1,60})\}\s*$")
 # Matches both a bare "Label:" line (group 2 empty) and an inline
 # "Label: rest of line" (group 2 non-empty), e.g. "Frontier unlock: [X](url)"
 # or "Technique family: binary search" (no link -> treated as ignorable
@@ -215,7 +220,7 @@ def parse_file(path):
             group["subgroups"].append(cur_subgroup)
         return cur_subgroup
 
-    def add_item(item_text, url):
+    def add_item(item_text, url, subtag=None):
         if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
             return
         item_text = item_text.strip()
@@ -233,7 +238,7 @@ def parse_file(path):
         id_parts += [tag, item_text, url or ""]
         item_id = make_id(*id_parts)
         subgroup["items"].append(
-            {"id": item_id, "text": item_text, "url": url, "tag": tag}
+            {"id": item_id, "text": item_text, "url": url, "tag": tag, "subtag": subtag}
         )
 
     def handle_labelish(text):
@@ -380,6 +385,11 @@ def parse_file(path):
         list_match = LIST_ITEM_RE.match(line)
         if list_match:
             item_text = list_match.group(1)
+            subtag_match = SUBTAG_RE.match(item_text)
+            subtag = None
+            if subtag_match:
+                subtag = subtag_match.group(2).strip()
+                item_text = subtag_match.group(1).strip()
             if handle_labelish(item_text):
                 continue
             links = LINK_RE.findall(item_text)
@@ -391,9 +401,9 @@ def parse_file(path):
                 # case (`- [Problem](url)` with nothing else on the line)
                 # this reduces to exactly the old behavior since
                 # strip_links(item_text) == the link's own anchor text.
-                add_item(strip_links(item_text), links[0][1])
+                add_item(strip_links(item_text), links[0][1], subtag)
             else:
-                add_item(strip_links(item_text), None)
+                add_item(strip_links(item_text), None, subtag)
             continue
 
         if handle_labelish(line):
