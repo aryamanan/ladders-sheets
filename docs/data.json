@@ -13671,7 +13671,7 @@
       "title": "FAANG DSA Concept Repetition Ladders",
       "description": "This document is not another \"big list.\" It is a repetition system. The goal is to make every important concept survive small tweaks, different constraints, and unfamiliar wording. Use this together with: [FAANG DSA Researched Interview Failure Map](faang_dsa_researched_interview_failure_map.md) [FAANG DSA Extreme Mastery Map](faang_dsa_extreme_mastery_map.md)",
       "category": "dsa",
-      "totalItems": 734,
+      "totalItems": 897,
       "sections": [
         {
           "title": "Concept 1: Hash Lookup And Complement",
@@ -19697,6 +19697,1417 @@
             }
           ],
           "id": "bba7d29a3c82"
+        },
+        {
+          "title": "Concept 53: Multi-Source BFS",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "29d62af62157",
+                      "text": "Rotting Oranges",
+                      "url": "https://leetcode.com/problems/rotting-oranges/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2613cdc6ddc5",
+                      "text": "01 Matrix",
+                      "url": "https://leetcode.com/problems/01-matrix/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "50bc512078fc",
+                      "text": "Walls and Gates",
+                      "url": "https://leetcode.com/problems/walls-and-gates/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "226120e0f023",
+                      "text": "As Far from Land as Possible",
+                      "url": "https://leetcode.com/problems/as-far-from-land-as-possible/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "708f0b76c0ed",
+                      "text": "Pacific Atlantic Water Flow",
+                      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1feddd84db50",
+                      "text": "Map of Highest Peak",
+                      "url": "https://leetcode.com/problems/map-of-highest-peak/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9a736417acbe",
+                      "text": "Shortest Bridge",
+                      "url": "https://leetcode.com/problems/shortest-bridge/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6fb8029e76c2",
+                      "text": "Find Shortest Safe Route in a Matrix",
+                      "url": "https://www.geeksforgeeks.org/problems/find-shortest-safe-route-in-a-matrix/1",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b68469f637dc",
+                      "text": "Reverse the direction (single target, many sources becomes many targets, one source).",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e27767a7ebe5",
+                      "text": "Add weighted cells so distances are no longer uniform per step.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "da97671c29ad",
+                      "text": "Cut off the search at a maximum radius.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6d074d620262",
+                      "text": "Sources arrive over time instead of all at once.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fefef8845324",
+                      "text": "Track which source reached each cell first, not just the distance.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "5c1e19bd292d"
+                }
+              ],
+              "id": "3965e4936421"
+            }
+          ],
+          "id": "e1741a6b674d"
+        },
+        {
+          "title": "Concept 54: Bidirectional BFS",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "95ab4f2c95f2",
+                      "text": "Word Ladder",
+                      "url": "https://leetcode.com/problems/word-ladder/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "12a39ad5e83a",
+                      "text": "Open the Lock",
+                      "url": "https://leetcode.com/problems/open-the-lock/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8bacc3ca2a1f",
+                      "text": "Minimum Genetic Mutation",
+                      "url": "https://leetcode.com/problems/minimum-genetic-mutation/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bbfa613b2ef9",
+                      "text": "Snakes and Ladders",
+                      "url": "https://leetcode.com/problems/snakes-and-ladders/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8cd43658fb14",
+                      "text": "Sliding Puzzle",
+                      "url": "https://leetcode.com/problems/sliding-puzzle/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d0d06ca4b472",
+                      "text": "Word Ladder II",
+                      "url": "https://leetcode.com/problems/word-ladder-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fe3a46d62992",
+                      "text": "Always expand the smaller frontier first, not a fixed side.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1e5efb65a4d8",
+                      "text": "Reconstruct the actual path across both frontiers' parent maps.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "078821b9eacd",
+                      "text": "Detect the meeting point with a shared visited set instead of two separate ones.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1d3fcee431b7",
+                      "text": "Weighted edges turn this into bidirectional Dijkstra.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "feffffd048c4",
+                      "text": "Support multiple simultaneous target nodes.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "b2ed88a98cf2"
+                }
+              ],
+              "id": "2af3793ae880"
+            }
+          ],
+          "id": "eaa2db73f707"
+        },
+        {
+          "title": "Concept 55: Lowest Common Ancestor (Binary Lifting And Beyond)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "e73b6405f9e4",
+                      "text": "Lowest Common Ancestor of a Binary Tree",
+                      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1e73c65b685a",
+                      "text": "Lowest Common Ancestor of a Binary Search Tree",
+                      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "56f745b1aa29",
+                      "text": "Company Queries I",
+                      "url": "https://cses.fi/problemset/task/1687",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "669ecdebd110",
+                      "text": "Company Queries II",
+                      "url": "https://cses.fi/problemset/task/1688",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "50823bdbf15c",
+                      "text": "Kth Ancestor of a Tree Node",
+                      "url": "https://leetcode.com/problems/kth-ancestor-of-a-tree-node/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "17245e7849f3",
+                      "text": "Distance Queries",
+                      "url": "https://cses.fi/problemset/task/1135",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9ecb694447a2",
+                      "text": "Planets Queries II",
+                      "url": "https://cses.fi/problemset/task/1160",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "49c737961d11",
+                      "text": "Tree Distances II",
+                      "url": "https://cses.fi/problemset/task/1133",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1b0ab8e66532",
+                      "text": "Switch from binary lifting to Euler tour plus sparse table for O(1) queries.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8ab521f54b65",
+                      "text": "Weight the edges and turn \"ancestor jump\" into \"distance to ancestor.\"",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ea1be19da0fc",
+                      "text": "Support online node insertion, not just a fixed static tree.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "66364f4f5eb7",
+                      "text": "Find the LCA of more than two nodes at once.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "dca5096ec88b",
+                      "text": "Apply the same jump table to a functional graph instead of a tree.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "d2636e033f4b"
+                }
+              ],
+              "id": "63f8e3688484"
+            }
+          ],
+          "id": "c7802df9b4cd"
+        },
+        {
+          "title": "Concept 56: Rerooting DP",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "180315d8e5e6",
+                      "text": "Tree Diameter",
+                      "url": "https://cses.fi/problemset/task/1131",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "126227b83d87",
+                      "text": "Diameter of Binary Tree",
+                      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b7641d536c4d",
+                      "text": "Sum of Distances in Tree",
+                      "url": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e9def25deb35",
+                      "text": "Count Subtrees With Max Distance Between Cities",
+                      "url": "https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f88e9c5606a0",
+                      "text": "Minimum Height Trees",
+                      "url": "https://leetcode.com/problems/minimum-height-trees/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "083c91ec6453",
+                      "text": "Diameter of N-Ary Tree",
+                      "url": "https://leetcode.com/problems/diameter-of-n-ary-tree/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d71f6b0c1660",
+                      "text": "Reroot to find the maximum distance instead of the sum.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3db4e18bb8c0",
+                      "text": "Weight the edges instead of counting unit steps.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8ef124d6256e",
+                      "text": "Combine two DP values (a count and a sum) through the same reroot pass.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b34e58faba0a",
+                      "text": "Reroot to answer a counting question instead of an optimization question.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7737ad994c08",
+                      "text": "Support one edge-weight update between reroot queries.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "453f0941baf9"
+                }
+              ],
+              "id": "25b3a707e480"
+            }
+          ],
+          "id": "6a0c830685cc"
+        },
+        {
+          "title": "Concept 57: Reverse DSU (Offline Deletion To Addition)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "5a82e6f468e0",
+                      "text": "Redundant Connection",
+                      "url": "https://leetcode.com/problems/redundant-connection/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "47b5dcf350fd",
+                      "text": "Bricks Falling When Hit",
+                      "url": "https://leetcode.com/problems/bricks-falling-when-hit/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e2e92921442d",
+                      "text": "Checking Existence of Edge Length Limited Paths",
+                      "url": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9ff456f584f4",
+                      "text": "Road Construction",
+                      "url": "https://cses.fi/problemset/task/1676",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8b7ed95cd896",
+                      "text": "Number of Good Paths",
+                      "url": "https://leetcode.com/problems/number-of-good-paths/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "73ab41a4eaf6",
+                      "text": "Process the same queries forward and compare why it fails.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "76b872e06a69",
+                      "text": "Maintain component max/min value alongside the reverse-processed DSU.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5ba277f28ffe",
+                      "text": "Count the total number of connected pairs after each reverse step.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "87044853a672",
+                      "text": "Combine reverse DSU with small-to-large merging for component metadata.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2761c703cf43",
+                      "text": "Recognize when queries are already in a usable order and reversal is unnecessary.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "016165a85352"
+                }
+              ],
+              "id": "368311f2af3b"
+            }
+          ],
+          "id": "7896af324895"
+        },
+        {
+          "title": "Concept 58: Persistent Segment Tree And Ordered Set",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "f4c3f11fb605",
+                      "text": "Range Sum Query - Mutable",
+                      "url": "https://leetcode.com/problems/range-sum-query-mutable/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "565d71256cfb",
+                      "text": "Range Queries and Copies",
+                      "url": "https://cses.fi/problemset/task/1737",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f8ffc6577899",
+                      "text": "Count of Smaller Numbers After Self",
+                      "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7404897e3da4",
+                      "text": "Kth Smallest Element in a Sorted Matrix",
+                      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "58029f0e253f",
+                      "text": "Count of Range Sum",
+                      "url": "https://leetcode.com/problems/count-of-range-sum/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1caa221725e2",
+                      "text": "My Calendar III",
+                      "url": "https://leetcode.com/problems/my-calendar-iii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "02a1798dcac6",
+                      "text": "Query a past version instead of only the latest one.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "418339769b01",
+                      "text": "Support \"undo the last update\" as a version rollback.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8a94fb169fdf",
+                      "text": "Maintain the k-th smallest value across every historical version.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "287552d528fa",
+                      "text": "Replace the ordered set with a Fenwick-tree-of-versions for a lighter alternative.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a8a5a3c463a6",
+                      "text": "Combine with offline query sorting instead of persistence when versions aren't actually needed.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "247f1298feef"
+                }
+              ],
+              "id": "b2d1b6caef39"
+            }
+          ],
+          "id": "d13cb3942b85"
+        },
+        {
+          "title": "Concept 59: Offline Queries And Mo's Algorithm",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "d9fa98d60dca",
+                      "text": "Distinct Values Queries",
+                      "url": "https://cses.fi/problemset/task/1734",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "dcc106c7a17b",
+                      "text": "Subarray Sum Queries",
+                      "url": "https://cses.fi/problemset/task/1190",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e50d00b0683d",
+                      "text": "Count of Smaller Numbers After Self",
+                      "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4988af7861ea",
+                      "text": "Range Queries and Copies",
+                      "url": "https://cses.fi/problemset/task/1737",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a582598fbedb",
+                      "text": "Range Updates and Sums",
+                      "url": "https://cses.fi/problemset/task/1735",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4f2ee85ddfad",
+                      "text": "Add point updates, turning ordinary Mo's into Mo's with an extra time dimension.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "177178c224d1",
+                      "text": "Apply Mo's algorithm to tree paths via an Euler-tour flattening.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c9025d0894f5",
+                      "text": "Tune the block size and explain the resulting complexity tradeoff.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8d8e348ed2b1",
+                      "text": "Process removals as well as additions when the pointer moves.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f31c74367a2a",
+                      "text": "Compare against a persistent-segment-tree or offline-DSU solution for the same query set.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "a2aa699bd227"
+                }
+              ],
+              "id": "23426e1407b2"
+            }
+          ],
+          "id": "d098f67cb6d2"
+        },
+        {
+          "title": "Concept 60: KMP And Prefix Function",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "ed3305f7d7c9",
+                      "text": "Find the Index of the First Occurrence in a String",
+                      "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "35382c880da5",
+                      "text": "Repeated Substring Pattern",
+                      "url": "https://leetcode.com/problems/repeated-substring-pattern/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "39a659837292",
+                      "text": "Finding Borders",
+                      "url": "https://cses.fi/problemset/task/1732",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "448828271e60",
+                      "text": "Shortest Palindrome",
+                      "url": "https://leetcode.com/problems/shortest-palindrome/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2b8f8c52d5af",
+                      "text": "Finding Periods",
+                      "url": "https://cses.fi/problemset/task/1733",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "592c5493f861",
+                      "text": "Longest Happy Prefix",
+                      "url": "https://leetcode.com/problems/longest-happy-prefix/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2f454262088b",
+                      "text": "Distinct Echo Substrings",
+                      "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c2ba178fa2b9",
+                      "text": "Build the automaton once and stream-match against arbitrary future input.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "336bdba72eb0",
+                      "text": "Count total occurrences instead of finding just the first one.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4856c639df2e",
+                      "text": "Extend to matching several patterns at once (bridge to Aho-Corasick).",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a8b74ab90ddc",
+                      "text": "Find every border of the string, not just the longest one.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "0f08875ae0fa",
+                      "text": "Find the string's shortest period from its prefix function.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "35cebf729a60"
+                }
+              ],
+              "id": "6543e4099bd0"
+            }
+          ],
+          "id": "dfa503382fe3"
+        },
+        {
+          "title": "Concept 61: Z-Function",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "0907e8496564",
+                      "text": "Repeated Substring Pattern",
+                      "url": "https://leetcode.com/problems/repeated-substring-pattern/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7f64b4cd914a",
+                      "text": "Finding Borders",
+                      "url": "https://cses.fi/problemset/task/1732",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "979a2bf9d674",
+                      "text": "Shortest Palindrome",
+                      "url": "https://leetcode.com/problems/shortest-palindrome/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ae7b10b2797a",
+                      "text": "String Matching",
+                      "url": "https://cses.fi/problemset/task/1753",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5a1edb2edc94",
+                      "text": "Distinct Echo Substrings",
+                      "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a010f275c3a5",
+                      "text": "Concatenate pattern + separator + text and read matches directly off the Z-array.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c76c6639c515",
+                      "text": "Derive all periods of the string from the Z-array instead of the prefix function.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c590ea56fc6a",
+                      "text": "Use the Z-array for multi-pattern matching by concatenating several patterns.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8af2220b90b1",
+                      "text": "Compare the Z-function's approach against KMP's for the same matching problem.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c6e1dfd87d21",
+                      "text": "Build the Z-array of the reversed string to answer suffix-side questions.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "fd51b8a6d382"
+                }
+              ],
+              "id": "4e1f604f7fd2"
+            }
+          ],
+          "id": "f3e0f7235130"
+        },
+        {
+          "title": "Concept 62: Rolling Hash",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "5d488dd71ed0",
+                      "text": "Repeated Substring Pattern",
+                      "url": "https://leetcode.com/problems/repeated-substring-pattern/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f36f22b42333",
+                      "text": "Longest Duplicate Substring",
+                      "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9742382510c1",
+                      "text": "Distinct Echo Substrings",
+                      "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b05ea2c7a260",
+                      "text": "Distinct Substrings",
+                      "url": "https://cses.fi/problemset/task/2105",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1eec6ea383d7",
+                      "text": "Longest Happy Prefix",
+                      "url": "https://leetcode.com/problems/longest-happy-prefix/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "688a115ad4c0",
+                      "text": "Use double hashing (two moduli/bases) to make collisions practically impossible.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "19c3282e2628",
+                      "text": "Hash 2D grids for pattern matching in a matrix.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6451f41c795d",
+                      "text": "Compare a rolling-hash solution against the equivalent suffix-array solution.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e478cc9c7d01",
+                      "text": "Support a rolling hash under point updates to individual characters.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f41618d69b53",
+                      "text": "Normalize case or whitespace before hashing when the match should be fuzzy.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "e2466eecc176"
+                }
+              ],
+              "id": "24ca861da241"
+            }
+          ],
+          "id": "099d01c3624a"
+        },
+        {
+          "title": "Concept 63: Manacher And Palindrome Structure",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "31c73c2b266f",
+                      "text": "Longest Palindromic Substring",
+                      "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b4547010f3ea",
+                      "text": "Palindromic Substrings",
+                      "url": "https://leetcode.com/problems/palindromic-substrings/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "15826fe01922",
+                      "text": "Shortest Palindrome",
+                      "url": "https://leetcode.com/problems/shortest-palindrome/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b51b3403480d",
+                      "text": "Longest Palindrome",
+                      "url": "https://cses.fi/problemset/task/1111",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "14ae8a9aef60",
+                      "text": "All Palindromes",
+                      "url": "https://cses.fi/problemset/task/3138",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a72bb4a59684",
+                      "text": "Longest Palindromic Subsequence",
+                      "url": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2a121da5c038",
+                      "text": "Count every palindromic substring, not just report the longest.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a6c50144c3b6",
+                      "text": "Contrast the \"substring\" (contiguous) version against the \"subsequence\" (DP) version.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "dad20573a1f0",
+                      "text": "Support palindrome-radius queries after single-character updates.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6bfd7fac984b",
+                      "text": "Find the minimum insertions needed to make the whole string a palindrome.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "778747b6ff1a",
+                      "text": "Explain why Manacher's transformed string needs distinct sentinel characters at both ends.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "9458e36e2d40"
+                }
+              ],
+              "id": "1366cf79034e"
+            }
+          ],
+          "id": "4e9d17d122bc"
+        },
+        {
+          "title": "Concept 64: Suffix Array",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "42bcf2110d72",
+                      "text": "Distinct Substrings",
+                      "url": "https://cses.fi/problemset/task/2105",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a79968cc0d44",
+                      "text": "String Functions",
+                      "url": "https://cses.fi/problemset/task/2107",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "267da0d6f98e",
+                      "text": "Substring Order I",
+                      "url": "https://cses.fi/problemset/task/2108",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c592d128ea5e",
+                      "text": "Repeating Substring",
+                      "url": "https://cses.fi/problemset/task/2106",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "228374bcff78",
+                      "text": "Substring Order II",
+                      "url": "https://cses.fi/problemset/task/2109",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "28689afaf582",
+                      "text": "Longest Duplicate Substring",
+                      "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "002028a4cc73",
+                      "text": "Build the LCP array alongside the suffix array via Kasai's algorithm.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d07c74bac151",
+                      "text": "Answer \"k-th distinct substring\" queries using the sorted suffixes plus LCP.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e18463e19a33",
+                      "text": "Find the longest common substring of two strings by merging their suffix arrays.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5b3f37a0e61c",
+                      "text": "Find the longest repeated substring as the maximum value in the LCP array.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f9843a1e4f72",
+                      "text": "Compare the suffix array's tradeoffs against a suffix automaton for the same query.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "8329d8b6eae1"
+                }
+              ],
+              "id": "6819c371d8fb"
+            }
+          ],
+          "id": "0c4147638a6a"
+        },
+        {
+          "title": "Concept 65: Aho-Corasick (Multi-Pattern Matching)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "075db4724417",
+                      "text": "Implement Trie",
+                      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "600d7dba66d7",
+                      "text": "String Matching",
+                      "url": "https://cses.fi/problemset/task/1753",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "335b446f0057",
+                      "text": "Stream of Characters",
+                      "url": "https://leetcode.com/problems/stream-of-characters/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3c697a5c6541",
+                      "text": "Word Search II",
+                      "url": "https://leetcode.com/problems/word-search-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "36168c3055bb",
+                      "text": "Sketch the failure-link automaton by hand for 3 short overlapping patterns.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8b6e6e1aad02",
+                      "text": "Combine the automaton with a DP over \"current automaton state\" (bridge to automaton-guided string DP).",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f37a16754d5a",
+                      "text": "Count total pattern occurrences versus just which patterns matched at least once.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4909896ef1d5",
+                      "text": "Compare against running KMP separately for each pattern and explain the crossover point.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ba599220ba6f",
+                      "text": "Handle patterns being added incrementally instead of all upfront.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "053fe518bee5"
+                }
+              ],
+              "id": "d1d2037b27cd"
+            }
+          ],
+          "id": "a7a93f1cf696"
+        },
+        {
+          "title": "Concept 66: Combinatorics And Modular Arithmetic",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "c6a2ff8ac0b4",
+                      "text": "Exponentiation",
+                      "url": "https://cses.fi/problemset/task/1095",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "10938580ef32",
+                      "text": "Binomial Coefficients",
+                      "url": "https://cses.fi/problemset/task/1079",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8d192888e37e",
+                      "text": "Creating Strings II",
+                      "url": "https://cses.fi/problemset/task/1715",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ccb3c0f28901",
+                      "text": "Counting Coprime Pairs",
+                      "url": "https://cses.fi/problemset/task/2417",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e3f805460f9d",
+                      "text": "Permutation Sequence",
+                      "url": "https://leetcode.com/problems/permutation-sequence/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "26ffc37b2868",
+                      "text": "Precompute factorials and inverse factorials mod p before answering any query.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "946b7ef9908d",
+                      "text": "Apply Lucas' theorem when n is far larger than p.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "802fa9af7f29",
+                      "text": "Use inclusion-exclusion to count arrangements avoiding certain patterns.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f85fca266815",
+                      "text": "Derive the Catalan numbers from a binomial-coefficient identity.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "fdd70eb1dddb",
+                      "text": "Handle an intermediate negative value correctly under modulo (the mod must be normalized into [0, p)).",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "a54e12852346"
+                }
+              ],
+              "id": "ff226196c4f2"
+            }
+          ],
+          "id": "9406b31309c1"
+        },
+        {
+          "title": "Concept 67: Game Theory (Nim And Grundy Numbers)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "98e0f8ae3bd2",
+                      "text": "Nim Game",
+                      "url": "https://leetcode.com/problems/nim-game/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bfa87a4003dc",
+                      "text": "Stone Game",
+                      "url": "https://leetcode.com/problems/stone-game/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f98c44c69a3e",
+                      "text": "Divisor Game",
+                      "url": "https://leetcode.com/problems/divisor-game/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "56a3531cd092",
+                      "text": "Predict the Winner",
+                      "url": "https://leetcode.com/problems/predict-the-winner/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4011a7fc5fdb",
+                      "text": "Can I Win",
+                      "url": "https://leetcode.com/problems/can-i-win/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "50dc553d09ca",
+                      "text": "Stone Game II",
+                      "url": "https://leetcode.com/problems/stone-game-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e1ecc7a6ade3",
+                      "text": "Compute a compound game's Grundy number as the XOR of its independent parts.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "58709ebb69f3",
+                      "text": "Brute-force the first few small cases by hand before trusting a closed-form pattern.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4488c48389cc",
+                      "text": "Distinguish a \"must move\" game from one where passing is allowed.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1e30593dd4b9",
+                      "text": "Convert the misere variant (last player to move loses) and check whether the same strategy still holds.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    },
+                    {
+                      "id": "18443d862e1a",
+                      "text": "Add alpha-beta pruning to a minimax search that was previously exhaustive.",
+                      "url": null,
+                      "tag": "Tweak drills",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "5cc7c9f8f6ba"
+                }
+              ],
+              "id": "67fee778cc44"
+            }
+          ],
+          "id": "747098b5d91d"
         },
         {
           "title": "What \"I Understand It\" Means",

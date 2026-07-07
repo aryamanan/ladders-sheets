@@ -1588,6 +1588,409 @@ Tweak drills:
 4. Use prefix probability.
 5. Handle collinear points.
 
+## Concept 53: Multi-Source BFS
+
+Invariant: seeding every source into the BFS queue at distance 0 before the first step makes each expansion layer represent one global time-tick, not one node's personal distance.
+
+Foundation:
+
+1. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+2. [01 Matrix](https://leetcode.com/problems/01-matrix/)
+3. [Walls and Gates](https://leetcode.com/problems/walls-and-gates/)
+
+Reinforcement:
+
+1. [As Far from Land as Possible](https://leetcode.com/problems/as-far-from-land-as-possible/)
+2. [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)
+3. [Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/)
+
+Boss:
+
+1. [Shortest Bridge](https://leetcode.com/problems/shortest-bridge/)
+2. [Find Shortest Safe Route in a Matrix](https://www.geeksforgeeks.org/problems/find-shortest-safe-route-in-a-matrix/1)
+
+Tweak drills:
+
+1. Reverse the direction (single target, many sources becomes many targets, one source).
+2. Add weighted cells so distances are no longer uniform per step.
+3. Cut off the search at a maximum radius.
+4. Sources arrive over time instead of all at once.
+5. Track which source reached each cell first, not just the distance.
+
+## Concept 54: Bidirectional BFS
+
+Invariant: growing two frontiers toward each other and stopping the moment they meet cuts the explored state space from roughly b^d to roughly 2*b^(d/2).
+
+Foundation:
+
+1. [Word Ladder](https://leetcode.com/problems/word-ladder/)
+2. [Open the Lock](https://leetcode.com/problems/open-the-lock/)
+3. [Minimum Genetic Mutation](https://leetcode.com/problems/minimum-genetic-mutation/)
+
+Reinforcement:
+
+1. [Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/)
+2. [Sliding Puzzle](https://leetcode.com/problems/sliding-puzzle/)
+
+Boss:
+
+1. [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
+
+Tweak drills:
+
+1. Always expand the smaller frontier first, not a fixed side.
+2. Reconstruct the actual path across both frontiers' parent maps.
+3. Detect the meeting point with a shared visited set instead of two separate ones.
+4. Weighted edges turn this into bidirectional Dijkstra.
+5. Support multiple simultaneous target nodes.
+
+## Concept 55: Lowest Common Ancestor (Binary Lifting And Beyond)
+
+Invariant: precomputing each node's 2^k-th ancestor lets any ancestor-jump or LCA query resolve in O(log n) by decomposing the jump distance into powers of two, instead of walking one edge at a time.
+
+Foundation:
+
+1. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+2. [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+3. [Company Queries I](https://cses.fi/problemset/task/1687)
+
+Reinforcement:
+
+1. [Company Queries II](https://cses.fi/problemset/task/1688)
+2. [Kth Ancestor of a Tree Node](https://leetcode.com/problems/kth-ancestor-of-a-tree-node/)
+3. [Distance Queries](https://cses.fi/problemset/task/1135)
+
+Boss:
+
+1. [Planets Queries II](https://cses.fi/problemset/task/1160)
+2. [Tree Distances II](https://cses.fi/problemset/task/1133)
+
+Tweak drills:
+
+1. Switch from binary lifting to Euler tour plus sparse table for O(1) queries.
+2. Weight the edges and turn "ancestor jump" into "distance to ancestor."
+3. Support online node insertion, not just a fixed static tree.
+4. Find the LCA of more than two nodes at once.
+5. Apply the same jump table to a functional graph instead of a tree.
+
+## Concept 56: Rerooting DP
+
+Invariant: a tree DP computed once for an arbitrary root only answers the question for that root -- rerooting reuses that first pass to answer the identical question for every node as root in one more linear pass, instead of re-running the DP n times.
+
+Foundation:
+
+1. [Tree Diameter](https://cses.fi/problemset/task/1131)
+2. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+
+Reinforcement:
+
+1. [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree/)
+2. [Count Subtrees With Max Distance Between Cities](https://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/)
+
+Boss:
+
+1. [Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/)
+2. [Diameter of N-Ary Tree](https://leetcode.com/problems/diameter-of-n-ary-tree/)
+
+Tweak drills:
+
+1. Reroot to find the maximum distance instead of the sum.
+2. Weight the edges instead of counting unit steps.
+3. Combine two DP values (a count and a sum) through the same reroot pass.
+4. Reroot to answer a counting question instead of an optimization question.
+5. Support one edge-weight update between reroot queries.
+
+## Concept 57: Reverse DSU (Offline Deletion To Addition)
+
+Invariant: DSU can union components but can never un-union them -- so when queries delete edges or nodes over time, replaying the queries in reverse turns every deletion into an addition, which plain forward DSU can process.
+
+Foundation:
+
+1. [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
+2. [Bricks Falling When Hit](https://leetcode.com/problems/bricks-falling-when-hit/)
+
+Reinforcement:
+
+1. [Checking Existence of Edge Length Limited Paths](https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/)
+2. [Road Construction](https://cses.fi/problemset/task/1676)
+
+Boss:
+
+1. [Number of Good Paths](https://leetcode.com/problems/number-of-good-paths/)
+
+Tweak drills:
+
+1. Process the same queries forward and compare why it fails.
+2. Maintain component max/min value alongside the reverse-processed DSU.
+3. Count the total number of connected pairs after each reverse step.
+4. Combine reverse DSU with small-to-large merging for component metadata.
+5. Recognize when queries are already in a usable order and reversal is unnecessary.
+
+## Concept 58: Persistent Segment Tree And Ordered Set
+
+Invariant: a persistent segment tree creates a new O(log n)-sized path of nodes per update while sharing every unchanged subtree with the previous version, so any past version stays fully queryable forever.
+
+Foundation:
+
+1. [Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)
+2. [Range Queries and Copies](https://cses.fi/problemset/task/1737)
+
+Reinforcement:
+
+1. [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
+2. [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+
+Boss:
+
+1. [Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)
+2. [My Calendar III](https://leetcode.com/problems/my-calendar-iii/)
+
+Tweak drills:
+
+1. Query a past version instead of only the latest one.
+2. Support "undo the last update" as a version rollback.
+3. Maintain the k-th smallest value across every historical version.
+4. Replace the ordered set with a Fenwick-tree-of-versions for a lighter alternative.
+5. Combine with offline query sorting instead of persistence when versions aren't actually needed.
+
+## Concept 59: Offline Queries And Mo's Algorithm
+
+Invariant: sorting queries by block-of-left-endpoint (then by right endpoint within the block) lets a two-pointer sweep answer every range query in roughly O((n+q) sqrt n) total, instead of recomputing each range's answer from scratch.
+
+Foundation:
+
+1. [Distinct Values Queries](https://cses.fi/problemset/task/1734)
+2. [Subarray Sum Queries](https://cses.fi/problemset/task/1190)
+
+Reinforcement:
+
+1. [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
+2. [Range Queries and Copies](https://cses.fi/problemset/task/1737)
+
+Boss:
+
+1. [Range Updates and Sums](https://cses.fi/problemset/task/1735)
+
+Tweak drills:
+
+1. Add point updates, turning ordinary Mo's into Mo's with an extra time dimension.
+2. Apply Mo's algorithm to tree paths via an Euler-tour flattening.
+3. Tune the block size and explain the resulting complexity tradeoff.
+4. Process removals as well as additions when the pointer moves.
+5. Compare against a persistent-segment-tree or offline-DSU solution for the same query set.
+
+## Concept 60: KMP And Prefix Function
+
+Invariant: the prefix function at position i is the length of the longest proper prefix of the pattern that is also a suffix ending at i, so a failed character match can jump forward using already-proven information instead of rescanning from the start.
+
+Foundation:
+
+1. [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+2. [Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+3. [Finding Borders](https://cses.fi/problemset/task/1732)
+
+Reinforcement:
+
+1. [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+2. [Finding Periods](https://cses.fi/problemset/task/1733)
+3. [Longest Happy Prefix](https://leetcode.com/problems/longest-happy-prefix/)
+
+Boss:
+
+1. [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
+
+Tweak drills:
+
+1. Build the automaton once and stream-match against arbitrary future input.
+2. Count total occurrences instead of finding just the first one.
+3. Extend to matching several patterns at once (bridge to Aho-Corasick).
+4. Find every border of the string, not just the longest one.
+5. Find the string's shortest period from its prefix function.
+
+## Concept 61: Z-Function
+
+Invariant: Z[i] is the length of the longest substring starting at i that matches a prefix of the whole string, and maintaining a running [l, r] match window lets every Z[i] be computed in O(n) total.
+
+Foundation:
+
+1. [Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+2. [Finding Borders](https://cses.fi/problemset/task/1732)
+
+Reinforcement:
+
+1. [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+2. [String Matching](https://cses.fi/problemset/task/1753)
+
+Boss:
+
+1. [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
+
+Tweak drills:
+
+1. Concatenate pattern + separator + text and read matches directly off the Z-array.
+2. Derive all periods of the string from the Z-array instead of the prefix function.
+3. Use the Z-array for multi-pattern matching by concatenating several patterns.
+4. Compare the Z-function's approach against KMP's for the same matching problem.
+5. Build the Z-array of the reversed string to answer suffix-side questions.
+
+## Concept 62: Rolling Hash
+
+Invariant: precomputed prefix hashes with modular powers of the base let any substring's hash be produced in O(1), turning substring-equality checks into O(1) integer comparisons instead of O(length) character comparisons.
+
+Foundation:
+
+1. [Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+2. [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/)
+
+Reinforcement:
+
+1. [Distinct Echo Substrings](https://leetcode.com/problems/distinct-echo-substrings/)
+2. [Distinct Substrings](https://cses.fi/problemset/task/2105)
+
+Boss:
+
+1. [Longest Happy Prefix](https://leetcode.com/problems/longest-happy-prefix/)
+
+Tweak drills:
+
+1. Use double hashing (two moduli/bases) to make collisions practically impossible.
+2. Hash 2D grids for pattern matching in a matrix.
+3. Compare a rolling-hash solution against the equivalent suffix-array solution.
+4. Support a rolling hash under point updates to individual characters.
+5. Normalize case or whitespace before hashing when the match should be fuzzy.
+
+## Concept 63: Manacher And Palindrome Structure
+
+Invariant: transforming the string with separator characters between every letter lets one unified sweep find the longest palindrome centered at every position in O(n), handling even- and odd-length palindromes with the same code path.
+
+Foundation:
+
+1. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+2. [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+
+Reinforcement:
+
+1. [Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)
+2. [Longest Palindrome](https://cses.fi/problemset/task/1111)
+
+Boss:
+
+1. [All Palindromes](https://cses.fi/problemset/task/3138)
+2. [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+
+Tweak drills:
+
+1. Count every palindromic substring, not just report the longest.
+2. Contrast the "substring" (contiguous) version against the "subsequence" (DP) version.
+3. Support palindrome-radius queries after single-character updates.
+4. Find the minimum insertions needed to make the whole string a palindrome.
+5. Explain why Manacher's transformed string needs distinct sentinel characters at both ends.
+
+## Concept 64: Suffix Array
+
+Invariant: sorting every suffix of the string lexicographically (built via a doubling technique in O(n log n)), plus an LCP array between lexicographically adjacent suffixes, answers most substring-comparison questions without ever comparing two substrings character by character.
+
+Foundation:
+
+1. [Distinct Substrings](https://cses.fi/problemset/task/2105)
+2. [String Functions](https://cses.fi/problemset/task/2107)
+
+Reinforcement:
+
+1. [Substring Order I](https://cses.fi/problemset/task/2108)
+2. [Repeating Substring](https://cses.fi/problemset/task/2106)
+
+Boss:
+
+1. [Substring Order II](https://cses.fi/problemset/task/2109)
+2. [Longest Duplicate Substring](https://leetcode.com/problems/longest-duplicate-substring/)
+
+Tweak drills:
+
+1. Build the LCP array alongside the suffix array via Kasai's algorithm.
+2. Answer "k-th distinct substring" queries using the sorted suffixes plus LCP.
+3. Find the longest common substring of two strings by merging their suffix arrays.
+4. Find the longest repeated substring as the maximum value in the LCP array.
+5. Compare the suffix array's tradeoffs against a suffix automaton for the same query.
+
+## Concept 65: Aho-Corasick (Multi-Pattern Matching)
+
+Invariant: building a trie of every pattern and adding KMP-style failure links between trie nodes lets one linear scan of the text match all patterns simultaneously, instead of running KMP once per pattern.
+
+Foundation:
+
+1. [Implement Trie](https://leetcode.com/problems/implement-trie-prefix-tree/)
+2. [String Matching](https://cses.fi/problemset/task/1753)
+
+Reinforcement:
+
+1. [Stream of Characters](https://leetcode.com/problems/stream-of-characters/)
+
+Boss:
+
+1. [Word Search II](https://leetcode.com/problems/word-search-ii/)
+
+Tweak drills:
+
+1. Sketch the failure-link automaton by hand for 3 short overlapping patterns.
+2. Combine the automaton with a DP over "current automaton state" (bridge to automaton-guided string DP).
+3. Count total pattern occurrences versus just which patterns matched at least once.
+4. Compare against running KMP separately for each pattern and explain the crossover point.
+5. Handle patterns being added incrementally instead of all upfront.
+
+## Concept 66: Combinatorics And Modular Arithmetic
+
+Invariant: precomputing factorials and modular inverses up front turns nCr mod p into an O(1) lookup, instead of a per-query O(r) or O(log p) computation.
+
+Foundation:
+
+1. [Exponentiation](https://cses.fi/problemset/task/1095)
+2. [Binomial Coefficients](https://cses.fi/problemset/task/1079)
+
+Reinforcement:
+
+1. [Creating Strings II](https://cses.fi/problemset/task/1715)
+2. [Counting Coprime Pairs](https://cses.fi/problemset/task/2417)
+
+Boss:
+
+1. [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)
+
+Tweak drills:
+
+1. Precompute factorials and inverse factorials mod p before answering any query.
+2. Apply Lucas' theorem when n is far larger than p.
+3. Use inclusion-exclusion to count arrangements avoiding certain patterns.
+4. Derive the Catalan numbers from a binomial-coefficient identity.
+5. Handle an intermediate negative value correctly under modulo (the mod must be normalized into [0, p)).
+
+## Concept 67: Game Theory (Nim And Grundy Numbers)
+
+Invariant: a position is losing for the player about to move exactly when every move available from it leads to a winning position for the opponent -- Grundy numbers reduce a compound game made of independent sub-games to the XOR of each sub-game's value.
+
+Foundation:
+
+1. [Nim Game](https://leetcode.com/problems/nim-game/)
+2. [Stone Game](https://leetcode.com/problems/stone-game/)
+
+Reinforcement:
+
+1. [Divisor Game](https://leetcode.com/problems/divisor-game/)
+2. [Predict the Winner](https://leetcode.com/problems/predict-the-winner/)
+
+Boss:
+
+1. [Can I Win](https://leetcode.com/problems/can-i-win/)
+2. [Stone Game II](https://leetcode.com/problems/stone-game-ii/)
+
+Tweak drills:
+
+1. Compute a compound game's Grundy number as the XOR of its independent parts.
+2. Brute-force the first few small cases by hand before trusting a closed-form pattern.
+3. Distinguish a "must move" game from one where passing is allowed.
+4. Convert the misere variant (last player to move loses) and check whether the same strategy still holds.
+5. Add alpha-beta pruning to a minimax search that was previously exhaustive.
+
 ## The 300-Rep Rule
 
 To lock the concepts in:
