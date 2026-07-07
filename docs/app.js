@@ -314,6 +314,8 @@ function renderSheet(sheet) {
     <div class="controls">
       <input class="search-input" id="search-input" type="search" placeholder="Filter items in this sheet…" />
       <label class="check-label"><input type="checkbox" id="hide-solved" /> Hide solved</label>
+      <button class="btn btn-small" id="randomize-btn">🔀 Randomize</button>
+      <button class="btn btn-small" id="grouped-view-btn" hidden>Grouped view</button>
     </div>
     <div id="sections"></div>
   `);
@@ -329,6 +331,12 @@ function renderSheet(sheet) {
   document.getElementById("hide-solved").addEventListener("change", (e) => {
     hideSolved = e.target.checked;
     applyFilters();
+  });
+  document.getElementById("randomize-btn").addEventListener("click", () => {
+    renderRandomized(sheet);
+  });
+  document.getElementById("grouped-view-btn").addEventListener("click", () => {
+    renderSheet(sheet);
   });
   document.getElementById("expand-all").addEventListener("click", () => {
     sectionsEl.querySelectorAll("details.section").forEach((d) => (d.open = true));
@@ -357,6 +365,45 @@ function renderSheet(sheet) {
   });
 
   updateProgressBar(sheet);
+}
+
+function shuffleInPlace(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Flattens every real, checkable item across all sections/groups/subgroups
+// -- skipping "Invariant: ..." callouts, since those are facts to remember,
+// not problems to randomly drill.
+function flattenItems(sheet) {
+  const items = [];
+  for (const sec of sheet.sections) {
+    for (const g of sec.groups) {
+      for (const sg of g.subgroups) {
+        for (const it of sg.items) {
+          const isInvariant = !it.url && /^Invariant:\s*/i.test(it.text);
+          if (!isInvariant) items.push(it);
+        }
+      }
+    }
+  }
+  return items;
+}
+
+function renderRandomized(sheet) {
+  const items = shuffleInPlace(flattenItems(sheet));
+  const sectionsEl = document.getElementById("sections");
+  sectionsEl.innerHTML = `
+    <div class="section random-section">
+      <div class="section-body">${items.map((it) => renderItemRow(it)).join("")}</div>
+    </div>
+  `;
+  document.getElementById("randomize-btn").hidden = true;
+  document.getElementById("grouped-view-btn").hidden = false;
+  applyFilters();
 }
 
 function renderSection(section) {
@@ -415,8 +462,17 @@ function renderItemRow(item) {
   // same item in practice, but show both if they ever are.
   const badgeText = [item.tag, item.subtag].filter(Boolean).join(" · ");
   const tagHtml = badgeText ? `<span class="item-tag">${escapeHtml(badgeText)}</span>` : "";
+  // A full-block difficulty color only appears once solved -- it's a reward/
+  // signal read at a glance ("I've been clearing a lot of Hards lately"),
+  // not a spoiler shown before you've attempted the problem. Items with no
+  // known difficulty (non-LeetCode URLs, plain-text items) just get the
+  // plain muted/strikethrough solved style instead.
+  const diffClass =
+    isSolved && item.difficulty
+      ? { E: " diff-easy", M: " diff-medium", H: " diff-hard" }[item.difficulty] || ""
+      : "";
   return `
-    <div class="item-row${isSolved ? " is-solved" : ""}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText).toLowerCase())}">
+    <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText).toLowerCase())}">
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
       ${tagHtml}
@@ -424,16 +480,42 @@ function renderItemRow(item) {
   `;
 }
 
+function findItemById(sheet, id) {
+  for (const sec of sheet.sections) {
+    for (const g of sec.groups) {
+      for (const sg of g.subgroups) {
+        for (const it of sg.items) {
+          if (it.id === id) return it;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+const DIFF_CLASSES = ["diff-easy", "diff-medium", "diff-hard"];
+const DIFF_CLASS_BY_CODE = { E: "diff-easy", M: "diff-medium", H: "diff-hard" };
+
 function toggleItem(id) {
   if (solved[id]) delete solved[id];
   else solved[id] = true;
   saveLocalSolved();
   scheduleCloudWrite();
 
-  const row = document.querySelector(`[data-item-row="${id}"]`);
-  if (row) row.classList.toggle("is-solved", !!solved[id]);
-
+  const isSolvedNow = !!solved[id];
   const sheet = findSheet(currentSheetId);
+  const row = document.querySelector(`[data-item-row="${id}"]`);
+  if (row) {
+    row.classList.toggle("is-solved", isSolvedNow);
+    // The full-block difficulty color only shows once solved -- toggle it
+    // live here too, otherwise it'd only appear after the next full re-render.
+    row.classList.remove(...DIFF_CLASSES);
+    const item = sheet && findItemById(sheet, id);
+    if (isSolvedNow && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
+      row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
+    }
+  }
+
   if (sheet) {
     document.getElementById("sheet-done-count").textContent = sheetStats(sheet).done;
     document.querySelectorAll(".section[data-section-total]").forEach((detailsEl, idx) => {
@@ -470,7 +552,14 @@ function refreshAllCounts() {
         const isSolved = !!solved[cb.dataset.id];
         cb.checked = isSolved;
         const row = cb.closest(".item-row");
-        if (row) row.classList.toggle("is-solved", isSolved);
+        if (row) {
+          row.classList.toggle("is-solved", isSolved);
+          row.classList.remove(...DIFF_CLASSES);
+          const item = findItemById(sheet, cb.dataset.id);
+          if (isSolved && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
+            row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
+          }
+        }
       });
       const doneEl = document.getElementById("sheet-done-count");
       if (doneEl) doneEl.textContent = sheetStats(sheet).done;

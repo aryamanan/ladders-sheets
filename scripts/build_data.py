@@ -13,10 +13,25 @@ Re-run this any time a faang_*.md file is added or edited:
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "docs" / "data.json"
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lc_difficulty import LC_DIFFICULTY
+
+LC_SLUG_RE = re.compile(r"^https?://leetcode\.com/problems/([a-z0-9\-]+)/?$")
+
+
+def difficulty_for(url):
+    if not url:
+        return None
+    m = LC_SLUG_RE.match(url)
+    if not m:
+        return None
+    return LC_DIFFICULTY.get(m.group(1))
 
 # Landing-page category is inferred from the filename ("dsa" -> OA+Interview,
 # else -> System Design) except for sheets listed here, which need an
@@ -246,7 +261,14 @@ def parse_file(path):
         id_parts += [tag, item_text, url or ""]
         item_id = make_id(*id_parts)
         subgroup["items"].append(
-            {"id": item_id, "text": item_text, "url": url, "tag": tag, "subtag": subtag}
+            {
+                "id": item_id,
+                "text": item_text,
+                "url": url,
+                "tag": tag,
+                "subtag": subtag,
+                "difficulty": difficulty_for(url),
+            }
         )
 
     def handle_labelish(text):
@@ -383,7 +405,13 @@ def parse_file(path):
                     id_parts += [tag, link_text, url]
                     item_id = make_id(*id_parts)
                     subgroup["items"].append(
-                        {"id": item_id, "text": link_text, "url": url, "tag": tag}
+                        {
+                            "id": item_id,
+                            "text": link_text,
+                            "url": url,
+                            "tag": tag,
+                            "difficulty": difficulty_for(url),
+                        }
                     )
             continue
 
