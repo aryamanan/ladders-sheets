@@ -162,6 +162,74 @@ function sheetStats(sheet) {
   return { total, done };
 }
 
+// Counts solved/total per difficulty, restricted to items that actually
+// have a known difficulty (non-LeetCode items without one are excluded
+// from both the numerator and denominator, not counted as "unsolved Easy").
+function sheetDifficultyStats(sheet) {
+  const stats = {
+    E: { done: 0, total: 0 },
+    M: { done: 0, total: 0 },
+    H: { done: 0, total: 0 },
+  };
+  for (const sec of sheet.sections) {
+    for (const g of sec.groups) {
+      for (const sg of g.subgroups) {
+        for (const it of sg.items) {
+          if (!it.difficulty || !stats[it.difficulty]) continue;
+          stats[it.difficulty].total++;
+          if (solved[it.id]) stats[it.difficulty].done++;
+        }
+      }
+    }
+  }
+  return stats;
+}
+
+// A LeetCode-style ring: the track is 100% of every difficulty-tagged item
+// in the sheet, and the colored arcs show how much of that ring is solved,
+// broken down by difficulty (Easy arc, then Medium, then Hard, back to
+// back around the circle) -- so the total filled fraction is "solved with
+// known difficulty / total with known difficulty," subdivided by color.
+function renderDifficultyDonut(stats) {
+  const totalAll = stats.E.total + stats.M.total + stats.H.total;
+  if (totalAll === 0) return "";
+  const doneAll = stats.E.done + stats.M.done + stats.H.done;
+  const r = 26;
+  const circumference = 2 * Math.PI * r;
+  let offset = 0;
+  const order = [["E", "var(--diff-easy-fg)"], ["M", "var(--diff-medium-fg)"], ["H", "var(--diff-hard-fg)"]];
+  const arcs = order
+    .map(([code, color]) => {
+      const frac = stats[code].done / totalAll;
+      const len = frac * circumference;
+      const dasharray = `${len} ${circumference - len}`;
+      const dashoffset = -offset;
+      offset += len;
+      if (len <= 0) return "";
+      return `<circle class="donut-arc" cx="32" cy="32" r="${r}" stroke="${color}" stroke-dasharray="${dasharray}" stroke-dashoffset="${dashoffset}" />`;
+    })
+    .join("");
+  const legend = order
+    .map(([code, color]) => {
+      const s = stats[code];
+      if (!s.total) return "";
+      return `<div class="donut-legend-row"><span class="donut-dot" style="background:${color}"></span>${DIFF_LABEL[code]} <strong>${s.done}</strong> / ${s.total}</div>`;
+    })
+    .join("");
+  return `
+    <div class="difficulty-donut">
+      <div class="donut-ring-wrap">
+        <svg viewBox="0 0 64 64" width="64" height="64">
+          <circle class="donut-track" cx="32" cy="32" r="${r}" />
+          ${arcs}
+        </svg>
+        <div class="donut-center">${doneAll}<span>/${totalAll}</span></div>
+      </div>
+      <div class="donut-legend">${legend}</div>
+    </div>
+  `;
+}
+
 function sectionStats(section) {
   let total = 0;
   let done = 0;
@@ -348,13 +416,18 @@ function renderSheet(sheet) {
   parts.push(`
     <div class="sheet-header">
       <a class="back-link" href="#/">&larr; All sheets</a>
-      <h1>${escapeHtml(sheet.title)}</h1>
-      <div class="desc">${escapeHtml(sheet.description || "")}</div>
-      <div class="sheet-stats">
-        <span><strong id="sheet-done-count">${done}</strong> / ${total} solved</span>
-        <button class="btn btn-small" id="expand-all">Expand all</button>
-        <button class="btn btn-small" id="collapse-all">Collapse all</button>
-        <button class="btn btn-small btn-danger" id="reset-progress">Reset this sheet</button>
+      <div class="sheet-header-top">
+        <div>
+          <h1>${escapeHtml(sheet.title)}</h1>
+          <div class="desc">${escapeHtml(sheet.description || "")}</div>
+          <div class="sheet-stats">
+            <span><strong id="sheet-done-count">${done}</strong> / ${total} solved</span>
+            <button class="btn btn-small" id="expand-all">Expand all</button>
+            <button class="btn btn-small" id="collapse-all">Collapse all</button>
+            <button class="btn btn-small btn-danger" id="reset-progress">Reset this sheet</button>
+          </div>
+        </div>
+        <div id="difficulty-donut-slot">${renderDifficultyDonut(sheetDifficultyStats(sheet))}</div>
       </div>
     </div>
     <div class="controls">
@@ -585,6 +658,8 @@ function toggleItem(id) {
       const countEl = detailsEl.querySelector("[data-section-count]");
       if (countEl) countEl.textContent = `${done} / ${total}`;
     });
+    const donutSlot = document.getElementById("difficulty-donut-slot");
+    if (donutSlot) donutSlot.innerHTML = renderDifficultyDonut(sheetDifficultyStats(sheet));
     updateProgressBar(sheet);
   }
 }
@@ -630,6 +705,8 @@ function refreshAllCounts() {
         const countEl = detailsEl.querySelector("[data-section-count]");
         if (countEl) countEl.textContent = `${done} / ${total}`;
       });
+      const donutSlot = document.getElementById("difficulty-donut-slot");
+      if (donutSlot) donutSlot.innerHTML = renderDifficultyDonut(sheetDifficultyStats(sheet));
       updateProgressBar(sheet);
       applyFilters();
     }

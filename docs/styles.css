@@ -253,6 +253,73 @@ a:hover { text-decoration: underline; }
 }
 .sheet-stats strong { color: var(--fg); }
 
+.sheet-header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* A LeetCode-style ring: the track is every difficulty-tagged item in the
+   sheet, the colored arcs are how much of it is solved (subdivided by
+   difficulty) -- gives an at-a-glance "how much Hard-tier ground have I
+   actually covered" read that the plain X/Y counter above doesn't. */
+.difficulty-donut {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+.donut-ring-wrap {
+  position: relative;
+  flex: none;
+  width: 64px;
+  height: 64px;
+}
+.donut-track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 8;
+}
+.donut-arc {
+  fill: none;
+  stroke-width: 8;
+  transform: rotate(-90deg);
+  transform-origin: 32px 32px;
+  transition: stroke-dasharray 0.3s ease;
+}
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+.donut-center span { font-size: 0.68rem; font-weight: 400; color: var(--fg-muted); }
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+.donut-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.donut-legend-row strong { color: var(--fg); }
+.donut-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+
 .controls {
   display: flex;
   gap: 10px;
