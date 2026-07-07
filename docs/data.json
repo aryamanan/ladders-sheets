@@ -9658,7 +9658,7 @@
       "title": "FAANG DSA Researched Interview Failure Map",
       "description": "This is a correction to the previous DSA sheets. A giant random problem bank is not enough. The real target is the intersection of: 1. What public interview-prep lists repeatedly recommend. 2. What pattern taxonomies say you must recognize. 3. What actually causes candidates to fail under interview pressure. 4. What advanced topics cover the rare but brutal interviewer follow-ups. No prep document can honestly guarantee a 100% pass rate. But this map is built to make your prep much less random.",
       "category": "dsa",
-      "totalItems": 528,
+      "totalItems": 452,
       "sections": [
         {
           "title": "Candidate Failure Modes And Killer Drills",
@@ -9871,1558 +9871,1068 @@
           "id": "c85739a60bc2"
         },
         {
-          "title": "Tier A: The Non-Negotiable Interview Core",
+          "title": "Tier A: Trap Taxonomy -- Where Candidates Actually Break",
           "groups": [
             {
-              "title": "Arrays, Hashing, Prefix Sums",
+              "title": "Numeric And Search Traps",
               "subgroups": [
                 {
-                  "title": null,
+                  "title": "Integer Overflow / Numeric Edge Traps",
                   "items": [
                     {
-                      "id": "28e2db1923e1",
-                      "text": "frequency map,",
+                      "id": "e2424d15cab0",
+                      "text": "Invariant: the trap is that an operation like multiply, add, or repeated doubling can silently overflow a fixed-width integer (or flip sign under negative operands / negative-mod semantics) while the algorithm's logic stays correct; survive it by reasoning in a wider type or an early-exit bound before the overflow point, and treating the sign/edge case (MIN_INT negation, negative operands) as a first-class branch, not an afterthought.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "0adea19e8438",
-                      "text": "index map,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "39747e9bbe91",
+                      "text": "Reverse Integer",
+                      "url": "https://leetcode.com/problems/reverse-integer/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "26ba6152a2c2",
-                      "text": "prefix sum,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "66f87ebda1a0",
+                      "text": "String to Integer (atoi)",
+                      "url": "https://leetcode.com/problems/string-to-integer-atoi/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "deb7bead79dc",
-                      "text": "modulo prefix,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "1b6daeaeac4e",
+                      "text": "Palindrome Number",
+                      "url": "https://leetcode.com/problems/palindrome-number/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "8cc77a278802",
-                      "text": "XOR prefix,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "aec4aee792b8",
+                      "text": "Pow(x, n)",
+                      "url": "https://leetcode.com/problems/powx-n/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "9eff0e1895a0",
-                      "text": "in-place marking,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "f7ba293de36d",
+                      "text": "Sqrt(x)",
+                      "url": "https://leetcode.com/problems/sqrtx/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "8cc2d2c62866",
-                      "text": "cyclic placement,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "6f4b1f405f8d",
-                      "text": "Boyer-Moore majority vote,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ee4035b089a3",
-                      "text": "coordinate compression.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f22da0907ece",
-                      "text": "Two Sum",
-                      "url": "https://leetcode.com/problems/two-sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "55fead77f597",
-                      "text": "Contains Duplicate",
-                      "url": "https://leetcode.com/problems/contains-duplicate/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "11639e4dcfc3",
-                      "text": "Valid Anagram",
-                      "url": "https://leetcode.com/problems/valid-anagram/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "c60a8ca6b0ea",
-                      "text": "Group Anagrams",
-                      "url": "https://leetcode.com/problems/group-anagrams/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ac4a5c670af6",
-                      "text": "Top K Frequent Elements",
-                      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "9d03855923e2",
-                      "text": "Product of Array Except Self",
-                      "url": "https://leetcode.com/problems/product-of-array-except-self/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "1f0fcc1622ca",
-                      "text": "Longest Consecutive Sequence",
-                      "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a1e23febd254",
-                      "text": "Find the Duplicate Number",
-                      "url": "https://leetcode.com/problems/find-the-duplicate-number/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "885846180445",
-                      "text": "First Missing Positive",
-                      "url": "https://leetcode.com/problems/first-missing-positive/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "b6bcb70cbffe",
-                      "text": "Majority Element II",
-                      "url": "https://leetcode.com/problems/majority-element-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "8c840f7d50b0",
-                      "text": "Subarray Sum Equals K",
-                      "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "719c7d6c8c74",
-                      "text": "Continuous Subarray Sum",
-                      "url": "https://leetcode.com/problems/continuous-subarray-sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "c095b58551d2",
-                      "text": "Subarray Sums Divisible by K",
-                      "url": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "9800e4a8656c",
-                      "text": "Maximum Subarray",
-                      "url": "https://leetcode.com/problems/maximum-subarray/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "846acfc23ab7",
-                      "text": "Maximum Product Subarray",
-                      "url": "https://leetcode.com/problems/maximum-product-subarray/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "1db337c3d5b3",
-                      "text": "Count of Range Sum",
-                      "url": "https://leetcode.com/problems/count-of-range-sum/",
-                      "tag": "Problems",
+                      "id": "dd1bb586e606",
+                      "text": "Divide Two Integers (the INT_MIN / -1 overflow edge case is the canonical version of this trap)",
+                      "url": "https://leetcode.com/problems/divide-two-integers/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "876bf49462c4"
-                }
-              ],
-              "id": "3ae7b0d57734"
-            },
-            {
-              "title": "Two Pointers, Sliding Window, Deque",
-              "subgroups": [
+                  "id": "5dc4eace2c2f"
+                },
                 {
-                  "title": null,
+                  "title": "Off-By-One / Boundary Traps In Binary Search",
                   "items": [
                     {
-                      "id": "88129965b262",
-                      "text": "same direction,",
+                      "id": "2c5fc1762d8b",
+                      "text": "Invariant: the trap is that a binary search invariant proven correct for strictly-distinct, non-rotated data quietly breaks when duplicates or a rotation point are introduced, because `arr[mid] == arr[lo]` or `arr[mid] == arr[hi]` stops being decisive; survive it by naming, before you code, exactly which half the invariant still guarantees is sorted when a tie occurs, and shrinking the search space by one instead of guessing.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "9bed3e7c56a3",
-                      "text": "opposite direction,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "a1045590e329",
+                      "text": "Find First and Last Position of Element in Sorted Array",
+                      "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "591bcd749b81",
-                      "text": "fast/slow,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "137ff92b53ff",
-                      "text": "fixed window,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "c3cc7eeace4f",
-                      "text": "variable window,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "fa608ec725a7",
-                      "text": "exact K by at-most K subtraction,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "dd4752087940",
-                      "text": "monotonic deque,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "24461f9c77a6",
-                      "text": "window with negative numbers.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "5a58d074fa79",
-                      "text": "Two Sum II",
-                      "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "61b09debf60c",
-                      "text": "3Sum",
-                      "url": "https://leetcode.com/problems/3sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f00e7ef4b590",
-                      "text": "4Sum",
-                      "url": "https://leetcode.com/problems/4sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3815c6d9fe02",
-                      "text": "Container With Most Water",
-                      "url": "https://leetcode.com/problems/container-with-most-water/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "70a6c55eef3c",
-                      "text": "Trapping Rain Water",
-                      "url": "https://leetcode.com/problems/trapping-rain-water/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "0475f47c4fc1",
-                      "text": "Longest Substring Without Repeating Characters",
-                      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "6f2a1332ccc1",
-                      "text": "Longest Repeating Character Replacement",
-                      "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "03bf3182a1d7",
-                      "text": "Permutation in String",
-                      "url": "https://leetcode.com/problems/permutation-in-string/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e620490a09ea",
-                      "text": "Find All Anagrams in a String",
-                      "url": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "65c46e8b72fa",
-                      "text": "Minimum Window Substring",
-                      "url": "https://leetcode.com/problems/minimum-window-substring/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "dccb4298c5d4",
-                      "text": "Substring with Concatenation of All Words",
-                      "url": "https://leetcode.com/problems/substring-with-concatenation-of-all-words/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "da5f993ac1e3",
-                      "text": "Sliding Window Maximum",
-                      "url": "https://leetcode.com/problems/sliding-window-maximum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f9ad5641c8f8",
-                      "text": "Shortest Subarray with Sum at Least K",
-                      "url": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "32f3f079f3b5",
-                      "text": "Constrained Subsequence Sum",
-                      "url": "https://leetcode.com/problems/constrained-subsequence-sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    }
-                  ],
-                  "id": "91fa16b0e0f9"
-                }
-              ],
-              "id": "5f82de6c9811"
-            },
-            {
-              "title": "Sorting, Intervals, Sweep Line",
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "0ecfaa6a0879",
-                      "text": "custom sorting,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a04c20fbc343",
-                      "text": "merge intervals,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d28a49f93a65",
-                      "text": "min rooms,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2857245d8a3c",
-                      "text": "active set,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "cf52aee82514",
-                      "text": "event ordering,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e3ab3f060b5f",
-                      "text": "sweep line with deltas,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ee4035b089a3",
-                      "text": "coordinate compression.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "000fc9b9969c",
-                      "text": "Merge Intervals",
-                      "url": "https://leetcode.com/problems/merge-intervals/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "4dcf098d66d2",
-                      "text": "Insert Interval",
-                      "url": "https://leetcode.com/problems/insert-interval/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "6d43e4576c04",
-                      "text": "Non-overlapping Intervals",
-                      "url": "https://leetcode.com/problems/non-overlapping-intervals/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "8a763c02a3e9",
-                      "text": "Meeting Rooms II",
-                      "url": "https://leetcode.com/problems/meeting-rooms-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d63ca4ec342a",
-                      "text": "Minimum Number of Arrows to Burst Balloons",
-                      "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "5332cbaf0b05",
-                      "text": "Car Fleet",
-                      "url": "https://leetcode.com/problems/car-fleet/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "7d0d15a52f5d",
-                      "text": "Queue Reconstruction by Height",
-                      "url": "https://leetcode.com/problems/queue-reconstruction-by-height/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "5e9882708af5",
-                      "text": "My Calendar II",
-                      "url": "https://leetcode.com/problems/my-calendar-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "476be1680432",
-                      "text": "My Calendar III",
-                      "url": "https://leetcode.com/problems/my-calendar-iii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "243a0390436d",
-                      "text": "The Skyline Problem",
-                      "url": "https://leetcode.com/problems/the-skyline-problem/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "4bfff83efe07",
-                      "text": "Number of Flowers in Full Bloom",
-                      "url": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ea6441727c1d",
-                      "text": "Falling Squares",
-                      "url": "https://leetcode.com/problems/falling-squares/",
-                      "tag": "Problems",
-                      "subtag": null
-                    }
-                  ],
-                  "id": "c3b8df375fd9"
-                }
-              ],
-              "id": "eed4abe42308"
-            },
-            {
-              "title": "Binary Search",
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "a050098773e6",
-                      "text": "lower bound,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3025fa50dc01",
-                      "text": "upper bound,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a5976fc499cc",
-                      "text": "rotated search,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e9ab345bba4d",
-                      "text": "first true,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "29ad73bb9566",
-                      "text": "monotonic predicate,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "90c2407d0153",
-                      "text": "kth value search,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3c527ed220a8",
-                      "text": "binary search on answer,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3dda8074383b",
-                      "text": "precision search.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "c511b907d1e5",
-                      "text": "Binary Search",
-                      "url": "https://leetcode.com/problems/binary-search/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "846d5b6f8f01",
+                      "id": "a09c314b27c8",
                       "text": "Search in Rotated Sorted Array",
                       "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
-                      "tag": "Problems",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "07e25fdd6c7a",
+                      "id": "71d98e7c3c98",
                       "text": "Find Minimum in Rotated Sorted Array",
                       "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
-                      "tag": "Problems",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "69fda8452558",
-                      "text": "Find Peak Element",
-                      "url": "https://leetcode.com/problems/find-peak-element/",
-                      "tag": "Problems",
+                      "id": "5f0f650a67a4",
+                      "text": "Find Minimum in Rotated Sorted Array II (duplicates break the \"one half is always sorted\" invariant)",
+                      "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "a0f068ba7927",
-                      "text": "Search a 2D Matrix",
-                      "url": "https://leetcode.com/problems/search-a-2d-matrix/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "db5f0894ee40",
-                      "text": "Search a 2D Matrix II",
-                      "url": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "b85d52b2ba6d",
-                      "text": "Koko Eating Bananas",
-                      "url": "https://leetcode.com/problems/koko-eating-bananas/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ca1f03093b9b",
-                      "text": "Capacity To Ship Packages Within D Days",
-                      "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "21c29c68b327",
-                      "text": "Split Array Largest Sum",
-                      "url": "https://leetcode.com/problems/split-array-largest-sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ab61e2a38fb8",
-                      "text": "Kth Smallest Element in a Sorted Matrix",
-                      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "4d5c94c4876c",
-                      "text": "Find K-th Smallest Pair Distance",
-                      "url": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d063ad5bf23c",
-                      "text": "Median of Two Sorted Arrays",
-                      "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
-                      "tag": "Problems",
+                      "id": "f026e966b4cf",
+                      "text": "Single Element in a Sorted Array (the boundary condition is an index-parity invariant, not a value comparison)",
+                      "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "a905781c900f"
+                  "id": "0da66cb354d3"
                 }
               ],
-              "id": "6a80bdcae5c4"
+              "id": "018a39a3ed1f"
             },
             {
-              "title": "Stack, Monotonic Stack, Parsing",
+              "title": "Greedy And Recursion Traps",
               "subgroups": [
                 {
-                  "title": null,
+                  "title": "Greedy That Looks Provably Right But Isn't",
                   "items": [
                     {
-                      "id": "e2c666e72d75",
-                      "text": "stack of indices,",
+                      "id": "4b5d51db61c6",
+                      "text": "Invariant: the trap is trusting an intuitive greedy rule (always take the biggest/closest/cheapest option) without an exchange-argument proof, so it passes the examples you thought of and fails on a case where the \"obviously correct\" local choice forecloses a better global one; survive it by stating out loud why swapping any two adjacent choices can't improve the answer before you trust the greedy.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "7386f067e303",
-                      "text": "next greater/smaller,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "5764c099aeaa",
+                      "text": "Jump Game",
+                      "url": "https://leetcode.com/problems/jump-game/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "403dc957b2a4",
-                      "text": "contribution counting,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "bc800a050711",
+                      "text": "Gas Station",
+                      "url": "https://leetcode.com/problems/gas-station/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "e588fa2defc0",
-                      "text": "histogram,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "98e277622bcc",
+                      "text": "Jump Game II",
+                      "url": "https://leetcode.com/problems/jump-game-ii/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "2e754da84c80",
-                      "text": "parentheses validation,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "4c3e539685e7",
-                      "text": "expression parsing,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2b6e59071c45",
-                      "text": "operator precedence.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "be196c5875b8",
-                      "text": "Valid Parentheses",
-                      "url": "https://leetcode.com/problems/valid-parentheses/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "1f658e8b46c2",
-                      "text": "Min Stack",
-                      "url": "https://leetcode.com/problems/min-stack/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ad281379daab",
-                      "text": "Evaluate Reverse Polish Notation",
-                      "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "58e00a5ad69b",
-                      "text": "Daily Temperatures",
-                      "url": "https://leetcode.com/problems/daily-temperatures/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a851aace2343",
-                      "text": "Online Stock Span",
-                      "url": "https://leetcode.com/problems/online-stock-span/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "15f83393699c",
-                      "text": "Asteroid Collision",
-                      "url": "https://leetcode.com/problems/asteroid-collision/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "6a22e2755b76",
-                      "text": "Decode String",
-                      "url": "https://leetcode.com/problems/decode-string/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "cfb28be97d95",
-                      "text": "Remove K Digits",
-                      "url": "https://leetcode.com/problems/remove-k-digits/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "96252a45e348",
-                      "text": "Remove Duplicate Letters",
-                      "url": "https://leetcode.com/problems/remove-duplicate-letters/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "31581ee863f2",
-                      "text": "Sum of Subarray Minimums",
-                      "url": "https://leetcode.com/problems/sum-of-subarray-minimums/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f32ae1b55a5e",
-                      "text": "Largest Rectangle in Histogram",
-                      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "14574e5e0819",
-                      "text": "Maximal Rectangle",
-                      "url": "https://leetcode.com/problems/maximal-rectangle/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "86061843c90d",
-                      "text": "Basic Calculator",
-                      "url": "https://leetcode.com/problems/basic-calculator/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "5374202d7914",
-                      "text": "Basic Calculator III",
-                      "url": "https://leetcode.com/problems/basic-calculator-iii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "15894c6d535b",
-                      "text": "Number of Atoms",
-                      "url": "https://leetcode.com/problems/number-of-atoms/",
-                      "tag": "Problems",
-                      "subtag": null
-                    }
-                  ],
-                  "id": "016325d979a4"
-                }
-              ],
-              "id": "8ac7a2367ce7"
-            },
-            {
-              "title": "Heaps And Streaming",
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "39e427b35fe3",
-                      "text": "top K,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "9322fd6a6e4d",
-                      "text": "k-way merge,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "b3c0c551b055",
-                      "text": "two heaps,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "458e55684ebf",
-                      "text": "lazy deletion,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "87da8224d579",
-                      "text": "greedy heap replacement,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a57266f70c4e",
-                      "text": "streaming order statistics.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "13dfdd4a5925",
-                      "text": "Kth Largest Element in an Array",
-                      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "41320b42ab3a",
-                      "text": "Find Median from Data Stream",
-                      "url": "https://leetcode.com/problems/find-median-from-data-stream/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3be9584796bc",
-                      "text": "Merge k Sorted Lists",
-                      "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "db24255b513d",
-                      "text": "Find K Pairs with Smallest Sums",
-                      "url": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "52c940507260",
+                      "id": "ba77985ed5a8",
                       "text": "Task Scheduler",
                       "url": "https://leetcode.com/problems/task-scheduler/",
-                      "tag": "Problems",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "f54b22507c16",
-                      "text": "Reorganize String",
-                      "url": "https://leetcode.com/problems/reorganize-string/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2bdd00f07e92",
-                      "text": "Single-Threaded CPU",
-                      "url": "https://leetcode.com/problems/single-threaded-cpu/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "0453822380b1",
-                      "text": "IPO",
-                      "url": "https://leetcode.com/problems/ipo/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2e98f5c968b6",
-                      "text": "Minimum Cost to Hire K Workers",
-                      "url": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f3f59b1cd22d",
-                      "text": "Minimum Number of Refueling Stops",
-                      "url": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "356ad70c8d7c",
-                      "text": "Smallest Range Covering Elements from K Lists",
-                      "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ae30a239a1e9",
-                      "text": "Sliding Window Median",
-                      "url": "https://leetcode.com/problems/sliding-window-median/",
-                      "tag": "Problems",
+                      "id": "f2942c8de9a7",
+                      "text": "Candy (the two-pass greedy needs an exchange-argument proof most candidates never actually construct)",
+                      "url": "https://leetcode.com/problems/candy/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "47172821026d"
-                }
-              ],
-              "id": "f5d2f3afd2f0"
-            },
-            {
-              "title": "Linked Lists",
-              "subgroups": [
+                  "id": "d9ba1a4b358e"
+                },
                 {
-                  "title": null,
+                  "title": "Missing Memoization -> Silent TLE",
                   "items": [
                     {
-                      "id": "e506e5debb10",
-                      "text": "dummy node,",
+                      "id": "5df081f28480",
+                      "text": "Invariant: the trap is recursion that looks like simple branching but actually revisits the same sub-state exponentially many times, so it \"works\" on the sample input and times out only once the input is large enough to expose the blow-up; survive it by identifying the full state that repeats (not just one parameter of it) and caching on that exact state before the first optimization pass, not after a TLE forces it.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "34661b784cdc",
-                      "text": "pointer rewiring,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "0b9254447b50",
+                      "text": "Climbing Stairs",
+                      "url": "https://leetcode.com/problems/climbing-stairs/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "591bcd749b81",
-                      "text": "fast/slow,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "3f1d388e72a0",
+                      "text": "Word Break",
+                      "url": "https://leetcode.com/problems/word-break/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "50eccd822bd2",
-                      "text": "reverse sublist,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "8b1e876b9321",
+                      "text": "Decode Ways",
+                      "url": "https://leetcode.com/problems/decode-ways/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "0a982ca4dc69",
-                      "text": "k-group reversal,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "55eaa82a9d26",
+                      "text": "Friends Pairing Problem (GeeksforGeeks -- naive recursion re-explores the same sub-count from two different branches; genuinely distinct from any LC problem already used elsewhere)",
+                      "url": "https://www.geeksforgeeks.org/problems/friends-pairing-problem5425/1",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "8d5089bb4111",
-                      "text": "copy with random pointer.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "62019782e13f",
-                      "text": "Reverse Linked List",
-                      "url": "https://leetcode.com/problems/reverse-linked-list/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "c9bfbbe473ce",
-                      "text": "Reverse Linked List II",
-                      "url": "https://leetcode.com/problems/reverse-linked-list-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2009fd24ed02",
-                      "text": "Merge Two Sorted Lists",
-                      "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "80753b175a4e",
-                      "text": "Linked List Cycle",
-                      "url": "https://leetcode.com/problems/linked-list-cycle/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a5eaeb9f65ff",
-                      "text": "Linked List Cycle II",
-                      "url": "https://leetcode.com/problems/linked-list-cycle-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d5dc8d3d46a8",
-                      "text": "Remove Nth Node From End of List",
-                      "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "481ae9b1d580",
-                      "text": "Reorder List",
-                      "url": "https://leetcode.com/problems/reorder-list/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ab2463cfe7e4",
-                      "text": "Add Two Numbers",
-                      "url": "https://leetcode.com/problems/add-two-numbers/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "55d14bde112c",
-                      "text": "Copy List with Random Pointer",
-                      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "1f1ee6046b1a",
-                      "text": "Reverse Nodes in k-Group",
-                      "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-                      "tag": "Problems",
+                      "id": "ed0467c921e9",
+                      "text": "Word Break II (memoizing the boolean sub-question is not enough once you must also collect and return every valid sentence)",
+                      "url": "https://leetcode.com/problems/word-break-ii/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "9573b908c88d"
-                }
-              ],
-              "id": "05a3c3c6fcba"
-            },
-            {
-              "title": "Trees And BSTs",
-              "subgroups": [
+                  "id": "f8bf7c78303b"
+                },
                 {
-                  "title": null,
+                  "title": "DP Iteration-Direction / State-Reuse Traps",
                   "items": [
                     {
-                      "id": "920aef82e298",
-                      "text": "recursive return values,",
+                      "id": "e01194f6b890",
+                      "text": "Invariant: the trap is that the loop order over items vs. capacity silently decides whether an item can be reused (unbounded knapsack) or used once (0/1 knapsack), and a 1-D in-place array can silently read a value this same iteration already overwrote; survive it by iterating the capacity dimension in decreasing order when items must not repeat and in increasing order when they may, and by naming, for every cell, whether you intend to read \"last row's\" or \"this row's\" value.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "079e31730178",
-                      "text": "global answer updates,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "5ba030a46fc3",
+                      "text": "0/1 Knapsack (Naukri Code360 -- the base template isn't its own standalone LeetCode problem)",
+                      "url": "https://www.naukri.com/code360/problems/code-0-1-knapsack_8717",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "3581d98effc5",
-                      "text": "iterative DFS,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "f9864c0d96fe",
+                      "text": "Unbounded Knapsack (Naukri Code360 -- same, no standalone LeetCode equivalent)",
+                      "url": "https://www.naukri.com/code360/problems/unbounded-knapsack_1215029",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "f510331bcb62",
-                      "text": "BFS levels,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "373b816325d0",
+                      "text": "Coin Change",
+                      "url": "https://leetcode.com/problems/coin-change/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "deaf600819ff",
-                      "text": "BST bounds,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "fd8a4599c456",
+                      "text": "Coin Change II (combinations vs. permutations loop-order trap)",
+                      "url": "https://leetcode.com/problems/coin-change-ii/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "a62d83ddb229",
-                      "text": "LCA,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "285a605f23bf",
+                      "text": "Partition Equal Subset Sum",
+                      "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "71945a004b51",
-                      "text": "serialization,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "bfde534d51d9",
+                      "text": "House Robber",
+                      "url": "https://leetcode.com/problems/house-robber/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "213b5b8d2bf5",
-                      "text": "subtree signatures,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "ce51d329f5a5",
+                      "text": "House Robber II (circular disguise of the same adjacency constraint)",
+                      "url": "https://leetcode.com/problems/house-robber-ii/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "255b7c8388d7",
-                      "text": "rerooting concept.",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "fe3083f4a47c",
+                      "text": "Target Sum (assign +/- signs, disguised subset-sum reduction)",
+                      "url": "https://leetcode.com/problems/target-sum/",
+                      "tag": "Boss",
                       "subtag": null
                     },
                     {
-                      "id": "1273dcd95b4f",
-                      "text": "Invert Binary Tree",
-                      "url": "https://leetcode.com/problems/invert-binary-tree/",
-                      "tag": "Problems",
+                      "id": "a75ca9631cbf",
+                      "text": "Last Stone Weight II",
+                      "url": "https://leetcode.com/problems/last-stone-weight-ii/",
+                      "tag": "Boss",
                       "subtag": null
                     },
                     {
-                      "id": "ae0932e1f755",
-                      "text": "Diameter of Binary Tree",
-                      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "8dab1d4a23de",
-                      "text": "Balanced Binary Tree",
-                      "url": "https://leetcode.com/problems/balanced-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "43049d9f49c0",
-                      "text": "Binary Tree Level Order Traversal",
-                      "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2e73f47fb39f",
-                      "text": "Binary Tree Right Side View",
-                      "url": "https://leetcode.com/problems/binary-tree-right-side-view/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ba99f7cbbadf",
-                      "text": "Validate Binary Search Tree",
-                      "url": "https://leetcode.com/problems/validate-binary-search-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "562e3bb9de05",
-                      "text": "Kth Smallest Element in a BST",
-                      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "18b767572770",
-                      "text": "Lowest Common Ancestor of a Binary Tree",
-                      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "799fd4b00989",
-                      "text": "Construct Binary Tree from Preorder and Inorder Traversal",
-                      "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e77dcc70d6a3",
-                      "text": "Path Sum III",
-                      "url": "https://leetcode.com/problems/path-sum-iii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ccc67ec00984",
-                      "text": "Flatten Binary Tree to Linked List",
-                      "url": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "cbf2cec64ebf",
-                      "text": "Recover Binary Search Tree",
-                      "url": "https://leetcode.com/problems/recover-binary-search-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "ac4c09842628",
-                      "text": "Binary Tree Maximum Path Sum",
-                      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "8d9d1a7d36fb",
-                      "text": "Serialize and Deserialize Binary Tree",
-                      "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "250fb46f4f3e",
-                      "text": "Find Duplicate Subtrees",
-                      "url": "https://leetcode.com/problems/find-duplicate-subtrees/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d3391ac6441b",
-                      "text": "Vertical Order Traversal of a Binary Tree",
-                      "url": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "0c984fd638da",
-                      "text": "Binary Tree Cameras",
-                      "url": "https://leetcode.com/problems/binary-tree-cameras/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "995f19846a72",
-                      "text": "Step-By-Step Directions From a Binary Tree Node to Another",
-                      "url": "https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e9b182ceb0ab",
-                      "text": "Maximum Sum BST in Binary Tree",
-                      "url": "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "291d88c33bdb",
-                      "text": "Sum of Distances in Tree",
-                      "url": "https://leetcode.com/problems/sum-of-distances-in-tree/",
-                      "tag": "Problems",
+                      "id": "63f38826a3e4",
+                      "text": "Partition to K Equal Sum Subsets",
+                      "url": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "bb0f3bf8bbd2"
+                  "id": "db8d4165e8c7"
                 }
               ],
-              "id": "80d0e9915035"
+              "id": "e9ce2d68961d"
             },
             {
-              "title": "Tries And Search",
+              "title": "Structural And Duplicate Traps",
               "subgroups": [
                 {
-                  "title": null,
+                  "title": "Duplicate-Handling Traps",
                   "items": [
                     {
-                      "id": "6294a05e04cd",
-                      "text": "prefix trie,",
+                      "id": "2c16743cb40d",
+                      "text": "Invariant: the trap is that an algorithm designed for distinct elements silently produces repeated or missing results once duplicate values enter the input; survive it by sorting first and explicitly skipping over an equal value at the *same recursion level / same binary-search half*, not banning the value everywhere.",
                       "url": null,
-                      "tag": "You must know",
+                      "tag": "",
                       "subtag": null
                     },
                     {
-                      "id": "bc88dc8ba9c6",
-                      "text": "wildcard DFS,",
-                      "url": null,
-                      "tag": "You must know",
+                      "id": "905adaa8ff58",
+                      "text": "3Sum",
+                      "url": "https://leetcode.com/problems/3sum/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "5a7e563c284b",
-                      "text": "trie plus board DFS,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "733406e6146b",
-                      "text": "bit trie,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a95c89744d55",
-                      "text": "reversed trie,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "8149c1ccdd76",
-                      "text": "pruning duplicate work.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "9171d3babad2",
-                      "text": "Implement Trie",
-                      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "50106498ba09",
-                      "text": "Design Add and Search Words Data Structure",
-                      "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "472a0d1a15ed",
-                      "text": "Word Search",
-                      "url": "https://leetcode.com/problems/word-search/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "2896cd4b7129",
-                      "text": "Word Search II",
-                      "url": "https://leetcode.com/problems/word-search-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "4e548dd2beef",
-                      "text": "Search Suggestions System",
-                      "url": "https://leetcode.com/problems/search-suggestions-system/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "f8717b1cb96c",
-                      "text": "Stream of Characters",
-                      "url": "https://leetcode.com/problems/stream-of-characters/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "3b76c7c79714",
-                      "text": "Concatenated Words",
-                      "url": "https://leetcode.com/problems/concatenated-words/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "78dff34d91df",
-                      "text": "Palindrome Pairs",
-                      "url": "https://leetcode.com/problems/palindrome-pairs/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "31a3224188d9",
-                      "text": "Maximum XOR of Two Numbers in an Array",
-                      "url": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "af29fc0611df",
-                      "text": "Maximum XOR With an Element From Array",
-                      "url": "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/",
-                      "tag": "Problems",
-                      "subtag": null
-                    }
-                  ],
-                  "id": "18759b14acb5"
-                }
-              ],
-              "id": "8eb6962b0948"
-            },
-            {
-              "title": "Backtracking",
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "c08ea7bffa59",
-                      "text": "choose/explore/unchoose,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "7090029f40d8",
-                      "text": "duplicate skipping,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "b8c4fd39a767",
-                      "text": "pruning,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e76bd54b3610",
-                      "text": "constraint propagation,",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d279db198a63",
-                      "text": "memoization boundary.",
-                      "url": null,
-                      "tag": "You must know",
-                      "subtag": null
-                    },
-                    {
-                      "id": "76008545b008",
-                      "text": "Permutations",
-                      "url": "https://leetcode.com/problems/permutations/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "d3c0bc047455",
-                      "text": "Permutations II",
-                      "url": "https://leetcode.com/problems/permutations-ii/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "25b3e0541859",
-                      "text": "Subsets",
-                      "url": "https://leetcode.com/problems/subsets/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "e29072bd30b0",
+                      "id": "edf2475180fd",
                       "text": "Subsets II",
                       "url": "https://leetcode.com/problems/subsets-ii/",
-                      "tag": "Problems",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "53cb825f732f",
-                      "text": "Combination Sum",
-                      "url": "https://leetcode.com/problems/combination-sum/",
-                      "tag": "Problems",
+                      "id": "7ccde0a6ca16",
+                      "text": "Permutations II",
+                      "url": "https://leetcode.com/problems/permutations-ii/",
+                      "tag": "Foundation",
                       "subtag": null
                     },
                     {
-                      "id": "8b4056f0317f",
+                      "id": "7e59076573ed",
                       "text": "Combination Sum II",
                       "url": "https://leetcode.com/problems/combination-sum-ii/",
-                      "tag": "Problems",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "9d7861625872",
-                      "text": "Palindrome Partitioning",
-                      "url": "https://leetcode.com/problems/palindrome-partitioning/",
-                      "tag": "Problems",
+                      "id": "5b40e2079a44",
+                      "text": "4Sum",
+                      "url": "https://leetcode.com/problems/4sum/",
+                      "tag": "Reinforcement",
                       "subtag": null
                     },
                     {
-                      "id": "54335ee149e1",
-                      "text": "N-Queens",
-                      "url": "https://leetcode.com/problems/n-queens/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "a5fb8555fb82",
-                      "text": "Sudoku Solver",
-                      "url": "https://leetcode.com/problems/sudoku-solver/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "b1c783d86567",
-                      "text": "Expression Add Operators",
-                      "url": "https://leetcode.com/problems/expression-add-operators/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "86d1a2c017f6",
-                      "text": "Restore IP Addresses",
-                      "url": "https://leetcode.com/problems/restore-ip-addresses/",
-                      "tag": "Problems",
-                      "subtag": null
-                    },
-                    {
-                      "id": "629371fca1bd",
-                      "text": "Verbal Arithmetic Puzzle",
-                      "url": "https://leetcode.com/problems/verbal-arithmetic-puzzle/",
-                      "tag": "Problems",
+                      "id": "a8f7e6bcf396",
+                      "text": "Search in Rotated Sorted Array II (duplicates break the \"one half is always sorted\" invariant that made the distinct-element version easy)",
+                      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
+                      "tag": "Boss",
                       "subtag": null
                     }
                   ],
-                  "id": "ff0ad9f81ace"
+                  "id": "42b46e958e62"
+                },
+                {
+                  "title": "Backtracking State-Restoration Traps",
+                  "items": [
+                    {
+                      "id": "aecc85141035",
+                      "text": "Invariant: the trap is mutating shared state (a path list, a visited grid, a used-digits set) on the way down and forgetting to undo that exact mutation on the way back up -- survive it by pairing every mutate-before-recursion with an identical undo-after-recursion in the same stack frame, so the container returns to the caller in the state it was handed.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "634e7342422b",
+                      "text": "Permutations",
+                      "url": "https://leetcode.com/problems/permutations/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "dcfe7912787e",
+                      "text": "Combination Sum",
+                      "url": "https://leetcode.com/problems/combination-sum/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5d0ede908fdd",
+                      "text": "Subsets",
+                      "url": "https://leetcode.com/problems/subsets/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "051fa0c73e06",
+                      "text": "Palindrome Partitioning",
+                      "url": "https://leetcode.com/problems/palindrome-partitioning/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "713a1e56a730",
+                      "text": "N-Queens",
+                      "url": "https://leetcode.com/problems/n-queens/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6ebc18fe880a",
+                      "text": "Word Search",
+                      "url": "https://leetcode.com/problems/word-search/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a084c8f5cdb3",
+                      "text": "Restore IP Addresses",
+                      "url": "https://leetcode.com/problems/restore-ip-addresses/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1bbd988f721f",
+                      "text": "Sudoku Solver (restoring both a cell value and per-row/col/box constraint state)",
+                      "url": "https://leetcode.com/problems/sudoku-solver/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "9a34c227ab7d"
+                },
+                {
+                  "title": "Mutable/Aliasing Reference Traps",
+                  "items": [
+                    {
+                      "id": "c0fb21bd02bd",
+                      "text": "Invariant: the trap is sharing one mutable object (a node, a list, a reference) across recursive branches or forgetting to break aliasing when \"copying,\" so the clone silently points back into the original structure and corrupts it on the next mutation; survive it by explicitly tracking a visited/cloned map from old node to new node before you follow a single additional pointer.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bc41ac80fd3d",
+                      "text": "Clone Graph (recursing without a visited map infinite-loops on any cycle)",
+                      "url": "https://leetcode.com/problems/clone-graph/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f91e9bc4566e",
+                      "text": "Copy List with Random Pointer",
+                      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "cb8f4a4b60f5",
+                      "text": "Flatten Nested List Iterator",
+                      "url": "https://leetcode.com/problems/flatten-nested-list-iterator/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "cc533b21da27",
+                      "text": "Populating Next Right Pointers in Each Node II (O(1)-space variant: the next-pointers you rely on to traverse the next level are exactly the ones you're still constructing on this level)",
+                      "url": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "3320026011ef"
                 }
               ],
-              "id": "20eb535b92f2"
+              "id": "f4a64e351c68"
+            },
+            {
+              "title": "Graph And Cycle Traps",
+              "subgroups": [
+                {
+                  "title": "Cycle-Detection Math/Logic Traps",
+                  "items": [
+                    {
+                      "id": "876b3f9ea675",
+                      "text": "Invariant: the trap is treating \"a cycle exists\" and \"this is the correct notion of cycle for this structure\" as interchangeable facts; survive it by matching the detection rule to the actual semantics -- directed graphs need a recursion-stack/color check (not just a visited set), undirected graphs must ignore the immediate parent edge, and Floyd's meeting point is not the cycle's start until you reset one pointer to the head and walk both one step at a time.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d97c3e3c27c9",
+                      "text": "Linked List Cycle",
+                      "url": "https://leetcode.com/problems/linked-list-cycle/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6442efe1cd3c",
+                      "text": "Course Schedule",
+                      "url": "https://leetcode.com/problems/course-schedule/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "22ae7e71f380",
+                      "text": "Find the Duplicate Number",
+                      "url": "https://leetcode.com/problems/find-the-duplicate-number/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "743562ab7013",
+                      "text": "Linked List Cycle II (meeting point is not the cycle start)",
+                      "url": "https://leetcode.com/problems/linked-list-cycle-ii/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6c50a4b9c461",
+                      "text": "Graph Valid Tree (GeeksforGeeks/Naukri clone -- LC 261 is a real problem but premium-locked on leetcode.com)",
+                      "url": "https://www.naukri.com/code360/problems/graph-valid-tree_1376618",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6642ff292b34",
+                      "text": "Redundant Connection",
+                      "url": "https://leetcode.com/problems/redundant-connection/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "185ab9bf23bf",
+                      "text": "Redundant Connection II (directed rooted tree: cycle detection entangled with a two-parent conflict)",
+                      "url": "https://leetcode.com/problems/redundant-connection-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "e4983ac67312"
+                },
+                {
+                  "title": "Multi-Source vs Single-Source BFS Confusion",
+                  "items": [
+                    {
+                      "id": "a46bb79f02c2",
+                      "text": "Invariant: the trap is seeding the BFS queue with only one start node (or only \"the\" obvious source) when the grid actually has many simultaneous sources whose frontiers must expand together -- survive it by pushing every source cell into the queue at distance 0 *before* the first BFS step, so each queue \"pop layer\" represents one true global time-tick, not one node's personal distance.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5d2aa2c80ea1",
+                      "text": "Rotting Oranges",
+                      "url": "https://leetcode.com/problems/rotting-oranges/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "b0b2e0bb229f",
+                      "text": "01 Matrix",
+                      "url": "https://leetcode.com/problems/01-matrix/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8996b6f4892d",
+                      "text": "Walls and Gates (Naukri Code360 -- LC 286 is a real problem but premium-locked on leetcode.com)",
+                      "url": "https://www.naukri.com/code360/problems/walls-and-gates_1092887",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c574d51dc5c4",
+                      "text": "As Far from Land as Possible",
+                      "url": "https://leetcode.com/problems/as-far-from-land-as-possible/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "259c60847216",
+                      "text": "Snakes and Ladders (single-source BFS where \"layer = dice throw\" is the trap)",
+                      "url": "https://leetcode.com/problems/snakes-and-ladders/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "5105ffc28b36",
+                      "text": "Find Shortest Safe Route in a Matrix (GeeksforGeeks -- landmine danger-zone BFS, no direct LeetCode equivalent)",
+                      "url": "https://www.geeksforgeeks.org/problems/find-shortest-safe-route-in-a-matrix/1",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1590f881a6fa",
+                      "text": "Shortest Bridge (DFS to find island one, then multi-source BFS from every cell of it)",
+                      "url": "https://leetcode.com/problems/shortest-bridge/",
+                      "tag": "Boss",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e4158878d0f2",
+                      "text": "Minimum Knight Moves (GeeksforGeeks \"Steps by Knight\" -- LC 1197 is premium-locked on leetcode.com)",
+                      "url": "https://www.geeksforgeeks.org/problems/steps-by-knight5927/1",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "a57263567873"
+                },
+                {
+                  "title": "Union-Find Without Path Compression/Union-By-Rank -> Silent TLE",
+                  "items": [
+                    {
+                      "id": "609f3b947771",
+                      "text": "Invariant: the trap is a naive DSU (no path compression, no union by rank) that returns correct answers on small inputs and only reveals its near-linear-chain worst case once the graph is large enough to make every `find` walk a long parent chain; survive it by building path compression and union-by-rank into the very first version you write, not as a later optimization pass.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "ec29bbe94d5a",
+                      "text": "Number of Provinces",
+                      "url": "https://leetcode.com/problems/number-of-provinces/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3d3d01d138e6",
+                      "text": "Accounts Merge",
+                      "url": "https://leetcode.com/problems/accounts-merge/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d67738be1465",
+                      "text": "Satisfiability of Equality Equations",
+                      "url": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "897b1be832d3",
+                      "text": "Most Stones Removed with Same Row or Column (union happens on a shared row/column, not a direct edge -- easy to union the wrong pair of indices)",
+                      "url": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a84c64cd115c",
+                      "text": "Bricks Falling When Hit (reverse-DSU: the naive forward simulation is the trap; the fix requires processing hits backward)",
+                      "url": "https://leetcode.com/problems/bricks-falling-when-hit/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "f628cb7f8c4f"
+                },
+                {
+                  "title": "Directed vs Undirected Graph Confusion",
+                  "items": [
+                    {
+                      "id": "e829076b0c82",
+                      "text": "Invariant: the trap is applying an undirected-graph algorithm (plain two-coloring, plain Union-Find cycle check) to a directed graph, where a \"back edge\" to an already-visited node isn't automatically a cycle unless that node is still on the current recursion stack; survive it by tracking three node states (unvisited / in-progress / done) for directed graphs instead of the two states (visited / unvisited) that suffice for undirected ones.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f80a2deec70b",
+                      "text": "Is Graph Bipartite?",
+                      "url": "https://leetcode.com/problems/is-graph-bipartite/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a2fbaaa979ee",
+                      "text": "Possible Bipartition",
+                      "url": "https://leetcode.com/problems/possible-bipartition/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "2d7b995fb5d5",
+                      "text": "Find Eventual Safe States (a node is only \"unsafe\" if it can reach a cycle -- which requires the three-state directed-graph coloring, not a plain visited set)",
+                      "url": "https://leetcode.com/problems/find-eventual-safe-states/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "0cef74ad5d3f"
+                }
+              ],
+              "id": "26e2eec20f5e"
+            },
+            {
+              "title": "Data Structure Usage Traps",
+              "subgroups": [
+                {
+                  "title": "Heap/Comparator Tie-Breaking Traps",
+                  "items": [
+                    {
+                      "id": "e1f748b048a9",
+                      "text": "Invariant: the trap is a comparator that is correct on the primary key but produces a valid-looking, wrong answer once two elements tie, because the problem's real constraint (adjacency, distance, recency) only bites on the tie-break; survive it by writing the tie-break rule as an explicit second comparator key before you trust the heap's output.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4931094c6017",
+                      "text": "Reorganize String (tie-breaking on frequency alone isn't enough to guarantee no two adjacent characters match)",
+                      "url": "https://leetcode.com/problems/reorganize-string/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "0a8249c59095",
+                      "text": "Top K Frequent Words (frequency ties must break lexicographically, not arbitrarily)",
+                      "url": "https://leetcode.com/problems/top-k-frequent-words/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c78aae954b22",
+                      "text": "Super Ugly Number (a heap without duplicate-suppression re-inserts the same value from multiple prime multipliers)",
+                      "url": "https://leetcode.com/problems/super-ugly-number/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "0778aa287691"
+                },
+                {
+                  "title": "Interval Boundary Traps",
+                  "items": [
+                    {
+                      "id": "32083a24524e",
+                      "text": "Invariant: the trap is silently treating \"end of A equals start of B\" as either always-merge or always-separate without checking which the problem actually wants -- survive it by writing the merge/overlap test as an explicit inequality (`<=` for touching-counts-as-overlap, `<` for touching-is-fine) and unit-testing the exact boundary case before trusting the sort-and-sweep.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4ba77c9ae247",
+                      "text": "Merge Intervals",
+                      "url": "https://leetcode.com/problems/merge-intervals/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "23b00a48f0b7",
+                      "text": "Insert Interval",
+                      "url": "https://leetcode.com/problems/insert-interval/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7e3e8e8c5714",
+                      "text": "Teemo Attacking (poison-duration overlap/reset boundary)",
+                      "url": "https://leetcode.com/problems/teemo-attacking/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "0737e8dccc20",
+                      "text": "Non-overlapping Intervals",
+                      "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "7cad7485dcd9",
+                      "text": "Meeting Rooms II (Naukri Code360 \"Minimum Number of Platforms\" -- LC is premium-locked on leetcode.com)",
+                      "url": "https://www.naukri.com/code360/problems/minimum-number-of-platforms_799400",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1dbedaddcd5d",
+                      "text": "My Calendar III (k-overlap sweep, boundary error compounds across many events)",
+                      "url": "https://leetcode.com/problems/my-calendar-iii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "e42cb722fdb0"
+                },
+                {
+                  "title": "Sliding Window Invariant Traps",
+                  "items": [
+                    {
+                      "id": "d019d169cdc3",
+                      "text": "Invariant: the trap is picking a shrink condition that is correct for \"at most K\" but then trying to reuse that same window logic directly for \"exactly K\" -- survive it by remembering exactly(K) = atMost(K) - atMost(K-1), and by re-deriving the shrink-while condition from scratch for every new constraint instead of copy-pasting the last problem's window.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d75f30cde8a3",
+                      "text": "Longest Substring Without Repeating Characters",
+                      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "50e26c7c5ebc",
+                      "text": "Fruit Into Baskets",
+                      "url": "https://leetcode.com/problems/fruit-into-baskets/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "da681232bbc9",
+                      "text": "Max Consecutive Ones III",
+                      "url": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "43e4e05818ed",
+                      "text": "Longest Substring with At Most K Distinct Characters (Naukri Code360 -- LC 340 is premium-locked on leetcode.com)",
+                      "url": "https://www.naukri.com/code360/problems/longest-sub-string-with-at-most-k-distinct-characters_699944",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "008309d34dc3",
+                      "text": "Longest K Unique Characters Substring (GeeksforGeeks -- \"exactly K\", not \"at most K\"; must return -1 if impossible, no direct LeetCode equivalent)",
+                      "url": "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "6bd090798c68",
+                      "text": "Subarrays with K Different Integers (the canonical atMost(K)-atMost(K-1) boss problem)",
+                      "url": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "2182cf232cae"
+                }
+              ],
+              "id": "275aaebcc43b"
+            },
+            {
+              "title": "Tree And Parsing Traps",
+              "subgroups": [
+                {
+                  "title": "Tree Recursion Return-Value Conflation",
+                  "items": [
+                    {
+                      "id": "272b81ff724f",
+                      "text": "Invariant: the trap is conflating \"the best value achievable through this node as a bridge between two of its branches\" with \"the single best value this node is allowed to hand up to its parent\"; survive it by having the recursive call return only the one-sided, parent-usable value while a separate outer/global variable is updated with the two-sided (through-node) combination at every node.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "59519214f20d",
+                      "text": "Binary Tree Maximum Path Sum",
+                      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d9a6447d833c",
+                      "text": "House Robber III",
+                      "url": "https://leetcode.com/problems/house-robber-iii/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "937a50073057",
+                      "text": "Diameter of Binary Tree",
+                      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c5096721ef2e",
+                      "text": "Longest Univalue Path",
+                      "url": "https://leetcode.com/problems/longest-univalue-path/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "9afff12d2c05",
+                      "text": "Binary Tree Cameras",
+                      "url": "https://leetcode.com/problems/binary-tree-cameras/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "a408240f70e9",
+                      "text": "Diameter of N-Ary Tree",
+                      "url": "https://leetcode.com/problems/diameter-of-n-ary-tree/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "bae18c806c23",
+                      "text": "Longest Path With Different Adjacent Characters",
+                      "url": "https://leetcode.com/problems/longest-path-with-different-adjacent-characters/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "0ed6faeaa864"
+                },
+                {
+                  "title": "Expression-Parsing Operator-Precedence Traps",
+                  "items": [
+                    {
+                      "id": "8abab548a6e8",
+                      "text": "Invariant: the trap is evaluating strictly left-to-right and only discovering precedence rules exist once `*`/`/` binds tighter than `+`/`-`, or once nested parentheses require a stack frame per depth level rather than one global state; survive it by deciding up front whether you need a two-stack (operator/operand) parser or a recursive-descent parser, and never trying to patch precedence into a single flat left-to-right scan.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "236e745bb72b",
+                      "text": "Basic Calculator",
+                      "url": "https://leetcode.com/problems/basic-calculator/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "195a932905fa",
+                      "text": "Evaluate Reverse Polish Notation",
+                      "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "3c251892d883",
+                      "text": "Basic Calculator II (no parentheses, but now precedence between `*`/`/` and `+`/`-` is the entire problem)",
+                      "url": "https://leetcode.com/problems/basic-calculator-ii/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "d28ef17c2731",
+                      "text": "Different Ways to Add Parentheses (every possible precedence grouping simultaneously, via divide-and-conquer)",
+                      "url": "https://leetcode.com/problems/different-ways-to-add-parentheses/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "f8c88310086a"
+                }
+              ],
+              "id": "974a54ec2e8d"
+            },
+            {
+              "title": "Low-Level Correctness Traps",
+              "subgroups": [
+                {
+                  "title": "Wrong-Complexity Brute Force That Passes Small Tests But Fails At Scale",
+                  "items": [
+                    {
+                      "id": "64ac22ce4566",
+                      "text": "Invariant: the trap is an O(n^2) approach that looks correct and passes every example you hand-check, so the failure only shows up against the judge's large hidden tests; survive it by stating the target complexity from the problem's constraints *before* writing code, not after a TLE.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "38b2f18aea73",
+                      "text": "Two Sum (nested-loop brute force vs. one-pass hash map)",
+                      "url": "https://leetcode.com/problems/two-sum/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "8f032bda9a06",
+                      "text": "Container With Most Water (checking every pair vs. the two-pointer argument for why the shorter side can always be discarded)",
+                      "url": "https://leetcode.com/problems/container-with-most-water/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "940539f5f151",
+                      "text": "Trapping Rain Water (per-index brute force recomputes both directions' max on every step)",
+                      "url": "https://leetcode.com/problems/trapping-rain-water/",
+                      "tag": "Reinforcement",
+                      "subtag": null
+                    },
+                    {
+                      "id": "4cea4c201ace",
+                      "text": "Longest Consecutive Sequence (sort-and-scan looks like the \"obvious\" O(n log n) fix, but the real target is O(n) via a hash set and only expanding from sequence starts)",
+                      "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "e674cb2d5548"
+                },
+                {
+                  "title": "Modulo Arithmetic Sign/Negative Traps",
+                  "items": [
+                    {
+                      "id": "2e35d1012f00",
+                      "text": "Invariant: the trap is that a prefix sum, running total, or intermediate result can go negative, and languages differ on what `%` returns for negative operands, so a remainder-equality check silently misses valid answers; survive it by normalizing every modulo result into `[0, k)` with `((x % k) + k) % k` before comparing or using it as a hash-map key.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "eeeb87b6bf53",
+                      "text": "Subarray Sums Divisible by K (negative prefix sums must still map to the same remainder bucket as their positive counterparts)",
+                      "url": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "e38a29db8808",
+                      "text": "Continuous Subarray Sum",
+                      "url": "https://leetcode.com/problems/continuous-subarray-sum/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "70dd8e63401b",
+                      "text": "K-Concatenation Maximum Sum (combines Kadane's with a mod-10^9+7 output on a value that can be enormous before the mod is applied)",
+                      "url": "https://leetcode.com/problems/k-concatenation-maximum-sum/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "1ddd66080fc2"
+                },
+                {
+                  "title": "Bit Manipulation Sign-Extension / Shift Traps",
+                  "items": [
+                    {
+                      "id": "fb8f49d16f32",
+                      "text": "Invariant: the trap is that right-shifting a negative number, or treating a language's fixed-width integer as if it had infinite bits, silently changes which bit ends up where; survive it by masking to the exact bit width the problem specifies (`& 0xFFFFFFFF`) before any shift, and reasoning about the sign bit as data, not noise.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null
+                    },
+                    {
+                      "id": "f994ca07175c",
+                      "text": "Reverse Bits",
+                      "url": "https://leetcode.com/problems/reverse-bits/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "c241bfe5035f",
+                      "text": "Sum of Two Integers (bitwise add without `+`; carry propagation on negative operands is the whole difficulty)",
+                      "url": "https://leetcode.com/problems/sum-of-two-integers/",
+                      "tag": "Foundation",
+                      "subtag": null
+                    },
+                    {
+                      "id": "1c20c287a7d0",
+                      "text": "Single Number II (bit-counting mod 3 across 32 bit positions; sign bit must be handled the same as any other bit)",
+                      "url": "https://leetcode.com/problems/single-number-ii/",
+                      "tag": "Boss",
+                      "subtag": null
+                    }
+                  ],
+                  "id": "d43a1c8d5027"
+                }
+              ],
+              "id": "8bcff23fe4b9"
             }
           ],
-          "id": "f0370d617a64"
+          "id": "f604fa6562bc"
         },
         {
           "title": "Tier B: Graph Problems That Actually Expose Weakness",

@@ -136,293 +136,399 @@ Most failures are not "I do not know Dijkstra." They are:
 | Cannot parse expressions | Stack/order precedence breaks | [Basic Calculator](https://leetcode.com/problems/basic-calculator/), [Number of Atoms](https://leetcode.com/problems/number-of-atoms/) |
 | Cache design memorized | O(1) operations not actually O(1) | [LRU Cache](https://leetcode.com/problems/lru-cache/), [LFU Cache](https://leetcode.com/problems/lfu-cache/), [All O(1) Data Structure](https://leetcode.com/problems/all-oone-data-structure/) |
 
-## Tier A: The Non-Negotiable Interview Core
+## Tier A: Trap Taxonomy -- Where Candidates Actually Break
 
-These are the patterns that overlap strongly across LeetCode classic lists, Grind/Blind-style prep, and pattern-based courses.
+These are not organized by data structure. They are organized by the specific, well-known way a competent candidate gets each one wrong -- the same axis gauntlet.md and extreme_mastery_map.md deliberately don't use. Each sub-pattern names its trap as one sentence you should be able to recite before you start coding, then gives a Foundation -> Reinforcement -> Boss run of problems that all share it.
 
-### Arrays, Hashing, Prefix Sums
+### Numeric And Search Traps
 
-You must know:
+#### Integer Overflow / Numeric Edge Traps
 
-- frequency map,
-- index map,
-- prefix sum,
-- modulo prefix,
-- XOR prefix,
-- in-place marking,
-- cyclic placement,
-- Boyer-Moore majority vote,
-- coordinate compression.
+- Invariant: the trap is that an operation like multiply, add, or repeated doubling can silently overflow a fixed-width integer (or flip sign under negative operands / negative-mod semantics) while the algorithm's logic stays correct; survive it by reasoning in a wider type or an early-exit bound before the overflow point, and treating the sign/edge case (MIN_INT negation, negative operands) as a first-class branch, not an afterthought.
 
-Problems:
+Foundation:
 
-1. [Two Sum](https://leetcode.com/problems/two-sum/)
-2. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
-3. [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-4. [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
-5. [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
-6. [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
-7. [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
-8. [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
-9. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
-10. [Majority Element II](https://leetcode.com/problems/majority-element-ii/)
-11. [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
-12. [Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)
-13. [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/)
-14. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-15. [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
-16. [Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)
+1. [Reverse Integer](https://leetcode.com/problems/reverse-integer/)
+2. [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
+3. [Palindrome Number](https://leetcode.com/problems/palindrome-number/)
 
-### Two Pointers, Sliding Window, Deque
+Reinforcement:
 
-You must know:
+1. [Pow(x, n)](https://leetcode.com/problems/powx-n/)
+2. [Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 
-- same direction,
-- opposite direction,
-- fast/slow,
-- fixed window,
-- variable window,
-- exact K by at-most K subtraction,
-- monotonic deque,
-- window with negative numbers.
+Boss:
 
-Problems:
+1. [Divide Two Integers](https://leetcode.com/problems/divide-two-integers/) (the INT_MIN / -1 overflow edge case is the canonical version of this trap)
 
-1. [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
-2. [3Sum](https://leetcode.com/problems/3sum/)
-3. [4Sum](https://leetcode.com/problems/4sum/)
-4. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
-5. [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
-6. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-7. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-8. [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
-9. [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-10. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
-11. [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)
-12. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
-13. [Shortest Subarray with Sum at Least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/)
-14. [Constrained Subsequence Sum](https://leetcode.com/problems/constrained-subsequence-sum/)
 
-### Sorting, Intervals, Sweep Line
+#### Off-By-One / Boundary Traps In Binary Search
 
-You must know:
+- Invariant: the trap is that a binary search invariant proven correct for strictly-distinct, non-rotated data quietly breaks when duplicates or a rotation point are introduced, because `arr[mid] == arr[lo]` or `arr[mid] == arr[hi]` stops being decisive; survive it by naming, before you code, exactly which half the invariant still guarantees is sorted when a tie occurs, and shrinking the search space by one instead of guessing.
 
-- custom sorting,
-- merge intervals,
-- min rooms,
-- active set,
-- event ordering,
-- sweep line with deltas,
-- coordinate compression.
+Foundation:
 
-Problems:
+1. [Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+2. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+3. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+
+Reinforcement:
+
+1. [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/) (duplicates break the "one half is always sorted" invariant)
+
+Boss:
+
+1. [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/) (the boundary condition is an index-parity invariant, not a value comparison)
+
+
+### Greedy And Recursion Traps
+
+#### Greedy That Looks Provably Right But Isn't
+
+- Invariant: the trap is trusting an intuitive greedy rule (always take the biggest/closest/cheapest option) without an exchange-argument proof, so it passes the examples you thought of and fails on a case where the "obviously correct" local choice forecloses a better global one; survive it by stating out loud why swapping any two adjacent choices can't improve the answer before you trust the greedy.
+
+Foundation:
+
+1. [Jump Game](https://leetcode.com/problems/jump-game/)
+2. [Gas Station](https://leetcode.com/problems/gas-station/)
+
+Reinforcement:
+
+1. [Jump Game II](https://leetcode.com/problems/jump-game-ii/)
+2. [Task Scheduler](https://leetcode.com/problems/task-scheduler/)
+
+Boss:
+
+1. [Candy](https://leetcode.com/problems/candy/) (the two-pass greedy needs an exchange-argument proof most candidates never actually construct)
+
+
+#### Missing Memoization -> Silent TLE
+
+- Invariant: the trap is recursion that looks like simple branching but actually revisits the same sub-state exponentially many times, so it "works" on the sample input and times out only once the input is large enough to expose the blow-up; survive it by identifying the full state that repeats (not just one parameter of it) and caching on that exact state before the first optimization pass, not after a TLE forces it.
+
+Foundation:
+
+1. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+2. [Word Break](https://leetcode.com/problems/word-break/)
+
+Reinforcement:
+
+1. [Decode Ways](https://leetcode.com/problems/decode-ways/)
+2. [Friends Pairing Problem (GeeksforGeeks -- naive recursion re-explores the same sub-count from two different branches; genuinely distinct from any LC problem already used elsewhere)](https://www.geeksforgeeks.org/problems/friends-pairing-problem5425/1)
+
+Boss:
+
+1. [Word Break II](https://leetcode.com/problems/word-break-ii/) (memoizing the boolean sub-question is not enough once you must also collect and return every valid sentence)
+
+
+#### DP Iteration-Direction / State-Reuse Traps
+
+- Invariant: the trap is that the loop order over items vs. capacity silently decides whether an item can be reused (unbounded knapsack) or used once (0/1 knapsack), and a 1-D in-place array can silently read a value this same iteration already overwrote; survive it by iterating the capacity dimension in decreasing order when items must not repeat and in increasing order when they may, and by naming, for every cell, whether you intend to read "last row's" or "this row's" value.
+
+Foundation:
+
+1. [0/1 Knapsack (Naukri Code360 -- the base template isn't its own standalone LeetCode problem)](https://www.naukri.com/code360/problems/code-0-1-knapsack_8717)
+2. [Unbounded Knapsack (Naukri Code360 -- same, no standalone LeetCode equivalent)](https://www.naukri.com/code360/problems/unbounded-knapsack_1215029)
+3. [Coin Change](https://leetcode.com/problems/coin-change/)
+
+Reinforcement:
+
+1. [Coin Change II](https://leetcode.com/problems/coin-change-ii/) (combinations vs. permutations loop-order trap)
+2. [Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+3. [House Robber](https://leetcode.com/problems/house-robber/)
+4. [House Robber II](https://leetcode.com/problems/house-robber-ii/) (circular disguise of the same adjacency constraint)
+
+Boss:
+
+1. [Target Sum](https://leetcode.com/problems/target-sum/) (assign +/- signs, disguised subset-sum reduction)
+2. [Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
+3. [Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/)
+
+
+### Structural And Duplicate Traps
+
+#### Duplicate-Handling Traps
+
+- Invariant: the trap is that an algorithm designed for distinct elements silently produces repeated or missing results once duplicate values enter the input; survive it by sorting first and explicitly skipping over an equal value at the *same recursion level / same binary-search half*, not banning the value everywhere.
+
+Foundation:
+
+1. [3Sum](https://leetcode.com/problems/3sum/)
+2. [Subsets II](https://leetcode.com/problems/subsets-ii/)
+3. [Permutations II](https://leetcode.com/problems/permutations-ii/)
+
+Reinforcement:
+
+1. [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
+2. [4Sum](https://leetcode.com/problems/4sum/)
+
+Boss:
+
+1. [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) (duplicates break the "one half is always sorted" invariant that made the distinct-element version easy)
+
+
+#### Backtracking State-Restoration Traps
+
+- Invariant: the trap is mutating shared state (a path list, a visited grid, a used-digits set) on the way down and forgetting to undo that exact mutation on the way back up -- survive it by pairing every mutate-before-recursion with an identical undo-after-recursion in the same stack frame, so the container returns to the caller in the state it was handed.
+
+Foundation:
+
+1. [Permutations](https://leetcode.com/problems/permutations/)
+2. [Combination Sum](https://leetcode.com/problems/combination-sum/)
+3. [Subsets](https://leetcode.com/problems/subsets/)
+
+Reinforcement:
+
+1. [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
+2. [N-Queens](https://leetcode.com/problems/n-queens/)
+3. [Word Search](https://leetcode.com/problems/word-search/)
+4. [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
+
+Boss:
+
+1. [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) (restoring both a cell value and per-row/col/box constraint state)
+
+
+#### Mutable/Aliasing Reference Traps
+
+- Invariant: the trap is sharing one mutable object (a node, a list, a reference) across recursive branches or forgetting to break aliasing when "copying," so the clone silently points back into the original structure and corrupts it on the next mutation; survive it by explicitly tracking a visited/cloned map from old node to new node before you follow a single additional pointer.
+
+Foundation:
+
+1. [Clone Graph](https://leetcode.com/problems/clone-graph/) (recursing without a visited map infinite-loops on any cycle)
+2. [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+
+Reinforcement:
+
+1. [Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator/)
+
+Boss:
+
+1. [Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/) (O(1)-space variant: the next-pointers you rely on to traverse the next level are exactly the ones you're still constructing on this level)
+
+
+### Graph And Cycle Traps
+
+#### Cycle-Detection Math/Logic Traps
+
+- Invariant: the trap is treating "a cycle exists" and "this is the correct notion of cycle for this structure" as interchangeable facts; survive it by matching the detection rule to the actual semantics -- directed graphs need a recursion-stack/color check (not just a visited set), undirected graphs must ignore the immediate parent edge, and Floyd's meeting point is not the cycle's start until you reset one pointer to the head and walk both one step at a time.
+
+Foundation:
+
+1. [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+2. [Course Schedule](https://leetcode.com/problems/course-schedule/)
+3. [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)
+
+Reinforcement:
+
+1. [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) (meeting point is not the cycle start)
+2. [Graph Valid Tree (GeeksforGeeks/Naukri clone -- LC 261 is a real problem but premium-locked on leetcode.com)](https://www.naukri.com/code360/problems/graph-valid-tree_1376618)
+3. [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
+
+Boss:
+
+1. [Redundant Connection II](https://leetcode.com/problems/redundant-connection-ii/) (directed rooted tree: cycle detection entangled with a two-parent conflict)
+
+
+#### Multi-Source vs Single-Source BFS Confusion
+
+- Invariant: the trap is seeding the BFS queue with only one start node (or only "the" obvious source) when the grid actually has many simultaneous sources whose frontiers must expand together -- survive it by pushing every source cell into the queue at distance 0 *before* the first BFS step, so each queue "pop layer" represents one true global time-tick, not one node's personal distance.
+
+Foundation:
+
+1. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+2. [01 Matrix](https://leetcode.com/problems/01-matrix/)
+3. [Walls and Gates (Naukri Code360 -- LC 286 is a real problem but premium-locked on leetcode.com)](https://www.naukri.com/code360/problems/walls-and-gates_1092887)
+
+Reinforcement:
+
+1. [As Far from Land as Possible](https://leetcode.com/problems/as-far-from-land-as-possible/)
+2. [Snakes and Ladders](https://leetcode.com/problems/snakes-and-ladders/) (single-source BFS where "layer = dice throw" is the trap)
+3. [Find Shortest Safe Route in a Matrix (GeeksforGeeks -- landmine danger-zone BFS, no direct LeetCode equivalent)](https://www.geeksforgeeks.org/problems/find-shortest-safe-route-in-a-matrix/1)
+
+Boss:
+
+1. [Shortest Bridge](https://leetcode.com/problems/shortest-bridge/) (DFS to find island one, then multi-source BFS from every cell of it)
+2. [Minimum Knight Moves (GeeksforGeeks "Steps by Knight" -- LC 1197 is premium-locked on leetcode.com)](https://www.geeksforgeeks.org/problems/steps-by-knight5927/1)
+
+
+#### Union-Find Without Path Compression/Union-By-Rank -> Silent TLE
+
+- Invariant: the trap is a naive DSU (no path compression, no union by rank) that returns correct answers on small inputs and only reveals its near-linear-chain worst case once the graph is large enough to make every `find` walk a long parent chain; survive it by building path compression and union-by-rank into the very first version you write, not as a later optimization pass.
+
+Foundation:
+
+1. [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)
+2. [Accounts Merge](https://leetcode.com/problems/accounts-merge/)
+3. [Satisfiability of Equality Equations](https://leetcode.com/problems/satisfiability-of-equality-equations/)
+
+Reinforcement:
+
+1. [Most Stones Removed with Same Row or Column](https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/) (union happens on a shared row/column, not a direct edge -- easy to union the wrong pair of indices)
+
+Boss:
+
+1. [Bricks Falling When Hit](https://leetcode.com/problems/bricks-falling-when-hit/) (reverse-DSU: the naive forward simulation is the trap; the fix requires processing hits backward)
+
+
+#### Directed vs Undirected Graph Confusion
+
+- Invariant: the trap is applying an undirected-graph algorithm (plain two-coloring, plain Union-Find cycle check) to a directed graph, where a "back edge" to an already-visited node isn't automatically a cycle unless that node is still on the current recursion stack; survive it by tracking three node states (unvisited / in-progress / done) for directed graphs instead of the two states (visited / unvisited) that suffice for undirected ones.
+
+Foundation:
+
+1. [Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/)
+2. [Possible Bipartition](https://leetcode.com/problems/possible-bipartition/)
+
+Boss:
+
+1. [Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) (a node is only "unsafe" if it can reach a cycle -- which requires the three-state directed-graph coloring, not a plain visited set)
+
+
+### Data Structure Usage Traps
+
+#### Heap/Comparator Tie-Breaking Traps
+
+- Invariant: the trap is a comparator that is correct on the primary key but produces a valid-looking, wrong answer once two elements tie, because the problem's real constraint (adjacency, distance, recency) only bites on the tie-break; survive it by writing the tie-break rule as an explicit second comparator key before you trust the heap's output.
+
+Foundation:
+
+1. [Reorganize String](https://leetcode.com/problems/reorganize-string/) (tie-breaking on frequency alone isn't enough to guarantee no two adjacent characters match)
+2. [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/) (frequency ties must break lexicographically, not arbitrarily)
+
+Boss:
+
+1. [Super Ugly Number](https://leetcode.com/problems/super-ugly-number/) (a heap without duplicate-suppression re-inserts the same value from multiple prime multipliers)
+
+
+#### Interval Boundary Traps
+
+- Invariant: the trap is silently treating "end of A equals start of B" as either always-merge or always-separate without checking which the problem actually wants -- survive it by writing the merge/overlap test as an explicit inequality (`<=` for touching-counts-as-overlap, `<` for touching-is-fine) and unit-testing the exact boundary case before trusting the sort-and-sweep.
+
+Foundation:
 
 1. [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
 2. [Insert Interval](https://leetcode.com/problems/insert-interval/)
-3. [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
-4. [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)
-5. [Minimum Number of Arrows to Burst Balloons](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/)
-6. [Car Fleet](https://leetcode.com/problems/car-fleet/)
-7. [Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
-8. [My Calendar II](https://leetcode.com/problems/my-calendar-ii/)
-9. [My Calendar III](https://leetcode.com/problems/my-calendar-iii/)
-10. [The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)
-11. [Number of Flowers in Full Bloom](https://leetcode.com/problems/number-of-flowers-in-full-bloom/)
-12. [Falling Squares](https://leetcode.com/problems/falling-squares/)
+3. [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/) (poison-duration overlap/reset boundary)
 
-### Binary Search
+Reinforcement:
 
-You must know:
+1. [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+2. [Meeting Rooms II (Naukri Code360 "Minimum Number of Platforms" -- LC is premium-locked on leetcode.com)](https://www.naukri.com/code360/problems/minimum-number-of-platforms_799400)
 
-- lower bound,
-- upper bound,
-- rotated search,
-- first true,
-- monotonic predicate,
-- kth value search,
-- binary search on answer,
-- precision search.
+Boss:
 
-Problems:
+1. [My Calendar III](https://leetcode.com/problems/my-calendar-iii/) (k-overlap sweep, boundary error compounds across many events)
 
-1. [Binary Search](https://leetcode.com/problems/binary-search/)
-2. [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
-3. [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-4. [Find Peak Element](https://leetcode.com/problems/find-peak-element/)
-5. [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)
-6. [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)
-7. [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
-8. [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
-9. [Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum/)
-10. [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
-11. [Find K-th Smallest Pair Distance](https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
-12. [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
-### Stack, Monotonic Stack, Parsing
+#### Sliding Window Invariant Traps
 
-You must know:
+- Invariant: the trap is picking a shrink condition that is correct for "at most K" but then trying to reuse that same window logic directly for "exactly K" -- survive it by remembering exactly(K) = atMost(K) - atMost(K-1), and by re-deriving the shrink-while condition from scratch for every new constraint instead of copy-pasting the last problem's window.
 
-- stack of indices,
-- next greater/smaller,
-- contribution counting,
-- histogram,
-- parentheses validation,
-- expression parsing,
-- operator precedence.
+Foundation:
 
-Problems:
+1. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+2. [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+3. [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/)
 
-1. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
-2. [Min Stack](https://leetcode.com/problems/min-stack/)
-3. [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
-4. [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
-5. [Online Stock Span](https://leetcode.com/problems/online-stock-span/)
-6. [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/)
-7. [Decode String](https://leetcode.com/problems/decode-string/)
-8. [Remove K Digits](https://leetcode.com/problems/remove-k-digits/)
-9. [Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)
-10. [Sum of Subarray Minimums](https://leetcode.com/problems/sum-of-subarray-minimums/)
-11. [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
-12. [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)
-13. [Basic Calculator](https://leetcode.com/problems/basic-calculator/)
-14. [Basic Calculator III](https://leetcode.com/problems/basic-calculator-iii/)
-15. [Number of Atoms](https://leetcode.com/problems/number-of-atoms/)
+Reinforcement:
 
-### Heaps And Streaming
+1. [Longest Substring with At Most K Distinct Characters (Naukri Code360 -- LC 340 is premium-locked on leetcode.com)](https://www.naukri.com/code360/problems/longest-sub-string-with-at-most-k-distinct-characters_699944)
+2. [Longest K Unique Characters Substring (GeeksforGeeks -- "exactly K", not "at most K"; must return -1 if impossible, no direct LeetCode equivalent)](https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1)
 
-You must know:
+Boss:
 
-- top K,
-- k-way merge,
-- two heaps,
-- lazy deletion,
-- greedy heap replacement,
-- streaming order statistics.
+1. [Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/) (the canonical atMost(K)-atMost(K-1) boss problem)
 
-Problems:
 
-1. [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-2. [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
-3. [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
-4. [Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
-5. [Task Scheduler](https://leetcode.com/problems/task-scheduler/)
-6. [Reorganize String](https://leetcode.com/problems/reorganize-string/)
-7. [Single-Threaded CPU](https://leetcode.com/problems/single-threaded-cpu/)
-8. [IPO](https://leetcode.com/problems/ipo/)
-9. [Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)
-10. [Minimum Number of Refueling Stops](https://leetcode.com/problems/minimum-number-of-refueling-stops/)
-11. [Smallest Range Covering Elements from K Lists](https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/)
-12. [Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+### Tree And Parsing Traps
 
-### Linked Lists
+#### Tree Recursion Return-Value Conflation
 
-You must know:
+- Invariant: the trap is conflating "the best value achievable through this node as a bridge between two of its branches" with "the single best value this node is allowed to hand up to its parent"; survive it by having the recursive call return only the one-sided, parent-usable value while a separate outer/global variable is updated with the two-sided (through-node) combination at every node.
 
-- dummy node,
-- pointer rewiring,
-- fast/slow,
-- reverse sublist,
-- k-group reversal,
-- copy with random pointer.
+Foundation:
 
-Problems:
+1. [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+2. [House Robber III](https://leetcode.com/problems/house-robber-iii/)
+3. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
 
-1. [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-2. [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)
-3. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-4. [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
-5. [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
-6. [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-7. [Reorder List](https://leetcode.com/problems/reorder-list/)
-8. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
-9. [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
-10. [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)
+Reinforcement:
 
-### Trees And BSTs
+1. [Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)
+2. [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/)
+3. [Diameter of N-Ary Tree](https://leetcode.com/problems/diameter-of-n-ary-tree/)
 
-You must know:
+Boss:
 
-- recursive return values,
-- global answer updates,
-- iterative DFS,
-- BFS levels,
-- BST bounds,
-- LCA,
-- serialization,
-- subtree signatures,
-- rerooting concept.
+1. [Longest Path With Different Adjacent Characters](https://leetcode.com/problems/longest-path-with-different-adjacent-characters/)
 
-Problems:
 
-1. [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)
-2. [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
-3. [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
-4. [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-5. [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
-6. [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-7. [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
-8. [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-9. [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-10. [Path Sum III](https://leetcode.com/problems/path-sum-iii/)
-11. [Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)
-12. [Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)
-13. [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
-14. [Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
-15. [Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)
-16. [Vertical Order Traversal of a Binary Tree](https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)
-17. [Binary Tree Cameras](https://leetcode.com/problems/binary-tree-cameras/)
-18. [Step-By-Step Directions From a Binary Tree Node to Another](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/)
-19. [Maximum Sum BST in Binary Tree](https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/)
-20. [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree/)
+#### Expression-Parsing Operator-Precedence Traps
 
-### Tries And Search
+- Invariant: the trap is evaluating strictly left-to-right and only discovering precedence rules exist once `*`/`/` binds tighter than `+`/`-`, or once nested parentheses require a stack frame per depth level rather than one global state; survive it by deciding up front whether you need a two-stack (operator/operand) parser or a recursive-descent parser, and never trying to patch precedence into a single flat left-to-right scan.
 
-You must know:
+Foundation:
 
-- prefix trie,
-- wildcard DFS,
-- trie plus board DFS,
-- bit trie,
-- reversed trie,
-- pruning duplicate work.
+1. [Basic Calculator](https://leetcode.com/problems/basic-calculator/)
+2. [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
 
-Problems:
+Reinforcement:
 
-1. [Implement Trie](https://leetcode.com/problems/implement-trie-prefix-tree/)
-2. [Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)
-3. [Word Search](https://leetcode.com/problems/word-search/)
-4. [Word Search II](https://leetcode.com/problems/word-search-ii/)
-5. [Search Suggestions System](https://leetcode.com/problems/search-suggestions-system/)
-6. [Stream of Characters](https://leetcode.com/problems/stream-of-characters/)
-7. [Concatenated Words](https://leetcode.com/problems/concatenated-words/)
-8. [Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)
-9. [Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)
-10. [Maximum XOR With an Element From Array](https://leetcode.com/problems/maximum-xor-with-an-element-from-array/)
+1. [Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/) (no parentheses, but now precedence between `*`/`/` and `+`/`-` is the entire problem)
 
-### Backtracking
+Boss:
 
-You must know:
+1. [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) (every possible precedence grouping simultaneously, via divide-and-conquer)
 
-- choose/explore/unchoose,
-- duplicate skipping,
-- pruning,
-- constraint propagation,
-- memoization boundary.
 
-Problems:
+### Low-Level Correctness Traps
 
-1. [Permutations](https://leetcode.com/problems/permutations/)
-2. [Permutations II](https://leetcode.com/problems/permutations-ii/)
-3. [Subsets](https://leetcode.com/problems/subsets/)
-4. [Subsets II](https://leetcode.com/problems/subsets-ii/)
-5. [Combination Sum](https://leetcode.com/problems/combination-sum/)
-6. [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
-7. [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)
-8. [N-Queens](https://leetcode.com/problems/n-queens/)
-9. [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
-10. [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)
-11. [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)
-12. [Verbal Arithmetic Puzzle](https://leetcode.com/problems/verbal-arithmetic-puzzle/)
+#### Wrong-Complexity Brute Force That Passes Small Tests But Fails At Scale
+
+- Invariant: the trap is an O(n^2) approach that looks correct and passes every example you hand-check, so the failure only shows up against the judge's large hidden tests; survive it by stating the target complexity from the problem's constraints *before* writing code, not after a TLE.
+
+Foundation:
+
+1. [Two Sum](https://leetcode.com/problems/two-sum/) (nested-loop brute force vs. one-pass hash map)
+2. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) (checking every pair vs. the two-pointer argument for why the shorter side can always be discarded)
+
+Reinforcement:
+
+1. [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) (per-index brute force recomputes both directions' max on every step)
+
+Boss:
+
+1. [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) (sort-and-scan looks like the "obvious" O(n log n) fix, but the real target is O(n) via a hash set and only expanding from sequence starts)
+
+
+#### Modulo Arithmetic Sign/Negative Traps
+
+- Invariant: the trap is that a prefix sum, running total, or intermediate result can go negative, and languages differ on what `%` returns for negative operands, so a remainder-equality check silently misses valid answers; survive it by normalizing every modulo result into `[0, k)` with `((x % k) + k) % k` before comparing or using it as a hash-map key.
+
+Foundation:
+
+1. [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/) (negative prefix sums must still map to the same remainder bucket as their positive counterparts)
+2. [Continuous Subarray Sum](https://leetcode.com/problems/continuous-subarray-sum/)
+
+Boss:
+
+1. [K-Concatenation Maximum Sum](https://leetcode.com/problems/k-concatenation-maximum-sum/) (combines Kadane's with a mod-10^9+7 output on a value that can be enormous before the mod is applied)
+
+
+#### Bit Manipulation Sign-Extension / Shift Traps
+
+- Invariant: the trap is that right-shifting a negative number, or treating a language's fixed-width integer as if it had infinite bits, silently changes which bit ends up where; survive it by masking to the exact bit width the problem specifies (`& 0xFFFFFFFF`) before any shift, and reasoning about the sign bit as data, not noise.
+
+Foundation:
+
+1. [Reverse Bits](https://leetcode.com/problems/reverse-bits/)
+2. [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) (bitwise add without `+`; carry propagation on negative operands is the whole difficulty)
+
+Boss:
+
+1. [Single Number II](https://leetcode.com/problems/single-number-ii/) (bit-counting mod 3 across 32 bit positions; sign bit must be handled the same as any other bit)
+
 
 ## Tier B: Graph Problems That Actually Expose Weakness
 
