@@ -1,4 +1,4 @@
-# FAANG DSA Extreme Mastery Map
+# Extreme Mastery Map
 
 This is the heavier replacement for a normal DSA list. It is built to cover the interview surface area, not just popular questions. No document can honestly guarantee a 100% pass rate, because interviews also test communication, speed, debugging, and judgment under pressure. But if you can solve this set cold, explain the invariants, and adapt to variants, you should be ready for almost any FAANG-style DSA interview.
 

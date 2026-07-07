@@ -202,10 +202,30 @@ window.addEventListener("hashchange", render);
 
 // ---------- Home view ----------
 
+// Curated links to well-known external sheets -- not parsed from markdown,
+// so they carry no checkable items or progress; just a bookmark card that
+// opens the official resource in a new tab.
+const EXTERNAL_RESOURCES = {
+  dsa: [
+    { title: "Blind 75", desc: "The original 75-problem list that started the whole genre.", url: "https://leetcode.com/discuss/post/460599/blind-75-leetcode-questions-by-krishnade-9xev/" },
+    { title: "LeetCode Interview 150", desc: "LeetCode's own curated interview study plan.", url: "https://leetcode.com/studyplan/top-interview-150/" },
+    { title: "NeetCode 150", desc: "Blind 75 plus 75 more, each with a free video solution.", url: "https://neetcode.io/practice/practice/neetcode150" },
+    { title: "Sean Prashad's Patterns", desc: "LeetCode problems grouped by the underlying pattern.", url: "https://seanprashad.com/leetcode-patterns/" },
+    { title: "Love Babbar 450 (via Codolio)", desc: "The well-known 450 DSA sheet, tracked on Codolio.", url: "https://codolio.com/question-tracker/sheet/love-babbar-sheet" },
+    { title: "Striver's A2Z Sheet", desc: "TakeUForward's structured A-to-Z DSA course sheet.", url: "https://takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z" },
+  ],
+  cp: [
+    { title: "CP-31 Sheet", desc: "TLE Eliminators' 31 hand-picked problems per rating band, 800-1900.", url: "https://www.tle-eliminators.com/cp-sheet" },
+    { title: "A2OJ Ladders", desc: "Classic rating-banded Codeforces practice ladders.", url: "https://earthshakira.github.io/a2oj-clientside/server/Ladders.html" },
+    { title: "AtCoder Problems", desc: "The standard problem tracker and recommender for AtCoder.", url: "https://kenkoooo.com/atcoder/" },
+  ],
+};
+
 function renderHome() {
   const categories = [
-    { key: "dsa", label: "DSA Ladders" },
-    { key: "system-design", label: "System Design Ladders" },
+    { key: "dsa", label: "OA + Interview" },
+    { key: "cp", label: "Competitive Programming" },
+    { key: "system-design", label: "System Design" },
   ];
 
   const parts = [];
@@ -234,6 +254,21 @@ function renderHome() {
       `);
     }
     parts.push(`</div>`);
+
+    const extResources = EXTERNAL_RESOURCES[cat.key];
+    if (extResources && extResources.length) {
+      parts.push(`<h3 class="external-heading">Popular external sheets</h3>`);
+      parts.push(`<div class="sheet-grid">`);
+      for (const r of extResources) {
+        parts.push(`
+          <a class="sheet-card external-card" href="${escapeAttr(r.url)}" target="_blank" rel="noopener">
+            <h3>${escapeHtml(r.title)} <span class="ext-icon">↗</span></h3>
+            <p>${escapeHtml(r.desc)}</p>
+          </a>
+        `);
+      }
+      parts.push(`</div>`);
+    }
   }
 
   appEl.innerHTML = parts.join("");

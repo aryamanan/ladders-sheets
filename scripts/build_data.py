@@ -18,6 +18,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "docs" / "data.json"
 
+# Landing-page category is inferred from the filename ("dsa" -> OA+Interview,
+# else -> System Design) except for sheets listed here, which need an
+# explicit override (e.g. CSES lives under Competitive Programming even
+# though its filename contains "dsa").
+CATEGORY_OVERRIDES = {
+    "faang_dsa_cses_complete_map.md": "cp",
+}
+
 # Files where the same URL legitimately gets referenced over and over within
 # one section (e.g. every problem in a CSES technique family sharing an
 # identical "external prereqs" list, or ladders whose solidifiers point back
@@ -431,7 +439,7 @@ def parse_file(path):
             for sg in g["subgroups"]:
                 sg["id"] = make_id(path.name, s["title"], g["title"] or "", sg["title"] or "")
 
-    category = "dsa" if "dsa" in path.stem else "system-design"
+    category = CATEGORY_OVERRIDES.get(path.name, "dsa" if "dsa" in path.stem else "system-design")
     sheet_id = path.stem.replace("_", "-")
     total_items = sum(
         len(sg["items"]) for s in sections for g in s["groups"] for sg in g["subgroups"]

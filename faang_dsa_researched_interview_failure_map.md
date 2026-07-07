@@ -1,4 +1,4 @@
-# FAANG DSA Researched Interview Failure Map
+# Interview Failure Map
 
 This is a correction to the previous DSA sheets. A giant random problem bank is not enough. The real target is the intersection of:
 

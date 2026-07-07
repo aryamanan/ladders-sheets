@@ -1,4 +1,4 @@
-# FAANG System Design And Technical Concept Repetition Ladders
+# System Design Concept Repetition Ladders
 
 This document turns system design from "I know the topics" into repeated practice. The goal is to make each concept survive new products, scale changes, failure modes, and interviewer pressure.
 

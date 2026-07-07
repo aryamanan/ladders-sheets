@@ -163,6 +163,28 @@ a:hover { text-decoration: underline; }
 }
 .card-progress-label { font-size: 0.78rem; color: var(--fg-muted); }
 
+/* External sheets are bookmarks to someone else's site, not trackable
+   practice -- a dashed border and no progress bar keeps that obvious at a
+   glance instead of looking like a broken/empty internal sheet card. */
+.external-heading {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-muted);
+  margin: 18px 0 10px;
+}
+.external-card {
+  border-style: dashed;
+  background: transparent;
+}
+.external-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+.external-card .ext-icon { font-size: 0.8rem; color: var(--fg-muted); }
+
 /* Sheet view */
 .sheet-header { margin-bottom: 18px; }
 .back-link { font-size: 0.85rem; }

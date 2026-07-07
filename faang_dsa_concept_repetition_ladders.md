@@ -1,4 +1,4 @@
-# FAANG DSA Concept Repetition Ladders
+# Concept Repetition Ladders
 
 This document is not another "big list." It is a repetition system. The goal is to make every important concept survive small tweaks, different constraints, and unfamiliar wording.
 

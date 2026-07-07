@@ -1,4 +1,4 @@
-# FAANG System Design And Technical Interview Failure Map
+# System Design Failure Map
 
 This is the corrected system-design document. The earlier version included useful material, but the source hierarchy was muddy. For interview prep, the core should be interview-specific system design practice. SRE and cloud architecture frameworks are relevant, but only as deep-dive support for reliability, observability, resilience, cost, and operational follow-ups.
 

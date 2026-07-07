@@ -3,7 +3,7 @@
     {
       "id": "faang-dsa-gauntlet",
       "file": "faang_dsa_gauntlet.md",
-      "title": "FAANG DSA Gauntlet",
+      "title": "The Gauntlet",
       "description": "This is intentionally overbuilt. No list can guarantee an offer, because real interviews also test communication, speed, debugging, and judgment, but if you can solve this bank cold, explain tradeoffs cleanly, and implement without hints, you are very strongly prepared for FAANG-style DSA rounds. Sources used for calibration: LeetCode Top Interview 150, LeetCode Problemset, NeetCode Roadmap, CSES Problem Set, and cp-algorithms.",
       "category": "dsa",
       "totalItems": 368,
@@ -2809,7 +2809,7 @@
     {
       "id": "faang-dsa-extreme-mastery-map",
       "file": "faang_dsa_extreme_mastery_map.md",
-      "title": "FAANG DSA Extreme Mastery Map",
+      "title": "Extreme Mastery Map",
       "description": "This is the heavier replacement for a normal DSA list. It is built to cover the interview surface area, not just popular questions. No document can honestly guarantee a 100% pass rate, because interviews also test communication, speed, debugging, and judgment under pressure. But if you can solve this set cold, explain the invariants, and adapt to variants, you should be ready for almost any FAANG-style DSA interview. Primary calibration sources: LeetCode Problemset, LeetCode Top Interview 150, NeetCode Roadmap, CSES Problem Set, and cp-algorithms.",
       "category": "dsa",
       "totalItems": 857,
@@ -10106,7 +10106,7 @@
     {
       "id": "faang-dsa-researched-interview-failure-map",
       "file": "faang_dsa_researched_interview_failure_map.md",
-      "title": "FAANG DSA Researched Interview Failure Map",
+      "title": "Interview Failure Map",
       "description": "This is a correction to the previous DSA sheets. A giant random problem bank is not enough. The real target is the intersection of: 1. What public interview-prep lists repeatedly recommend. 2. What pattern taxonomies say you must recognize. 3. What actually causes candidates to fail under interview pressure. 4. What advanced topics cover the rare but brutal interviewer follow-ups. No prep document can honestly guarantee a 100% pass rate. But this map is built to make your prep much less random.",
       "category": "dsa",
       "totalItems": 452,
@@ -13668,7 +13668,7 @@
     {
       "id": "faang-dsa-concept-repetition-ladders",
       "file": "faang_dsa_concept_repetition_ladders.md",
-      "title": "FAANG DSA Concept Repetition Ladders",
+      "title": "Concept Repetition Ladders",
       "description": "This document is not another \"big list.\" It is a repetition system. The goal is to make every important concept survive small tweaks, different constraints, and unfamiliar wording. Use this together with: [FAANG DSA Researched Interview Failure Map](faang_dsa_researched_interview_failure_map.md) [FAANG DSA Extreme Mastery Map](faang_dsa_extreme_mastery_map.md)",
       "category": "dsa",
       "totalItems": 897,
@@ -21181,7 +21181,7 @@
     {
       "id": "faang-system-design-technical-mastery",
       "file": "faang_system_design_technical_mastery.md",
-      "title": "FAANG System Design and Technical Interview Mastery",
+      "title": "System Design Mastery",
       "description": "This is a practice document for system design, low-level design, and the non-DSA technical material that large tech companies commonly test. No honest prep plan can guarantee a 100% pass rate, but this is designed to make passing highly likely if you can execute the drills under interview conditions. Core references for calibration: System Design Primer Google SRE Book Google SRE Workbook AWS Well-Architected Framework Amazon Builders' Library Designing Data-Intensive Applications Martin Fowler Architecture Guide PostgreSQL Documentation Kafka Documentation Redis Documentation MDN HTTP Overview",
       "category": "system-design",
       "totalItems": 731,
@@ -27766,7 +27766,7 @@
     {
       "id": "faang-system-design-researched-interview-failure-map",
       "file": "faang_system_design_researched_interview_failure_map.md",
-      "title": "FAANG System Design And Technical Interview Failure Map",
+      "title": "System Design Failure Map",
       "description": "This is the corrected system-design document. The earlier version included useful material, but the source hierarchy was muddy. For interview prep, the core should be interview-specific system design practice. SRE and cloud architecture frameworks are relevant, but only as deep-dive support for reliability, observability, resilience, cost, and operational follow-ups.",
       "category": "system-design",
       "totalItems": 623,
@@ -32689,7 +32689,7 @@
     {
       "id": "faang-system-design-concept-repetition-ladders",
       "file": "faang_system_design_concept_repetition_ladders.md",
-      "title": "FAANG System Design And Technical Concept Repetition Ladders",
+      "title": "System Design Concept Repetition Ladders",
       "description": "This document turns system design from \"I know the topics\" into repeated practice. The goal is to make each concept survive new products, scale changes, failure modes, and interviewer pressure. Use this together with: [FAANG System Design And Technical Interview Failure Map](faang_system_design_researched_interview_failure_map.md) [FAANG System Design and Technical Interview Mastery](faang_system_design_technical_mastery.md)",
       "category": "system-design",
       "totalItems": 806,
@@ -39043,9 +39043,9 @@
     {
       "id": "faang-dsa-cses-complete-map",
       "file": "faang_dsa_cses_complete_map.md",
-      "title": "CSES Complete Conquest Map: Every Problem With Prereqs And Solidifiers",
+      "title": "CSES Complete Map",
       "description": "This workbook maps every current CSES Problem Set task to a technique family, prerequisite runway, beginner/intermediate/pro solidifiers, and mutation drills. It is meant to help you solve the whole CSES set without treating it as 400 unrelated puzzles. Source catalog: CSES Problem Set. The catalog was scraped during this session from the live task list. Total CSES tasks mapped: 400.",
-      "category": "dsa",
+      "category": "cp",
       "totalItems": 2442,
       "sections": [
         {

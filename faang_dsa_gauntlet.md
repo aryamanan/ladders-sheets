@@ -1,4 +1,4 @@
-# FAANG DSA Gauntlet
+# The Gauntlet
 
 This is intentionally overbuilt. No list can guarantee an offer, because real interviews also test communication, speed, debugging, and judgment, but if you can solve this bank cold, explain tradeoffs cleanly, and implement without hints, you are very strongly prepared for FAANG-style DSA rounds.
 

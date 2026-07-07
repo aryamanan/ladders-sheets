@@ -1,4 +1,4 @@
-# CSES Complete Conquest Map: Every Problem With Prereqs And Solidifiers
+# CSES Complete Map
 
 This workbook maps every current CSES Problem Set task to a technique family, prerequisite runway, beginner/intermediate/pro solidifiers, and mutation drills. It is meant to help you solve the whole CSES set without treating it as 400 unrelated puzzles.
 

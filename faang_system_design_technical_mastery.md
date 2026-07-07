@@ -1,4 +1,4 @@
-# FAANG System Design and Technical Interview Mastery
+# System Design Mastery
 
 This is a practice document for system design, low-level design, and the non-DSA technical material that large tech companies commonly test. No honest prep plan can guarantee a 100% pass rate, but this is designed to make passing highly likely if you can execute the drills under interview conditions.
 
