@@ -484,6 +484,14 @@ function renderSubgroup(sg) {
   return `<div class="subgroup">${titleHtml}${rows}</div>`;
 }
 
+const DIFF_LABEL = { E: "Easy", M: "Medium", H: "Hard" };
+
+function difficultyDotHtml(difficulty) {
+  if (!difficulty || !DIFF_LABEL[difficulty]) return "";
+  const cls = { E: "dot-easy", M: "dot-medium", H: "dot-hard" }[difficulty];
+  return `<span class="diff-dot ${cls}" title="${DIFF_LABEL[difficulty]}" aria-label="${DIFF_LABEL[difficulty]}"></span>`;
+}
+
 function renderItemRow(item) {
   // An invariant is a fact to internalize, not a task to complete -- render
   // it as a distinct callout with no checkbox, so it visually stands apart
@@ -517,8 +525,14 @@ function renderItemRow(item) {
     isSolved && item.difficulty
       ? { E: " diff-easy", M: " diff-medium", H: " diff-hard" }[item.difficulty] || ""
       : "";
+  // A small dot before the checkbox shows difficulty up front, before you've
+  // even attempted the problem -- separate from the full-block color, which
+  // only appears once solved. Both read the same E/M/H code, just at
+  // different moments (deciding whether to attempt vs. celebrating a Hard).
+  const dotHtml = difficultyDotHtml(item.difficulty);
   return `
     <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText).toLowerCase())}">
+      ${dotHtml}
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
       ${tagHtml}

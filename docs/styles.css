@@ -423,6 +423,20 @@ a:hover { text-decoration: underline; }
   line-height: 1.4;
 }
 
+/* A small dot before the checkbox, always visible -- unlike the full-block
+   highlight (which only appears once solved), this tells you the
+   difficulty BEFORE you decide whether to attempt the problem. */
+.diff-dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+.diff-dot.dot-easy { background: var(--diff-easy-fg); }
+.diff-dot.dot-medium { background: var(--diff-medium-fg); }
+.diff-dot.dot-hard { background: var(--diff-hard-fg); }
+
 .item-checkbox {
   width: 18px;
   height: 18px;
