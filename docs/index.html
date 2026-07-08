@@ -13,7 +13,6 @@
       <div class="topbar-right">
         <a class="btn btn-ghost btn-small" href="#/starred">★ Starred</a>
         <a class="btn btn-ghost btn-small" href="#/most-practiced">🔁 Most Practiced</a>
-        <button id="accounts-btn" class="btn btn-ghost btn-small" type="button">Accounts</button>
         <span id="sync-status" class="sync-status">Checking sync…</span>
         <button id="signin-btn" class="btn btn-ghost" type="button">Sign in with Google</button>
       </div>
@@ -22,54 +21,6 @@
       <div id="sheet-progress-fill" class="sheet-progress-fill"></div>
     </div>
   </header>
-
-  <div id="accounts-panel" class="accounts-panel" hidden>
-    <div class="accounts-panel-inner">
-      <h3>Link your LeetCode account</h3>
-      <p class="accounts-note">
-        Shows a read-only "solved on LeetCode" mark next to matching items -- it never checks/unchecks your
-        own progress, that's always manual.
-      </p>
-      <label>LeetCode username <input id="lc-username-input" type="text" placeholder="e.g. aryanarora" /></label>
-      <div class="accounts-panel-actions">
-        <button id="accounts-sync-btn" class="btn btn-small btn-primary" type="button">Quick sync (recent only)</button>
-        <span id="accounts-sync-status" class="accounts-sync-status"></span>
-      </div>
-      <p class="accounts-note">
-        Quick sync uses a community proxy (<code>alfa-leetcode-api</code>) and only sees your ~20 most
-        recent accepted submissions -- LeetCode's own API doesn't expose full solve history without
-        authentication, and no public proxy supports that.
-      </p>
-
-      <details class="accounts-advanced">
-        <summary>Full sync (your entire solve history, needs a one-time free setup)</summary>
-        <p class="accounts-note">
-          This needs a tiny proxy you deploy yourself on Cloudflare's free tier (~5 min, no card needed) --
-          the code and step-by-step instructions are in
-          <code>cloudflare-worker/leetcode-proxy.js</code> in the repo. It exists because your session
-          cookie can only ever be attached to a LeetCode request by a server, never by JavaScript running
-          in this page.
-        </p>
-        <label>Worker URL <input id="lc-worker-url-input" type="text" placeholder="https://leetcode-proxy.YOU.workers.dev" /></label>
-        <label>
-          LEETCODE_SESSION cookie
-          <input id="lc-session-input" type="password" placeholder="paste the cookie value" autocomplete="off" />
-        </label>
-        <label>
-          csrftoken cookie <span class="accounts-optional">(optional, only if the quick field above fails)</span>
-          <input id="lc-csrf-input" type="password" placeholder="paste the cookie value" autocomplete="off" />
-        </label>
-        <p class="accounts-note">
-          Treat this cookie like a password -- it's stored only in this browser's local storage, sent only
-          to the Worker URL above, and never touches any server of mine. Log out of LeetCode (or rotate
-          the cookie) any time to revoke it.
-        </p>
-        <div class="accounts-panel-actions">
-          <button id="accounts-full-sync-btn" class="btn btn-small btn-primary" type="button">Full sync now</button>
-        </div>
-      </details>
-    </div>
-  </div>
 
   <main id="app" class="app"></main>
 

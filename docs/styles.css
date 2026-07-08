@@ -139,37 +139,49 @@ a:hover { text-decoration: underline; }
 }
 
 /* GitHub-contributions-style calendar: one column per week, one cell per
-   day, shaded by how many problems were solved/re-practiced that day. */
+   day, shaded by how many problems were solved/re-practiced that day.
+   Title/stat and the Less-More legend share one row to keep the whole
+   panel compact instead of stacking three separate rows of chrome above
+   a small grid. */
 .heatmap-panel {
-  margin-top: 20px;
+  margin-top: 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-alt);
-  padding: 12px 14px;
+  padding: 10px 14px;
 }
-.heatmap-panel .recap-col-title { margin: 0 0 10px; }
+.heatmap-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.heatmap-panel .recap-col-title { margin: 0; }
+.heatmap-subtle { font-size: 0.76rem; font-weight: 400; color: var(--fg-muted); }
 .heatmap-grid {
   display: flex;
-  gap: 3px;
+  gap: 2px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 .heatmap-week {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   flex: none;
 }
 .heatmap-month-label {
-  height: 14px;
-  font-size: 0.68rem;
-  line-height: 14px;
+  height: 12px;
+  font-size: 0.62rem;
+  line-height: 12px;
   color: var(--fg-muted);
   white-space: nowrap;
 }
 .heatmap-cell {
-  width: 11px;
-  height: 11px;
+  width: 9px;
+  height: 9px;
   border-radius: 2px;
   background: var(--border);
 }
@@ -180,10 +192,10 @@ a:hover { text-decoration: underline; }
 .heatmap-legend {
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-top: 10px;
-  font-size: 0.72rem;
+  gap: 3px;
+  font-size: 0.68rem;
   color: var(--fg-muted);
+  flex: none;
 }
 .heatmap-legend .heatmap-cell { margin: 0 1px; }
 
@@ -662,20 +674,6 @@ a.recap-text:hover { text-decoration: underline; }
 .star-btn:hover { color: var(--fg-muted); }
 .star-btn.is-starred { color: #e0b84a; }
 
-/* Read-only "already solved on the real platform" mark -- deliberately
-   not a checkbox and not clickable, since only the user's own manual
-   checkbox is allowed to change `solved`. */
-.platform-badge {
-  flex: none;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--solved);
-  background: var(--solved-soft);
-  border-radius: 999px;
-  padding: 2px 7px;
-  white-space: nowrap;
-}
-
 .last-touched {
   flex: none;
   font-size: 0.72rem;
@@ -695,71 +693,6 @@ a.recap-text:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 .practice-btn:hover { border-color: var(--accent); color: var(--accent); }
-
-/* Accounts panel: a small dropdown-style card under the topbar, not a
-   full-screen modal -- linking accounts is a quick, occasional action. */
-.accounts-panel {
-  position: sticky;
-  top: 53px;
-  z-index: 9;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-.accounts-panel-inner {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 16px 20px;
-}
-.accounts-panel h3 { margin: 0 0 8px; font-size: 1rem; }
-.accounts-note {
-  font-size: 0.82rem;
-  color: var(--fg-muted);
-  margin: 0 0 12px;
-  line-height: 1.45;
-}
-.accounts-note code {
-  background: var(--bg-alt);
-  padding: 1px 5px;
-  border-radius: 4px;
-}
-.accounts-panel label {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--fg-muted);
-  margin-bottom: 10px;
-}
-.accounts-panel input {
-  display: block;
-  width: 100%;
-  margin-top: 4px;
-  font: inherit;
-  padding: 7px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-alt);
-  color: var(--fg);
-}
-.accounts-panel-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
-.accounts-sync-status { font-size: 0.8rem; color: var(--fg-muted); }
-
-.accounts-advanced {
-  margin-top: 14px;
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-}
-.accounts-advanced summary {
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--fg);
-}
-.accounts-advanced[open] summary { margin-bottom: 10px; }
-.accounts-optional { font-weight: 400; color: var(--fg-muted); }
 
 .empty-state { color: var(--fg-muted); padding: 30px 0; text-align: center; }
 

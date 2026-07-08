@@ -90,126 +90,20 @@ function skipFromRecap(id) {
   if (panel) panel.outerHTML = renderRepracticeRecommender();
 }
 
-// ---------- Linked-platform "solved elsewhere" marks ----------
-// Read-only cross-reference against the user's real LeetCode account --
-// deliberately never touches `solved` (that stays 100% manual, per
-// explicit instruction). Cached in localStorage since it requires a
-// network round trip most of the sheet-rendering code shouldn't have to
-// wait on.
-const PLATFORM_KEY = "practice-tracker-platform-solved-v1";
-const LC_USERNAME_KEY = "practice-tracker-lc-username";
-// Self-hosted (by the user, on their own free Cloudflare Workers account --
-// see cloudflare-worker/leetcode-proxy.js) full-solve-history proxy. Stored
-// locally like everything else here, never sent anywhere except the worker
-// URL the user themselves provided.
-const LC_WORKER_URL_KEY = "practice-tracker-lc-worker-url";
-const LC_SESSION_KEY = "practice-tracker-lc-session-cookie";
-const LC_CSRF_KEY = "practice-tracker-lc-csrf-cookie";
-// Community-hosted proxy: leetcode.com's own GraphQL API has no public
-// CORS support, so direct browser fetches to it are blocked. This is the
-// standard workaround the LC community uses for exactly this reason --
-// best-effort, not an official/guaranteed-uptime API. Known limitation
-// (a LeetCode platform limit, not fixable client-side): its acSubmission
-// endpoint only returns your ~20 most recent accepted submissions, not
-// your full solve history -- there's no public LC API that exposes
-// all-time solved slugs without an authenticated session.
-const LC_PROXY_BASE = "https://alfa-leetcode-api.onrender.com";
-
-function loadPlatformSolved() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(PLATFORM_KEY) || "{}");
-    return { lc: new Set(raw.lc || []) };
-  } catch {
-    return { lc: new Set() };
-  }
+// Topic names and item ids share the same `recapSkipped` map -- prefixed so
+// a topic named identically to some coincidental string can never collide
+// with an item id (item ids are fixed-length hex hashes, so in practice
+// this is just a defensive habit, not a real collision risk).
+function topicSkipKey(topicName) {
+  return "topic:" + topicName;
 }
 
-function savePlatformSolved() {
-  localStorage.setItem(PLATFORM_KEY, JSON.stringify({ lc: [...platformSolved.lc] }));
-}
-
-let platformSolved = loadPlatformSolved();
-
-function lcSlugFromUrl(url) {
-  const m = url && url.match(/^https?:\/\/leetcode\.com\/problems\/([a-z0-9\-]+)\/?/);
-  return m ? m[1] : null;
-}
-
-function platformBadgeHtml(item) {
-  if (!item.url) return "";
-  const lcSlug = lcSlugFromUrl(item.url);
-  if (lcSlug && platformSolved.lc.has(lcSlug)) {
-    return `<span class="platform-badge" title="Already solved on LeetCode">LC ✓</span>`;
-  }
-  return "";
-}
-
-async function syncPlatformSolved() {
-  const statusEl = document.getElementById("accounts-sync-status");
-  const lcUsername = (document.getElementById("lc-username-input").value || "").trim();
-  localStorage.setItem(LC_USERNAME_KEY, lcUsername);
-
-  if (!lcUsername) {
-    if (statusEl) statusEl.textContent = "Enter a LeetCode username first.";
-    return;
-  }
-  if (statusEl) statusEl.textContent = "Syncing… (proxy can take ~30s to wake up if it's been idle)";
-
-  try {
-    const res = await fetch(`${LC_PROXY_BASE}/${encodeURIComponent(lcUsername)}/acSubmission?limit=2000`);
-    const json = await res.json();
-    const submissions = json.submission || json.acSubmission || [];
-    const solved = new Set();
-    for (const sub of submissions) {
-      if (sub.titleSlug) solved.add(sub.titleSlug);
-    }
-    platformSolved.lc = solved;
-    savePlatformSolved();
-    if (statusEl) {
-      statusEl.textContent = solved.size
-        ? `Found ${solved.size} recent solved problem(s). Note: this only covers your ~20 most recent LeetCode submissions -- LeetCode's API doesn't expose full solve history publicly.`
-        : "No recent submissions found -- check the username, or your LeetCode privacy settings may hide submissions.";
-    }
-    render(); // re-render current view so badges show up immediately
-  } catch (e) {
-    console.warn("LeetCode sync failed", e);
-    if (statusEl) statusEl.textContent = "Failed -- proxy may be asleep/down, try again in a moment.";
-  }
-}
-
-async function syncFullPlatformSolved() {
-  const statusEl = document.getElementById("accounts-sync-status");
-  const workerUrl = (document.getElementById("lc-worker-url-input").value || "").trim();
-  const sessionCookie = (document.getElementById("lc-session-input").value || "").trim();
-  const csrfToken = (document.getElementById("lc-csrf-input").value || "").trim();
-  localStorage.setItem(LC_WORKER_URL_KEY, workerUrl);
-  localStorage.setItem(LC_SESSION_KEY, sessionCookie);
-  localStorage.setItem(LC_CSRF_KEY, csrfToken);
-
-  if (!workerUrl || !sessionCookie) {
-    if (statusEl) statusEl.textContent = "Worker URL and session cookie are both required for full sync.";
-    return;
-  }
-  if (statusEl) statusEl.textContent = "Fetching your full solve history… (paginates through every problem, can take a few seconds)";
-
-  try {
-    const res = await fetch(workerUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sessionCookie, csrfToken: csrfToken || undefined }),
-    });
-    const json = await res.json();
-    if (!res.ok || json.error) {
-      throw new Error(json.error || `Worker responded ${res.status}`);
-    }
-    platformSolved.lc = new Set(json.slugs || []);
-    savePlatformSolved();
-    if (statusEl) statusEl.textContent = `Full sync: ${json.count} solved problem(s) found across your entire LeetCode history.`;
-    render();
-  } catch (e) {
-    console.warn("LeetCode full sync failed", e);
-    if (statusEl) statusEl.textContent = `Full sync failed: ${e.message || e} -- check the Worker URL and that the session cookie is current.`;
-  }
+function skipTopicFromRecap(topicName) {
+  recapSkipped[topicSkipKey(topicName)] = true;
+  saveRecapSkipped();
+  scheduleCloudWrite();
+  const panel = document.querySelector(".recap-panel");
+  if (panel) panel.outerHTML = renderRepracticeRecommender();
 }
 
 // Firebase (optional; app fully works without it via localStorage only)
@@ -574,7 +468,7 @@ const EXTERNAL_RESOURCES = {
         { label: "A Coded Daily ↗", url: "https://www.acodedaily.com/" },
       ],
     },
-    { title: "Awesome Competitive Programming", desc: "A curated GitHub list of CP resources, judges, and references.", url: "https://github.com/lnishan/awesome-competitive-programming" },
+    { title: "AceCoder CP Sheet", desc: "A curated competitive-programming problem sheet.", url: "https://www.acecoder.site/cp-sheet" },
   ],
 };
 
@@ -682,19 +576,22 @@ function renderHeatmap() {
     weeksHtml.push(`<div class="heatmap-week"><div class="heatmap-month-label">${escapeHtml(monthLabels[w])}</div>${weekCells}</div>`);
   }
 
+  const activeDays = dayCounts.size;
   return `
     <div class="heatmap-panel">
-      <h3 class="recap-col-title">Solve activity</h3>
-      <div class="heatmap-grid">${weeksHtml.join("")}</div>
-      <div class="heatmap-legend">
-        <span>Less</span>
-        <span class="heatmap-cell heatmap-level-0"></span>
-        <span class="heatmap-cell heatmap-level-1"></span>
-        <span class="heatmap-cell heatmap-level-2"></span>
-        <span class="heatmap-cell heatmap-level-3"></span>
-        <span class="heatmap-cell heatmap-level-4"></span>
-        <span>More</span>
+      <div class="heatmap-panel-header">
+        <h3 class="recap-col-title">Solve activity <span class="heatmap-subtle">· ${activeDays} active day${activeDays === 1 ? "" : "s"} in the last ${HEATMAP_WEEKS} weeks</span></h3>
+        <div class="heatmap-legend">
+          <span>Less</span>
+          <span class="heatmap-cell heatmap-level-0"></span>
+          <span class="heatmap-cell heatmap-level-1"></span>
+          <span class="heatmap-cell heatmap-level-2"></span>
+          <span class="heatmap-cell heatmap-level-3"></span>
+          <span class="heatmap-cell heatmap-level-4"></span>
+          <span>More</span>
+        </div>
       </div>
+      <div class="heatmap-grid">${weeksHtml.join("")}</div>
     </div>
   `;
 }
@@ -711,11 +608,12 @@ function renderRepracticeRecommender() {
   const byTopic = new Map();
   for (const e of entries) {
     const key = e.group.title || e.section?.title || e.sheet.title;
+    if (recapSkipped[topicSkipKey(key)]) continue;
     const cur = byTopic.get(key);
     if (!cur || e.ts < cur.ts) byTopic.set(key, { ts: e.ts, sheetId: e.sheet.id, count: (cur ? cur.count : 0) + 1 });
     else cur.count++;
   }
-  const oldestTopics = [...byTopic.entries()].sort((a, b) => a[1].ts - b[1].ts).slice(0, 5);
+  const oldestTopics = [...byTopic.entries()].sort((a, b) => a[1].ts - b[1].ts).slice(0, RECAP_WINDOW_SIZE);
 
   const itemsHtml = oldestItems
     .map(({ item, sheet, group, subgroup, ts }) => {
@@ -733,10 +631,11 @@ function renderRepracticeRecommender() {
 
   const topicsHtml = oldestTopics
     .map(([key, v]) => `
-      <a class="recap-row" href="#/sheet/${v.sheetId}">
-        <span class="recap-text">${escapeHtml(key)}</span>
+      <div class="recap-row">
+        <a class="recap-text" href="#/sheet/${v.sheetId}">${escapeHtml(key)}</a>
         <span class="recap-meta">${v.count} solved · oldest ${relativeTimeLabel(v.ts)}</span>
-      </a>
+        <button type="button" class="recap-skip-btn" data-recap-skip-topic="${escapeAttr(key)}" title="Skip this topic in the stalest-topics list">Skip</button>
+      </div>
     `)
     .join("");
 
@@ -1226,7 +1125,6 @@ function renderItemRow(item, originLabel) {
   // different moments (deciding whether to attempt vs. celebrating a Hard).
   const dotHtml = difficultyDotHtml(item.difficulty);
   const isStarred = !!starred[item.id];
-  const platformHtml = platformBadgeHtml(item);
   // Last-touched label and the repeat-practice counter only make sense once
   // an item has been solved at least once -- clicking the counter logs
   // another practice pass (spaced-repetition redrilling) without touching
@@ -1244,7 +1142,6 @@ function renderItemRow(item, originLabel) {
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
       ${originHtml}
-      ${platformHtml}
       ${lastTouchedHtml}
       ${practiceHtml}
       ${tagHtml}
@@ -1452,41 +1349,10 @@ appEl.addEventListener("click", (e) => {
   const skipBtn = e.target.closest(".recap-skip-btn");
   if (skipBtn) {
     e.preventDefault();
-    skipFromRecap(skipBtn.dataset.recapSkipId);
+    if (skipBtn.dataset.recapSkipTopic) skipTopicFromRecap(skipBtn.dataset.recapSkipTopic);
+    else skipFromRecap(skipBtn.dataset.recapSkipId);
   }
 });
-
-// ---------- Accounts panel wiring ----------
-
-const accountsBtn = document.getElementById("accounts-btn");
-const accountsPanel = document.getElementById("accounts-panel");
-const lcUsernameInput = document.getElementById("lc-username-input");
-const lcWorkerUrlInput = document.getElementById("lc-worker-url-input");
-const lcSessionInput = document.getElementById("lc-session-input");
-const lcCsrfInput = document.getElementById("lc-csrf-input");
-
-if (lcUsernameInput) lcUsernameInput.value = localStorage.getItem(LC_USERNAME_KEY) || "";
-if (lcWorkerUrlInput) lcWorkerUrlInput.value = localStorage.getItem(LC_WORKER_URL_KEY) || "";
-if (lcSessionInput) lcSessionInput.value = localStorage.getItem(LC_SESSION_KEY) || "";
-if (lcCsrfInput) lcCsrfInput.value = localStorage.getItem(LC_CSRF_KEY) || "";
-
-if (accountsBtn) {
-  accountsBtn.addEventListener("click", () => {
-    accountsPanel.hidden = !accountsPanel.hidden;
-  });
-}
-const accountsSyncBtn = document.getElementById("accounts-sync-btn");
-if (accountsSyncBtn) {
-  accountsSyncBtn.addEventListener("click", () => {
-    syncPlatformSolved();
-  });
-}
-const accountsFullSyncBtn = document.getElementById("accounts-full-sync-btn");
-if (accountsFullSyncBtn) {
-  accountsFullSyncBtn.addEventListener("click", () => {
-    syncFullPlatformSolved();
-  });
-}
 
 // ---------- Boot ----------
 
