@@ -2,6 +2,7 @@ import { firebaseConfig } from "./firebase-config.js";
 
 const LOCAL_KEY = "practice-tracker-solved-v1";
 const STARRED_KEY = "practice-tracker-starred-v1";
+const PRACTICE_LOG_KEY = "practice-tracker-practice-log-v1";
 const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.13.0";
 
 const appEl = document.getElementById("app");
@@ -17,36 +18,79 @@ let data = { sheets: [] };
 // still works unchanged since any positive number is truthy.
 let solved = loadLocalSolved();
 let starred = loadLocalStarred();
+// `practiceLog[id] = { count, lastAt }` -- separate from `solved`, this
+// tracks REPEAT practice on an already-solved item (spaced-repetition
+// style redrilling), not the first solve. `lastAt` here supersedes
+// `solved[id]`'s timestamp as "last touched" once it exists, since
+// re-practicing is more recent than the original solve.
+let practiceLog = loadPracticeLog();
+
+function loadPracticeLog() {
+  try {
+    return JSON.parse(localStorage.getItem(PRACTICE_LOG_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function savePracticeLog() {
+  localStorage.setItem(PRACTICE_LOG_KEY, JSON.stringify(practiceLog));
+}
+
+function lastTouchedAt(id) {
+  const log = practiceLog[id];
+  if (log && log.lastAt) return log.lastAt;
+  return typeof solved[id] === "number" ? solved[id] : null;
+}
+
+function practiceCount(id) {
+  return (practiceLog[id] && practiceLog[id].count) || 0;
+}
+
+function incrementPractice(id) {
+  const cur = practiceLog[id] || { count: 0 };
+  practiceLog[id] = { count: cur.count + 1, lastAt: Date.now() };
+  savePracticeLog();
+  scheduleCloudWrite();
+  // Update every visible copy of this row in place (an item can appear more
+  // than once on screen, e.g. Starred view) rather than a full re-render.
+  document.querySelectorAll(`[data-item-row="${id}"]`).forEach((row) => {
+    const btn = row.querySelector(".practice-btn");
+    if (btn) btn.textContent = `🔁 ${practiceCount(id)}`;
+    const touched = row.querySelector(".last-touched");
+    if (touched) touched.textContent = relativeTimeLabel(lastTouchedAt(id));
+  });
+}
 
 // ---------- Linked-platform "solved elsewhere" marks ----------
-// Read-only cross-reference against the user's real LeetCode/Codeforces
-// accounts -- deliberately never touches `solved` (that stays 100%
-// manual, per explicit instruction). Cached in localStorage since it
-// requires a network round trip most of the sheet-rendering code
-// shouldn't have to wait on.
+// Read-only cross-reference against the user's real LeetCode account --
+// deliberately never touches `solved` (that stays 100% manual, per
+// explicit instruction). Cached in localStorage since it requires a
+// network round trip most of the sheet-rendering code shouldn't have to
+// wait on.
 const PLATFORM_KEY = "practice-tracker-platform-solved-v1";
 const LC_USERNAME_KEY = "practice-tracker-lc-username";
-const CF_HANDLE_KEY = "practice-tracker-cf-handle";
 // Community-hosted proxy: leetcode.com's own GraphQL API has no public
 // CORS support, so direct browser fetches to it are blocked. This is the
 // standard workaround the LC community uses for exactly this reason --
-// best-effort, not an official/guaranteed-uptime API.
+// best-effort, not an official/guaranteed-uptime API. Known limitation
+// (a LeetCode platform limit, not fixable client-side): its acSubmission
+// endpoint only returns your ~20 most recent accepted submissions, not
+// your full solve history -- there's no public LC API that exposes
+// all-time solved slugs without an authenticated session.
 const LC_PROXY_BASE = "https://alfa-leetcode-api.onrender.com";
 
 function loadPlatformSolved() {
   try {
     const raw = JSON.parse(localStorage.getItem(PLATFORM_KEY) || "{}");
-    return { lc: new Set(raw.lc || []), cf: new Set(raw.cf || []) };
+    return { lc: new Set(raw.lc || []) };
   } catch {
-    return { lc: new Set(), cf: new Set() };
+    return { lc: new Set() };
   }
 }
 
 function savePlatformSolved() {
-  localStorage.setItem(
-    PLATFORM_KEY,
-    JSON.stringify({ lc: [...platformSolved.lc], cf: [...platformSolved.cf] })
-  );
+  localStorage.setItem(PLATFORM_KEY, JSON.stringify({ lc: [...platformSolved.lc] }));
 }
 
 let platformSolved = loadPlatformSolved();
@@ -56,20 +100,11 @@ function lcSlugFromUrl(url) {
   return m ? m[1] : null;
 }
 
-function cfKeyFromUrl(url) {
-  const m = url && url.match(/^https?:\/\/codeforces\.com\/problemset\/problem\/(\d+)\/([A-Za-z0-9]+)/);
-  return m ? `${m[1]}${m[2]}` : null;
-}
-
 function platformBadgeHtml(item) {
   if (!item.url) return "";
   const lcSlug = lcSlugFromUrl(item.url);
   if (lcSlug && platformSolved.lc.has(lcSlug)) {
     return `<span class="platform-badge" title="Already solved on LeetCode">LC ✓</span>`;
-  }
-  const cfKey = cfKeyFromUrl(item.url);
-  if (cfKey && platformSolved.cf.has(cfKey)) {
-    return `<span class="platform-badge" title="Already solved on Codeforces">CF ✓</span>`;
   }
   return "";
 }
@@ -77,57 +112,34 @@ function platformBadgeHtml(item) {
 async function syncPlatformSolved() {
   const statusEl = document.getElementById("accounts-sync-status");
   const lcUsername = (document.getElementById("lc-username-input").value || "").trim();
-  const cfHandle = (document.getElementById("cf-handle-input").value || "").trim();
   localStorage.setItem(LC_USERNAME_KEY, lcUsername);
-  localStorage.setItem(CF_HANDLE_KEY, cfHandle);
 
-  if (!lcUsername && !cfHandle) {
-    if (statusEl) statusEl.textContent = "Enter at least one username first.";
+  if (!lcUsername) {
+    if (statusEl) statusEl.textContent = "Enter a LeetCode username first.";
     return;
   }
-  if (statusEl) statusEl.textContent = "Syncing… (LeetCode's proxy can be slow to wake up)";
+  if (statusEl) statusEl.textContent = "Syncing… (proxy can take ~30s to wake up if it's been idle)";
 
-  const results = [];
-
-  if (cfHandle) {
-    try {
-      const res = await fetch(`https://codeforces.com/api/user.status?handle=${encodeURIComponent(cfHandle)}`);
-      const json = await res.json();
-      if (json.status !== "OK") throw new Error(json.comment || "Codeforces API error");
-      const solved = new Set();
-      for (const sub of json.result) {
-        if (sub.verdict === "OK" && sub.problem) {
-          solved.add(`${sub.problem.contestId}${sub.problem.index}`);
-        }
-      }
-      platformSolved.cf = solved;
-      results.push(`Codeforces: ${solved.size} solved`);
-    } catch (e) {
-      console.warn("Codeforces sync failed", e);
-      results.push("Codeforces: failed (bad handle, or codeforces.com unreachable)");
+  try {
+    const res = await fetch(`${LC_PROXY_BASE}/${encodeURIComponent(lcUsername)}/acSubmission?limit=2000`);
+    const json = await res.json();
+    const submissions = json.submission || json.acSubmission || [];
+    const solved = new Set();
+    for (const sub of submissions) {
+      if (sub.titleSlug) solved.add(sub.titleSlug);
     }
-  }
-
-  if (lcUsername) {
-    try {
-      const res = await fetch(`${LC_PROXY_BASE}/${encodeURIComponent(lcUsername)}/acSubmission?limit=2000`);
-      const json = await res.json();
-      const submissions = json.submission || json.acSubmission || [];
-      const solved = new Set();
-      for (const sub of submissions) {
-        if (sub.titleSlug) solved.add(sub.titleSlug);
-      }
-      platformSolved.lc = solved;
-      results.push(`LeetCode: ${solved.size} distinct solved (from recent submissions)`);
-    } catch (e) {
-      console.warn("LeetCode sync failed", e);
-      results.push("LeetCode: failed (proxy may be asleep/down -- try again in a moment)");
+    platformSolved.lc = solved;
+    savePlatformSolved();
+    if (statusEl) {
+      statusEl.textContent = solved.size
+        ? `Found ${solved.size} recent solved problem(s). Note: this only covers your ~20 most recent LeetCode submissions -- LeetCode's API doesn't expose full solve history publicly.`
+        : "No recent submissions found -- check the username, or your LeetCode privacy settings may hide submissions.";
     }
+    render(); // re-render current view so badges show up immediately
+  } catch (e) {
+    console.warn("LeetCode sync failed", e);
+    if (statusEl) statusEl.textContent = "Failed -- proxy may be asleep/down, try again in a moment.";
   }
-
-  savePlatformSolved();
-  if (statusEl) statusEl.textContent = results.join(" · ");
-  render(); // re-render current view so badges show up immediately
 }
 
 // Firebase (optional; app fully works without it via localStorage only)
@@ -240,18 +252,23 @@ function subscribeToCloud(uid) {
     (snap) => {
       const remoteSolved = migrateLegacySolved(snap.exists() ? snap.data().solved || {} : {});
       const remoteStarred = snap.exists() ? snap.data().starred || {} : {};
+      const remotePracticeLog = snap.exists() ? snap.data().practiceLog || {} : {};
       if (!firstSnapshotHandled) {
         firstSnapshotHandled = true;
         solved = { ...remoteSolved, ...solved };
         starred = { ...remoteStarred, ...starred };
+        practiceLog = { ...remotePracticeLog, ...practiceLog };
         saveLocalSolved();
         saveLocalStarred();
+        savePracticeLog();
         writeCloudNow();
       } else {
         solved = remoteSolved;
         starred = remoteStarred;
+        practiceLog = remotePracticeLog;
         saveLocalSolved();
         saveLocalStarred();
+        savePracticeLog();
       }
       refreshAllCounts();
     },
@@ -271,7 +288,7 @@ function scheduleCloudWrite() {
 function writeCloudNow() {
   if (!user || !db) return;
   fsMod
-    .setDoc(fsMod.doc(db, "users", user.uid), { solved, starred, updatedAt: Date.now() })
+    .setDoc(fsMod.doc(db, "users", user.uid), { solved, starred, practiceLog, updatedAt: Date.now() })
     .catch((e) => console.warn("Cloud write failed", e));
 }
 
@@ -408,6 +425,9 @@ function parseHash() {
   if (h === "starred") {
     return { view: "starred" };
   }
+  if (h === "most-practiced") {
+    return { view: "most-practiced" };
+  }
   return { view: "home" };
 }
 
@@ -419,6 +439,9 @@ function render() {
   } else if (route.view === "starred") {
     progressBarWrap.hidden = true;
     renderStarred();
+  } else if (route.view === "most-practiced") {
+    progressBarWrap.hidden = true;
+    renderMostPracticed();
   } else {
     progressBarWrap.hidden = true;
     renderHome();
@@ -654,30 +677,56 @@ function refreshHomeCards() {
 
 // ---------- Starred view ----------
 
-function renderStarred() {
-  currentSheetId = null; // not a real sheet -- keeps toggleItem's per-sheet counter updates a no-op here
-  hideSolved = false;
-  searchQuery = "";
-
-  const starredEntries = [];
+function collectStarredEntries() {
+  const entries = [];
   for (const sheet of data.sheets) {
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
         for (const sg of g.subgroups) {
           for (const it of sg.items) {
-            if (starred[it.id]) starredEntries.push({ item: it, sheet, group: g, subgroup: sg });
+            if (starred[it.id]) entries.push({ item: it, sheet, group: g, subgroup: sg });
           }
         }
       }
     }
   }
-  starredEntries.sort((a, b) => (b.item.difficulty ? 1 : 0) - (a.item.difficulty ? 1 : 0));
+  return entries;
+}
 
-  const rowsHtml = starredEntries.length
-    ? starredEntries
-        .map(({ item, sheet, group, subgroup }) => {
-          const origin = [sheet.title, group.title, subgroup.title].filter(Boolean).join(" › ");
-          return renderItemRow(item, origin);
+function renderStarred() {
+  currentSheetId = null; // not a real sheet -- keeps toggleItem's per-sheet counter updates a no-op here
+  hideSolved = false;
+  searchQuery = "";
+
+  const starredEntries = collectStarredEntries();
+
+  // Grouped by originating sheet (its own collapsible section, like a real
+  // sheet view) rather than one flat list -- so a starred item's home
+  // context is obvious at a glance instead of relying on an inline tag.
+  const bySheet = new Map();
+  for (const entry of starredEntries) {
+    if (!bySheet.has(entry.sheet.id)) bySheet.set(entry.sheet.id, { sheet: entry.sheet, entries: [] });
+    bySheet.get(entry.sheet.id).entries.push(entry);
+  }
+
+  const sectionsHtml = starredEntries.length
+    ? [...bySheet.values()]
+        .map(({ sheet, entries }) => {
+          const rows = entries
+            .map(({ item, group, subgroup }) => {
+              const origin = [group.title, subgroup.title].filter(Boolean).join(" › ");
+              return renderItemRow(item, origin);
+            })
+            .join("");
+          return `
+            <details class="section" open data-section-total="${entries.length}">
+              <summary>
+                <span>${escapeHtml(sheet.title)}</span>
+                <span class="section-count">${entries.length} starred</span>
+              </summary>
+              <div class="section-body">${rows}</div>
+            </details>
+          `;
         })
         .join("")
     : `<div class="empty-state">No starred problems yet. Click the ★ on any item to save it here.</div>`;
@@ -686,7 +735,7 @@ function renderStarred() {
     <div class="sheet-header">
       <a class="back-link" href="#/">&larr; All sheets</a>
       <h1>★ Starred Problems</h1>
-      <div class="desc">Every problem you've starred, across every sheet, gathered in one bank.</div>
+      <div class="desc">Every problem you've starred, grouped by the sheet it came from.</div>
       <div class="sheet-stats">
         <span><strong>${starredEntries.length}</strong> starred</span>
       </div>
@@ -695,11 +744,7 @@ function renderStarred() {
       <input class="search-input" id="search-input" type="search" placeholder="Filter starred items…" />
       <label class="check-label"><input type="checkbox" id="hide-solved" /> Hide solved</label>
     </div>
-    <div id="sections">
-      <div class="section random-section">
-        <div class="section-body">${rowsHtml}</div>
-      </div>
-    </div>
+    <div id="sections">${sectionsHtml}</div>
   `;
 
   const sectionsEl = document.getElementById("sections");
@@ -715,10 +760,85 @@ function renderStarred() {
     if (e.target.matches(".item-checkbox")) toggleItem(e.target.dataset.id);
   });
   sectionsEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".star-btn");
-    if (btn) {
-      toggleStarred(btn.dataset.starId);
+    const starBtn = e.target.closest(".star-btn");
+    if (starBtn) {
+      toggleStarred(starBtn.dataset.starId);
       renderStarred(); // unstarring should drop the row out of this view immediately
+      return;
+    }
+    const practiceBtn = e.target.closest(".practice-btn");
+    if (practiceBtn) incrementPractice(practiceBtn.dataset.practiceId);
+  });
+}
+
+// ---------- Most Practiced view ----------
+
+function renderMostPracticed() {
+  currentSheetId = null;
+  hideSolved = false;
+  searchQuery = "";
+
+  const entries = [];
+  for (const sheet of data.sheets) {
+    for (const sec of sheet.sections) {
+      for (const g of sec.groups) {
+        for (const sg of g.subgroups) {
+          for (const it of sg.items) {
+            const count = practiceCount(it.id);
+            if (count > 0) entries.push({ item: it, sheet, group: g, subgroup: sg, count });
+          }
+        }
+      }
+    }
+  }
+  entries.sort((a, b) => b.count - a.count || lastTouchedAt(b.item.id) - lastTouchedAt(a.item.id));
+
+  const rowsHtml = entries.length
+    ? entries
+        .map(({ item, sheet, group, subgroup }) => {
+          const origin = [sheet.title, group.title, subgroup.title].filter(Boolean).join(" › ");
+          return renderItemRow(item, origin);
+        })
+        .join("")
+    : `<div class="empty-state">No repeat practice logged yet. Once an item is solved, click its 🔁 counter to log another practice pass -- the most-repeated ones show up here, ranked.</div>`;
+
+  appEl.innerHTML = `
+    <div class="sheet-header">
+      <a class="back-link" href="#/">&larr; All sheets</a>
+      <h1>🔁 Most Practiced</h1>
+      <div class="desc">Ranked by how many times you've logged a repeat practice pass, most-repeated first.</div>
+      <div class="sheet-stats">
+        <span><strong>${entries.length}</strong> problem(s) with repeat practice</span>
+      </div>
+    </div>
+    <div class="controls">
+      <input class="search-input" id="search-input" type="search" placeholder="Filter…" />
+    </div>
+    <div id="sections">
+      <div class="section random-section">
+        <div class="section-body">${rowsHtml}</div>
+      </div>
+    </div>
+  `;
+
+  const sectionsEl = document.getElementById("sections");
+  document.getElementById("search-input").addEventListener("input", (e) => {
+    searchQuery = e.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+  sectionsEl.addEventListener("change", (e) => {
+    if (e.target.matches(".item-checkbox")) toggleItem(e.target.dataset.id);
+  });
+  sectionsEl.addEventListener("click", (e) => {
+    const starBtn = e.target.closest(".star-btn");
+    if (starBtn) {
+      toggleStarred(starBtn.dataset.starId);
+      return;
+    }
+    const practiceBtn = e.target.closest(".practice-btn");
+    if (practiceBtn) {
+      incrementPractice(practiceBtn.dataset.practiceId);
+      renderMostPracticed(); // re-rank immediately since count/order just changed
     }
   });
 }
@@ -807,8 +927,13 @@ function renderSheet(sheet) {
     }
   });
   sectionsEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".star-btn");
-    if (btn) toggleStarred(btn.dataset.starId);
+    const starBtn = e.target.closest(".star-btn");
+    if (starBtn) {
+      toggleStarred(starBtn.dataset.starId);
+      return;
+    }
+    const practiceBtn = e.target.closest(".practice-btn");
+    if (practiceBtn) incrementPractice(practiceBtn.dataset.practiceId);
   });
 
   updateProgressBar(sheet);
@@ -936,6 +1061,17 @@ function renderItemRow(item, originLabel) {
   const dotHtml = difficultyDotHtml(item.difficulty);
   const isStarred = !!starred[item.id];
   const platformHtml = platformBadgeHtml(item);
+  // Last-touched label and the repeat-practice counter only make sense once
+  // an item has been solved at least once -- clicking the counter logs
+  // another practice pass (spaced-repetition redrilling) without touching
+  // the checkbox/`solved` state itself.
+  const touchedAt = isSolved ? lastTouchedAt(item.id) : null;
+  const lastTouchedHtml = touchedAt
+    ? `<span class="last-touched" title="Last practiced">${relativeTimeLabel(touchedAt)}</span>`
+    : "";
+  const practiceHtml = isSolved
+    ? `<button type="button" class="practice-btn" data-practice-id="${item.id}" title="Log another practice pass">🔁 ${practiceCount(item.id)}</button>`
+    : "";
   return `
     <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText + " " + (originLabel || "")).toLowerCase())}">
       ${dotHtml}
@@ -943,6 +1079,8 @@ function renderItemRow(item, originLabel) {
       ${textHtml}
       ${originHtml}
       ${platformHtml}
+      ${lastTouchedHtml}
+      ${practiceHtml}
       ${tagHtml}
       <button type="button" class="star-btn${isStarred ? " is-starred" : ""}" data-star-id="${item.id}" title="${isStarred ? "Unstar" : "Star for later"}" aria-label="${isStarred ? "Unstar" : "Star for later"}">★</button>
     </div>
@@ -962,6 +1100,17 @@ function findItemById(sheet, id) {
   return null;
 }
 
+// Same lookup, but searches every sheet -- needed by views that aren't
+// scoped to one sheet (Starred, Most Practiced), where `currentSheetId`
+// is null so the single-sheet `findItemById` above has nothing to search.
+function findItemByIdAnywhere(id) {
+  for (const sheet of data.sheets) {
+    const item = findItemById(sheet, id);
+    if (item) return item;
+  }
+  return null;
+}
+
 const DIFF_CLASSES = ["diff-easy", "diff-medium", "diff-hard"];
 const DIFF_CLASS_BY_CODE = { E: "diff-easy", M: "diff-medium", H: "diff-hard" };
 
@@ -973,17 +1122,43 @@ function toggleItem(id) {
 
   const isSolvedNow = !!solved[id];
   const sheet = findSheet(currentSheetId);
-  const row = document.querySelector(`[data-item-row="${id}"]`);
-  if (row) {
+  const item = (sheet && findItemById(sheet, id)) || findItemByIdAnywhere(id);
+  document.querySelectorAll(`[data-item-row="${id}"]`).forEach((row) => {
     row.classList.toggle("is-solved", isSolvedNow);
     // The full-block difficulty color only shows once solved -- toggle it
     // live here too, otherwise it'd only appear after the next full re-render.
     row.classList.remove(...DIFF_CLASSES);
-    const item = sheet && findItemById(sheet, id);
     if (isSolvedNow && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
       row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
     }
-  }
+    // The last-touched label and repeat-practice counter only exist once
+    // solved -- inject/remove them live too, same reason as the diff class.
+    const starBtn = row.querySelector(".star-btn");
+    let touchedEl = row.querySelector(".last-touched");
+    let practiceBtn = row.querySelector(".practice-btn");
+    if (isSolvedNow) {
+      const touchedAt = lastTouchedAt(id);
+      if (!touchedEl && touchedAt) {
+        touchedEl = document.createElement("span");
+        touchedEl.className = "last-touched";
+        touchedEl.title = "Last practiced";
+        row.insertBefore(touchedEl, starBtn);
+      }
+      if (touchedEl) touchedEl.textContent = touchedAt ? relativeTimeLabel(touchedAt) : "";
+      if (!practiceBtn) {
+        practiceBtn = document.createElement("button");
+        practiceBtn.type = "button";
+        practiceBtn.className = "practice-btn";
+        practiceBtn.dataset.practiceId = id;
+        practiceBtn.title = "Log another practice pass";
+        row.insertBefore(practiceBtn, starBtn);
+      }
+      practiceBtn.textContent = `🔁 ${practiceCount(id)}`;
+    } else {
+      if (touchedEl) touchedEl.remove();
+      if (practiceBtn) practiceBtn.remove();
+    }
+  });
 
   if (sheet) {
     document.getElementById("sheet-done-count").textContent = sheetStats(sheet).done;
@@ -1030,15 +1205,41 @@ function refreshAllCounts() {
     const sheet = findSheet(route.id);
     if (sheet) {
       document.querySelectorAll(".item-checkbox").forEach((cb) => {
-        const isSolved = !!solved[cb.dataset.id];
+        const id = cb.dataset.id;
+        const isSolved = !!solved[id];
         cb.checked = isSolved;
         const row = cb.closest(".item-row");
         if (row) {
           row.classList.toggle("is-solved", isSolved);
           row.classList.remove(...DIFF_CLASSES);
-          const item = findItemById(sheet, cb.dataset.id);
+          const item = findItemById(sheet, id);
           if (isSolved && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
             row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
+          }
+          const starBtn = row.querySelector(".star-btn");
+          let touchedEl = row.querySelector(".last-touched");
+          let practiceBtn = row.querySelector(".practice-btn");
+          if (isSolved) {
+            const touchedAt = lastTouchedAt(id);
+            if (!touchedEl && touchedAt) {
+              touchedEl = document.createElement("span");
+              touchedEl.className = "last-touched";
+              touchedEl.title = "Last practiced";
+              row.insertBefore(touchedEl, starBtn);
+            }
+            if (touchedEl) touchedEl.textContent = touchedAt ? relativeTimeLabel(touchedAt) : "";
+            if (!practiceBtn) {
+              practiceBtn = document.createElement("button");
+              practiceBtn.type = "button";
+              practiceBtn.className = "practice-btn";
+              practiceBtn.dataset.practiceId = id;
+              practiceBtn.title = "Log another practice pass";
+              row.insertBefore(practiceBtn, starBtn);
+            }
+            practiceBtn.textContent = `🔁 ${practiceCount(id)}`;
+          } else {
+            if (touchedEl) touchedEl.remove();
+            if (practiceBtn) practiceBtn.remove();
           }
         }
       });
@@ -1082,10 +1283,8 @@ function escapeAttr(s) {
 const accountsBtn = document.getElementById("accounts-btn");
 const accountsPanel = document.getElementById("accounts-panel");
 const lcUsernameInput = document.getElementById("lc-username-input");
-const cfHandleInput = document.getElementById("cf-handle-input");
 
 if (lcUsernameInput) lcUsernameInput.value = localStorage.getItem(LC_USERNAME_KEY) || "";
-if (cfHandleInput) cfHandleInput.value = localStorage.getItem(CF_HANDLE_KEY) || "";
 
 if (accountsBtn) {
   accountsBtn.addEventListener("click", () => {
