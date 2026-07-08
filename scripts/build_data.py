@@ -43,6 +43,9 @@ CATEGORY_OVERRIDES = {
     # in-repo ladder sheet -- this internal CSES sheet still exists and is
     # still useful, it's just not the front-line CP recommendation anymore.
     "faang_dsa_cses_complete_map.md": "deprecated",
+    # Its filename doesn't contain "dsa", so the fallback rule below would
+    # otherwise misfile it under System Design.
+    "faang_sql_mastery.md": "sql",
 }
 
 # Files where the same URL legitimately gets referenced over and over within

@@ -1,8 +1,31 @@
 # SQL Mastery
 
-This is the SQL counterpart to the DSA sheets: real, verified, free problems organized by concept into Foundation/Reinforcement/Boss ladders, plus the production-database-engineer concepts (indexing, normalization, transactions, query optimization) that come up as verbal/whiteboard questions, not just queries to write. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch, DataLemur, and GeeksforGeeks -- every problem link was checked to make sure it's real, free, and not premium-locked.
+This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set and HackerRank's SQL domain -- every problem link was checked to make sure it's real, free, and not premium-locked.
 
-This sheet is being built incrementally -- more topics (self-joins, subqueries, window ranking, CTEs, set operations, pivoting, sessionization, views, and more) are actively being added.
+Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.
+
+## SQL Basics
+
+### Your First Queries
+
+#### Plain SELECT & WHERE, No Joins
+
+- Invariant: before touching a single join, aggregate, or subquery, you need SELECT/WHERE/ORDER BY to be pure muscle memory on one table -- everything else in this sheet is built on top of this.
+
+Foundation:
+
+1. [SELECT All (HackerRank)](https://www.hackerrank.com/challenges/select-all-sql/problem)
+2. [SELECT By ID (HackerRank)](https://www.hackerrank.com/challenges/select-by-id/problem)
+3. [Japanese Cities' Attributes (HackerRank)](https://www.hackerrank.com/challenges/japanese-cities-attributes/problem)
+
+Reinforcement:
+
+1. [Weather Observation Station 1 (HackerRank)](https://www.hackerrank.com/challenges/weather-observation-station-1/problem)
+2. [Weather Observation Station 3 (HackerRank -- WHERE with a modulo condition)](https://www.hackerrank.com/challenges/weather-observation-station-3/problem)
+
+Boss:
+
+1. [Higher Than 75 Marks (HackerRank -- WHERE + ORDER BY combined)](https://www.hackerrank.com/challenges/more-than-75-marks/problem)
 
 ## Core Query Fundamentals
 
@@ -259,293 +282,195 @@ Boss:
 
 1. [Students and Examinations](https://leetcode.com/problems/students-and-examinations/)
 
-## Schema, Performance & Production Concepts
+### Self Joins & Multi-Table Joins
 
-The theory side of SQL interviews -- indexing, normalization, transactions, and query optimization come up constantly as verbal/whiteboard questions, not just coding problems. "Know cold" facts are what should be immediately recallable; "Drill prompts" are scenarios to reason through out loud.
+#### Same-Table Row Comparison
 
-### Indexing
+- Invariant: joining a table to itself under two different aliases lets you compare each row against a related row in the same table (a manager, the previous day, a duplicate email) as if they were separate tables.
 
-#### B-Tree Mechanics & Clustered vs Non-Clustered
+Foundation:
 
-- Invariant: A clustered index defines the physical row order on disk (one per table); every non-clustered index is a separate sorted structure of key + pointer (row locator) back to the clustered key, so non-clustered lookups cost an extra "bookmark" hop unless the index covers the query.
+1. [Delete Duplicate Emails](https://leetcode.com/problems/delete-duplicate-emails/)
+2. [Symmetric Pairs (HackerRank)](https://www.hackerrank.com/challenges/symmetric-pairs/problem)
 
-Know cold:
+Reinforcement:
 
-1. A B-tree index keeps keys sorted, so it accelerates equality, range (`<`, `>`, `BETWEEN`), prefix `LIKE 'abc%'`, `ORDER BY`, and `MIN`/`MAX` on the indexed column(s) -- but not leading-wildcard `LIKE '%abc'`.
-2. Clustered index leaf nodes ARE the table rows (InnoDB calls this the "clustered index" = the table itself, keyed on the primary key by default); non-clustered/secondary index leaf nodes store the indexed column(s) plus the clustered key (InnoDB) or a direct row pointer (heap tables, e.g. SQL Server heaps).
-3. A table can have only one clustered index (or be a heap with none, e.g. SQL Server default without a PK) but many non-clustered indexes.
-4. Non-clustered index seeks in InnoDB require a second lookup into the clustered index to fetch columns not in the secondary index -- this is the "bookmark lookup" / "key lookup" cost that covering indexes eliminate.
-5. Choosing the clustering key matters: a monotonically increasing key (auto-increment, or time-ordered UUIDv7/ULID) gives sequential inserts at the end of the B-tree; a random key (UUIDv4) causes page splits scattered across the tree, fragmenting it and hurting insert throughput and cache locality.
+1. [Human Traffic of Stadium](https://leetcode.com/problems/human-traffic-of-stadium/)
 
-Drill prompts:
+Boss:
 
-1. Why does looking up a row by a non-clustered index typically cost more than looking up by the clustered/primary key, and under what condition does that extra cost disappear?
-2. A table uses a random UUID as its primary key and clustering key. Explain concretely why insert throughput degrades as the table grows, compared to using an auto-increment integer or a time-sortable ID.
-3. If a table has no primary key and no explicit clustered index, how does the storage engine locate rows, and what does that cost on every secondary-index lookup?
+1. [Binary Tree Nodes (HackerRank -- self-referencing parent/child table)](https://www.hackerrank.com/challenges/binary-search-tree-1/problem)
 
-#### Composite Index Column Order & Covering Indexes
+#### Multi-Table Joins (3+ Tables)
 
-- Invariant: In a composite index on `(A, B, C)`, the index is only useful for filtering/sorting on a *left-prefix* of the columns (`A`, or `A,B`, or `A,B,C`) in that order -- a query that filters on `B` or `C` alone cannot use the index for seeking, and equality columns should generally precede range columns in the key order.
+- Invariant: chaining several JOINs pulls related facts scattered across normalized tables back into one row, but each additional join can silently multiply row counts if the join keys aren't as unique as assumed.
 
-Know cold:
+Foundation:
 
-1. Column order rule of thumb: equality-filter columns first, then a single range/sort column, then the rest -- because once the index hits a range predicate, subsequent columns in the key are no longer sorted usefully for further filtering.
-2. A "covering index" includes every column the query needs (in the key or as included/non-key columns), letting the engine answer entirely from the index without touching the base table (an "index-only scan" in Postgres, avoiding the heap fetch).
-3. Index on `(user_id, created_at)` serves `WHERE user_id = ? ORDER BY created_at` perfectly (equality then range/sort) but does NOT efficiently serve `WHERE created_at > ?` alone, nor `WHERE user_id = ? AND status = ? ORDER BY created_at` if `status` isn't in the key.
-4. Postgres supports `INCLUDE` columns (payload-only, not part of the key) to build covering indexes without bloating the sortable key; MySQL/InnoDB achieves it implicitly since secondary indexes always carry the clustering key.
-5. Redundant indexes are wasted overhead: an index on `(A, B)` makes a separate index on `(A)` alone almost always redundant.
+1. [Rearrange Products Table](https://leetcode.com/problems/rearrange-products-table/)
+2. [African Cities (HackerRank)](https://www.hackerrank.com/challenges/african-cities/problem)
 
-Drill prompts:
+Reinforcement:
 
-1. You have `INDEX(a, b, c)`. For each of these queries, say whether the index can be used for seeking, and how much of it is used: `WHERE a = 1 AND b = 2`, `WHERE b = 2 AND c = 3`, `WHERE a = 1 AND c = 3`, `WHERE a = 1 ORDER BY b`, `WHERE a > 1 AND b = 2`.
-2. Design a composite index for a query that filters `WHERE tenant_id = ? AND status = 'active' ORDER BY created_at DESC LIMIT 20`. Justify the column order and whether it needs to be "covering."
-3. A table has `INDEX(email)` and someone adds `INDEX(email, created_at)`. Is the first index now redundant? Under what circumstance would you still keep both?
+1. [Interviews (HackerRank -- 4-table join)](https://www.hackerrank.com/challenges/interviews/problem)
 
-#### When the Planner Uses vs Ignores an Index
+Boss:
 
-- Invariant: An index only wins when the optimizer's cost estimate says reading the (smaller) index plus row lookups beats a sequential/table scan -- for large result-set fractions, low-cardinality columns, or stale statistics, the planner will correctly (or sometimes incorrectly) prefer a full scan even with an index present.
+1. [Restaurant Growth](https://leetcode.com/problems/restaurant-growth/)
 
-Know cold:
+### Subqueries (Nested & Correlated)
 
-1. Selectivity threshold: if a query is expected to return a large percentage of the table's rows (rules of thumb range ~5-30% depending on engine/table shape), a full/sequential scan is usually cheaper than millions of random-I/O index lookups.
-2. An index is silently ignored when: a function or expression wraps the indexed column (`WHERE YEAR(created_at) = 2024`), there's an implicit type mismatch/coercion, a leading wildcard `LIKE '%foo'` is used, or the column has very low cardinality (e.g. a boolean flag).
-3. Stale or missing statistics (histogram out of date after bulk load) can make the optimizer misjudge cardinality and pick the wrong plan -- this is why `ANALYZE` matters after large data changes.
-4. Small tables: the optimizer may skip an index entirely and just scan, because the whole table fits in one or a few pages.
+#### Scalar and Nested Subqueries
 
-Drill prompts:
+- Invariant: a subquery in SELECT or WHERE runs first and collapses to a single value (or a set IN can test against), so the outer query never needs to know how that value was computed.
 
-1. A `WHERE` clause is `WHERE status = 'active'` on a column that's 95% "active" rows, and there's a plain B-tree index on `status`. Will the planner use it? Why or why not, and what would you index instead?
-2. Explain exactly why `WHERE DATE(order_date) = '2024-01-01'` fails to use an index on `order_date`, and give two ways to fix the query so the index is used again.
-3. After bulk-loading 10M rows in one transaction, a previously-fast query on the new data goes slow. What's the first thing to check, and why?
+Foundation:
 
-#### Write Overhead & When NOT to Add an Index
+1. [Article Views II](https://leetcode.com/problems/article-views-ii/)
+2. [Weather Observation Station 13 (HackerRank -- scalar subquery inside a range check)](https://www.hackerrank.com/challenges/weather-observation-station-13/problem)
 
-- Invariant: Every index is a second (or third...) data structure that must be kept transactionally consistent with the table, so each `INSERT`/`UPDATE`/`DELETE` pays to update every index touched by the changed columns -- indexes are a read/write tradeoff, not a free lunch.
+Reinforcement:
 
-Know cold:
+1. [The PADS (HackerRank -- subquery-built label per row)](https://www.hackerrank.com/challenges/the-pads/problem)
 
-1. Each additional index adds write amplification: one logical row insert becomes N physical B-tree insertions, plus WAL/redo log volume, plus potential page splits.
-2. Indexes cost storage and cache pressure -- more indexes competing for buffer pool memory means more evictions and cold-cache misses.
-3. Don't index: columns with very low cardinality alone, columns rarely used in `WHERE`/`JOIN`/`ORDER BY`, small tables that always fit in memory, write-heavy tables where read queries are rare.
-4. Partial/filtered indexes (Postgres `WHERE` clause on `CREATE INDEX`) solve the low-cardinality problem cheaply -- e.g. index only `WHERE status = 'pending'` when that's the rare, hot-path value.
+Boss:
 
-Drill prompts:
+1. [Find the Team Size](https://leetcode.com/problems/find-the-team-size/)
 
-1. Design an index strategy for a table that's queried by `(user_id, created_at)` but written to constantly (thousands of inserts/sec). What do you add, what do you avoid, and why does write throughput matter here?
-2. A table has a `deleted` boolean where 99% of rows are `false` and queries almost always filter `WHERE deleted = false`. Is a plain index on `deleted` useful? What would you build instead?
-3. Your team's habit is "query is slow -> add an index." After a year, a hot table has 15 indexes and inserts have gotten measurably slower. Walk through how you'd audit and prune them.
+#### Correlated Subqueries
 
-Practice:
+- Invariant: a correlated subquery re-runs once per outer row because it references a column from the outer query, so it's really a per-row lookup in disguise -- correct but potentially slow if the inner query itself isn't cheap.
 
-1. [262. Trips and Users](https://leetcode.com/problems/trips-and-users/)
+Foundation:
 
-### Normalization & Schema Design
+1. [Top Competitors (HackerRank -- correlated count per contestant)](https://www.hackerrank.com/challenges/full-score/problem)
 
-#### 1NF -- Eliminating Repeating Groups / Non-Atomic Values
+Reinforcement:
 
-- Invariant: 1NF requires every column to hold a single atomic value (no comma-separated lists, no repeating column groups like `phone1, phone2, phone3`) and every row to be uniquely identifiable -- violating it makes filtering/aggregating on individual values require string-parsing hacks and update anomalies when the "list" changes.
+1. [Contest Leaderboard (HackerRank)](https://www.hackerrank.com/challenges/contest-leaderboard/problem)
 
-Know cold:
+Boss:
 
-1. Classic 1NF violation: a `PRODUCT` table with a `Suppliers` column storing `"Acme, Globex, Initech"` as one string, or a `Student` table with `Course1, Course2, Course3` columns -- both fixed by extracting a separate child table.
-2. The anomaly it fixes: without 1NF you can't cleanly query "all products supplied by Acme," can't add a 4th course without a schema change, and can't enforce uniqueness/foreign keys on individual list items.
-3. 1NF also implicitly wants a primary key -- a table with duplicate, indistinguishable rows and no key isn't in 1NF either, by most textbook definitions.
+1. [Challenges (HackerRank -- correlated subquery with a tie-breaking rule)](https://www.hackerrank.com/challenges/challenges/problem)
 
-Drill prompts:
+### EXISTS / NOT EXISTS / IN / ANY / ALL
 
-1. A `Student` table has columns `student_id, name, course1, course2, course3`. Identify the 1NF violation and redesign it. What breaks if a student takes a 4th course, or drops one?
-2. A `Contact` table has an `emails` column storing `"a@x.com;b@y.com"`. What query becomes hard/impossible with this design, and how do you fix the schema?
+#### EXISTS vs IN for NULL-Safety
 
-#### 2NF -- Eliminating Partial Dependencies (Composite Keys)
+- Invariant: `NOT IN` against a subquery that can produce even one NULL silently returns an empty result for the whole query (three-valued logic strikes again), while `NOT EXISTS` is immune because it only ever tests row existence, never compares against the NULL value itself.
 
-- Invariant: 2NF requires 1NF plus "no non-key attribute depends on only *part* of a composite primary key" -- this only matters when the PK has 2+ columns, and the fix is to split off attributes that depend on just one part of the key into their own table.
+Boss:
 
-Know cold:
+1. [Find Customers With Positive Revenue this Year](https://leetcode.com/problems/find-customers-with-positive-revenue-this-year/)
 
-1. Classic example: `OrderItem(order_id, product_id, product_name, quantity)` with PK `(order_id, product_id)`. `product_name` depends only on `product_id`, not on the full composite key -- that's a partial dependency, violating 2NF. Fix: move `product_name` into a `Product(product_id, product_name)` table.
-2. The anomaly it fixes: without the split, `product_name` is duplicated on every order line, so renaming a product means updating every historical order row, and you can't record a product's name before it's ever ordered.
-3. 2NF is only a meaningful concern for tables with composite primary keys; a table with a single-column surrogate key automatically satisfies 2NF.
+#### Anti-Join Patterns (Finding Rows With No Match)
 
-Drill prompts:
+- Invariant: "find rows in A with no match in B" is the same shape whether you write it as `NOT EXISTS`, `LEFT JOIN ... WHERE B.key IS NULL`, or `NOT IN` -- pick based on NULL-safety and the query planner, not because one is "more correct."
 
-1. `Enrollment(student_id, course_id, student_name, course_name, grade)` has PK `(student_id, course_id)`. Identify every partial dependency and redesign into 2NF-compliant tables.
-2. Why is 2NF irrelevant (automatically satisfied) for a table whose primary key is a single auto-increment `id` column?
+Boss:
 
-Practice:
+1. [Placements (HackerRank -- anti-join style filtering across 3 joined tables)](https://www.hackerrank.com/challenges/placements/problem)
 
-1. [Database Normalization #3 (HackerRank)](https://www.hackerrank.com/challenges/database-normalization-3/problem)
-2. [Database Normalization #4 (HackerRank)](https://www.hackerrank.com/challenges/database-normalization-4/problem)
+## Window Functions & Advanced Patterns
 
-#### 3NF & BCNF -- Eliminating Transitive Dependencies
+### Window Functions: Ranking
 
-- Invariant: 3NF requires 2NF plus "no non-key attribute depends on another non-key attribute" (no transitive dependency through a non-key column); BCNF tightens this further to "every determinant must be a candidate key" -- the gap between them matters when a table has multiple overlapping candidate keys.
+#### ROW_NUMBER, RANK, DENSE_RANK
 
-Know cold:
+- Invariant: ROW_NUMBER always breaks ties arbitrarily into distinct integers, RANK leaves gaps after a tie (1,1,3), and DENSE_RANK doesn't (1,1,2) -- picking the wrong one silently changes which row "wins" a tie or how many distinct tiers exist.
 
-1. Classic 3NF violation: `Employee(emp_id, dept_id, dept_manager)` where `dept_manager` depends on `dept_id`, which depends on `emp_id` -- a transitive chain. Fix: split into `Employee(emp_id, dept_id)` and `Department(dept_id, dept_manager)`.
-2. The anomaly it fixes: without the split, changing a department's manager requires updating every employee row in that department, and you can't store a new department's manager until it has at least one employee.
-3. BCNF can reduce update anomalies further than 3NF but occasionally sacrifices dependency preservation -- which is why 3NF is the common "good enough" target in practice and BCNF is reserved for cases with real anomalies from overlapping keys.
-4. 4NF/5NF exist for multivalued dependencies -- rarely tested in interviews beyond "have you heard of it," but worth naming if asked.
+Reinforcement:
 
-Drill prompts:
+1. [Rank Teams by Votes](https://leetcode.com/problems/rank-teams-by-votes/)
 
-1. `Order(order_id, customer_id, customer_zip, shipping_cost)` where `shipping_cost` is derived from `customer_zip`. Identify the transitive dependency and normalize to 3NF.
-2. Give an example of a relation that is in 3NF but not in BCNF, and explain precisely which determinant fails the "must be a candidate key" test.
-3. Why might a team deliberately stop at 3NF instead of pushing to BCNF for a given table? What could be lost?
+Boss:
 
-Practice:
+1. [The Most Recent Orders for Each Product](https://leetcode.com/problems/the-most-recent-orders-for-each-product/)
 
-1. [Database Normalization #6 (HackerRank)](https://www.hackerrank.com/challenges/database-normalization-6/problem)
-2. [Database Normalization #10 (HackerRank)](https://www.hackerrank.com/challenges/database-normalization-10/problem)
+### Window Functions: Running Aggregates & Offsets
 
-#### Denormalization Tradeoffs & Schema Design in Practice
+#### Running Totals and Moving Aggregates
 
-- Invariant: Denormalization is a deliberate, targeted trade of write-complexity/redundancy for read-performance and query-simplicity -- it's correct when reads vastly outnumber writes, when the duplicated data changes rarely, or when join cost in a query hot path is provably the bottleneck; it's a mistake when applied blindly "for speed" without measuring.
+- Invariant: a window frame like `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` re-aggregates over a growing slice of already-ordered rows per output row -- it's a SUM/AVG that remembers where it's been, without a self-join or subquery per row.
 
-Know cold:
+Foundation:
 
-1. Good denormalization candidates: precomputed aggregates, rarely-changing reference data copied onto a hot row (e.g. `price_at_purchase` snapshotted onto an order line -- this one is actually *correct* design, not just optimization), and read-heavy reporting/analytics tables deliberately denormalized apart from the normalized OLTP schema.
-2. The cost you're accepting: every denormalized copy is a place a bug can cause data to drift out of sync, extra storage, and either application-level or trigger-level logic to keep copies consistent.
-3. Materialized views are the "controlled" form of denormalization: you get a denormalized/aggregated read path but the source of truth stays normalized, and refresh is an explicit, schedulable operation.
-4. Rule of thumb interviewers look for: normalize by default for OLTP correctness; denormalize surgically, with a measured reason, and be able to name the write-side mechanism that keeps the copy in sync.
+1. [Last Person to Fit in the Bus](https://leetcode.com/problems/last-person-to-fit-in-the-bus/)
 
-Drill prompts:
+Reinforcement:
 
-1. Design a normalized schema for an e-commerce system supporting orders with multiple items, multiple shipping/billing addresses per customer, and payments that can partially fail/retry. Call out every foreign key and what normal form you're targeting.
-2. Your reporting dashboard runs a 6-table join to compute daily revenue by category and it's timing out. Propose a denormalization or materialization strategy, and explain exactly what keeps it from silently going stale.
-3. Why is storing `unit_price_at_purchase` on `OrderItem` (instead of joining live to `Product.price`) not really "premature denormalization" but actually a correctness requirement?
+1. [Weather Observation Station 20 (HackerRank -- ordered aggregate over a full column)](https://www.hackerrank.com/challenges/weather-observation-station-20/problem)
 
-### Transactions & ACID
+Boss:
 
-#### Atomicity, Consistency, Isolation, Durability -- Concrete Failure Modes
+1. [Product Sales Analysis III](https://leetcode.com/problems/product-sales-analysis-iii/)
 
-- Invariant: Each ACID letter guards against one distinct, concretely observable failure -- losing atomicity leaves half-applied writes, losing consistency lets invariants/constraints be violated, losing isolation lets concurrent transactions see each other's in-flight state, and losing durability makes committed data vanish on crash.
+#### LAG/LEAD for Row-to-Row Comparison
 
-Know cold:
+- Invariant: LAG/LEAD fetch a value from a different row within the same ordered partition without a self-join -- the offset (default 1) is how many rows away, and a missing neighbor (start/end of partition) returns NULL unless a default is given.
 
-1. Atomicity: a bank transfer that debits account A and credits account B must be all-or-nothing. A crash between the two statements leaves money destroyed unless both are wrapped in one transaction.
-2. Consistency: the database moves only between states that satisfy its declared constraints -- actually the "output" guaranteed by combining atomicity + isolation + your own constraints, not an independently enforced mechanism.
-3. Isolation: concurrent transactions must not observe each other's uncommitted intermediate state -- without it, a "dirty read" lets one transaction act on data that's about to be rolled back.
-4. Durability: once a transaction commits, the write survives a crash/power loss -- guaranteed via write-ahead logging flushed to disk before commit returns.
-5. Durability has a real tunable tradeoff: some systems let you relax fsync-per-commit (Postgres `synchronous_commit = off`, MySQL `innodb_flush_log_at_trx_commit`) trading a small durability window for throughput.
+Foundation:
 
-Drill prompts:
+1. [Biggest Window Between Visits](https://leetcode.com/problems/biggest-window-between-visits/)
 
-1. Give a concrete scenario where skipping atomicity causes real financial/data loss, and name the mechanism that prevents it.
-2. Is "consistency" in ACID the same thing as "consistency" in CAP theorem? Explain the difference precisely -- this is a very common interview trap.
-3. A payment service writes a row, returns success to the caller, then the database process crashes before flushing to disk. What ACID property was violated, and what's the fix?
+Boss:
 
-#### Isolation Levels & the Anomalies Each One Prevents
+1. [Movie Rating](https://leetcode.com/problems/movie-rating/)
 
-- Invariant: The four standard isolation levels form a strictly increasing guarantee ladder (Read Uncommitted < Read Committed < Repeatable Read < Serializable), each closing off exactly one more class of anomaly (dirty read -> non-repeatable read -> phantom read) at the cost of more locking/blocking or more abort-and-retry under contention.
+### Deduplication & Gaps-and-Islands
 
-Know cold:
+#### Gaps and Islands (Consecutive Groups)
 
-1. Dirty read: reading another transaction's *uncommitted* write. Prevented starting at Read Committed.
-2. Non-repeatable read: re-reading the *same row* within one transaction gives a different value because another transaction committed an update in between. Prevented starting at Repeatable Read.
-3. Phantom read: re-running the *same range query* returns a different *set of rows*. Only fully prevented at Serializable in the strict standard, though MVCC engines like Postgres/InnoDB largely prevent phantoms at Repeatable Read too -- a well-known deviation from the ANSI SQL standard worth mentioning.
-4. Read Committed is the default in Postgres, Oracle, and SQL Server; Repeatable Read is the default in MySQL/InnoDB -- a common trivia question.
-5. MVCC (Postgres/InnoDB/Oracle) lets readers see a consistent snapshot without blocking writers and vice versa -- this is *how* isolation avoids dirty reads without taking read locks.
+- Invariant: subtracting a row's own rank/row-number from its ordered value collapses every run of consecutive values to the same constant -- that constant becomes a free grouping key for "find each island of consecutive rows."
 
-Drill prompts:
+Foundation:
 
-1. Define dirty read, non-repeatable read, and phantom read with a two-transaction timeline for each, and state the minimum isolation level that prevents each one.
-2. Why can Postgres's Repeatable Read prevent phantom reads even though the ANSI standard says only Serializable must?
-3. Your application runs at Serializable isolation and starts seeing intermittent "could not serialize access due to concurrent update" errors under load. Is this a bug? What should the application do?
+1. [SQL Project Planning (HackerRank -- the canonical gaps-and-islands problem)](https://www.hackerrank.com/challenges/sql-projects/problem)
 
-#### Optimistic vs Pessimistic Locking
+Reinforcement:
 
-- Invariant: Pessimistic locking assumes conflicts are common and blocks other transactions from touching a row until you're done (`SELECT ... FOR UPDATE`); optimistic locking assumes conflicts are rare and lets everyone proceed, checking at commit time (via a version/timestamp column) whether anyone else modified the row first.
+1. [Team Scores in Football Tournament](https://leetcode.com/problems/team-scores-in-football-tournament/)
 
-Know cold:
+Boss:
 
-1. Pessimistic: acquire a lock before reading-with-intent-to-write; other transactions wanting the same row block until release. Good for high-contention hot rows.
-2. Optimistic: no lock taken; each row carries a `version` column; the update is `UPDATE t SET ..., version = version + 1 WHERE id = ? AND version = ?` -- if 0 rows are affected, someone else committed first.
-3. Deadlocks are the concrete pessimistic-locking failure mode: two transactions locking two rows in opposite order both block forever until the deadlock detector kills one. Mitigation: always acquire locks in a consistent, global order.
-4. Optimistic locking's failure mode is livelock/starvation under high contention -- this is why pessimistic locking is preferred specifically for known-hot rows.
+1. [Number of Transactions per Visit](https://leetcode.com/problems/number-of-transactions-per-visit/)
 
-Drill prompts:
+## CTEs, Set Operations & Reshaping
 
-1. You're building a flash-sale "buy the last item in stock" feature. Would you reach for optimistic or pessimistic locking, and why?
-2. Implement (describe, in SQL) an optimistic-locking update for an `accounts.balance` column using a `version` column, and explain exactly what the application does when the `UPDATE` affects 0 rows.
-3. Describe a deadlock scenario between two transactions each updating two shared rows in opposite order, and explain both the database's detection mechanism and the application-level fix.
+### Common Table Expressions (CTEs)
 
-### Query Optimization & Execution Plans
+#### CTEs for Readable Multi-Step Queries
 
-#### Reading an EXPLAIN / Execution Plan
+- Invariant: a CTE is just a named, reusable subquery scoped to one statement -- it doesn't change what's computable, only how readable the multi-step logic is, and it can be referenced more than once without repeating the subquery text.
 
-- Invariant: An execution plan is a tree of physical operators (scan/seek, join algorithm, sort, aggregate) each carrying an estimated vs. actual row count and cost -- the single most useful debugging signal is a large gap between *estimated* and *actual* rows at some node, which points straight at stale statistics or a misestimated predicate.
+Foundation:
 
-Know cold:
+1. [Advertiser Analysis](https://leetcode.com/problems/advertiser-analysis/)
 
-1. Read plans bottom-up / inside-out: leaf nodes are how data enters, each level up is an operator consuming its children's output, the root is the final result.
-2. Key operators: Seq Scan, Index Scan, Index Only Scan (covering index in action), Bitmap Heap Scan, Nested Loop Join (good for small outer input, indexed inner lookups), Hash Join (good for large unsorted inputs), Merge Join (good when both inputs are already sorted on the join key).
-3. `EXPLAIN` shows *planned/estimated* costs; `EXPLAIN ANALYZE` actually runs the query and shows real elapsed time and real row counts -- always prefer `EXPLAIN ANALYZE` when diagnosing.
-4. MySQL's `EXPLAIN` `type` column (`const`, `eq_ref`, `ref`, `range`, `index`, `ALL` -- roughly best to worst); watch `Extra` for `Using filesort` and `Using temporary`, both red flags for a missing/insufficient index.
+Reinforcement:
 
-Drill prompts:
+1. [Find Followers Count](https://leetcode.com/problems/find-followers-count/)
 
-1. Given an `EXPLAIN ANALYZE` output where the planner estimated 50 rows from a filter but actually got 500,000, what's the likely root cause and the fix?
-2. When would the planner prefer a Hash Join over a Nested Loop Join, and what does that tell you about the size of the two inputs?
-3. Explain the difference between an Index Scan and an Index Only Scan in Postgres, and what has to be true about the query and the index for the "Only" variant to apply.
+Boss:
 
-#### Common Causes of a Slow Query
+1. [Monthly Transactions II](https://leetcode.com/problems/monthly-transactions-ii/)
 
-- Invariant: The overwhelming majority of "why is this query slow" interview answers reduce to one of: the planner can't use an otherwise-good index (function-wrapped column, implicit type conversion, leading wildcard), there's no good index at all, or the app is issuing many small queries in a loop (N+1) instead of one set-based query.
+### Set Operations
 
-Know cold:
+#### UNION vs UNION ALL & Combining Differently-Shaped Result Sets
 
-1. Function-wrapped/expression column: `WHERE UPPER(email) = 'X@Y.COM'` can't use a plain index on `email` -- fixed by rewriting the predicate to be sargable or building a functional/expression index.
-2. Implicit type conversion: comparing a string column to a numeric literal forces the engine to convert every stored value to compare, defeating the index.
-3. N+1 query pattern: an ORM/app loop fetches N parent rows, then issues one additional query per row for related children instead of one join or `WHERE id IN (...)` -- kills performance primarily through network round-trip latency multiplication.
-4. Other frequent culprits: unbounded `LIMIT`, `SELECT *` forcing extra I/O, non-sargable `LIKE '%x%'`, and large `OFFSET` pagination -- keyset/cursor pagination avoids the last one.
+- Invariant: UNION implicitly deduplicates its combined result (an expensive sort/hash step) while UNION ALL keeps every row including duplicates; and when the two source tables don't naturally share a shape, you build that shared shape explicitly with literal/placeholder columns before unioning.
 
-Drill prompts:
+Foundation:
 
-1. A query `WHERE LOWER(username) = 'bob'` is slow despite an index on `username`. Give two fixes -- one that changes the query, one that changes the schema.
-2. An API endpoint that lists 50 orders and their customer names takes 2 seconds; the ORM logs show 51 SQL queries. Diagnose the pattern and describe the fix at the query level.
-3. A paginated admin report using `OFFSET 500000 LIMIT 20` gets slower the deeper you paginate. Why, and what's the standard fix?
+1. [User Activity for the Past 30 Days II](https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/)
 
-Practice:
+### Pivoting & Data Reshaping
 
-1. [197. Rising Temperature](https://leetcode.com/problems/rising-temperature/)
+#### Conditional Aggregation for Pivot-Style Reports
 
-#### Sequential Scan vs Index Scan: the Planner's Decision
+- Invariant: `SUM(CASE WHEN category = 'x' THEN value ELSE 0 END)` turns one row-per-category table into one column-per-category row without a native PIVOT operator -- each CASE branch is a hand-built column.
 
-- Invariant: The planner picks whichever physical plan it estimates will be cheapest given table/index statistics -- an index scan wins when it's expected to touch a small, selective fraction of rows, and a sequential scan wins whenever that's not true, regardless of whether an index "exists."
+Foundation:
 
-Know cold:
-
-1. Selectivity is the dominant factor: past a certain fraction of matching rows (commonly cited around 5-30%), linear beats random-access-per-row.
-2. Physical correlation matters: Postgres tracks `correlation` between index order and physical table order; a highly correlated index makes index-scan row fetches nearly sequential too.
-3. Table/index statistics drive the estimate, not reality at query time -- outdated statistics after a bulk load can make the planner choose badly until refreshed (`ANALYZE`).
-4. "The index exists but isn't used" is very often *correct planner behavior*, not a bug -- forcing an index with a hint should be a last resort since it fights the optimizer permanently as data shape changes.
-
-Drill prompts:
-
-1. Table `orders` has 10M rows; an index exists on `status`; the query filters `WHERE status = 'shipped'` matching 40% of rows. Would you expect an index scan or a sequential scan, and why is the planner's choice actually correct here?
-2. What does "correlation" mean in a Postgres plan, and why does a high-correlation index change the cost calculus for what would otherwise be a borderline scan-vs-seek decision?
-3. When (if ever) is it appropriate to force an index/hint the optimizer rather than let it choose? What's the long-term risk of doing so?
-
-Practice:
-
-1. [262. Trips and Users (Boss)](https://leetcode.com/problems/trips-and-users/)
-
-## Read First: Goldmine Reference Articles
-
-Genuinely excellent, industry-standard reference reading -- not generic "what is a JOIN" tutorial pages. Each one is worth reading before you're deep into that topic's practice ladder above.
-
-### Concept Deep Dives
-
-1. [Use The Index, Luke -- the canonical SQL indexing resource](https://use-the-index-luke.com/)
-2. [SQL Performance Explained (full book, free online)](https://use-the-index-luke.com/sql/table-of-contents)
-3. [The Internals of PostgreSQL: Join Operations (Nested Loop, Merge, Hash Join)](https://www.interdb.jp/pg/pgsql03/05/)
-4. [Explaining the unexplainable: reading real EXPLAIN output (5-part series)](https://www.depesz.com/2013/04/16/explaining-the-unexplainable/)
-5. [Uber Engineering: Designing Schemaless -- a real denormalization tradeoff](https://www.uber.com/en-us/blog/schemaless-part-one-mysql-datastore/)
-6. [Cockroach Labs: No Dirty Reads -- SQL isolation levels with concrete failure scenarios](https://www.cockroachlabs.com/blog/sql-isolation-levels-explained/)
-7. [Cockroach Labs: What write skew looks like](https://www.cockroachlabs.com/blog/what-write-skew-looks-like/)
-8. [Martin Kleppmann: Hermitage -- testing the "I" in ACID across databases](https://martin.kleppmann.com/2014/11/25/hermitage-testing-the-i-in-acid.html)
-9. [GitLab's real production Query Performance Guidelines](https://docs.gitlab.com/development/database/query_performance/)
-10. [Haki Benita: Be Careful With CTE in PostgreSQL (materialization/optimization-fence behavior)](https://hakibenita.com/be-careful-with-cte-in-postgre-sql)
-11. [jOOQ: Probably the Coolest SQL Feature -- Window Functions](https://blog.jooq.org/probably-the-coolest-sql-feature-window-functions/)
-12. [jOOQ Manual: Window frame clause (ROWS/RANGE/GROUPS) with a cross-database support matrix](https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/window-functions/window-frame/)
+1. [Occupations](https://leetcode.com/problems/occupations/)

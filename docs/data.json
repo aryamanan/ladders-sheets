@@ -79630,10 +79630,84 @@
       "id": "faang-sql-mastery",
       "file": "faang_sql_mastery.md",
       "title": "SQL Mastery",
-      "description": "This is the SQL counterpart to the DSA sheets: real, verified, free problems organized by concept into Foundation/Reinforcement/Boss ladders, plus the production-database-engineer concepts (indexing, normalization, transactions, query optimization) that come up as verbal/whiteboard questions, not just queries to write. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch, DataLemur, and GeeksforGeeks -- every problem link was checked to make sure it's real, free, and not premium-locked. This sheet is being built incrementally -- more topics (self-joins, subqueries, window ranking, CTEs, set operations, pivoting, sessionization, views, and more) are actively being added.",
-      "category": "system-design",
-      "totalItems": 204,
+      "description": "This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set and HackerRank's SQL domain -- every problem link was checked to make sure it's real, free, and not premium-locked. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.",
+      "category": "sql",
+      "totalItems": 121,
       "sections": [
+        {
+          "title": "SQL Basics",
+          "groups": [
+            {
+              "title": "Your First Queries",
+              "subgroups": [
+                {
+                  "title": "Plain SELECT & WHERE, No Joins",
+                  "items": [
+                    {
+                      "id": "76e368b64a3f",
+                      "text": "Invariant: before touching a single join, aggregate, or subquery, you need SELECT/WHERE/ORDER BY to be pure muscle memory on one table -- everything else in this sheet is built on top of this.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "436e4ce96b14",
+                      "text": "SELECT All (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/select-all-sql/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d7d047f2921d",
+                      "text": "SELECT By ID (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/select-by-id/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d4edf98ffbc8",
+                      "text": "Japanese Cities' Attributes (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/japanese-cities-attributes/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "58faa78b355d",
+                      "text": "Weather Observation Station 1 (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "18b31d5ac331",
+                      "text": "Weather Observation Station 3 (HackerRank -- WHERE with a modulo condition)",
+                      "url": "https://www.hackerrank.com/challenges/weather-observation-station-3/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8a49a7b86949",
+                      "text": "Higher Than 75 Marks (HackerRank -- WHERE + ORDER BY combined)",
+                      "url": "https://www.hackerrank.com/challenges/more-than-75-marks/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "e27cc6e3c93d"
+                }
+              ],
+              "id": "feb6ca3670af"
+            }
+          ],
+          "id": "cd704b09cc9a"
+        },
         {
           "title": "Core Query Fundamentals",
           "groups": [
@@ -80340,1189 +80414,475 @@
                 }
               ],
               "id": "4dd04049c963"
+            },
+            {
+              "title": "Self Joins & Multi-Table Joins",
+              "subgroups": [
+                {
+                  "title": "Same-Table Row Comparison",
+                  "items": [
+                    {
+                      "id": "8044a0f623c1",
+                      "text": "Invariant: joining a table to itself under two different aliases lets you compare each row against a related row in the same table (a manager, the previous day, a duplicate email) as if they were separate tables.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eaaab3cbccc4",
+                      "text": "Delete Duplicate Emails",
+                      "url": "https://leetcode.com/problems/delete-duplicate-emails/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2e2da80eada7",
+                      "text": "Symmetric Pairs (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/symmetric-pairs/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2e9d845ac6fc",
+                      "text": "Human Traffic of Stadium",
+                      "url": "https://leetcode.com/problems/human-traffic-of-stadium/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d71e99331795",
+                      "text": "Binary Tree Nodes (HackerRank -- self-referencing parent/child table)",
+                      "url": "https://www.hackerrank.com/challenges/binary-search-tree-1/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "f9412478147f"
+                },
+                {
+                  "title": "Multi-Table Joins (3+ Tables)",
+                  "items": [
+                    {
+                      "id": "3b01bd9434d0",
+                      "text": "Invariant: chaining several JOINs pulls related facts scattered across normalized tables back into one row, but each additional join can silently multiply row counts if the join keys aren't as unique as assumed.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "589339c328be",
+                      "text": "Rearrange Products Table",
+                      "url": "https://leetcode.com/problems/rearrange-products-table/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2a0b724bfea9",
+                      "text": "African Cities (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/african-cities/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0faed3237e23",
+                      "text": "Interviews (HackerRank -- 4-table join)",
+                      "url": "https://www.hackerrank.com/challenges/interviews/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3e6880f7d0b4",
+                      "text": "Restaurant Growth",
+                      "url": "https://leetcode.com/problems/restaurant-growth/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "fd88c0bd6861"
+                }
+              ],
+              "id": "43d85bf5350a"
+            },
+            {
+              "title": "Subqueries (Nested & Correlated)",
+              "subgroups": [
+                {
+                  "title": "Scalar and Nested Subqueries",
+                  "items": [
+                    {
+                      "id": "88397c94d0cb",
+                      "text": "Invariant: a subquery in SELECT or WHERE runs first and collapses to a single value (or a set IN can test against), so the outer query never needs to know how that value was computed.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1a663b9814a4",
+                      "text": "Article Views II",
+                      "url": "https://leetcode.com/problems/article-views-ii/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8ebc409d396e",
+                      "text": "Weather Observation Station 13 (HackerRank -- scalar subquery inside a range check)",
+                      "url": "https://www.hackerrank.com/challenges/weather-observation-station-13/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8153aa45e613",
+                      "text": "The PADS (HackerRank -- subquery-built label per row)",
+                      "url": "https://www.hackerrank.com/challenges/the-pads/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e1da7c03a740",
+                      "text": "Find the Team Size",
+                      "url": "https://leetcode.com/problems/find-the-team-size/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "5f068d67583e"
+                },
+                {
+                  "title": "Correlated Subqueries",
+                  "items": [
+                    {
+                      "id": "cbe3365aa730",
+                      "text": "Invariant: a correlated subquery re-runs once per outer row because it references a column from the outer query, so it's really a per-row lookup in disguise -- correct but potentially slow if the inner query itself isn't cheap.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4cb24ce5cceb",
+                      "text": "Top Competitors (HackerRank -- correlated count per contestant)",
+                      "url": "https://www.hackerrank.com/challenges/full-score/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8749fe653b44",
+                      "text": "Contest Leaderboard (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/contest-leaderboard/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b8a07fa62f3f",
+                      "text": "Challenges (HackerRank -- correlated subquery with a tie-breaking rule)",
+                      "url": "https://www.hackerrank.com/challenges/challenges/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "9948841af13a"
+                }
+              ],
+              "id": "35185f42d5a0"
+            },
+            {
+              "title": "EXISTS / NOT EXISTS / IN / ANY / ALL",
+              "subgroups": [
+                {
+                  "title": "EXISTS vs IN for NULL-Safety",
+                  "items": [
+                    {
+                      "id": "9584294c4243",
+                      "text": "Invariant: `NOT IN` against a subquery that can produce even one NULL silently returns an empty result for the whole query (three-valued logic strikes again), while `NOT EXISTS` is immune because it only ever tests row existence, never compares against the NULL value itself.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8d784cd106c5",
+                      "text": "Find Customers With Positive Revenue this Year",
+                      "url": "https://leetcode.com/problems/find-customers-with-positive-revenue-this-year/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "c8900545a010"
+                },
+                {
+                  "title": "Anti-Join Patterns (Finding Rows With No Match)",
+                  "items": [
+                    {
+                      "id": "d08bfac2dabb",
+                      "text": "Invariant: \"find rows in A with no match in B\" is the same shape whether you write it as `NOT EXISTS`, `LEFT JOIN ... WHERE B.key IS NULL`, or `NOT IN` -- pick based on NULL-safety and the query planner, not because one is \"more correct.\"",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c204044d06bb",
+                      "text": "Placements (HackerRank -- anti-join style filtering across 3 joined tables)",
+                      "url": "https://www.hackerrank.com/challenges/placements/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "eb142bb9486e"
+                }
+              ],
+              "id": "436ea4ae8e87"
             }
           ],
           "id": "2b31c89fa204"
         },
         {
-          "title": "Schema, Performance & Production Concepts",
+          "title": "Window Functions & Advanced Patterns",
           "groups": [
             {
-              "title": "Indexing",
+              "title": "Window Functions: Ranking",
               "subgroups": [
                 {
-                  "title": "B-Tree Mechanics & Clustered vs Non-Clustered",
+                  "title": "ROW_NUMBER, RANK, DENSE_RANK",
                   "items": [
                     {
-                      "id": "68d0b013410e",
-                      "text": "Invariant: A clustered index defines the physical row order on disk (one per table); every non-clustered index is a separate sorted structure of key + pointer (row locator) back to the clustered key, so non-clustered lookups cost an extra \"bookmark\" hop unless the index covers the query.",
+                      "id": "03ed4cdb9cbb",
+                      "text": "Invariant: ROW_NUMBER always breaks ties arbitrarily into distinct integers, RANK leaves gaps after a tie (1,1,3), and DENSE_RANK doesn't (1,1,2) -- picking the wrong one silently changes which row \"wins\" a tie or how many distinct tiers exist.",
                       "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "7dbe4fd8112c",
-                      "text": "A B-tree index keeps keys sorted, so it accelerates equality, range (`<`, `>`, `BETWEEN`), prefix `LIKE 'abc%'`, `ORDER BY`, and `MIN`/`MAX` on the indexed column(s) -- but not leading-wildcard `LIKE '%abc'`.",
-                      "url": null,
-                      "tag": "Know cold",
+                      "id": "100bb50ed03b",
+                      "text": "Rank Teams by Votes",
+                      "url": "https://leetcode.com/problems/rank-teams-by-votes/",
+                      "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "58971e41c3e1",
-                      "text": "Clustered index leaf nodes ARE the table rows (InnoDB calls this the \"clustered index\" = the table itself, keyed on the primary key by default); non-clustered/secondary index leaf nodes store the indexed column(s) plus the clustered key (InnoDB) or a direct row pointer (heap tables, e.g. SQL Server heaps).",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e541f26769ae",
-                      "text": "A table can have only one clustered index (or be a heap with none, e.g. SQL Server default without a PK) but many non-clustered indexes.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "780d303b7998",
-                      "text": "Non-clustered index seeks in InnoDB require a second lookup into the clustered index to fetch columns not in the secondary index -- this is the \"bookmark lookup\" / \"key lookup\" cost that covering indexes eliminate.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "551281565b3b",
-                      "text": "Choosing the clustering key matters: a monotonically increasing key (auto-increment, or time-ordered UUIDv7/ULID) gives sequential inserts at the end of the B-tree; a random key (UUIDv4) causes page splits scattered across the tree, fragmenting it and hurting insert throughput and cache locality.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "cc42d5338735",
-                      "text": "Why does looking up a row by a non-clustered index typically cost more than looking up by the clustered/primary key, and under what condition does that extra cost disappear?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "43936441fa8b",
-                      "text": "A table uses a random UUID as its primary key and clustering key. Explain concretely why insert throughput degrades as the table grows, compared to using an auto-increment integer or a time-sortable ID.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "eec494157e47",
-                      "text": "If a table has no primary key and no explicit clustered index, how does the storage engine locate rows, and what does that cost on every secondary-index lookup?",
-                      "url": null,
-                      "tag": "Drill prompts",
+                      "id": "9bfd6a220fb1",
+                      "text": "The Most Recent Orders for Each Product",
+                      "url": "https://leetcode.com/problems/the-most-recent-orders-for-each-product/",
+                      "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "bd8941ed31a5"
-                },
-                {
-                  "title": "Composite Index Column Order & Covering Indexes",
-                  "items": [
-                    {
-                      "id": "b62b4690a88e",
-                      "text": "Invariant: In a composite index on `(A, B, C)`, the index is only useful for filtering/sorting on a *left-prefix* of the columns (`A`, or `A,B`, or `A,B,C`) in that order -- a query that filters on `B` or `C` alone cannot use the index for seeking, and equality columns should generally precede range columns in the key order.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "778974995eb6",
-                      "text": "Column order rule of thumb: equality-filter columns first, then a single range/sort column, then the rest -- because once the index hits a range predicate, subsequent columns in the key are no longer sorted usefully for further filtering.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "c4a84c633ef3",
-                      "text": "A \"covering index\" includes every column the query needs (in the key or as included/non-key columns), letting the engine answer entirely from the index without touching the base table (an \"index-only scan\" in Postgres, avoiding the heap fetch).",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "11e96cca2b26",
-                      "text": "Index on `(user_id, created_at)` serves `WHERE user_id = ? ORDER BY created_at` perfectly (equality then range/sort) but does NOT efficiently serve `WHERE created_at > ?` alone, nor `WHERE user_id = ? AND status = ? ORDER BY created_at` if `status` isn't in the key.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "f2cae66fbd51",
-                      "text": "Postgres supports `INCLUDE` columns (payload-only, not part of the key) to build covering indexes without bloating the sortable key; MySQL/InnoDB achieves it implicitly since secondary indexes always carry the clustering key.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "db587529a8eb",
-                      "text": "Redundant indexes are wasted overhead: an index on `(A, B)` makes a separate index on `(A)` alone almost always redundant.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b116f3a9295d",
-                      "text": "You have `INDEX(a, b, c)`. For each of these queries, say whether the index can be used for seeking, and how much of it is used: `WHERE a = 1 AND b = 2`, `WHERE b = 2 AND c = 3`, `WHERE a = 1 AND c = 3`, `WHERE a = 1 ORDER BY b`, `WHERE a > 1 AND b = 2`.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8a6fb727fbec",
-                      "text": "Design a composite index for a query that filters `WHERE tenant_id = ? AND status = 'active' ORDER BY created_at DESC LIMIT 20`. Justify the column order and whether it needs to be \"covering.\"",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "05f2a9b63355",
-                      "text": "A table has `INDEX(email)` and someone adds `INDEX(email, created_at)`. Is the first index now redundant? Under what circumstance would you still keep both?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "504a339bf5a3"
-                },
-                {
-                  "title": "When the Planner Uses vs Ignores an Index",
-                  "items": [
-                    {
-                      "id": "e8b48ecb4ca7",
-                      "text": "Invariant: An index only wins when the optimizer's cost estimate says reading the (smaller) index plus row lookups beats a sequential/table scan -- for large result-set fractions, low-cardinality columns, or stale statistics, the planner will correctly (or sometimes incorrectly) prefer a full scan even with an index present.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0ae17edf999f",
-                      "text": "Selectivity threshold: if a query is expected to return a large percentage of the table's rows (rules of thumb range ~5-30% depending on engine/table shape), a full/sequential scan is usually cheaper than millions of random-I/O index lookups.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "be5e965575b1",
-                      "text": "An index is silently ignored when: a function or expression wraps the indexed column (`WHERE YEAR(created_at) = 2024`), there's an implicit type mismatch/coercion, a leading wildcard `LIKE '%foo'` is used, or the column has very low cardinality (e.g. a boolean flag).",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5cb17332c466",
-                      "text": "Stale or missing statistics (histogram out of date after bulk load) can make the optimizer misjudge cardinality and pick the wrong plan -- this is why `ANALYZE` matters after large data changes.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4aa1c1254925",
-                      "text": "Small tables: the optimizer may skip an index entirely and just scan, because the whole table fits in one or a few pages.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "99e61320d655",
-                      "text": "A `WHERE` clause is `WHERE status = 'active'` on a column that's 95% \"active\" rows, and there's a plain B-tree index on `status`. Will the planner use it? Why or why not, and what would you index instead?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "455579887b7f",
-                      "text": "Explain exactly why `WHERE DATE(order_date) = '2024-01-01'` fails to use an index on `order_date`, and give two ways to fix the query so the index is used again.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8f388eb7a608",
-                      "text": "After bulk-loading 10M rows in one transaction, a previously-fast query on the new data goes slow. What's the first thing to check, and why?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "3b1d1d3e0e93"
-                },
-                {
-                  "title": "Write Overhead & When NOT to Add an Index",
-                  "items": [
-                    {
-                      "id": "76dbd7251d34",
-                      "text": "Invariant: Every index is a second (or third...) data structure that must be kept transactionally consistent with the table, so each `INSERT`/`UPDATE`/`DELETE` pays to update every index touched by the changed columns -- indexes are a read/write tradeoff, not a free lunch.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "248eead641b4",
-                      "text": "Each additional index adds write amplification: one logical row insert becomes N physical B-tree insertions, plus WAL/redo log volume, plus potential page splits.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2aa6394ce935",
-                      "text": "Indexes cost storage and cache pressure -- more indexes competing for buffer pool memory means more evictions and cold-cache misses.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "9ece17739bdb",
-                      "text": "Don't index: columns with very low cardinality alone, columns rarely used in `WHERE`/`JOIN`/`ORDER BY`, small tables that always fit in memory, write-heavy tables where read queries are rare.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a1588d17d18a",
-                      "text": "Partial/filtered indexes (Postgres `WHERE` clause on `CREATE INDEX`) solve the low-cardinality problem cheaply -- e.g. index only `WHERE status = 'pending'` when that's the rare, hot-path value.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "62bdc29e7c22",
-                      "text": "Design an index strategy for a table that's queried by `(user_id, created_at)` but written to constantly (thousands of inserts/sec). What do you add, what do you avoid, and why does write throughput matter here?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a83ed4a93add",
-                      "text": "A table has a `deleted` boolean where 99% of rows are `false` and queries almost always filter `WHERE deleted = false`. Is a plain index on `deleted` useful? What would you build instead?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "17c0c472966b",
-                      "text": "Your team's habit is \"query is slow -> add an index.\" After a year, a hot table has 15 indexes and inserts have gotten measurably slower. Walk through how you'd audit and prune them.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "cced2673ad80",
-                      "text": "262. Trips and Users",
-                      "url": "https://leetcode.com/problems/trips-and-users/",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "e1b768776c65"
+                  "id": "d112f7ebadce"
                 }
               ],
-              "id": "4af4a6d36ef5"
+              "id": "61c56adcdfdf"
             },
             {
-              "title": "Normalization & Schema Design",
+              "title": "Window Functions: Running Aggregates & Offsets",
               "subgroups": [
                 {
-                  "title": "1NF -- Eliminating Repeating Groups / Non-Atomic Values",
+                  "title": "LAG/LEAD for Row-to-Row Comparison",
                   "items": [
                     {
-                      "id": "7e5f55e60b35",
-                      "text": "Invariant: 1NF requires every column to hold a single atomic value (no comma-separated lists, no repeating column groups like `phone1, phone2, phone3`) and every row to be uniquely identifiable -- violating it makes filtering/aggregating on individual values require string-parsing hacks and update anomalies when the \"list\" changes.",
+                      "id": "bfcc53aac48f",
+                      "text": "Invariant: LAG/LEAD fetch a value from a different row within the same ordered partition without a self-join -- the offset (default 1) is how many rows away, and a missing neighbor (start/end of partition) returns NULL unless a default is given.",
                       "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "2435cc5f5827",
-                      "text": "Classic 1NF violation: a `PRODUCT` table with a `Suppliers` column storing `\"Acme, Globex, Initech\"` as one string, or a `Student` table with `Course1, Course2, Course3` columns -- both fixed by extracting a separate child table.",
-                      "url": null,
-                      "tag": "Know cold",
+                      "id": "3d8509f9a0d1",
+                      "text": "Biggest Window Between Visits",
+                      "url": "https://leetcode.com/problems/biggest-window-between-visits/",
+                      "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "36f8fa3f9569",
-                      "text": "The anomaly it fixes: without 1NF you can't cleanly query \"all products supplied by Acme,\" can't add a 4th course without a schema change, and can't enforce uniqueness/foreign keys on individual list items.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "c102914c3fe4",
-                      "text": "1NF also implicitly wants a primary key -- a table with duplicate, indistinguishable rows and no key isn't in 1NF either, by most textbook definitions.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e2f2fc45a4b8",
-                      "text": "A `Student` table has columns `student_id, name, course1, course2, course3`. Identify the 1NF violation and redesign it. What breaks if a student takes a 4th course, or drops one?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2a25e1783385",
-                      "text": "A `Contact` table has an `emails` column storing `\"a@x.com;b@y.com\"`. What query becomes hard/impossible with this design, and how do you fix the schema?",
-                      "url": null,
-                      "tag": "Drill prompts",
+                      "id": "c5480a2cfa0b",
+                      "text": "Movie Rating",
+                      "url": "https://leetcode.com/problems/movie-rating/",
+                      "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "a5b4e4f7549e"
-                },
-                {
-                  "title": "2NF -- Eliminating Partial Dependencies (Composite Keys)",
-                  "items": [
-                    {
-                      "id": "39704ba2649e",
-                      "text": "Invariant: 2NF requires 1NF plus \"no non-key attribute depends on only *part* of a composite primary key\" -- this only matters when the PK has 2+ columns, and the fix is to split off attributes that depend on just one part of the key into their own table.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "de9dcd3052a7",
-                      "text": "Classic example: `OrderItem(order_id, product_id, product_name, quantity)` with PK `(order_id, product_id)`. `product_name` depends only on `product_id`, not on the full composite key -- that's a partial dependency, violating 2NF. Fix: move `product_name` into a `Product(product_id, product_name)` table.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "27ee80f97776",
-                      "text": "The anomaly it fixes: without the split, `product_name` is duplicated on every order line, so renaming a product means updating every historical order row, and you can't record a product's name before it's ever ordered.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6ff6d708da44",
-                      "text": "2NF is only a meaningful concern for tables with composite primary keys; a table with a single-column surrogate key automatically satisfies 2NF.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "68cac090ad89",
-                      "text": "`Enrollment(student_id, course_id, student_name, course_name, grade)` has PK `(student_id, course_id)`. Identify every partial dependency and redesign into 2NF-compliant tables.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "dc30a01d9993",
-                      "text": "Why is 2NF irrelevant (automatically satisfied) for a table whose primary key is a single auto-increment `id` column?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4cdebc100236",
-                      "text": "Database Normalization #3 (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/database-normalization-3/problem",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b6d802357187",
-                      "text": "Database Normalization #4 (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/database-normalization-4/problem",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "8aaf5a51214e"
-                },
-                {
-                  "title": "3NF & BCNF -- Eliminating Transitive Dependencies",
-                  "items": [
-                    {
-                      "id": "65a784f1c285",
-                      "text": "Invariant: 3NF requires 2NF plus \"no non-key attribute depends on another non-key attribute\" (no transitive dependency through a non-key column); BCNF tightens this further to \"every determinant must be a candidate key\" -- the gap between them matters when a table has multiple overlapping candidate keys.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8b07acadddfe",
-                      "text": "Classic 3NF violation: `Employee(emp_id, dept_id, dept_manager)` where `dept_manager` depends on `dept_id`, which depends on `emp_id` -- a transitive chain. Fix: split into `Employee(emp_id, dept_id)` and `Department(dept_id, dept_manager)`.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "bcd781bf1180",
-                      "text": "The anomaly it fixes: without the split, changing a department's manager requires updating every employee row in that department, and you can't store a new department's manager until it has at least one employee.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e70e78257310",
-                      "text": "BCNF can reduce update anomalies further than 3NF but occasionally sacrifices dependency preservation -- which is why 3NF is the common \"good enough\" target in practice and BCNF is reserved for cases with real anomalies from overlapping keys.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d6ee8e9c3409",
-                      "text": "4NF/5NF exist for multivalued dependencies -- rarely tested in interviews beyond \"have you heard of it,\" but worth naming if asked.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "fc5c80d3b253",
-                      "text": "`Order(order_id, customer_id, customer_zip, shipping_cost)` where `shipping_cost` is derived from `customer_zip`. Identify the transitive dependency and normalize to 3NF.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "135110c4b0d7",
-                      "text": "Give an example of a relation that is in 3NF but not in BCNF, and explain precisely which determinant fails the \"must be a candidate key\" test.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "da73ef935b54",
-                      "text": "Why might a team deliberately stop at 3NF instead of pushing to BCNF for a given table? What could be lost?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d54497dc649e",
-                      "text": "Database Normalization #6 (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/database-normalization-6/problem",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d1558a2a95b7",
-                      "text": "Database Normalization #10 (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/database-normalization-10/problem",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "0aef4df3679d"
-                },
-                {
-                  "title": "Denormalization Tradeoffs & Schema Design in Practice",
-                  "items": [
-                    {
-                      "id": "8a934e5d8417",
-                      "text": "Invariant: Denormalization is a deliberate, targeted trade of write-complexity/redundancy for read-performance and query-simplicity -- it's correct when reads vastly outnumber writes, when the duplicated data changes rarely, or when join cost in a query hot path is provably the bottleneck; it's a mistake when applied blindly \"for speed\" without measuring.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "49b0a5452467",
-                      "text": "Good denormalization candidates: precomputed aggregates, rarely-changing reference data copied onto a hot row (e.g. `price_at_purchase` snapshotted onto an order line -- this one is actually *correct* design, not just optimization), and read-heavy reporting/analytics tables deliberately denormalized apart from the normalized OLTP schema.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "7e6db7b0aedf",
-                      "text": "The cost you're accepting: every denormalized copy is a place a bug can cause data to drift out of sync, extra storage, and either application-level or trigger-level logic to keep copies consistent.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "86b967c32da0",
-                      "text": "Materialized views are the \"controlled\" form of denormalization: you get a denormalized/aggregated read path but the source of truth stays normalized, and refresh is an explicit, schedulable operation.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "758c62f166b7",
-                      "text": "Rule of thumb interviewers look for: normalize by default for OLTP correctness; denormalize surgically, with a measured reason, and be able to name the write-side mechanism that keeps the copy in sync.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d36cce3abfbf",
-                      "text": "Design a normalized schema for an e-commerce system supporting orders with multiple items, multiple shipping/billing addresses per customer, and payments that can partially fail/retry. Call out every foreign key and what normal form you're targeting.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0e7c815799c2",
-                      "text": "Your reporting dashboard runs a 6-table join to compute daily revenue by category and it's timing out. Propose a denormalization or materialization strategy, and explain exactly what keeps it from silently going stale.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e97e835e2e2c",
-                      "text": "Why is storing `unit_price_at_purchase` on `OrderItem` (instead of joining live to `Product.price`) not really \"premature denormalization\" but actually a correctness requirement?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "34e659929629"
+                  "id": "f399bf03fa95"
                 }
               ],
-              "id": "842e9fc5d6ed"
+              "id": "2af2d5ac04b8"
             },
             {
-              "title": "Transactions & ACID",
+              "title": "Deduplication & Gaps-and-Islands",
               "subgroups": [
                 {
-                  "title": "Atomicity, Consistency, Isolation, Durability -- Concrete Failure Modes",
+                  "title": "Gaps and Islands (Consecutive Groups)",
                   "items": [
                     {
-                      "id": "17da98ba592f",
-                      "text": "Invariant: Each ACID letter guards against one distinct, concretely observable failure -- losing atomicity leaves half-applied writes, losing consistency lets invariants/constraints be violated, losing isolation lets concurrent transactions see each other's in-flight state, and losing durability makes committed data vanish on crash.",
+                      "id": "2f72f9343279",
+                      "text": "Invariant: subtracting a row's own rank/row-number from its ordered value collapses every run of consecutive values to the same constant -- that constant becomes a free grouping key for \"find each island of consecutive rows.\"",
                       "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "f9b5faa8e8d7",
-                      "text": "Atomicity: a bank transfer that debits account A and credits account B must be all-or-nothing. A crash between the two statements leaves money destroyed unless both are wrapped in one transaction.",
-                      "url": null,
-                      "tag": "Know cold",
+                      "id": "92ea9c1bbdcb",
+                      "text": "SQL Project Planning (HackerRank -- the canonical gaps-and-islands problem)",
+                      "url": "https://www.hackerrank.com/challenges/sql-projects/problem",
+                      "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "a152f8d77e82",
-                      "text": "Consistency: the database moves only between states that satisfy its declared constraints -- actually the \"output\" guaranteed by combining atomicity + isolation + your own constraints, not an independently enforced mechanism.",
-                      "url": null,
-                      "tag": "Know cold",
+                      "id": "236425325f76",
+                      "text": "Team Scores in Football Tournament",
+                      "url": "https://leetcode.com/problems/team-scores-in-football-tournament/",
+                      "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "2f1e73b03347",
-                      "text": "Isolation: concurrent transactions must not observe each other's uncommitted intermediate state -- without it, a \"dirty read\" lets one transaction act on data that's about to be rolled back.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0d0d853a86fc",
-                      "text": "Durability: once a transaction commits, the write survives a crash/power loss -- guaranteed via write-ahead logging flushed to disk before commit returns.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2b414fbd8a7b",
-                      "text": "Durability has a real tunable tradeoff: some systems let you relax fsync-per-commit (Postgres `synchronous_commit = off`, MySQL `innodb_flush_log_at_trx_commit`) trading a small durability window for throughput.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0fdfb1162658",
-                      "text": "Give a concrete scenario where skipping atomicity causes real financial/data loss, and name the mechanism that prevents it.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "465d853357a8",
-                      "text": "Is \"consistency\" in ACID the same thing as \"consistency\" in CAP theorem? Explain the difference precisely -- this is a very common interview trap.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2c1e0fa19d54",
-                      "text": "A payment service writes a row, returns success to the caller, then the database process crashes before flushing to disk. What ACID property was violated, and what's the fix?",
-                      "url": null,
-                      "tag": "Drill prompts",
+                      "id": "34d99cd69f51",
+                      "text": "Number of Transactions per Visit",
+                      "url": "https://leetcode.com/problems/number-of-transactions-per-visit/",
+                      "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "734f7eb8a5e0"
-                },
-                {
-                  "title": "Isolation Levels & the Anomalies Each One Prevents",
-                  "items": [
-                    {
-                      "id": "0f46933d5c0e",
-                      "text": "Invariant: The four standard isolation levels form a strictly increasing guarantee ladder (Read Uncommitted < Read Committed < Repeatable Read < Serializable), each closing off exactly one more class of anomaly (dirty read -> non-repeatable read -> phantom read) at the cost of more locking/blocking or more abort-and-retry under contention.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a5973e8cbecc",
-                      "text": "Dirty read: reading another transaction's *uncommitted* write. Prevented starting at Read Committed.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e836f46d3dc7",
-                      "text": "Non-repeatable read: re-reading the *same row* within one transaction gives a different value because another transaction committed an update in between. Prevented starting at Repeatable Read.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "310e05458bb0",
-                      "text": "Phantom read: re-running the *same range query* returns a different *set of rows*. Only fully prevented at Serializable in the strict standard, though MVCC engines like Postgres/InnoDB largely prevent phantoms at Repeatable Read too -- a well-known deviation from the ANSI SQL standard worth mentioning.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b1662c13096f",
-                      "text": "Read Committed is the default in Postgres, Oracle, and SQL Server; Repeatable Read is the default in MySQL/InnoDB -- a common trivia question.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "9766d4319b47",
-                      "text": "MVCC (Postgres/InnoDB/Oracle) lets readers see a consistent snapshot without blocking writers and vice versa -- this is *how* isolation avoids dirty reads without taking read locks.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6ae80f9c57a4",
-                      "text": "Define dirty read, non-repeatable read, and phantom read with a two-transaction timeline for each, and state the minimum isolation level that prevents each one.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "796d61db4aef",
-                      "text": "Why can Postgres's Repeatable Read prevent phantom reads even though the ANSI standard says only Serializable must?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e8bdf5308dc7",
-                      "text": "Your application runs at Serializable isolation and starts seeing intermittent \"could not serialize access due to concurrent update\" errors under load. Is this a bug? What should the application do?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "643e3011cc3a"
-                },
-                {
-                  "title": "Optimistic vs Pessimistic Locking",
-                  "items": [
-                    {
-                      "id": "53d533e644c0",
-                      "text": "Invariant: Pessimistic locking assumes conflicts are common and blocks other transactions from touching a row until you're done (`SELECT ... FOR UPDATE`); optimistic locking assumes conflicts are rare and lets everyone proceed, checking at commit time (via a version/timestamp column) whether anyone else modified the row first.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "69e0e5e28807",
-                      "text": "Pessimistic: acquire a lock before reading-with-intent-to-write; other transactions wanting the same row block until release. Good for high-contention hot rows.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a692c0ef948f",
-                      "text": "Optimistic: no lock taken; each row carries a `version` column; the update is `UPDATE t SET ..., version = version + 1 WHERE id = ? AND version = ?` -- if 0 rows are affected, someone else committed first.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "f02e657856dc",
-                      "text": "Deadlocks are the concrete pessimistic-locking failure mode: two transactions locking two rows in opposite order both block forever until the deadlock detector kills one. Mitigation: always acquire locks in a consistent, global order.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e5675f2a49a5",
-                      "text": "Optimistic locking's failure mode is livelock/starvation under high contention -- this is why pessimistic locking is preferred specifically for known-hot rows.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5cc6a52134bd",
-                      "text": "You're building a flash-sale \"buy the last item in stock\" feature. Would you reach for optimistic or pessimistic locking, and why?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1caf1ef7437a",
-                      "text": "Implement (describe, in SQL) an optimistic-locking update for an `accounts.balance` column using a `version` column, and explain exactly what the application does when the `UPDATE` affects 0 rows.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "92d2292b22b8",
-                      "text": "Describe a deadlock scenario between two transactions each updating two shared rows in opposite order, and explain both the database's detection mechanism and the application-level fix.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "064080178304"
+                  "id": "33b10ce11065"
                 }
               ],
-              "id": "e36d158f9669"
-            },
-            {
-              "title": "Query Optimization & Execution Plans",
-              "subgroups": [
-                {
-                  "title": "Reading an EXPLAIN / Execution Plan",
-                  "items": [
-                    {
-                      "id": "43b41d814403",
-                      "text": "Invariant: An execution plan is a tree of physical operators (scan/seek, join algorithm, sort, aggregate) each carrying an estimated vs. actual row count and cost -- the single most useful debugging signal is a large gap between *estimated* and *actual* rows at some node, which points straight at stale statistics or a misestimated predicate.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a8970d610058",
-                      "text": "Read plans bottom-up / inside-out: leaf nodes are how data enters, each level up is an operator consuming its children's output, the root is the final result.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "c18022f41484",
-                      "text": "Key operators: Seq Scan, Index Scan, Index Only Scan (covering index in action), Bitmap Heap Scan, Nested Loop Join (good for small outer input, indexed inner lookups), Hash Join (good for large unsorted inputs), Merge Join (good when both inputs are already sorted on the join key).",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8edda1f930cf",
-                      "text": "`EXPLAIN` shows *planned/estimated* costs; `EXPLAIN ANALYZE` actually runs the query and shows real elapsed time and real row counts -- always prefer `EXPLAIN ANALYZE` when diagnosing.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d6198855620d",
-                      "text": "MySQL's `EXPLAIN` `type` column (`const`, `eq_ref`, `ref`, `range`, `index`, `ALL` -- roughly best to worst); watch `Extra` for `Using filesort` and `Using temporary`, both red flags for a missing/insufficient index.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5996a8401f6c",
-                      "text": "Given an `EXPLAIN ANALYZE` output where the planner estimated 50 rows from a filter but actually got 500,000, what's the likely root cause and the fix?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "85fda7009a97",
-                      "text": "When would the planner prefer a Hash Join over a Nested Loop Join, and what does that tell you about the size of the two inputs?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d9371b898df7",
-                      "text": "Explain the difference between an Index Scan and an Index Only Scan in Postgres, and what has to be true about the query and the index for the \"Only\" variant to apply.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "112c81425d21"
-                },
-                {
-                  "title": "Common Causes of a Slow Query",
-                  "items": [
-                    {
-                      "id": "b2df1916a915",
-                      "text": "Invariant: The overwhelming majority of \"why is this query slow\" interview answers reduce to one of: the planner can't use an otherwise-good index (function-wrapped column, implicit type conversion, leading wildcard), there's no good index at all, or the app is issuing many small queries in a loop (N+1) instead of one set-based query.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "99342866adbf",
-                      "text": "Function-wrapped/expression column: `WHERE UPPER(email) = 'X@Y.COM'` can't use a plain index on `email` -- fixed by rewriting the predicate to be sargable or building a functional/expression index.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0ddacaa062d2",
-                      "text": "Implicit type conversion: comparing a string column to a numeric literal forces the engine to convert every stored value to compare, defeating the index.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "455b0dcdc7f3",
-                      "text": "N+1 query pattern: an ORM/app loop fetches N parent rows, then issues one additional query per row for related children instead of one join or `WHERE id IN (...)` -- kills performance primarily through network round-trip latency multiplication.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "9cf9e0bd47fd",
-                      "text": "Other frequent culprits: unbounded `LIMIT`, `SELECT *` forcing extra I/O, non-sargable `LIKE '%x%'`, and large `OFFSET` pagination -- keyset/cursor pagination avoids the last one.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a008f7bba2cc",
-                      "text": "A query `WHERE LOWER(username) = 'bob'` is slow despite an index on `username`. Give two fixes -- one that changes the query, one that changes the schema.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6ac547783545",
-                      "text": "An API endpoint that lists 50 orders and their customer names takes 2 seconds; the ORM logs show 51 SQL queries. Diagnose the pattern and describe the fix at the query level.",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "91ec774bb5bd",
-                      "text": "A paginated admin report using `OFFSET 500000 LIMIT 20` gets slower the deeper you paginate. Why, and what's the standard fix?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "eadb2c43bfa9",
-                      "text": "197. Rising Temperature",
-                      "url": "https://leetcode.com/problems/rising-temperature/",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "ebb762b3f039"
-                },
-                {
-                  "title": "Sequential Scan vs Index Scan: the Planner's Decision",
-                  "items": [
-                    {
-                      "id": "9dc5c2ed3ae5",
-                      "text": "Invariant: The planner picks whichever physical plan it estimates will be cheapest given table/index statistics -- an index scan wins when it's expected to touch a small, selective fraction of rows, and a sequential scan wins whenever that's not true, regardless of whether an index \"exists.\"",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "86066be67323",
-                      "text": "Selectivity is the dominant factor: past a certain fraction of matching rows (commonly cited around 5-30%), linear beats random-access-per-row.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2df8a1c29785",
-                      "text": "Physical correlation matters: Postgres tracks `correlation` between index order and physical table order; a highly correlated index makes index-scan row fetches nearly sequential too.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d50ec1f961bd",
-                      "text": "Table/index statistics drive the estimate, not reality at query time -- outdated statistics after a bulk load can make the planner choose badly until refreshed (`ANALYZE`).",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8e83e432738b",
-                      "text": "\"The index exists but isn't used\" is very often *correct planner behavior*, not a bug -- forcing an index with a hint should be a last resort since it fights the optimizer permanently as data shape changes.",
-                      "url": null,
-                      "tag": "Know cold",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "610c8112c9c1",
-                      "text": "Table `orders` has 10M rows; an index exists on `status`; the query filters `WHERE status = 'shipped'` matching 40% of rows. Would you expect an index scan or a sequential scan, and why is the planner's choice actually correct here?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "828a4ceade42",
-                      "text": "What does \"correlation\" mean in a Postgres plan, and why does a high-correlation index change the cost calculus for what would otherwise be a borderline scan-vs-seek decision?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1d013f7c1d0c",
-                      "text": "When (if ever) is it appropriate to force an index/hint the optimizer rather than let it choose? What's the long-term risk of doing so?",
-                      "url": null,
-                      "tag": "Drill prompts",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "cceec25fb324",
-                      "text": "262. Trips and Users (Boss)",
-                      "url": "https://leetcode.com/problems/trips-and-users/",
-                      "tag": "Practice",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "874b0e54bc20"
-                }
-              ],
-              "id": "d38e0ad0d833"
+              "id": "09a5644b8f52"
             }
           ],
-          "id": "b519ddc46366"
+          "id": "5d49114cba34"
         },
         {
-          "title": "Read First: Goldmine Reference Articles",
+          "title": "CTEs, Set Operations & Reshaping",
           "groups": [
             {
-              "title": "Concept Deep Dives",
+              "title": "Common Table Expressions (CTEs)",
               "subgroups": [
                 {
-                  "title": null,
+                  "title": "CTEs for Readable Multi-Step Queries",
                   "items": [
                     {
-                      "id": "c37c92810417",
-                      "text": "Use The Index, Luke -- the canonical SQL indexing resource",
-                      "url": "https://use-the-index-luke.com/",
+                      "id": "500640b6f763",
+                      "text": "Invariant: a CTE is just a named, reusable subquery scoped to one statement -- it doesn't change what's computable, only how readable the multi-step logic is, and it can be referenced more than once without repeating the subquery text.",
+                      "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "8bfefceee34d",
-                      "text": "SQL Performance Explained (full book, free online)",
-                      "url": "https://use-the-index-luke.com/sql/table-of-contents",
-                      "tag": "",
+                      "id": "045054b331cf",
+                      "text": "Advertiser Analysis",
+                      "url": "https://leetcode.com/problems/advertiser-analysis/",
+                      "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "1eb3d2124c59",
-                      "text": "The Internals of PostgreSQL: Join Operations (Nested Loop, Merge, Hash Join)",
-                      "url": "https://www.interdb.jp/pg/pgsql03/05/",
-                      "tag": "",
+                      "id": "2c00ce7ad518",
+                      "text": "Find Followers Count",
+                      "url": "https://leetcode.com/problems/find-followers-count/",
+                      "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "b600f957ac29",
-                      "text": "Explaining the unexplainable: reading real EXPLAIN output (5-part series)",
-                      "url": "https://www.depesz.com/2013/04/16/explaining-the-unexplainable/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d950c1eb8ae6",
-                      "text": "Uber Engineering: Designing Schemaless -- a real denormalization tradeoff",
-                      "url": "https://www.uber.com/en-us/blog/schemaless-part-one-mysql-datastore/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "ac879776d7e0",
-                      "text": "Cockroach Labs: No Dirty Reads -- SQL isolation levels with concrete failure scenarios",
-                      "url": "https://www.cockroachlabs.com/blog/sql-isolation-levels-explained/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "233785d1103e",
-                      "text": "Cockroach Labs: What write skew looks like",
-                      "url": "https://www.cockroachlabs.com/blog/what-write-skew-looks-like/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b27fe5a1bc0f",
-                      "text": "Martin Kleppmann: Hermitage -- testing the \"I\" in ACID across databases",
-                      "url": "https://martin.kleppmann.com/2014/11/25/hermitage-testing-the-i-in-acid.html",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "c05220571eee",
-                      "text": "GitLab's real production Query Performance Guidelines",
-                      "url": "https://docs.gitlab.com/development/database/query_performance/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "f48522bdf12d",
-                      "text": "Haki Benita: Be Careful With CTE in PostgreSQL (materialization/optimization-fence behavior)",
-                      "url": "https://hakibenita.com/be-careful-with-cte-in-postgre-sql",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "635618ce928c",
-                      "text": "jOOQ: Probably the Coolest SQL Feature -- Window Functions",
-                      "url": "https://blog.jooq.org/probably-the-coolest-sql-feature-window-functions/",
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "38cb090515d0",
-                      "text": "jOOQ Manual: Window frame clause (ROWS/RANGE/GROUPS) with a cross-database support matrix",
-                      "url": "https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/window-functions/window-frame/",
-                      "tag": "",
+                      "id": "1b17a0537660",
+                      "text": "Monthly Transactions II",
+                      "url": "https://leetcode.com/problems/monthly-transactions-ii/",
+                      "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "17251ad364f6"
+                  "id": "cb6707b1a336"
                 }
               ],
-              "id": "98f2c0e6d180"
+              "id": "41dc0fcb4c75"
+            },
+            {
+              "title": "Set Operations",
+              "subgroups": [
+                {
+                  "title": "UNION vs UNION ALL & Combining Differently-Shaped Result Sets",
+                  "items": [
+                    {
+                      "id": "e58e2347df50",
+                      "text": "Invariant: UNION implicitly deduplicates its combined result (an expensive sort/hash step) while UNION ALL keeps every row including duplicates; and when the two source tables don't naturally share a shape, you build that shared shape explicitly with literal/placeholder columns before unioning.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c80c6f00fbe4",
+                      "text": "User Activity for the Past 30 Days II",
+                      "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "6b4e9ab9044a"
+                }
+              ],
+              "id": "5d6ddc3f4b9c"
+            },
+            {
+              "title": "Pivoting & Data Reshaping",
+              "subgroups": [
+                {
+                  "title": "Conditional Aggregation for Pivot-Style Reports",
+                  "items": [
+                    {
+                      "id": "fa99bd53a7f8",
+                      "text": "Invariant: `SUM(CASE WHEN category = 'x' THEN value ELSE 0 END)` turns one row-per-category table into one column-per-category row without a native PIVOT operator -- each CASE branch is a hand-built column.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fe73db06f83e",
+                      "text": "Occupations",
+                      "url": "https://leetcode.com/problems/occupations/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "217fdcfc97dc"
+                }
+              ],
+              "id": "5a2cdf175e3e"
             }
           ],
-          "id": "4dfa40daeb29"
+          "id": "40f3684821a9"
         }
       ]
     }
