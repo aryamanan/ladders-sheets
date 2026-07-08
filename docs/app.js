@@ -3,6 +3,7 @@ import { firebaseConfig } from "./firebase-config.js";
 const LOCAL_KEY = "practice-tracker-solved-v1";
 const STARRED_KEY = "practice-tracker-starred-v1";
 const PRACTICE_LOG_KEY = "practice-tracker-practice-log-v1";
+const RECAP_SKIPPED_KEY = "practice-tracker-recap-skipped-v1";
 const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.13.0";
 
 const appEl = document.getElementById("app");
@@ -60,6 +61,33 @@ function incrementPractice(id) {
     const touched = row.querySelector(".last-touched");
     if (touched) touched.textContent = relativeTimeLabel(lastTouchedAt(id));
   });
+}
+
+// `recapSkipped[id] = true` permanently excludes an item from the "oldest
+// solved" home-page recommender -- for a problem that's too basic to be
+// worth re-drilling but is old enough to otherwise hog a slot in the list.
+// Scoped only to that recommender; doesn't affect Starred/Most Practiced/
+// the sheet itself.
+let recapSkipped = loadRecapSkipped();
+
+function loadRecapSkipped() {
+  try {
+    return JSON.parse(localStorage.getItem(RECAP_SKIPPED_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveRecapSkipped() {
+  localStorage.setItem(RECAP_SKIPPED_KEY, JSON.stringify(recapSkipped));
+}
+
+function skipFromRecap(id) {
+  recapSkipped[id] = true;
+  saveRecapSkipped();
+  scheduleCloudWrite();
+  const panel = document.querySelector(".recap-panel");
+  if (panel) panel.outerHTML = renderRepracticeRecommender();
 }
 
 // ---------- Linked-platform "solved elsewhere" marks ----------
@@ -253,22 +281,27 @@ function subscribeToCloud(uid) {
       const remoteSolved = migrateLegacySolved(snap.exists() ? snap.data().solved || {} : {});
       const remoteStarred = snap.exists() ? snap.data().starred || {} : {};
       const remotePracticeLog = snap.exists() ? snap.data().practiceLog || {} : {};
+      const remoteRecapSkipped = snap.exists() ? snap.data().recapSkipped || {} : {};
       if (!firstSnapshotHandled) {
         firstSnapshotHandled = true;
         solved = { ...remoteSolved, ...solved };
         starred = { ...remoteStarred, ...starred };
         practiceLog = { ...remotePracticeLog, ...practiceLog };
+        recapSkipped = { ...remoteRecapSkipped, ...recapSkipped };
         saveLocalSolved();
         saveLocalStarred();
         savePracticeLog();
+        saveRecapSkipped();
         writeCloudNow();
       } else {
         solved = remoteSolved;
         starred = remoteStarred;
         practiceLog = remotePracticeLog;
+        recapSkipped = remoteRecapSkipped;
         saveLocalSolved();
         saveLocalStarred();
         savePracticeLog();
+        saveRecapSkipped();
       }
       refreshAllCounts();
     },
@@ -288,7 +321,7 @@ function scheduleCloudWrite() {
 function writeCloudNow() {
   if (!user || !db) return;
   fsMod
-    .setDoc(fsMod.doc(db, "users", user.uid), { solved, starred, practiceLog, updatedAt: Date.now() })
+    .setDoc(fsMod.doc(db, "users", user.uid), { solved, starred, practiceLog, recapSkipped, updatedAt: Date.now() })
     .catch((e) => console.warn("Cloud write failed", e));
 }
 
@@ -525,7 +558,7 @@ function allSolvedEntries() {
         for (const sg of g.subgroups) {
           for (const it of sg.items) {
             const ts = solved[it.id];
-            if (typeof ts === "number") entries.push({ item: it, sheet, group: g, subgroup: sg, ts });
+            if (typeof ts === "number") entries.push({ item: it, sheet, section: sec, group: g, subgroup: sg, ts });
           }
         }
       }
@@ -538,15 +571,104 @@ function allSolvedEntries() {
 // the topic/sub-pattern whose solved problems have gone stalest overall --
 // so you can either redo one specific old problem or go re-drill a whole
 // pattern you haven't touched in a while.
+// Skipped items are filtered out before sorting/slicing, not just hidden
+// after -- so skipping one always pulls the next-oldest candidate up into
+// the window instead of just shrinking it.
+const RECAP_WINDOW_SIZE = 8;
+
+function dayKey(ts) {
+  const d = new Date(ts);
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+
+const HEATMAP_WEEKS = 20;
+const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// A GitHub-contributions-style calendar: one cell per day for the last
+// ~20 weeks, shaded by how many problems were solved that day. Counts
+// every solve (`solved[id]`) plus every logged repeat-practice pass
+// (`practiceLog[id].lastAt`), since both represent real study time on a
+// given day, not just first-time solves.
+function renderHeatmap() {
+  const dayCounts = new Map();
+  const bump = (ts) => {
+    if (typeof ts !== "number") return;
+    const key = dayKey(ts);
+    dayCounts.set(key, (dayCounts.get(key) || 0) + 1);
+  };
+  for (const ts of Object.values(solved)) bump(ts);
+  for (const log of Object.values(practiceLog)) bump(log.lastAt);
+  if (dayCounts.size === 0) return "";
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  // Start on a Sunday so the grid's rows line up as Sun..Sat columns-of-weeks.
+  const totalDays = HEATMAP_WEEKS * 7;
+  const start = new Date(today);
+  start.setDate(start.getDate() - (totalDays - 1) - today.getDay());
+
+  const cells = [];
+  const monthLabels = [];
+  let lastMonth = null;
+  for (let i = 0; i < totalDays + today.getDay(); i++) {
+    const d = new Date(start);
+    d.setDate(start.getDate() + i);
+    if (d > today) break;
+    const count = dayCounts.get(dayKey(d.getTime())) || 0;
+    let level = 0;
+    if (count >= 6) level = 4;
+    else if (count >= 4) level = 3;
+    else if (count >= 2) level = 2;
+    else if (count >= 1) level = 1;
+    if (i % 7 === 0) {
+      const month = d.getMonth();
+      if (month !== lastMonth) {
+        monthLabels.push(MONTH_NAMES[month]);
+        lastMonth = month;
+      } else {
+        monthLabels.push("");
+      }
+    }
+    cells.push(
+      `<div class="heatmap-cell heatmap-level-${level}" title="${escapeAttr(d.toDateString())}: ${count} solved"></div>`
+    );
+  }
+
+  const weeksHtml = [];
+  for (let w = 0; w < monthLabels.length; w++) {
+    const weekCells = cells.slice(w * 7, w * 7 + 7).join("");
+    weeksHtml.push(`<div class="heatmap-week"><div class="heatmap-month-label">${escapeHtml(monthLabels[w])}</div>${weekCells}</div>`);
+  }
+
+  return `
+    <div class="heatmap-panel">
+      <h3 class="recap-col-title">Solve activity</h3>
+      <div class="heatmap-grid">${weeksHtml.join("")}</div>
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <span class="heatmap-cell heatmap-level-0"></span>
+        <span class="heatmap-cell heatmap-level-1"></span>
+        <span class="heatmap-cell heatmap-level-2"></span>
+        <span class="heatmap-cell heatmap-level-3"></span>
+        <span class="heatmap-cell heatmap-level-4"></span>
+        <span>More</span>
+      </div>
+    </div>
+  `;
+}
+
 function renderRepracticeRecommender() {
-  const entries = allSolvedEntries();
+  const entries = allSolvedEntries().filter((e) => !recapSkipped[e.item.id]);
   if (!entries.length) return "";
 
-  const oldestItems = [...entries].sort((a, b) => a.ts - b.ts).slice(0, 6);
+  const oldestItems = [...entries].sort((a, b) => a.ts - b.ts).slice(0, RECAP_WINDOW_SIZE);
 
+  // Grouped by subtopic (the H3 "Topic" heading -- Graphs, DP, Greedy, etc,
+  // falling back to the H2 section for sheets with no H3 level) rather than
+  // by sheet, since "The Gauntlet" tells you nothing about WHAT to redrill.
   const byTopic = new Map();
   for (const e of entries) {
-    const key = [e.sheet.title, e.group.title, e.subgroup.title].filter(Boolean).join(" › ");
+    const key = e.group.title || e.section?.title || e.sheet.title;
     const cur = byTopic.get(key);
     if (!cur || e.ts < cur.ts) byTopic.set(key, { ts: e.ts, sheetId: e.sheet.id, count: (cur ? cur.count : 0) + 1 });
     else cur.count++;
@@ -557,11 +679,12 @@ function renderRepracticeRecommender() {
     .map(({ item, sheet, group, subgroup, ts }) => {
       const origin = [sheet.title, group.title, subgroup.title].filter(Boolean).join(" › ");
       return `
-        <a class="recap-row" href="${escapeAttr(item.url || `#/sheet/${sheet.id}`)}" target="${item.url ? "_blank" : "_self"}" rel="noopener">
+        <div class="recap-row">
           ${difficultyDotHtml(item.difficulty)}
-          <span class="recap-text">${escapeHtml(item.text)}</span>
+          <a class="recap-text" href="${escapeAttr(item.url || `#/sheet/${sheet.id}`)}" target="${item.url ? "_blank" : "_self"}" rel="noopener">${escapeHtml(item.text)}</a>
           <span class="recap-meta">${escapeHtml(origin)} · ${relativeTimeLabel(ts)}</span>
-        </a>
+          <button type="button" class="recap-skip-btn" data-recap-skip-id="${item.id}" title="Too basic to bother re-drilling -- skip it in this list">Skip</button>
+        </div>
       `;
     })
     .join("");
@@ -581,7 +704,7 @@ function renderRepracticeRecommender() {
       <div class="recap-columns">
         <div class="recap-col">
           <h3 class="recap-col-title">Oldest solved problems</h3>
-          ${itemsHtml}
+          <div id="recap-items-list">${itemsHtml}</div>
         </div>
         <div class="recap-col">
           <h3 class="recap-col-title">Stalest topics</h3>
@@ -608,6 +731,7 @@ function renderHome() {
       <p>Click a sheet, check items off as you solve them. Progress is saved to this browser automatically, and to your account when signed in.</p>
     </div>
   `);
+  parts.push(renderHeatmap());
   parts.push(renderRepracticeRecommender());
 
   for (const cat of categories) {
@@ -1277,6 +1401,18 @@ function escapeHtml(s) {
 function escapeAttr(s) {
   return escapeHtml(s);
 }
+
+// Attached once to the persistent #app container (unlike sheet views, whose
+// #sections child element is fully recreated on every render so a fresh
+// listener there never stacks) -- renderHome() runs on every home-page
+// visit, so a listener added there directly would duplicate every time.
+appEl.addEventListener("click", (e) => {
+  const skipBtn = e.target.closest(".recap-skip-btn");
+  if (skipBtn) {
+    e.preventDefault();
+    skipFromRecap(skipBtn.dataset.recapSkipId);
+  }
+});
 
 // ---------- Accounts panel wiring ----------
 
