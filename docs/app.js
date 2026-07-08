@@ -30,11 +30,30 @@ let unsubscribeSnapshot = null;
 let writeTimer = null;
 
 function loadLocalSolved() {
+  let raw;
   try {
-    return JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}");
+    raw = JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}");
   } catch {
     return {};
   }
+  return migrateLegacySolved(raw);
+}
+
+// Older saved state marked a solved item as `solved[id] = true`, before
+// solving also recorded a timestamp. Those items are real, already-solved
+// problems -- treat them as solved "before tracking began" (epoch 0) so
+// they still count everywhere a timestamp is read (the oldest-solved
+// recommender), rather than silently vanishing from it.
+function migrateLegacySolved(obj) {
+  let changed = false;
+  for (const id in obj) {
+    if (obj[id] === true) {
+      obj[id] = 0;
+      changed = true;
+    }
+  }
+  if (changed) localStorage.setItem(LOCAL_KEY, JSON.stringify(obj));
+  return obj;
 }
 
 function saveLocalSolved() {
@@ -107,7 +126,7 @@ function subscribeToCloud(uid) {
   unsubscribeSnapshot = fsMod.onSnapshot(
     ref,
     (snap) => {
-      const remoteSolved = snap.exists() ? snap.data().solved || {} : {};
+      const remoteSolved = migrateLegacySolved(snap.exists() ? snap.data().solved || {} : {});
       const remoteStarred = snap.exists() ? snap.data().starred || {} : {};
       if (!firstSnapshotHandled) {
         firstSnapshotHandled = true;
@@ -349,6 +368,95 @@ const EXTERNAL_RESOURCES = {
   ],
 };
 
+function relativeTimeLabel(ts) {
+  const days = Math.floor((Date.now() - ts) / (1000 * 60 * 60 * 24));
+  if (days <= 0) return "today";
+  if (days === 1) return "1 day ago";
+  if (days < 30) return `${days} days ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} month${months > 1 ? "s" : ""} ago`;
+  const years = Math.floor(months / 12);
+  return `${years} year${years > 1 ? "s" : ""} ago`;
+}
+
+// Every solved item, flattened with its sheet/topic context and solved-at
+// timestamp -- the shared source for both the "oldest solved problems" and
+// "stalest topic" recommender lists below.
+function allSolvedEntries() {
+  const entries = [];
+  for (const sheet of data.sheets) {
+    for (const sec of sheet.sections) {
+      for (const g of sec.groups) {
+        for (const sg of g.subgroups) {
+          for (const it of sg.items) {
+            const ts = solved[it.id];
+            if (typeof ts === "number") entries.push({ item: it, sheet, group: g, subgroup: sg, ts });
+          }
+        }
+      }
+    }
+  }
+  return entries;
+}
+
+// A "repractice" nudge: the individual problems solved longest ago, plus
+// the topic/sub-pattern whose solved problems have gone stalest overall --
+// so you can either redo one specific old problem or go re-drill a whole
+// pattern you haven't touched in a while.
+function renderRepracticeRecommender() {
+  const entries = allSolvedEntries();
+  if (!entries.length) return "";
+
+  const oldestItems = [...entries].sort((a, b) => a.ts - b.ts).slice(0, 6);
+
+  const byTopic = new Map();
+  for (const e of entries) {
+    const key = [e.sheet.title, e.group.title, e.subgroup.title].filter(Boolean).join(" › ");
+    const cur = byTopic.get(key);
+    if (!cur || e.ts < cur.ts) byTopic.set(key, { ts: e.ts, sheetId: e.sheet.id, count: (cur ? cur.count : 0) + 1 });
+    else cur.count++;
+  }
+  const oldestTopics = [...byTopic.entries()].sort((a, b) => a[1].ts - b[1].ts).slice(0, 5);
+
+  const itemsHtml = oldestItems
+    .map(({ item, sheet, group, subgroup, ts }) => {
+      const origin = [sheet.title, group.title, subgroup.title].filter(Boolean).join(" › ");
+      return `
+        <a class="recap-row" href="${escapeAttr(item.url || `#/sheet/${sheet.id}`)}" target="${item.url ? "_blank" : "_self"}" rel="noopener">
+          ${difficultyDotHtml(item.difficulty)}
+          <span class="recap-text">${escapeHtml(item.text)}</span>
+          <span class="recap-meta">${escapeHtml(origin)} · ${relativeTimeLabel(ts)}</span>
+        </a>
+      `;
+    })
+    .join("");
+
+  const topicsHtml = oldestTopics
+    .map(([key, v]) => `
+      <a class="recap-row" href="#/sheet/${v.sheetId}">
+        <span class="recap-text">${escapeHtml(key)}</span>
+        <span class="recap-meta">${v.count} solved · oldest ${relativeTimeLabel(v.ts)}</span>
+      </a>
+    `)
+    .join("");
+
+  return `
+    <div class="recap-panel">
+      <h2 class="category-heading">Time to revisit</h2>
+      <div class="recap-columns">
+        <div class="recap-col">
+          <h3 class="recap-col-title">Oldest solved problems</h3>
+          ${itemsHtml}
+        </div>
+        <div class="recap-col">
+          <h3 class="recap-col-title">Stalest topics</h3>
+          ${topicsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderHome() {
   const categories = [
     { key: "dsa", label: "OA + Interview" },
@@ -365,6 +473,7 @@ function renderHome() {
       <p>Click a sheet, check items off as you solve them. Progress is saved to this browser automatically, and to your account when signed in.</p>
     </div>
   `);
+  parts.push(renderRepracticeRecommender());
 
   for (const cat of categories) {
     const sheets = data.sheets.filter((s) => s.category === cat.key);

@@ -138,6 +138,54 @@ a:hover { text-decoration: underline; }
   margin: 28px 0 12px;
 }
 
+/* Nudges you back to the problems/topics you solved longest ago, using the
+   same solved-timestamp data that powers the difficulty ring's live
+   updates -- a light-touch spaced-repetition prompt on the landing page. */
+.recap-panel { margin-top: 8px; }
+.recap-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .recap-columns { grid-template-columns: 1fr; }
+}
+.recap-col {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  padding: 10px 4px;
+}
+.recap-col-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin: 2px 14px 6px;
+}
+.recap-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-top: 1px solid var(--border);
+  color: var(--fg);
+}
+.recap-row:first-of-type { border-top: none; }
+.recap-row:hover { text-decoration: none; background: var(--bg); }
+.recap-text {
+  flex: 1;
+  font-size: 0.86rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recap-meta {
+  font-size: 0.74rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+  flex: none;
+}
+
 .sheet-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
