@@ -599,6 +599,71 @@ a:hover { text-decoration: underline; }
 .star-btn:hover { color: var(--fg-muted); }
 .star-btn.is-starred { color: #e0b84a; }
 
+/* Read-only "already solved on the real platform" mark -- deliberately
+   not a checkbox and not clickable, since only the user's own manual
+   checkbox is allowed to change `solved`. */
+.platform-badge {
+  flex: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--solved);
+  background: var(--solved-soft);
+  border-radius: 999px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+/* Accounts panel: a small dropdown-style card under the topbar, not a
+   full-screen modal -- linking accounts is a quick, occasional action. */
+.accounts-panel {
+  position: sticky;
+  top: 53px;
+  z-index: 9;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.accounts-panel-inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 20px;
+}
+.accounts-panel h3 { margin: 0 0 8px; font-size: 1rem; }
+.accounts-note {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin: 0 0 12px;
+  line-height: 1.45;
+}
+.accounts-note code {
+  background: var(--bg-alt);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.accounts-panel label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin-bottom: 10px;
+}
+.accounts-panel input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  font: inherit;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--fg);
+}
+.accounts-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.accounts-sync-status { font-size: 0.8rem; color: var(--fg-muted); }
+
 .empty-state { color: var(--fg-muted); padding: 30px 0; text-align: center; }
 
 .site-footer {

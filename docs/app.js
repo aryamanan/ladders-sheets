@@ -18,6 +18,118 @@ let data = { sheets: [] };
 let solved = loadLocalSolved();
 let starred = loadLocalStarred();
 
+// ---------- Linked-platform "solved elsewhere" marks ----------
+// Read-only cross-reference against the user's real LeetCode/Codeforces
+// accounts -- deliberately never touches `solved` (that stays 100%
+// manual, per explicit instruction). Cached in localStorage since it
+// requires a network round trip most of the sheet-rendering code
+// shouldn't have to wait on.
+const PLATFORM_KEY = "practice-tracker-platform-solved-v1";
+const LC_USERNAME_KEY = "practice-tracker-lc-username";
+const CF_HANDLE_KEY = "practice-tracker-cf-handle";
+// Community-hosted proxy: leetcode.com's own GraphQL API has no public
+// CORS support, so direct browser fetches to it are blocked. This is the
+// standard workaround the LC community uses for exactly this reason --
+// best-effort, not an official/guaranteed-uptime API.
+const LC_PROXY_BASE = "https://alfa-leetcode-api.onrender.com";
+
+function loadPlatformSolved() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(PLATFORM_KEY) || "{}");
+    return { lc: new Set(raw.lc || []), cf: new Set(raw.cf || []) };
+  } catch {
+    return { lc: new Set(), cf: new Set() };
+  }
+}
+
+function savePlatformSolved() {
+  localStorage.setItem(
+    PLATFORM_KEY,
+    JSON.stringify({ lc: [...platformSolved.lc], cf: [...platformSolved.cf] })
+  );
+}
+
+let platformSolved = loadPlatformSolved();
+
+function lcSlugFromUrl(url) {
+  const m = url && url.match(/^https?:\/\/leetcode\.com\/problems\/([a-z0-9\-]+)\/?/);
+  return m ? m[1] : null;
+}
+
+function cfKeyFromUrl(url) {
+  const m = url && url.match(/^https?:\/\/codeforces\.com\/problemset\/problem\/(\d+)\/([A-Za-z0-9]+)/);
+  return m ? `${m[1]}${m[2]}` : null;
+}
+
+function platformBadgeHtml(item) {
+  if (!item.url) return "";
+  const lcSlug = lcSlugFromUrl(item.url);
+  if (lcSlug && platformSolved.lc.has(lcSlug)) {
+    return `<span class="platform-badge" title="Already solved on LeetCode">LC ✓</span>`;
+  }
+  const cfKey = cfKeyFromUrl(item.url);
+  if (cfKey && platformSolved.cf.has(cfKey)) {
+    return `<span class="platform-badge" title="Already solved on Codeforces">CF ✓</span>`;
+  }
+  return "";
+}
+
+async function syncPlatformSolved() {
+  const statusEl = document.getElementById("accounts-sync-status");
+  const lcUsername = (document.getElementById("lc-username-input").value || "").trim();
+  const cfHandle = (document.getElementById("cf-handle-input").value || "").trim();
+  localStorage.setItem(LC_USERNAME_KEY, lcUsername);
+  localStorage.setItem(CF_HANDLE_KEY, cfHandle);
+
+  if (!lcUsername && !cfHandle) {
+    if (statusEl) statusEl.textContent = "Enter at least one username first.";
+    return;
+  }
+  if (statusEl) statusEl.textContent = "Syncing… (LeetCode's proxy can be slow to wake up)";
+
+  const results = [];
+
+  if (cfHandle) {
+    try {
+      const res = await fetch(`https://codeforces.com/api/user.status?handle=${encodeURIComponent(cfHandle)}`);
+      const json = await res.json();
+      if (json.status !== "OK") throw new Error(json.comment || "Codeforces API error");
+      const solved = new Set();
+      for (const sub of json.result) {
+        if (sub.verdict === "OK" && sub.problem) {
+          solved.add(`${sub.problem.contestId}${sub.problem.index}`);
+        }
+      }
+      platformSolved.cf = solved;
+      results.push(`Codeforces: ${solved.size} solved`);
+    } catch (e) {
+      console.warn("Codeforces sync failed", e);
+      results.push("Codeforces: failed (bad handle, or codeforces.com unreachable)");
+    }
+  }
+
+  if (lcUsername) {
+    try {
+      const res = await fetch(`${LC_PROXY_BASE}/${encodeURIComponent(lcUsername)}/acSubmission?limit=2000`);
+      const json = await res.json();
+      const submissions = json.submission || json.acSubmission || [];
+      const solved = new Set();
+      for (const sub of submissions) {
+        if (sub.titleSlug) solved.add(sub.titleSlug);
+      }
+      platformSolved.lc = solved;
+      results.push(`LeetCode: ${solved.size} distinct solved (from recent submissions)`);
+    } catch (e) {
+      console.warn("LeetCode sync failed", e);
+      results.push("LeetCode: failed (proxy may be asleep/down -- try again in a moment)");
+    }
+  }
+
+  savePlatformSolved();
+  if (statusEl) statusEl.textContent = results.join(" · ");
+  render(); // re-render current view so badges show up immediately
+}
+
 // Firebase (optional; app fully works without it via localStorage only)
 let auth = null;
 let db = null;
@@ -823,12 +935,14 @@ function renderItemRow(item, originLabel) {
   // different moments (deciding whether to attempt vs. celebrating a Hard).
   const dotHtml = difficultyDotHtml(item.difficulty);
   const isStarred = !!starred[item.id];
+  const platformHtml = platformBadgeHtml(item);
   return `
     <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText + " " + (originLabel || "")).toLowerCase())}">
       ${dotHtml}
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
       ${originHtml}
+      ${platformHtml}
       ${tagHtml}
       <button type="button" class="star-btn${isStarred ? " is-starred" : ""}" data-star-id="${item.id}" title="${isStarred ? "Unstar" : "Star for later"}" aria-label="${isStarred ? "Unstar" : "Star for later"}">★</button>
     </div>
@@ -961,6 +1075,28 @@ function escapeHtml(s) {
 
 function escapeAttr(s) {
   return escapeHtml(s);
+}
+
+// ---------- Accounts panel wiring ----------
+
+const accountsBtn = document.getElementById("accounts-btn");
+const accountsPanel = document.getElementById("accounts-panel");
+const lcUsernameInput = document.getElementById("lc-username-input");
+const cfHandleInput = document.getElementById("cf-handle-input");
+
+if (lcUsernameInput) lcUsernameInput.value = localStorage.getItem(LC_USERNAME_KEY) || "";
+if (cfHandleInput) cfHandleInput.value = localStorage.getItem(CF_HANDLE_KEY) || "";
+
+if (accountsBtn) {
+  accountsBtn.addEventListener("click", () => {
+    accountsPanel.hidden = !accountsPanel.hidden;
+  });
+}
+const accountsSyncBtn = document.getElementById("accounts-sync-btn");
+if (accountsSyncBtn) {
+  accountsSyncBtn.addEventListener("click", () => {
+    syncPlatformSolved();
+  });
 }
 
 // ---------- Boot ----------

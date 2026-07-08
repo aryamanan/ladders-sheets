@@ -12,6 +12,7 @@
       <a class="brand" href="#/">Interview Practice Tracker</a>
       <div class="topbar-right">
         <a class="btn btn-ghost btn-small" href="#/starred">★ Starred</a>
+        <button id="accounts-btn" class="btn btn-ghost btn-small" type="button">Accounts</button>
         <span id="sync-status" class="sync-status">Checking sync…</span>
         <button id="signin-btn" class="btn btn-ghost" type="button">Sign in with Google</button>
       </div>
@@ -20,6 +21,24 @@
       <div id="sheet-progress-fill" class="sheet-progress-fill"></div>
     </div>
   </header>
+
+  <div id="accounts-panel" class="accounts-panel" hidden>
+    <div class="accounts-panel-inner">
+      <h3>Link your accounts</h3>
+      <p class="accounts-note">
+        Shows a read-only "solved on X" mark next to matching problems -- it never checks/unchecks your own
+        progress, that's always manual. Codeforces works directly; LeetCode has no public CORS-friendly API,
+        so this goes through a third-party community proxy (<code>alfa-leetcode-api</code>) and may be
+        unreliable or occasionally down.
+      </p>
+      <label>LeetCode username <input id="lc-username-input" type="text" placeholder="e.g. aryanarora" /></label>
+      <label>Codeforces handle <input id="cf-handle-input" type="text" placeholder="e.g. tourist" /></label>
+      <div class="accounts-panel-actions">
+        <button id="accounts-sync-btn" class="btn btn-small btn-primary" type="button">Sync now</button>
+        <span id="accounts-sync-status" class="accounts-sync-status"></span>
+      </div>
+    </div>
+  </div>
 
   <main id="app" class="app"></main>
 
