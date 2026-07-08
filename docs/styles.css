@@ -747,6 +747,20 @@ a.recap-text:hover { text-decoration: underline; }
 }
 .accounts-sync-status { font-size: 0.8rem; color: var(--fg-muted); }
 
+.accounts-advanced {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.accounts-advanced summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+.accounts-advanced[open] summary { margin-bottom: 10px; }
+.accounts-optional { font-weight: 400; color: var(--fg-muted); }
+
 .empty-state { color: var(--fg-muted); padding: 30px 0; text-align: center; }
 
 .site-footer {

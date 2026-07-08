@@ -98,6 +98,13 @@ function skipFromRecap(id) {
 // wait on.
 const PLATFORM_KEY = "practice-tracker-platform-solved-v1";
 const LC_USERNAME_KEY = "practice-tracker-lc-username";
+// Self-hosted (by the user, on their own free Cloudflare Workers account --
+// see cloudflare-worker/leetcode-proxy.js) full-solve-history proxy. Stored
+// locally like everything else here, never sent anywhere except the worker
+// URL the user themselves provided.
+const LC_WORKER_URL_KEY = "practice-tracker-lc-worker-url";
+const LC_SESSION_KEY = "practice-tracker-lc-session-cookie";
+const LC_CSRF_KEY = "practice-tracker-lc-csrf-cookie";
 // Community-hosted proxy: leetcode.com's own GraphQL API has no public
 // CORS support, so direct browser fetches to it are blocked. This is the
 // standard workaround the LC community uses for exactly this reason --
@@ -167,6 +174,41 @@ async function syncPlatformSolved() {
   } catch (e) {
     console.warn("LeetCode sync failed", e);
     if (statusEl) statusEl.textContent = "Failed -- proxy may be asleep/down, try again in a moment.";
+  }
+}
+
+async function syncFullPlatformSolved() {
+  const statusEl = document.getElementById("accounts-sync-status");
+  const workerUrl = (document.getElementById("lc-worker-url-input").value || "").trim();
+  const sessionCookie = (document.getElementById("lc-session-input").value || "").trim();
+  const csrfToken = (document.getElementById("lc-csrf-input").value || "").trim();
+  localStorage.setItem(LC_WORKER_URL_KEY, workerUrl);
+  localStorage.setItem(LC_SESSION_KEY, sessionCookie);
+  localStorage.setItem(LC_CSRF_KEY, csrfToken);
+
+  if (!workerUrl || !sessionCookie) {
+    if (statusEl) statusEl.textContent = "Worker URL and session cookie are both required for full sync.";
+    return;
+  }
+  if (statusEl) statusEl.textContent = "Fetching your full solve history… (paginates through every problem, can take a few seconds)";
+
+  try {
+    const res = await fetch(workerUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionCookie, csrfToken: csrfToken || undefined }),
+    });
+    const json = await res.json();
+    if (!res.ok || json.error) {
+      throw new Error(json.error || `Worker responded ${res.status}`);
+    }
+    platformSolved.lc = new Set(json.slugs || []);
+    savePlatformSolved();
+    if (statusEl) statusEl.textContent = `Full sync: ${json.count} solved problem(s) found across your entire LeetCode history.`;
+    render();
+  } catch (e) {
+    console.warn("LeetCode full sync failed", e);
+    if (statusEl) statusEl.textContent = `Full sync failed: ${e.message || e} -- check the Worker URL and that the session cookie is current.`;
   }
 }
 
@@ -1419,8 +1461,14 @@ appEl.addEventListener("click", (e) => {
 const accountsBtn = document.getElementById("accounts-btn");
 const accountsPanel = document.getElementById("accounts-panel");
 const lcUsernameInput = document.getElementById("lc-username-input");
+const lcWorkerUrlInput = document.getElementById("lc-worker-url-input");
+const lcSessionInput = document.getElementById("lc-session-input");
+const lcCsrfInput = document.getElementById("lc-csrf-input");
 
 if (lcUsernameInput) lcUsernameInput.value = localStorage.getItem(LC_USERNAME_KEY) || "";
+if (lcWorkerUrlInput) lcWorkerUrlInput.value = localStorage.getItem(LC_WORKER_URL_KEY) || "";
+if (lcSessionInput) lcSessionInput.value = localStorage.getItem(LC_SESSION_KEY) || "";
+if (lcCsrfInput) lcCsrfInput.value = localStorage.getItem(LC_CSRF_KEY) || "";
 
 if (accountsBtn) {
   accountsBtn.addEventListener("click", () => {
@@ -1431,6 +1479,12 @@ const accountsSyncBtn = document.getElementById("accounts-sync-btn");
 if (accountsSyncBtn) {
   accountsSyncBtn.addEventListener("click", () => {
     syncPlatformSolved();
+  });
+}
+const accountsFullSyncBtn = document.getElementById("accounts-full-sync-btn");
+if (accountsFullSyncBtn) {
+  accountsFullSyncBtn.addEventListener("click", () => {
+    syncFullPlatformSolved();
   });
 }
 
