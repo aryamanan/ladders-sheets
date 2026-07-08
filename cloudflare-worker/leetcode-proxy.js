@@ -19,19 +19,26 @@
  *
  * DEPLOYMENT (one-time, ~5 minutes, free)
  * -----------------------------------------
+ * This uses the classic "service worker" syntax (addEventListener('fetch', ...))
+ * instead of the newer ES-module `export default` syntax, specifically so it
+ * pastes directly into Cloudflare's dashboard Quick Edit box -- that editor
+ * rejects `export default` with "this uploader does not yet support projects
+ * that require a build process." No Wrangler/CLI/npm needed.
+ *
  * 1. Go to https://dash.cloudflare.com/ and sign up (free, no credit card).
  * 2. Workers & Pages -> Create -> Create Worker -> give it any name (e.g.
  *    "leetcode-proxy") -> Deploy (it'll deploy a placeholder first).
- * 3. Click "Edit code", delete everything in the editor, paste this entire
- *    file's contents in, then click "Deploy".
+ * 3. Click "Edit code", select all the placeholder code and delete it, paste
+ *    this entire file's contents in, then click "Deploy" (or "Save and
+ *    deploy").
  * 4. Copy the worker's URL (shown at the top, looks like
  *    https://leetcode-proxy.YOUR-SUBDOMAIN.workers.dev) -- that's what goes
  *    into the "Worker URL" field in the site's Accounts panel.
  * 5. (Optional but recommended) Workers & Pages -> your worker -> Settings ->
- *    Variables -> add an environment variable ALLOWED_ORIGIN set to your
+ *    Variables and Secrets -> add a variable named ALLOWED_ORIGIN set to your
  *    site's exact URL (e.g. https://YOUR-GH-USERNAME.github.io) so the
  *    worker only ever answers requests from your own site, not anyone else
- *    who finds the URL.
+ *    who finds the URL. Skip this and it defaults to allowing any origin.
  *
  * USAGE
  * -----
@@ -70,95 +77,102 @@ query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $fi
 const PAGE_SIZE = 100;
 const MAX_PAGES = 45; // stays comfortably under the free-tier subrequest cap
 
-export default {
-  async fetch(request, env) {
-    const allowOrigin = env.ALLOWED_ORIGIN || "*";
-    const corsHeaders = {
-      "Access-Control-Allow-Origin": allowOrigin,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-    };
+addEventListener("fetch", (event) => {
+  event.respondWith(handleRequest(event.request));
+});
 
-    if (request.method === "OPTIONS") {
-      return new Response(null, { headers: corsHeaders });
-    }
-    if (request.method !== "POST") {
-      return new Response("POST only", { status: 405, headers: corsHeaders });
-    }
+async function handleRequest(request) {
+  // ALLOWED_ORIGIN is a global binding if you added it as a dashboard
+  // variable (see step 5 above); if you skipped that, this stays undefined
+  // and every origin is allowed.
+  const allowOrigin = typeof ALLOWED_ORIGIN !== "undefined" ? ALLOWED_ORIGIN : "*";
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
 
-    let sessionCookie, csrfToken;
-    try {
-      const body = await request.json();
-      sessionCookie = body.sessionCookie;
-      csrfToken = body.csrfToken;
-    } catch {
-      return new Response(JSON.stringify({ error: "Bad JSON body" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-    if (!sessionCookie) {
-      return new Response(JSON.stringify({ error: "sessionCookie required" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
+  if (request.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+  if (request.method !== "POST") {
+    return new Response("POST only", { status: 405, headers: corsHeaders });
+  }
 
-    const cookieHeader = csrfToken
-      ? `LEETCODE_SESSION=${sessionCookie}; csrftoken=${csrfToken}`
-      : `LEETCODE_SESSION=${sessionCookie}`;
-
-    const solvedSlugs = [];
-    let skip = 0;
-    let total = Infinity;
-
-    try {
-      for (let page = 0; page < MAX_PAGES && skip < total; page++) {
-        const res = await fetch("https://leetcode.com/graphql/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Cookie: cookieHeader,
-            ...(csrfToken ? { "x-csrftoken": csrfToken } : {}),
-            Referer: "https://leetcode.com/problemset/all/",
-          },
-          body: JSON.stringify({
-            query: QUESTION_LIST_QUERY,
-            variables: { categorySlug: "", skip, limit: PAGE_SIZE, filters: {} },
-          }),
-        });
-
-        if (!res.ok) {
-          return new Response(
-            JSON.stringify({ error: `LeetCode responded ${res.status} -- session cookie is likely expired or invalid` }),
-            { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-          );
-        }
-
-        const json = await res.json();
-        const data = json.data && json.data.problemsetQuestionList;
-        if (!data) {
-          return new Response(JSON.stringify({ error: "Unexpected LeetCode response shape", raw: json }), {
-            status: 502,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          });
-        }
-
-        total = data.total;
-        for (const q of data.questions) {
-          if (q.status === "ac") solvedSlugs.push(q.titleSlug);
-        }
-        skip += PAGE_SIZE;
-      }
-    } catch (e) {
-      return new Response(JSON.stringify({ error: String(e) }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
-    }
-
-    return new Response(JSON.stringify({ count: solvedSlugs.length, slugs: solvedSlugs }), {
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+  let sessionCookie, csrfToken;
+  try {
+    const body = await request.json();
+    sessionCookie = body.sessionCookie;
+    csrfToken = body.csrfToken;
+  } catch (e) {
+    return new Response(JSON.stringify({ error: "Bad JSON body" }), {
+      status: 400,
+      headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }),
     });
-  },
-};
+  }
+  if (!sessionCookie) {
+    return new Response(JSON.stringify({ error: "sessionCookie required" }), {
+      status: 400,
+      headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }),
+    });
+  }
+
+  const cookieHeader = csrfToken
+    ? "LEETCODE_SESSION=" + sessionCookie + "; csrftoken=" + csrfToken
+    : "LEETCODE_SESSION=" + sessionCookie;
+
+  const solvedSlugs = [];
+  let skip = 0;
+  let total = Infinity;
+
+  try {
+    for (let page = 0; page < MAX_PAGES && skip < total; page++) {
+      const fetchHeaders = {
+        "Content-Type": "application/json",
+        Cookie: cookieHeader,
+        Referer: "https://leetcode.com/problemset/all/",
+      };
+      if (csrfToken) fetchHeaders["x-csrftoken"] = csrfToken;
+
+      const res = await fetch("https://leetcode.com/graphql/", {
+        method: "POST",
+        headers: fetchHeaders,
+        body: JSON.stringify({
+          query: QUESTION_LIST_QUERY,
+          variables: { categorySlug: "", skip: skip, limit: PAGE_SIZE, filters: {} },
+        }),
+      });
+
+      if (!res.ok) {
+        return new Response(
+          JSON.stringify({ error: "LeetCode responded " + res.status + " -- session cookie is likely expired or invalid" }),
+          { status: 502, headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }) }
+        );
+      }
+
+      const json = await res.json();
+      const data = json.data && json.data.problemsetQuestionList;
+      if (!data) {
+        return new Response(JSON.stringify({ error: "Unexpected LeetCode response shape", raw: json }), {
+          status: 502,
+          headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }),
+        });
+      }
+
+      total = data.total;
+      for (const q of data.questions) {
+        if (q.status === "ac") solvedSlugs.push(q.titleSlug);
+      }
+      skip += PAGE_SIZE;
+    }
+  } catch (e) {
+    return new Response(JSON.stringify({ error: String(e) }), {
+      status: 500,
+      headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }),
+    });
+  }
+
+  return new Response(JSON.stringify({ count: solvedSlugs.length, slugs: solvedSlugs }), {
+    headers: Object.assign({}, corsHeaders, { "Content-Type": "application/json" }),
+  });
+}
