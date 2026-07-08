@@ -528,7 +528,28 @@ a:hover { text-decoration: underline; }
   color: var(--solved);
   background: var(--solved-soft);
 }
+.item-origin {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
 .ext-icon { color: var(--fg-muted); font-size: 0.75rem; }
+
+.star-btn {
+  flex: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px;
+  color: var(--border);
+  cursor: pointer;
+}
+.star-btn:hover { color: var(--fg-muted); }
+.star-btn.is-starred { color: #e0b84a; }
 
 .empty-state { color: var(--fg-muted); padding: 30px 0; text-align: center; }
 
