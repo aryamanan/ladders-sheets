@@ -391,6 +391,9 @@ function parseHash() {
   if (h.startsWith("sheet/")) {
     return { view: "sheet", id: h.slice("sheet/".length) };
   }
+  if (h.startsWith("reference/")) {
+    return { view: "reference", id: h.slice("reference/".length) };
+  }
   if (h === "starred") {
     return { view: "starred" };
   }
@@ -411,6 +414,9 @@ function render() {
   } else if (route.view === "most-practiced") {
     progressBarWrap.hidden = true;
     renderMostPracticed();
+  } else if (route.view === "reference" && findReferenceDoc(route.id)) {
+    progressBarWrap.hidden = true;
+    renderReferenceDoc(findReferenceDoc(route.id));
   } else {
     progressBarWrap.hidden = true;
     renderHome();
@@ -419,6 +425,185 @@ function render() {
 }
 
 window.addEventListener("hashchange", render);
+
+// ---------- Reference doc view ----------
+
+// Dense prose+code reference docs, rendered in-site as read-only markdown
+// (no checkable items, no progress tracking) -- distinct from EXTERNAL_RESOURCES
+// below, which are bookmark cards to sheets we don't host. `file` is fetched
+// relative to docs/reference/ (populated by scripts/build_data.py from the
+// matching faang_*.md in the repo root -- see REFERENCE_ONLY_FILES there).
+const REFERENCE_DOCS = {
+  "system-design-primer": {
+    id: "system-design-primer",
+    category: "system-design",
+    title: "System Design Primer Reference",
+    desc: "Fundamentals + 8 case studies + 6 OOD solutions, condensed from donnemartin/system-design-primer with the code kept in.",
+    file: "faang_system_design_primer_reference.md",
+  },
+};
+
+function findReferenceDoc(id) {
+  return REFERENCE_DOCS[id];
+}
+
+const referenceDocCache = {};
+
+// A small, deliberately non-general markdown-to-HTML renderer: it only needs
+// to handle what this repo's own reference docs actually use (headings,
+// paragraphs, **bold**, `inline code`, fenced code blocks, tables, - and
+// 1. lists, links, --- rules) -- not the full CommonMark surface.
+function renderMarkdownInline(text) {
+  let out = escapeHtml(text);
+  out = out.replace(/`([^`]+)`/g, (_, code) => `<code>${code}</code>`);
+  out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, label, url) => {
+    return `<a href="${escapeAttr(url)}" target="_blank" rel="noopener">${label}</a>`;
+  });
+  return out;
+}
+
+function markdownToHtml(md) {
+  const lines = md.replace(/\r\n/g, "\n").split("\n");
+  const html = [];
+  let i = 0;
+  let inList = null; // "ul" | "ol" | null
+  let paraBuf = [];
+
+  function closeList() {
+    if (inList) {
+      html.push(inList === "ul" ? "</ul>" : "</ol>");
+      inList = null;
+    }
+  }
+  function flushPara() {
+    if (paraBuf.length) {
+      html.push(`<p>${renderMarkdownInline(paraBuf.join(" "))}</p>`);
+      paraBuf = [];
+    }
+  }
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Fenced code block
+    const fence = line.match(/^```(\w*)\s*$/);
+    if (fence) {
+      flushPara();
+      closeList();
+      const lang = fence[1] || "";
+      const codeLines = [];
+      i++;
+      while (i < lines.length && !/^```\s*$/.test(lines[i])) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing fence
+      const cls = lang ? ` class="language-${escapeAttr(lang)}"` : "";
+      html.push(`<pre><code${cls}>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+      continue;
+    }
+
+    // Horizontal rule
+    if (/^-{3,}\s*$/.test(line)) {
+      flushPara();
+      closeList();
+      html.push("<hr>");
+      i++;
+      continue;
+    }
+
+    // Headings
+    const heading = line.match(/^(#{1,4})\s+(.+)$/);
+    if (heading) {
+      flushPara();
+      closeList();
+      const level = heading[1].length;
+      html.push(`<h${level}>${renderMarkdownInline(heading[2].trim())}</h${level}>`);
+      i++;
+      continue;
+    }
+
+    // Tables (header row, separator row, body rows)
+    if (line.trim().startsWith("|") && lines[i + 1] && /^\s*\|?[\s:|-]+\|?\s*$/.test(lines[i + 1])) {
+      flushPara();
+      closeList();
+      const headerCells = line.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      html.push("<table><thead><tr>");
+      for (const c of headerCells) html.push(`<th>${renderMarkdownInline(c)}</th>`);
+      html.push("</tr></thead><tbody>");
+      i += 2;
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        const cells = lines[i].trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+        html.push("<tr>");
+        for (const c of cells) html.push(`<td>${renderMarkdownInline(c)}</td>`);
+        html.push("</tr>");
+        i++;
+      }
+      html.push("</tbody></table>");
+      continue;
+    }
+
+    // Lists
+    const ulItem = line.match(/^\s*[-*]\s+(.+)$/);
+    const olItem = line.match(/^\s*\d+\.\s+(.+)$/);
+    if (ulItem || olItem) {
+      flushPara();
+      const kind = ulItem ? "ul" : "ol";
+      if (inList !== kind) {
+        closeList();
+        html.push(kind === "ul" ? "<ul>" : "<ol>");
+        inList = kind;
+      }
+      html.push(`<li>${renderMarkdownInline((ulItem || olItem)[1])}</li>`);
+      i++;
+      continue;
+    }
+
+    // Blank line
+    if (line.trim() === "") {
+      flushPara();
+      closeList();
+      i++;
+      continue;
+    }
+
+    // Paragraph text (accumulate until a blank line or a block-level construct)
+    paraBuf.push(line.trim());
+    i++;
+  }
+  flushPara();
+  closeList();
+  return html.join("\n");
+}
+
+function renderReferenceDoc(doc) {
+  appEl.innerHTML = `
+    <a class="back-link" href="#/">&larr; All sheets</a>
+    <div class="markdown-body" id="reference-body">Loading…</div>
+  `;
+  const bodyEl = appEl.querySelector("#reference-body");
+
+  const cached = referenceDocCache[doc.id];
+  if (cached) {
+    bodyEl.innerHTML = cached;
+    return;
+  }
+
+  fetch(`reference/${doc.file}`)
+    .then((r) => {
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+      return r.text();
+    })
+    .then((md) => {
+      const htmlStr = markdownToHtml(md);
+      referenceDocCache[doc.id] = htmlStr;
+      bodyEl.innerHTML = htmlStr;
+    })
+    .catch((err) => {
+      bodyEl.innerHTML = `<p class="error-text">Couldn't load this reference doc: ${escapeHtml(String(err))}</p>`;
+    });
+}
 
 // ---------- Home view ----------
 
@@ -677,10 +862,11 @@ function renderHome() {
 
   for (const cat of categories) {
     const sheets = data.sheets.filter((s) => s.category === cat.key);
+    const refDocs = Object.values(REFERENCE_DOCS).filter((d) => d.category === cat.key);
     const extResources = EXTERNAL_RESOURCES[cat.key];
-    if (!sheets.length && !(extResources && extResources.length)) continue;
+    if (!sheets.length && !refDocs.length && !(extResources && extResources.length)) continue;
     parts.push(`<h2 class="category-heading">${escapeHtml(cat.label)}</h2>`);
-    if (sheets.length) {
+    if (sheets.length || refDocs.length) {
       parts.push(`<div class="sheet-grid">`);
       for (const sheet of sheets) {
         const { total, done } = sheetStats(sheet);
@@ -691,6 +877,14 @@ function renderHome() {
             <p>${escapeHtml(sheet.description || "")}</p>
             <div class="card-progress-track"><div class="card-progress-fill" style="width:${pct}%"></div></div>
             <div class="card-progress-label">${done} / ${total} solved</div>
+          </a>
+        `);
+      }
+      for (const doc of refDocs) {
+        parts.push(`
+          <a class="sheet-card reference-card" href="#/reference/${doc.id}">
+            <h3>${escapeHtml(doc.title)} <span class="ref-icon">📖</span></h3>
+            <p>${escapeHtml(doc.desc)}</p>
           </a>
         `);
       }

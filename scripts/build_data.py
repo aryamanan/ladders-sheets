@@ -7,6 +7,10 @@ each row. Numbered/bulleted list items and markdown table cells that contain
 a link become checkable items; list items without a link become plain
 checkable text (no external link).
 
+Files listed in REFERENCE_ONLY_FILES are dense prose+code reference docs,
+not checklists -- they're skipped by the parser above and instead copied
+verbatim into docs/reference/ for app.js's in-site markdown reader.
+
 Re-run this any time a faang_*.md file is added or edited:
     python scripts/build_data.py
 """
@@ -18,6 +22,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = ROOT / "docs" / "data.json"
+REFERENCE_DIR = ROOT / "docs" / "reference"
+
+# Dense prose+code reference docs (not checklist ladders) -- skipped by the
+# checklist parser entirely (running one through it would shred paragraphs
+# and code blocks down to scattered checkbox fragments) and instead copied
+# verbatim into docs/reference/ for app.js's in-site markdown reader to
+# fetch at runtime. Register the matching entry in REFERENCE_DOCS in app.js
+# whenever a file is added here.
+REFERENCE_ONLY_FILES = {
+    "faang_system_design_primer_reference.md",
+}
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lc_difficulty import LC_DIFFICULTY
@@ -495,8 +510,15 @@ def parse_file(path):
 
 
 def main():
+    all_files = sorted(ROOT.glob("faang_*.md"))
+
+    REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
+    ref_files = [f for f in all_files if f.name in REFERENCE_ONLY_FILES]
+    for f in ref_files:
+        (REFERENCE_DIR / f.name).write_text(f.read_text(encoding="utf-8"), encoding="utf-8")
+
     files = sorted(
-        ROOT.glob("faang_*.md"),
+        (f for f in all_files if f.name not in REFERENCE_ONLY_FILES),
         key=lambda p: (
             SHEET_ORDER.index(p.name) if p.name in SHEET_ORDER else len(SHEET_ORDER),
             p.name,
@@ -510,6 +532,8 @@ def main():
     print(f"Wrote {OUT_PATH} with {len(sheets)} sheets, {total} items total.")
     for s in sheets:
         print(f"  {s['file']:55s} {s['totalItems']:4d} items  ({len(s['sections'])} sections)")
+    for f in ref_files:
+        print(f"  {f.name:55s} copied to docs/reference/ (reference doc, not parsed)")
 
 
 if __name__ == "__main__":
