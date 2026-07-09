@@ -10,14 +10,14 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 4. [Expectations by Level/YoE](https://algomaster.io/learn/system-design-interviews/expectations-by-level) {AlgoMaster}
 5. [A Framework For System Design Interviews](https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews) {ByteByteGo}
    - [Delivery Framework](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) {Hello Interview}
-   - [Core Concepts (In a Hurry)](https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts) {Hello Interview}
 6. Performance vs. Scalability (yet to be linked) {roadmap.sh}
 7. [Latency vs. Throughput](https://cs.fyi/guide/latency-vs-throughput/) {roadmap.sh}
-8. [Back-of-the-envelope Estimation](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation) {ByteByteGo}
+8. [Core Concepts (In a Hurry)](https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts) {Hello Interview}
+9. [Back-of-the-envelope Estimation](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation) {ByteByteGo}
    - [Numbers Every Engineer Should Know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know) {System Design Primer}
    - [Powers of Two Table](https://github.com/donnemartin/system-design-primer#powers-of-two-table) {System Design Primer}
-9. Diagramming Tips (yet to be linked) {Hello Interview}
-10. [Scaling to Millions of Users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) {System Design Primer}
+10. Diagramming Tips (yet to be linked) {Hello Interview}
+11. [Scaling to Millions of Users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) {System Design Primer}
 
 ## Part 2: Networking & Communication
 

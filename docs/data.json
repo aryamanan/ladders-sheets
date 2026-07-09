@@ -90248,14 +90248,6 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
-                        },
-                        {
-                          "id": "e21477373fdf",
-                          "text": "Core Concepts (In a Hurry)",
-                          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
-                          "tag": "",
-                          "subtag": "Hello Interview",
-                          "difficulty": null
                         }
                       ]
                     },
@@ -90273,6 +90265,14 @@
                       "url": "https://cs.fyi/guide/latency-vs-throughput/",
                       "tag": "",
                       "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3f4bc77fc875",
+                      "text": "Core Concepts (In a Hurry)",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
+                      "tag": "",
+                      "subtag": "Hello Interview",
                       "difficulty": null
                     },
                     {
