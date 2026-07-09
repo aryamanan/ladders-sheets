@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 437,
+      "totalItems": 447,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90982,6 +90982,14 @@
                           "difficulty": null
                         },
                         {
+                          "id": "bf10c507beea",
+                          "text": "Consistent Hashing, Explained",
+                          "url": "https://bytebytego.com/guides/consistent-hashing/",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
                           "id": "bd05e3f5b3f9",
                           "text": "Consistent Hashing | Algorithms You Should Know #1",
                           "url": "https://www.youtube.com/watch?v=UF9Iqmg94tk",
@@ -91034,15 +91042,15 @@
                       ]
                     },
                     {
-                      "id": "63a6e237365e",
-                      "text": "Leader Election (yet to be linked)",
-                      "url": null,
+                      "id": "e968c237ab99",
+                      "text": "Leader Election Pattern",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/leader-election",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "23b0abc4cd88",
+                          "id": "2c3fc99362c3",
                           "text": "Distributed Consensus -- Raft Leader Election",
                           "url": "https://www.youtube.com/watch?v=Al2JNJBGG30",
                           "tag": "",
@@ -91052,15 +91060,15 @@
                       ]
                     },
                     {
-                      "id": "03106a0bd6c3",
-                      "text": "Quorum & Consensus (Paxos/Raft) (yet to be linked)",
-                      "url": null,
+                      "id": "7eea8ba45d45",
+                      "text": "Quorum & Consensus (Paxos/Raft)",
+                      "url": "https://raft.github.io/",
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "a90f4da6f1ea",
+                          "id": "4a78fc470c89",
                           "text": "Distributed Consensus -- Raft Writes",
                           "url": "https://www.youtube.com/watch?v=FByzF2D_-KU",
                           "tag": "",
@@ -91068,7 +91076,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "0b67c6a856f7",
+                          "id": "7f65752d27ac",
                           "text": "Raft in 15 Minutes",
                           "url": "https://www.youtube.com/watch?v=YOMgi7T823E",
                           "tag": "",
@@ -91111,7 +91119,25 @@
                       "url": "https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "0fb916bc7354",
+                          "text": "Designing Robust and Predictable APIs with Idempotency",
+                          "url": "https://stripe.com/blog/idempotency",
+                          "tag": "",
+                          "subtag": "Stripe",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "9e1e0701855b",
+                          "text": "Making Retries Safe with Idempotent APIs",
+                          "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-apis/",
+                          "tag": "",
+                          "subtag": "AWS Builders' Library",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "971c04da70d5"
@@ -91142,9 +91168,9 @@
                       "difficulty": null
                     },
                     {
-                      "id": "5680353c7d10",
-                      "text": "Monitoring (yet to be linked)",
-                      "url": null,
+                      "id": "4c493e1edc10",
+                      "text": "Monitoring -- Observability Fundamentals (Logs, Metrics, Traces)",
+                      "url": "https://www.sysdesai.com/news/ib5lUYKXgWNv",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
@@ -91182,9 +91208,9 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ba6b9ffa3c40",
-                      "text": "SLOs (Service Level Objectives) (yet to be linked)",
-                      "url": null,
+                      "id": "d6c677cc48a8",
+                      "text": "SLOs (Service Level Objectives)",
+                      "url": "https://www.ibm.com/think/topics/service-level-objective",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
@@ -91302,15 +91328,15 @@
                       "difficulty": null
                     },
                     {
-                      "id": "3d7feae71245",
-                      "text": "Choosing the Right Database (yet to be linked)",
-                      "url": null,
+                      "id": "25458fa0acfb",
+                      "text": "Choosing the Right Database",
+                      "url": "https://medium.com/@agustin.ignacio.rossi/choosing-the-right-database-a-guide-for-system-design-interviews-8d176b022011",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "4e18b067e829",
+                          "id": "47c0dc113bc2",
                           "text": "How To Choose The Right Database?",
                           "url": "https://www.youtube.com/watch?v=kkeFE6iRfMM",
                           "tag": "",
@@ -91340,9 +91366,9 @@
                       "difficulty": null
                     },
                     {
-                      "id": "cc7a42c72a3a",
-                      "text": "Transactions (yet to be linked)",
-                      "url": null,
+                      "id": "8ab0b2e0287b",
+                      "text": "Transactions -- ACID and BASE Consistency Models",
+                      "url": "https://dev.to/karanpratapsingh/system-design-acid-and-base-consistency-models-4aid",
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
@@ -92040,6 +92066,14 @@
                           "tag": "",
                           "subtag": "Martin Fowler",
                           "difficulty": null
+                        },
+                        {
+                          "id": "d36333b0a48a",
+                          "text": "Circuit Breaker Pattern",
+                          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92126,6 +92160,14 @@
                           "tag": "",
                           "subtag": "roadmap.sh",
                           "difficulty": null
+                        },
+                        {
+                          "id": "d9cc087e6cd7",
+                          "text": "Saga Pattern (microservices.io)",
+                          "url": "https://microservices.io/patterns/data/saga.html",
+                          "tag": "",
+                          "subtag": "Chris Richardson",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92154,9 +92196,9 @@
                       "difficulty": null
                     },
                     {
-                      "id": "99d5b6c79207",
-                      "text": "Exponential Backoff (yet to be linked)",
-                      "url": null,
+                      "id": "d25f3817a320",
+                      "text": "Exponential Backoff and Jitter",
+                      "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
@@ -92210,6 +92252,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "14a48372b301",
+                          "text": "Queue-Based Load Leveling Pattern",
+                          "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92227,7 +92277,25 @@
                       "url": "https://github.com/donnemartin/system-design-primer#back-pressure",
                       "tag": "",
                       "subtag": "System Design Primer",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "d1a53d02cc5d",
+                          "text": "Backpressure Explained -- The Flow of Data Through Software",
+                          "url": "https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7",
+                          "tag": "",
+                          "subtag": "Jay Phelps",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "6778cb15078c",
+                          "text": "Understanding the Backpressure Mechanism",
+                          "url": "https://designgurus.substack.com/p/understanding-backpressure-mechanism",
+                          "tag": "",
+                          "subtag": "Design Gurus",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "9b13310b0ed7",
@@ -92235,7 +92303,17 @@
                       "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "590e6511b421",
+                          "text": "Pub/Sub Architecture: An In-Depth Overview with Example",
+                          "url": "https://arindam-das.medium.com/pub-sub-architecture-an-in-depth-overview-with-example-a7e13d5b1292",
+                          "tag": "",
+                          "subtag": "Arindam Das",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "905b7cfa7598",
@@ -92264,12 +92342,22 @@
                       "difficulty": null
                     },
                     {
-                      "id": "d3dfffeb14c1",
-                      "text": "Delivery Guarantees -- At-most-once, At-least-once, Exactly-once (yet to be linked)",
-                      "url": null,
+                      "id": "d2c5362327a0",
+                      "text": "Delivery Guarantees -- At-most-once, At-least-once, Exactly-once",
+                      "url": "https://exactly-once.github.io/posts/exactly-once-delivery/",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "2508c084c8e2",
+                          "text": "Exactly-Once Delivery Explained",
+                          "url": "https://www.mydistributed.systems/2021/10/exactly-once-delivery.html",
+                          "tag": "",
+                          "subtag": "Alexander Rubin",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "0d71bba34b60",

@@ -103,15 +103,16 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 5. [Consistent Hashing](https://www.hellointerview.com/learn/system-design/core-concepts/consistent-hashing) {Hello Interview}
    - [Design Consistent Hashing](https://bytebytego.com/courses/system-design-interview/design-consistent-hashing) {ByteByteGo}
    - [Consistent Hashing: Easy Explanation for System Design Interviews](https://www.youtube.com/watch?v=vccwdhfqIrI) {Hello Interview}
+   - [Consistent Hashing, Explained](https://bytebytego.com/guides/consistent-hashing/) {ByteByteGo}
    - [Consistent Hashing | Algorithms You Should Know #1](https://www.youtube.com/watch?v=UF9Iqmg94tk) {ByteByteGo}
    - [What is CONSISTENT HASHING and Where is it used?](https://www.youtube.com/watch?v=zaRkONvyGr8) {Gaurav Sen}
 6. Fault Tolerance (yet to be linked) {Hello Interview}
 7. Distributed Transactions (yet to be linked) {Hello Interview}
    - [Distributed Transactions Explained: 2 Phase Commit vs Saga Pattern](https://www.youtube.com/watch?v=DOFflggE_0Q) {Hello Interview}
    - [Two Phase Commit -- Distributed Transactions](https://www.youtube.com/watch?v=7DoT2sTGulc) {Jordan Has No Life}
-8. Leader Election (yet to be linked) {Hello Interview}
+8. [Leader Election Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/leader-election) {Hello Interview}
    - [Distributed Consensus -- Raft Leader Election](https://www.youtube.com/watch?v=Al2JNJBGG30) {Jordan Has No Life}
-9. Quorum & Consensus (Paxos/Raft) (yet to be linked) {roadmap.sh}
+9. [Quorum & Consensus (Paxos/Raft)](https://raft.github.io/) {roadmap.sh}
    - [Distributed Consensus -- Raft Writes](https://www.youtube.com/watch?v=FByzF2D_-KU) {Jordan Has No Life}
    - [Raft in 15 Minutes](https://www.youtube.com/watch?v=YOMgi7T823E) {Jordan Has No Life}
 10. Vector Clocks / Lamport Clocks (yet to be linked) {roadmap.sh}
@@ -120,17 +121,19 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Latency vs. Throughput](https://cs.fyi/guide/latency-vs-throughput/) {roadmap.sh}
 2. [Idempotency](https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation) {roadmap.sh}
+   - [Designing Robust and Predictable APIs with Idempotency](https://stripe.com/blog/idempotency) {Stripe}
+   - [Making Retries Safe with Idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-apis/) {AWS Builders' Library}
 
 ### Observability
 
 1. Logging (yet to be linked) {Hello Interview}
 2. Metrics (yet to be linked) {Hello Interview}
-3. Monitoring (yet to be linked) {Hello Interview}
+3. [Monitoring -- Observability Fundamentals (Logs, Metrics, Traces)](https://www.sysdesai.com/news/ib5lUYKXgWNv) {Hello Interview}
 4. Alerting (yet to be linked) {Hello Interview}
 5. Health Checks (yet to be linked) {Hello Interview}
 6. Distributed Tracing (yet to be linked) {Hello Interview}
 7. SLIs (Service Level Indicators) (yet to be linked) {Hello Interview}
-8. SLOs (Service Level Objectives) (yet to be linked) {Hello Interview}
+8. [SLOs (Service Level Objectives)](https://www.ibm.com/think/topics/service-level-objective) {Hello Interview}
 9. Error Budgets (yet to be linked) {Hello Interview}
 
 ## Part 4: Scalability & Traffic Distribution
@@ -148,13 +151,13 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 1. [Types of Databases](https://www.educative.io/courses/grokking-the-system-design-interview/types-of-databases) {Grokking}
    - [Introduction to Databases](https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-databases) {Grokking}
 2. [SQL vs. NoSQL: The Differences](https://www.sitepoint.com/sql-vs-nosql-differences/) {roadmap.sh}
-3. Choosing the Right Database (yet to be linked) {Hello Interview}
+3. [Choosing the Right Database](https://medium.com/@agustin.ignacio.rossi/choosing-the-right-database-a-guide-for-system-design-interviews-8d176b022011) {Hello Interview}
    - [How To Choose The Right Database?](https://www.youtube.com/watch?v=kkeFE6iRfMM) {ByteByteGo}
 
 ### Relational
 
 1. [Relational Databases & ACID](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) {System Design Primer}
-2. Transactions (yet to be linked) {roadmap.sh}
+2. [Transactions -- ACID and BASE Consistency Models](https://dev.to/karanpratapsingh/system-design-acid-and-base-consistency-models-4aid) {roadmap.sh}
 3. Database Indexing (yet to be linked) {Hello Interview}
    - [DB Indexing in System Design Interviews -- B-tree, Geospatial, Inverted Index, and more!](https://www.youtube.com/watch?v=BHCSL_ZifI0) {Hello Interview}
 4. [Introduction to SQL Tuning (Oracle)](https://docs.oracle.com/en/database/oracle/oracle-database/23/tgsql/introduction-to-sql-tuning.html) {roadmap.sh}
@@ -242,6 +245,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Circuit Breaker](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) {roadmap.sh}
    - [Circuit Breaker (Martin Fowler)](https://martinfowler.com/bliki/CircuitBreaker.html) {Martin Fowler}
+   - [Circuit Breaker Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker) {roadmap.sh}
 2. [Retry Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry) {roadmap.sh}
 3. Retry Storm (yet to be linked) {roadmap.sh}
 4. [Throttling](https://learn.microsoft.com/en-us/azure/architecture/patterns/throttling) {roadmap.sh}
@@ -252,10 +256,11 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Event Sourcing (Martin Fowler)](https://martinfowler.com/eaaDev/EventSourcing.html) {Martin Fowler}
 8. [Saga Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga) {roadmap.sh}
    - [Choreography Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) {roadmap.sh}
+   - [Saga Pattern (microservices.io)](https://microservices.io/patterns/data/saga.html) {Chris Richardson}
 9. Removing Single Points of Failure (yet to be linked) {Hello Interview}
 10. Handling Failures / Failure Detection (yet to be linked) {Hello Interview}
 11. Timeouts (yet to be linked) {roadmap.sh}
-12. Exponential Backoff (yet to be linked) {roadmap.sh}
+12. [Exponential Backoff and Jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/) {roadmap.sh}
 13. Dead Letter Queue (yet to be linked) {roadmap.sh}
 14. Graceful Degradation (yet to be linked) {roadmap.sh}
 
@@ -263,13 +268,18 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Message Queues](https://redis.io/) {roadmap.sh}
    - [Message Queues in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=1ISRd0bS714) {Hello Interview}
+   - [Queue-Based Load Leveling Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling) {roadmap.sh}
 2. [Task Queues](https://github.com/donnemartin/system-design-primer#task-queues) {System Design Primer}
 3. [Back Pressure](https://github.com/donnemartin/system-design-primer#back-pressure) {System Design Primer}
+   - [Backpressure Explained -- The Flow of Data Through Software](https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7) {Jay Phelps}
+   - [Understanding the Backpressure Mechanism](https://designgurus.substack.com/p/understanding-backpressure-mechanism) {Design Gurus}
 4. [Publisher/Subscriber Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber) {roadmap.sh}
+   - [Pub/Sub Architecture: An In-Depth Overview with Example](https://arindam-das.medium.com/pub-sub-architecture-an-in-depth-overview-with-example-a7e13d5b1292) {Arindam Das}
 5. [Event-Driven Architecture](https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers) {roadmap.sh}
    - [What do you mean by 'Event-Driven'? (Martin Fowler)](https://martinfowler.com/articles/201701-event-driven.html) {Martin Fowler}
 6. Amazon SQS (yet to be linked) {Hello Interview}
-7. Delivery Guarantees -- At-most-once, At-least-once, Exactly-once (yet to be linked) {roadmap.sh}
+7. [Delivery Guarantees -- At-most-once, At-least-once, Exactly-once](https://exactly-once.github.io/posts/exactly-once-delivery/) {roadmap.sh}
+   - [Exactly-Once Delivery Explained](https://www.mydistributed.systems/2021/10/exactly-once-delivery.html) {Alexander Rubin}
 8. Ordering Guarantees (yet to be linked) {roadmap.sh}
 
 ## Part 9: Common Interview-Solving Patterns
