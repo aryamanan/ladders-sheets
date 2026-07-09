@@ -1,8 +1,8 @@
-# SQL Mastery
+# SQL Gauntlet
 
-This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked.
+This is the SQL counterpart to the DSA Gauntlet: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked.
 
-Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage: working through this sheet should leave nothing on either platform's free tier looking unfamiliar.
+Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage of the free tier: working through this sheet should leave nothing free on either platform looking unfamiliar. For the premium-locked problems too (StrataScratch's are still solvable without a subscription, just not auto-graded), see the SQL Extreme Mastery sheet.
 
 Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.
 

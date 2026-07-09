@@ -43,9 +43,10 @@ CATEGORY_OVERRIDES = {
     # in-repo ladder sheet -- this internal CSES sheet still exists and is
     # still useful, it's just not the front-line CP recommendation anymore.
     "faang_dsa_cses_complete_map.md": "deprecated",
-    # Its filename doesn't contain "dsa", so the fallback rule below would
-    # otherwise misfile it under System Design.
+    # Neither filename contains "dsa", so the fallback rule below would
+    # otherwise misfile them under System Design.
     "faang_sql_mastery.md": "sql",
+    "faang_sql_extreme_mastery.md": "sql",
 }
 
 # Files where the same URL legitimately gets referenced over and over within
@@ -65,6 +66,8 @@ SHEET_ORDER = [
     "faang_system_design_technical_mastery.md",
     "faang_system_design_researched_interview_failure_map.md",
     "faang_system_design_concept_repetition_ladders.md",
+    "faang_sql_mastery.md",
+    "faang_sql_extreme_mastery.md",
 ]
 
 # H2 (and cascading H3 children) headings whose content is meta/instructional
