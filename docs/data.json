@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 233,
+      "totalItems": 289,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90252,22 +90252,6 @@
                       ]
                     },
                     {
-                      "id": "47e48213231e",
-                      "text": "Performance vs. Scalability (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "c5613332618e",
-                      "text": "Latency vs. Throughput",
-                      "url": "https://cs.fyi/guide/latency-vs-throughput/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
                       "id": "3f4bc77fc875",
                       "text": "Core Concepts (In a Hurry)",
                       "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
@@ -90307,7 +90291,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "f68e14fc8f40",
+                          "text": "System Design Interviews: 10 Key Principles (with ex-Google EM)",
+                          "url": "https://www.youtube.com/watch?v=8dG0qzNAVXI",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f2b1e06ff4f8",
+                          "text": "System Design Interviews: 10 Ways to IMPRESS Your Interviewer (with ex-Google EM)",
+                          "url": "https://www.youtube.com/watch?v=PSYdvx0lwLg",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "6658cbae6b42",
@@ -90315,6 +90317,38 @@
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md",
                       "tag": "",
                       "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1a5b33200837",
+                      "text": "Functional vs. Non-Functional Requirements (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d7071df6af2a",
+                      "text": "Bottleneck Identification (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "deca801c8fea",
+                      "text": "Tradeoff Analysis (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ece3a71c5fe8",
+                      "text": "Interview Communication (Thinking Aloud) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
                       "difficulty": null
                     }
                   ],
@@ -90362,6 +90396,14 @@
                       ]
                     },
                     {
+                      "id": "9429235bf726",
+                      "text": "TCP vs. UDP",
+                      "url": "https://github.com/donnemartin/system-design-primer#transmission-control-protocol-tcp",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
                       "id": "1c93ac80c104",
                       "text": "HTTP / HTTPS",
                       "url": "https://github.com/donnemartin/system-design-primer#hypertext-transfer-protocol-http",
@@ -90380,22 +90422,20 @@
                       ]
                     },
                     {
-                      "id": "9429235bf726",
-                      "text": "TCP vs. UDP",
-                      "url": "https://github.com/donnemartin/system-design-primer#transmission-control-protocol-tcp",
+                      "id": "d17c848b494d",
+                      "text": "TLS (yet to be linked)",
+                      "url": null,
                       "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null,
-                      "children": [
-                        {
-                          "id": "7f772f5441c1",
-                          "text": "Networking for Game Programming (UDP vs TCP)",
-                          "url": "http://gafferongames.com/networking-for-game-programmers/udp-vs-tcp/",
-                          "tag": "",
-                          "subtag": "roadmap.sh",
-                          "difficulty": null
-                        }
-                      ]
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3761e2532e8c",
+                      "text": "HTTP/2 & HTTP/3 (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
                     },
                     {
                       "id": "f00edc9a1a87",
@@ -90422,19 +90462,19 @@
                       "difficulty": null
                     },
                     {
-                      "id": "6a788e56ef82",
-                      "text": "API Design",
-                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/api-design",
+                      "id": "1d42680191a8",
+                      "text": "WebSockets (yet to be linked)",
+                      "url": null,
                       "tag": "",
-                      "subtag": "Hello Interview",
+                      "subtag": "roadmap.sh",
                       "difficulty": null
                     },
                     {
-                      "id": "2a38dca1fcf7",
-                      "text": "API Gateway",
-                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway",
+                      "id": "08b99192da6f",
+                      "text": "SSE / Long Polling (yet to be linked)",
+                      "url": null,
                       "tag": "",
-                      "subtag": "Hello Interview",
+                      "subtag": "roadmap.sh",
                       "difficulty": null
                     },
                     {
@@ -90443,14 +90483,6 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6b8297a1d756",
-                      "text": "WebSockets / Long Polling / Server-Sent Events for Realtime (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "roadmap.sh",
                       "difficulty": null
                     }
                   ],
@@ -90463,7 +90495,7 @@
           "id": "1442446f30d4"
         },
         {
-          "title": "Part 3: Scaling the Compute Layer",
+          "title": "Part 3: Core Concepts",
           "groups": [
             {
               "title": null,
@@ -90472,121 +90504,15 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "4f318f62ad28",
-                      "text": "Vertical vs. Horizontal Scaling (yet to be linked)",
-                      "url": null,
+                      "id": "a44e41e5119f",
+                      "text": "API Design",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/api-design",
                       "tag": "",
-                      "subtag": "roadmap.sh",
+                      "subtag": "Hello Interview",
                       "difficulty": null
                     },
                     {
-                      "id": "4f7226b8362e",
-                      "text": "Load Balancers -- Layer 4 f5.com",
-                      "url": "https://www.f5.com/glossary/layer-4-load-balancing",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1e11bb5f0078",
-                      "text": "Load Balancers -- Layer 7",
-                      "url": "https://github.com/donnemartin/system-design-primer#layer-7-load-balancing",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3dcf3d3804bb",
-                      "text": "Load Balancing Algorithms",
-                      "url": "https://www.cloudflare.com/learning/performance/types-of-load-balancing-algorithms/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "53fd5769b23b",
-                      "text": "Design Load Balancer",
-                      "url": "https://algomaster.io/learn/system-design-interviews/design-load-balancer",
-                      "tag": "",
-                      "subtag": "AlgoMaster",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "426f8d10fee2",
-                      "text": "Load Balancer vs. Reverse Proxy",
-                      "url": "https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "97eb16053bb3",
-                      "text": "Content Delivery Network -- Push vs. Pull CDNs",
-                      "url": "https://github.com/donnemartin/system-design-primer#content-delivery-network",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "eab07f3c4d37",
-                      "text": "Microservices & Application Layer aws.amazon.com",
-                      "url": "https://aws.amazon.com/microservices/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "00b0102eb734",
-                      "text": "Service Discovery",
-                      "url": "https://github.com/donnemartin/system-design-primer#service-discovery",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "d6e08ef38180"
-                }
-              ],
-              "id": "bdbf64622b92"
-            }
-          ],
-          "id": "126add1e3604"
-        },
-        {
-          "title": "Part 4: Data Storage",
-          "groups": [
-            {
-              "title": null,
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "b25d71836d96",
-                      "text": "Introduction to Databases",
-                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-databases",
-                      "tag": "",
-                      "subtag": "Grokking",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "96804968f159",
-                      "text": "Types of Databases",
-                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/types-of-databases",
-                      "tag": "",
-                      "subtag": "Grokking",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2b52fafdbd44",
-                      "text": "Relational Databases & ACID",
-                      "url": "https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2f2e0f5cc23c",
+                      "id": "a1bd0459ea72",
                       "text": "Data Modeling",
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling",
                       "tag": "",
@@ -90594,15 +90520,143 @@
                       "difficulty": null
                     },
                     {
-                      "id": "2eaa8a336ac2",
-                      "text": "Master-Slave / Master-Master Replication",
+                      "id": "ffb73596c414",
+                      "text": "Scalability (Performance vs. Scalability) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "d3d1951abbb0"
+                }
+              ],
+              "id": "fc54425423b5"
+            },
+            {
+              "title": "Caching",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "6e49913365ef",
+                      "text": "Caching",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/caching",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "35b80bdac05d",
+                      "text": "Cache Placement -- Client, CDN, Web Server, Database, Application",
+                      "url": "https://github.com/donnemartin/system-design-primer#cache",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "42bd940d879d",
+                      "text": "Cache-Aside Pattern",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2626ef72b3d3",
+                      "text": "Write-Through",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "66eafbbcf7bd",
+                      "text": "Write-Behind",
+                      "url": "http://www.slideshare.net/jboner/scalability-availability-stability-patterns/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cc6baa407209",
+                      "text": "Refresh-Ahead",
+                      "url": "http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a2f74be8bc0b",
+                      "text": "Design a Distributed Cache (like Redis)",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-cache-like-redis",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "73bd6cf0c174",
+                      "text": "Memcached (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "aed48a571093",
+                      "text": "Cache Eviction Policies (LRU/LFU/FIFO) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ceabf1caed2e",
+                      "text": "Cache Invalidation (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cfb4180e74f7",
+                      "text": "Cache Stampede (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ed59942e13f6",
+                      "text": "Distributed Cache Consistency (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "264db14813df"
+                }
+              ],
+              "id": "238e79f74b30"
+            },
+            {
+              "title": "Replication & Partitioning",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "503901bb4669",
+                      "text": "Replication (Master-Slave / Master-Master)",
                       "url": "https://github.com/donnemartin/system-design-primer#master-slave-replication",
                       "tag": "",
                       "subtag": "System Design Primer",
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "fc6745c007ea",
+                          "id": "ae22b8a4fad1",
                           "text": "Data Replication",
                           "url": "https://www.educative.io/courses/grokking-the-system-design-interview/data-replication",
                           "tag": "",
@@ -90612,211 +90666,27 @@
                       ]
                     },
                     {
-                      "id": "93d9779adaee",
-                      "text": "Key-Value Store Wikipedia",
-                      "url": "https://en.wikipedia.org/wiki/Key%E2%80%93value_database",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "88b64777abc7",
-                      "text": "Document Store Wikipedia",
-                      "url": "https://en.wikipedia.org/wiki/Document-oriented_database",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "42da3154d6e5",
-                      "text": "Wide-Column Store Bigtable architecture",
-                      "url": "https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a64be0c4ea6d",
-                      "text": "Graph Database Wikipedia",
-                      "url": "https://en.wikipedia.org/wiki/Graph_database",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d008abbc0719",
-                      "text": "SQL vs. NoSQL: The Differences",
-                      "url": "https://www.sitepoint.com/sql-vs-nosql-differences/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "943edd9f848f",
-                      "text": "Database Indexing (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a49fde9fed22",
-                      "text": "Introduction to SQL Tuning (Oracle)",
-                      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/tgsql/introduction-to-sql-tuning.html",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "7022fc0dcbbd",
+                      "id": "0de394703d05",
                       "text": "Sharding",
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/sharding",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
-                    },
-                    {
-                      "id": "aceee5ae752f",
-                      "text": "Federation",
-                      "url": "https://github.com/donnemartin/system-design-primer#federation",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1200c836a272",
-                      "text": "Denormalization",
-                      "url": "https://en.wikipedia.org/wiki/Denormalization",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "20fccb915992",
-                      "text": "Choosing the Right Database (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5b8ec1b6d5f8",
-                      "text": "Object Storage (S3-like) (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Design Gurus / ByteByteGo",
-                      "difficulty": null
                     }
                   ],
-                  "id": "8d8d31d256c3"
+                  "id": "286150a8818d"
                 }
               ],
-              "id": "e02f530ca5fe"
-            }
-          ],
-          "id": "beb5e144f1de"
-        },
-        {
-          "title": "Part 5: Caching",
-          "groups": [
+              "id": "3dc7e1eb54ea"
+            },
             {
-              "title": null,
+              "title": "Consistency & Availability",
               "subgroups": [
                 {
                   "title": null,
                   "items": [
                     {
-                      "id": "15ef3c41d138",
-                      "text": "Caching",
-                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/caching",
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "ebccc0cf0d0d",
-                      "text": "Cache Placement -- Client, CDN, Web Server, Database, Application",
-                      "url": "https://github.com/donnemartin/system-design-primer#cache",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b5945acec3ee",
-                      "text": "Cache-Aside Pattern",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "af3fcd5a7a9a",
-                      "text": "Write-Through",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3dfa27193b87",
-                      "text": "Write-Behind",
-                      "url": "http://www.slideshare.net/jboner/scalability-availability-stability-patterns/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8ff45ad7a45b",
-                      "text": "Refresh-Ahead",
-                      "url": "http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "f0035e184d59",
-                      "text": "Design a Distributed Cache (like Redis)",
-                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-cache-like-redis",
-                      "tag": "",
-                      "subtag": "Design Gurus",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "fa8ed97b09e3",
-                      "text": "Redis",
-                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/redis",
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6da658bb7f3a",
-                      "text": "Memcached (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "9aeaf44bbe58"
-                }
-              ],
-              "id": "997cc19edd81"
-            }
-          ],
-          "id": "0903d2b91d47"
-        },
-        {
-          "title": "Part 6: Consistency, Availability & Distributed Systems Theory",
-          "groups": [
-            {
-              "title": null,
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "f54fdf316ac5",
+                      "id": "2a285a66d483",
                       "text": "CAP Theorem",
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/cap-theorem",
                       "tag": "",
@@ -90824,9 +90694,17 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "e4343bc36d71",
+                          "id": "90343055b47d",
                           "text": "CAP FAQ",
                           "url": "https://github.com/henryr/cap-faq",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "d96561da3d48",
+                          "text": "PACELC (yet to be linked)",
+                          "url": null,
                           "tag": "",
                           "subtag": "roadmap.sh",
                           "difficulty": null
@@ -90834,7 +90712,15 @@
                       ]
                     },
                     {
-                      "id": "cc46968b20c5",
+                      "id": "3938e6e55566",
+                      "text": "Consistency Models -- Weak, Eventual, Strong",
+                      "url": "https://cs.fyi/guide/consistency-patterns-week-strong-eventual/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d2a99aabc5a1",
                       "text": "Availability vs. Consistency",
                       "url": "https://github.com/donnemartin/system-design-primer#availability-vs-consistency",
                       "tag": "",
@@ -90842,15 +90728,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "cd8ed4e30194",
-                      "text": "Consistency Patterns -- Weak, Eventual, Strong",
-                      "url": "https://cs.fyi/guide/consistency-patterns-week-strong-eventual/",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4f44c00ebcb8",
+                      "id": "d984ccbcd0cb",
                       "text": "Availability Patterns -- Fail-over, Replication, 9s",
                       "url": "https://github.com/donnemartin/system-design-primer#availability-patterns",
                       "tag": "",
@@ -90858,7 +90736,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "305d900d868e",
+                          "id": "81d778472033",
                           "text": "High Availability in System Design -- 15 Strategies",
                           "url": "https://www.designgurus.io/blog/high-availability-system-design-basics",
                           "tag": "",
@@ -90868,7 +90746,7 @@
                       ]
                     },
                     {
-                      "id": "58268ff6b9a6",
+                      "id": "9db35e49de36",
                       "text": "Consistent Hashing",
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/consistent-hashing",
                       "tag": "",
@@ -90876,7 +90754,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "cbed6fd4be04",
+                          "id": "6c3e6eaa31e0",
                           "text": "Design Consistent Hashing",
                           "url": "https://bytebytego.com/courses/system-design-interview/design-consistent-hashing",
                           "tag": "",
@@ -90886,7 +90764,15 @@
                       ]
                     },
                     {
-                      "id": "c8752dc2f453",
+                      "id": "1f863a132e44",
+                      "text": "Fault Tolerance (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "66c92a7236aa",
                       "text": "Distributed Transactions (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -90894,7 +90780,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "038fd1bba153",
+                      "id": "63a6e237365e",
                       "text": "Leader Election (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -90902,24 +90788,144 @@
                       "difficulty": null
                     },
                     {
-                      "id": "801371a015a9",
+                      "id": "03106a0bd6c3",
                       "text": "Quorum & Consensus (Paxos/Raft) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b776fce9d91e",
+                      "text": "Vector Clocks / Lamport Clocks (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
                     }
                   ],
-                  "id": "2a04adfbedb4"
+                  "id": "f5ae4527e7f2"
                 }
               ],
-              "id": "68993677b081"
+              "id": "6cec41f2eff3"
+            },
+            {
+              "title": "Performance",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "eb556cd577ac",
+                      "text": "Latency vs. Throughput",
+                      "url": "https://cs.fyi/guide/latency-vs-throughput/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cbdc9bd7062f",
+                      "text": "Idempotency",
+                      "url": "https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "971c04da70d5"
+                }
+              ],
+              "id": "337098d139f2"
+            },
+            {
+              "title": "Observability",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "720b5bae0981",
+                      "text": "Logging (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2999a0e8566e",
+                      "text": "Metrics (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5680353c7d10",
+                      "text": "Monitoring (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ca78a508dc52",
+                      "text": "Alerting (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7ad17cfef932",
+                      "text": "Health Checks (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eeea3971bfed",
+                      "text": "Distributed Tracing (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "78a1fa767e17",
+                      "text": "SLIs (Service Level Indicators) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ba6b9ffa3c40",
+                      "text": "SLOs (Service Level Objectives) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "30b4861b0933",
+                      "text": "Error Budgets (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "42b8fc79164d"
+                }
+              ],
+              "id": "4219e8b4c4ff"
             }
           ],
-          "id": "184039e515c7"
+          "id": "3cec6db68661"
         },
         {
-          "title": "Part 7: Asynchronous Processing & Messaging",
+          "title": "Part 4: Scalability & Traffic Distribution",
           "groups": [
             {
               "title": null,
@@ -90928,47 +90934,299 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "3df12a359152",
-                      "text": "Message Queues",
-                      "url": "https://redis.io/",
+                      "id": "cadfeeba23c9",
+                      "text": "Vertical vs. Horizontal Scaling (yet to be linked)",
+                      "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
                     },
                     {
-                      "id": "0a375885ae1d",
-                      "text": "Task Queues",
-                      "url": "https://github.com/donnemartin/system-design-primer#task-queues",
+                      "id": "57cc3a05468b",
+                      "text": "Microservices & Application Layer aws.amazon.com",
+                      "url": "https://aws.amazon.com/microservices/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c849166196bb",
+                      "text": "Service Discovery",
+                      "url": "https://github.com/donnemartin/system-design-primer#service-discovery",
                       "tag": "",
                       "subtag": "System Design Primer",
                       "difficulty": null
                     },
                     {
-                      "id": "e5934d5804f5",
-                      "text": "Back Pressure",
-                      "url": "https://github.com/donnemartin/system-design-primer#back-pressure",
+                      "id": "3c98c048203e",
+                      "text": "Auto Scaling (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "abd1b95b41fd"
+                }
+              ],
+              "id": "2e4197892cbb"
+            }
+          ],
+          "id": "40aae04e2731"
+        },
+        {
+          "title": "Part 5: Storage & Databases",
+          "groups": [
+            {
+              "title": "Introduction",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "450c0ff90479",
+                      "text": "Types of Databases",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/types-of-databases",
+                      "tag": "",
+                      "subtag": "Grokking",
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "e659217e4220",
+                          "text": "Introduction to Databases",
+                          "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-databases",
+                          "tag": "",
+                          "subtag": "Grokking",
+                          "difficulty": null
+                        }
+                      ]
+                    },
+                    {
+                      "id": "efab5a358fd1",
+                      "text": "SQL vs. NoSQL: The Differences",
+                      "url": "https://www.sitepoint.com/sql-vs-nosql-differences/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3d7feae71245",
+                      "text": "Choosing the Right Database (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "4e6b668142e3"
+                }
+              ],
+              "id": "0c60737e5a38"
+            },
+            {
+              "title": "Relational",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "f38dadd3b993",
+                      "text": "Relational Databases & ACID",
+                      "url": "https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms",
                       "tag": "",
                       "subtag": "System Design Primer",
                       "difficulty": null
                     },
                     {
-                      "id": "a445906d550a",
-                      "text": "Publisher/Subscriber Pattern",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber",
+                      "id": "cc7a42c72a3a",
+                      "text": "Transactions (yet to be linked)",
+                      "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
                     },
                     {
-                      "id": "c9dcd8ab32d4",
-                      "text": "Event-Driven Architecture",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers",
+                      "id": "fd22e6e33cee",
+                      "text": "Database Indexing (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2629cf341e7f",
+                      "text": "Introduction to SQL Tuning (Oracle)",
+                      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/tgsql/introduction-to-sql-tuning.html",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "c63ff305c773"
+                }
+              ],
+              "id": "fda004e3e23b"
+            },
+            {
+              "title": "Data Design",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "77a731888e36",
+                      "text": "Denormalization",
+                      "url": "https://en.wikipedia.org/wiki/Denormalization",
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
                     },
                     {
-                      "id": "83eb4a547923",
+                      "id": "102aa3f17547",
+                      "text": "Federation",
+                      "url": "https://github.com/donnemartin/system-design-primer#federation",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "f35cc5194d9a"
+                }
+              ],
+              "id": "eefb920f813d"
+            },
+            {
+              "title": "Specialized",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "2b76e25d9253",
+                      "text": "Key-Value Store Wikipedia",
+                      "url": "https://en.wikipedia.org/wiki/Key%E2%80%93value_database",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "de717101ca22",
+                      "text": "Document Store Wikipedia",
+                      "url": "https://en.wikipedia.org/wiki/Document-oriented_database",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c816231ed100",
+                      "text": "Wide-Column Store Bigtable architecture",
+                      "url": "https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "76df8ae36fe2",
+                      "text": "Graph Database Wikipedia",
+                      "url": "https://en.wikipedia.org/wiki/Graph_database",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c818b9abddb3",
+                      "text": "Object Storage (S3-like) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus / ByteByteGo",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "dd7c6498a4ba"
+                }
+              ],
+              "id": "389ca2aa5a31"
+            }
+          ],
+          "id": "bebadc403e48"
+        },
+        {
+          "title": "Part 6: Infrastructure Technologies",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "b3b321886287",
+                      "text": "API Gateway",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "73670faa6b9e",
+                      "text": "Load Balancer",
+                      "url": "https://github.com/donnemartin/system-design-primer#layer-7-load-balancing",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "470c974b60db",
+                          "text": "Load Balancers -- Layer 4",
+                          "url": "https://www.f5.com/glossary/layer-4-load-balancing",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "22cdcb070e1b",
+                          "text": "Load Balancing Algorithms",
+                          "url": "https://www.cloudflare.com/learning/performance/types-of-load-balancing-algorithms/",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "0e8032ff241f",
+                          "text": "Design Load Balancer",
+                          "url": "https://algomaster.io/learn/system-design-interviews/design-load-balancer",
+                          "tag": "",
+                          "subtag": "AlgoMaster",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "55a794cdb2ab",
+                          "text": "Load Balancer vs. Reverse Proxy",
+                          "url": "https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/",
+                          "tag": "",
+                          "subtag": "roadmap.sh",
+                          "difficulty": null
+                        }
+                      ]
+                    },
+                    {
+                      "id": "86c5eaf76f41",
+                      "text": "Content Delivery Network -- Push vs. Pull CDNs",
+                      "url": "https://github.com/donnemartin/system-design-primer#content-delivery-network",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4979f52a1cd5",
+                      "text": "Redis",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/redis",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "855a8d6c5951",
                       "text": "Kafka",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/kafka",
                       "tag": "",
@@ -90976,7 +91234,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "077d9e4b99d1",
+                      "id": "6779fae929b2",
                       "text": "RabbitMQ (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -90984,139 +91242,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "13ebf55dd93e",
-                      "text": "Amazon SQS (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "58f55d3cd20f"
-                }
-              ],
-              "id": "451aad47ced2"
-            }
-          ],
-          "id": "cbd64233f62f"
-        },
-        {
-          "title": "Part 8: Resilience & Distributed System Patterns",
-          "groups": [
-            {
-              "title": null,
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "d7dec2f478d4",
-                      "text": "Circuit Breaker",
-                      "url": "https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a7ecf3022022",
-                      "text": "Retry Pattern",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/retry",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "bb9ca965ba31",
-                      "text": "Retry Storm (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "135e2f842c3b",
-                      "text": "Throttling",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/throttling",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3c520fd8b0f8",
-                      "text": "Bulkhead",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3df5f3585c31",
-                      "text": "CQRS",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4f18b980f74c",
-                      "text": "Event Sourcing",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "ce1404032c67",
-                      "text": "Saga / Choreography Pattern",
-                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "ceb7558aad38",
-                      "text": "Idempotent Operations",
-                      "url": "https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation",
-                      "tag": "",
-                      "subtag": "roadmap.sh",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2f6115c314dd",
-                      "text": "Removing Single Points of Failure (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b295ea3352b9",
-                      "text": "Handling Failures / Failure Detection (yet to be linked)",
-                      "url": null,
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "564212a6cc1f"
-                }
-              ],
-              "id": "5ced24e6ea85"
-            }
-          ],
-          "id": "729a6a97e242"
-        },
-        {
-          "title": "Part 9: Key Technologies (Deep Dives)",
-          "groups": [
-            {
-              "title": null,
-              "subgroups": [
-                {
-                  "title": null,
-                  "items": [
-                    {
-                      "id": "5eb98a2b67c2",
+                      "id": "89e3ca8ca3c7",
                       "text": "Elasticsearch",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch",
                       "tag": "",
@@ -91124,7 +91250,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "d39f9a13a5c2",
+                      "id": "9ff0acaf3aa3",
                       "text": "Cassandra",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/cassandra",
                       "tag": "",
@@ -91132,7 +91258,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "23bd665d74f4",
+                      "id": "c3725e95e08a",
                       "text": "DynamoDB",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/dynamodb",
                       "tag": "",
@@ -91140,7 +91266,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "6d76c076d0c9",
+                      "id": "cae93ebf98b8",
                       "text": "PostgreSQL",
                       "url": "https://algomaster.io/learn/system-design-interviews/postgresql",
                       "tag": "",
@@ -91148,7 +91274,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "489e40f26b96",
+                      "id": "c053c84d7bbd",
                       "text": "MySQL",
                       "url": "https://algomaster.io/learn/system-design-interviews/mysql",
                       "tag": "",
@@ -91156,7 +91282,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "dea7caaec694",
+                      "id": "cfaab9738e2f",
                       "text": "MongoDB",
                       "url": "https://algomaster.io/learn/system-design-interviews/mongodb",
                       "tag": "",
@@ -91164,7 +91290,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "08219241f462",
+                      "id": "dee85f7f990a",
                       "text": "Time Series Databases",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/time-series-databases",
                       "tag": "",
@@ -91172,7 +91298,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "247d959e2a5b",
+                      "id": "800008416ba9",
                       "text": "Vector Databases (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91180,7 +91306,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "77871d4ce3c1",
+                      "id": "85b983ccf31d",
                       "text": "Zookeeper (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91188,7 +91314,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b59bee45f76f",
+                      "id": "7cf1a2258c22",
                       "text": "Flink (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91196,7 +91322,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b0d0e738e130",
+                      "id": "5f9974d8a7a7",
                       "text": "Spark (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91204,7 +91330,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "99df5d51b95b",
+                      "id": "ce4af110704c",
                       "text": "Amazon S3 (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91212,7 +91338,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "2dadc7ba05d9",
+                      "id": "4533b0b64db2",
                       "text": "AWS Lambda (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91220,7 +91346,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "da48f36678b9",
+                      "id": "dc60ef303a5a",
                       "text": "Nginx (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91228,7 +91354,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ed53489d23f5",
+                      "id": "14173c502556",
                       "text": "Docker (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91236,7 +91362,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "3627d25c232d",
+                      "id": "7119840a4999",
                       "text": "Kubernetes (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91244,24 +91370,56 @@
                       "difficulty": null
                     },
                     {
-                      "id": "6f8dd312ec49",
+                      "id": "fd14182d7b4c",
                       "text": "Prometheus (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a1a09a5906a1",
+                      "text": "etcd (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a082f0267b8c",
+                      "text": "Envoy (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "19ba03fbff3a",
+                      "text": "Istio (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f41fb72001da",
+                      "text": "Data Structures for Big Data (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
                     }
                   ],
-                  "id": "57d362491eef"
+                  "id": "af42ca643566"
                 }
               ],
-              "id": "f051dae254b4"
+              "id": "5d7ea19700c7"
             }
           ],
-          "id": "5f1668ef5d1a"
+          "id": "fd507cf48440"
         },
         {
-          "title": "Part 10: Common Interview-Solving Patterns",
+          "title": "Part 7: Reliability Patterns",
           "groups": [
             {
               "title": null,
@@ -91270,7 +91428,219 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "1d6a4603f1f7",
+                      "id": "667440a9a0a0",
+                      "text": "Circuit Breaker",
+                      "url": "https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "472ba731d068",
+                      "text": "Retry Pattern",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/retry",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0995285d27d7",
+                      "text": "Retry Storm (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ad4da64b8d61",
+                      "text": "Throttling",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/throttling",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "17718685644c",
+                      "text": "Bulkhead",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9e2facbe80e6",
+                      "text": "CQRS",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d30d08f59fa0",
+                      "text": "Event Sourcing",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "405d21d7ab1d",
+                      "text": "Saga / Choreography Pattern",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "447728056eb4",
+                      "text": "Removing Single Points of Failure (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "85ff94cc133a",
+                      "text": "Handling Failures / Failure Detection (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "83fc9fa94a51",
+                      "text": "Timeouts (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "99d5b6c79207",
+                      "text": "Exponential Backoff (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3f802cc47423",
+                      "text": "Dead Letter Queue (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5c76bc08974e",
+                      "text": "Graceful Degradation (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "c5c627fbd3ff"
+                }
+              ],
+              "id": "d7e9cc031c37"
+            }
+          ],
+          "id": "f56ac02f47a3"
+        },
+        {
+          "title": "Part 8: Asynchronous Processing & Messaging",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "83e36a8a49a3",
+                      "text": "Message Queues",
+                      "url": "https://redis.io/",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "165a5834dcdf",
+                      "text": "Task Queues",
+                      "url": "https://github.com/donnemartin/system-design-primer#task-queues",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "983e31bcaede",
+                      "text": "Back Pressure",
+                      "url": "https://github.com/donnemartin/system-design-primer#back-pressure",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9b13310b0ed7",
+                      "text": "Publisher/Subscriber Pattern",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "905b7cfa7598",
+                      "text": "Event-Driven Architecture",
+                      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e9a73782818e",
+                      "text": "Amazon SQS (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d3dfffeb14c1",
+                      "text": "Delivery Guarantees -- At-most-once, At-least-once, Exactly-once (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0d71bba34b60",
+                      "text": "Ordering Guarantees (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "1d5a07f81944"
+                }
+              ],
+              "id": "7c6727b0d9be"
+            }
+          ],
+          "id": "5612638560db"
+        },
+        {
+          "title": "Part 9: Common Interview-Solving Patterns",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "703dcb6380b6",
                       "text": "Fanout Pattern -- Push vs. Pull (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91278,7 +91648,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "7c80f3e4b507",
+                      "id": "13c31f9909e0",
                       "text": "Realtime Updates",
                       "url": "https://algomaster.io/learn/system-design-interviews/realtime-updates",
                       "tag": "",
@@ -91286,7 +91656,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b135d16cf6dd",
+                      "id": "42355a73ab43",
                       "text": "Scaling Reads (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91294,7 +91664,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "bc33ee22428d",
+                      "id": "0f8155fe0613",
                       "text": "Scaling Writes (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91302,7 +91672,23 @@
                       "difficulty": null
                     },
                     {
-                      "id": "e0e1e64f105b",
+                      "id": "211e5fe06599",
+                      "text": "Read-Heavy Systems (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "51b5ce7d859e",
+                      "text": "Write-Heavy Systems (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b96185ef99de",
                       "text": "Handling Hot Keys (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91310,7 +91696,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "13701ab65df9",
+                      "id": "d8a026e55da8",
                       "text": "Handling Traffic Spikes (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91318,7 +91704,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "e9387965dbb8",
+                      "id": "3f3ef5e68f8b",
                       "text": "Handling Large Files / Blobs (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91326,7 +91712,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "68f8a9aa281d",
+                      "id": "d1d4b9906b63",
                       "text": "Handling Location Data (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91334,7 +91720,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "a7d510eb8d68",
+                      "id": "bdec590acca1",
                       "text": "Generating Unique IDs (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91342,7 +91728,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "0aa40d9c4c00",
+                      "id": "9cfbb8bcf666",
                       "text": "Distributed Counting (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91350,7 +91736,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "cd67f298700f",
+                      "id": "5d7f75de5f2a",
                       "text": "Deduplicating Data (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91358,7 +91744,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "4fd41187393d",
+                      "id": "137cfa80ed43",
                       "text": "Multi-Region Architecture (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91366,7 +91752,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "29e0706447b1",
+                      "id": "38c16839ead1",
                       "text": "Multi-Tenancy (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91374,7 +91760,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "38de22f99d92",
+                      "id": "54c883a75af0",
                       "text": "Multi-Step Processes (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91382,7 +91768,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ac41f96966ba",
+                      "id": "8ae20814c2d9",
                       "text": "Managing Long-Running Tasks (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91390,24 +91776,56 @@
                       "difficulty": null
                     },
                     {
-                      "id": "47320adbffeb",
+                      "id": "655d79a685e7",
                       "text": "Media Streaming (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7b79f7d9971c",
+                      "text": "Scatter-Gather (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7d6105b89a00",
+                      "text": "Request Aggregation (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eb68647df87d",
+                      "text": "Leaderboards (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7594e14fa29a",
+                      "text": "Pagination (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
                     }
                   ],
-                  "id": "6a7f655a6cc9"
+                  "id": "0ae42c6423a1"
                 }
               ],
-              "id": "00da432be309"
+              "id": "fb25c878147b"
             }
           ],
-          "id": "4bc1b00503e7"
+          "id": "bcea7718ed57"
         },
         {
-          "title": "Part 11: Foundational Building-Block Systems",
+          "title": "Part 10: Foundational Building Blocks",
           "groups": [
             {
               "title": null,
@@ -91416,7 +91834,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "264b5b96d05b",
+                      "id": "5befeae59d55",
                       "text": "Design a Rate Limiter",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter",
                       "tag": "",
@@ -91424,7 +91842,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "ecc2afec2524",
+                          "id": "07d01150cf43",
                           "text": "Distributed Rate Limiter",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/distributed-rate-limiter",
                           "tag": "",
@@ -91432,7 +91850,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "e3d878290b5b",
+                          "id": "bb9d7500f58b",
                           "text": "Design a Distributed Rate Limiter",
                           "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-rate-limiter",
                           "tag": "",
@@ -91442,7 +91860,7 @@
                       ]
                     },
                     {
-                      "id": "a19d66e751e7",
+                      "id": "55d86a89862b",
                       "text": "Design a Key-Value Store",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-key-value-store",
                       "tag": "",
@@ -91450,7 +91868,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "6cc461318eaf",
+                          "id": "face63848539",
                           "text": "Design a Key-Value Store for a Search Engine (LRU query cache)",
                           "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/query_cache/README.md",
                           "tag": "",
@@ -91458,7 +91876,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "55c1a105256f",
+                          "id": "6e6c2fbb3b74",
                           "text": "System Design: The Key-Value Store",
                           "url": "https://www.educative.io/courses/grokking-the-system-design-interview/system-design-the-key-value-store",
                           "tag": "",
@@ -91466,7 +91884,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "d761abb3407a",
+                          "id": "9d5da80a5b08",
                           "text": "Design of a Key-Value Store",
                           "url": "https://www.educative.io/courses/grokking-the-system-design-interview/design-of-a-key-value-store",
                           "tag": "",
@@ -91474,7 +91892,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "1d1a15379497",
+                          "id": "aa14d5649fa3",
                           "text": "Ensure Scalability and Replication",
                           "url": "https://www.educative.io/courses/grokking-the-system-design-interview/ensure-scalability-and-replication",
                           "tag": "",
@@ -91482,7 +91900,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "a7174d199c26",
+                          "id": "25d3593eb788",
                           "text": "Versioning Data and Achieving Configurability",
                           "url": "https://www.educative.io/courses/grokking-the-system-design-interview/versioning-data-and-achieving-configurability",
                           "tag": "",
@@ -91492,7 +91910,7 @@
                       ]
                     },
                     {
-                      "id": "02dab3775413",
+                      "id": "58e8d59f734f",
                       "text": "Design a URL Shortener",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-url-shortener",
                       "tag": "",
@@ -91500,7 +91918,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "6fd1b5c16162",
+                          "id": "9e9542c649ee",
                           "text": "Bitly",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly",
                           "tag": "",
@@ -91508,7 +91926,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "3538c2395424",
+                          "id": "9cf693fe7bad",
                           "text": "Design Pastebin.com (or Bit.ly)",
                           "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md",
                           "tag": "",
@@ -91518,7 +91936,7 @@
                       ]
                     },
                     {
-                      "id": "5d903680cd75",
+                      "id": "851a9283d1d0",
                       "text": "Design a Unique ID Generator in Distributed Systems (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91526,7 +91944,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ede6645d34ea",
+                      "id": "d4d535047119",
                       "text": "Design an API Gateway (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91534,7 +91952,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "c47af3e7325e",
+                      "id": "42e6d642edee",
                       "text": "Design a Distributed Lock Manager (like Chubby) (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91542,7 +91960,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "3b594c9f5da7",
+                      "id": "a3114173d4b3",
                       "text": "Design a Distributed Job Scheduler (like Cron) (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91550,32 +91968,24 @@
                       "difficulty": null
                     },
                     {
-                      "id": "0ee967ba36f0",
+                      "id": "07e0f8af4172",
                       "text": "Design Search Autocomplete System",
                       "url": "https://algomaster.io/learn/system-design-interviews/design-search-autocomplete-system",
                       "tag": "",
                       "subtag": "AlgoMaster",
                       "difficulty": null
-                    },
-                    {
-                      "id": "0fd4a66ae08b",
-                      "text": "Design a Notification System / Service",
-                      "url": "https://algomaster.io/learn/system-design-interviews/design-notification-service",
-                      "tag": "",
-                      "subtag": "AlgoMaster",
-                      "difficulty": null
                     }
                   ],
-                  "id": "d8d291e75e68"
+                  "id": "86e873306db1"
                 }
               ],
-              "id": "6cad68c81dd1"
+              "id": "94ee89c22f0e"
             }
           ],
-          "id": "be9fbf17fb72"
+          "id": "84dc6f01f8ee"
         },
         {
-          "title": "Part 12: Case Studies -- Social & Content Feeds",
+          "title": "Part 11: Case Studies -- Social & Content Feeds",
           "groups": [
             {
               "title": null,
@@ -91584,7 +91994,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "ad0e96273bd5",
+                      "id": "276266ef1c1e",
                       "text": "Design a News Feed System",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-news-feed-system",
                       "tag": "",
@@ -91592,7 +92002,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "dc3de4a2ff4f",
+                          "id": "247b7f7cc645",
                           "text": "FB News Feed",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed",
                           "tag": "",
@@ -91602,7 +92012,7 @@
                       ]
                     },
                     {
-                      "id": "0a067c9b10e1",
+                      "id": "4a300c80a44b",
                       "text": "Design the Twitter Timeline and Search",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md",
                       "tag": "",
@@ -91610,25 +92020,43 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "6692bd17137d",
+                          "id": "3489ee9bb055",
                           "text": "Design Twitter Timeline (yet to be linked)",
                           "url": null,
                           "tag": "",
                           "subtag": "Design Gurus",
                           "difficulty": null
+                        },
+                        {
+                          "id": "3f6b231ed29c",
+                          "text": "Twitter System Design Mock Interview (with Senior Software Engineer)",
+                          "url": "https://www.youtube.com/watch?v=3yW856jAbZA",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
                         }
                       ]
                     },
                     {
-                      "id": "258ff936368d",
+                      "id": "09a5e028e805",
                       "text": "Design Instagram",
                       "url": "https://algomaster.io/learn/system-design-interviews/design-instagram",
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "62b256023f19",
+                          "text": "Meta System Design Interview: Design Instagram (with ex-Meta data engineer)",
+                          "url": "https://www.youtube.com/watch?v=DXpJCh5_KT4",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
-                      "id": "d1a13c4342d3",
+                      "id": "8cffe4aa7f62",
                       "text": "Tinder",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/tinder",
                       "tag": "",
@@ -91636,15 +92064,25 @@
                       "difficulty": null
                     },
                     {
-                      "id": "c7a68139d3b8",
+                      "id": "974ec9067fd3",
                       "text": "Design TikTok (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "8dcf237812a4",
+                          "text": "Google System Design Interview: Design TikTok (with ex-Google EM)",
+                          "url": "https://www.youtube.com/watch?v=NHqdG-aZxOk",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
-                      "id": "5ce5c6c19b1b",
+                      "id": "2acb4eebc076",
                       "text": "Design Reddit (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91652,7 +92090,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "2ff3a846eda5",
+                      "id": "5eb60387d4d0",
                       "text": "Design the Data Structures for a Social Network",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/social_graph/README.md",
                       "tag": "",
@@ -91660,7 +92098,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "d5fd9c09e663",
+                      "id": "3682e3f2dac9",
                       "text": "Design Facebook \"People You May Know\" (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91668,24 +92106,34 @@
                       "difficulty": null
                     },
                     {
-                      "id": "5ca77e95a437",
+                      "id": "775a4a63fbea",
                       "text": "Design LinkedIn Connections (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "0ebd3283102e",
+                          "text": "\"Design LinkedIn\" -- System Design Mock with Senior SWE at Amazon",
+                          "url": "https://www.youtube.com/watch?v=ICu8g9auh8E",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
-                  "id": "f47d9a9027d8"
+                  "id": "223ee3e90124"
                 }
               ],
-              "id": "f66468118193"
+              "id": "7be90368f99b"
             }
           ],
-          "id": "557bfa2feb25"
+          "id": "21f0ac0e80cc"
         },
         {
-          "title": "Part 13: Case Studies -- Messaging & Real-Time Communication",
+          "title": "Part 12: Case Studies -- Messaging & Real-Time Communication",
           "groups": [
             {
               "title": null,
@@ -91694,7 +92142,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "3c84d5d20c34",
+                      "id": "461615455577",
                       "text": "Design a Chat System",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-chat-system",
                       "tag": "",
@@ -91702,7 +92150,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "82f5823846be",
+                          "id": "f531e2bfb902",
                           "text": "WhatsApp",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp",
                           "tag": "",
@@ -91710,7 +92158,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "9d1e85d33698",
+                          "id": "574399289746",
                           "text": "Design WhatsApp",
                           "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-whatsapp",
                           "tag": "",
@@ -91718,7 +92166,15 @@
                           "difficulty": null
                         },
                         {
-                          "id": "61cb9e64197e",
+                          "id": "86da18faa309",
+                          "text": "System Design Mock Interview: \"Design WhatsApp or Telegram\" (with ex-Google EM)",
+                          "url": "https://www.youtube.com/watch?v=M6UZ7pVD-rQ",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "ed2c176dddff",
                           "text": "Design WhatsApp",
                           "url": "https://algomaster.io/learn/system-design-interviews/design-whatsapp",
                           "tag": "",
@@ -91728,7 +92184,7 @@
                       ]
                     },
                     {
-                      "id": "0fadbd255588",
+                      "id": "8e3aa1725804",
                       "text": "FB Live Comments",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments",
                       "tag": "",
@@ -91736,7 +92192,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "8fe627b64dc6",
+                          "id": "f9ffdc2b1114",
                           "text": "Design Live Comment Streaming Service (Twitch Chat) (yet to be linked)",
                           "url": null,
                           "tag": "",
@@ -91746,7 +92202,7 @@
                       ]
                     },
                     {
-                      "id": "bee8a006db65",
+                      "id": "cb293caffb49",
                       "text": "Design Slack (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91754,7 +92210,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "72c157025fc4",
+                      "id": "f2bc38158d16",
                       "text": "Design Google Docs (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91762,7 +92218,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "f89dae76f9c6",
+                      "id": "0250d6b941ae",
                       "text": "Design a Collaborative Whiteboard (Miro) (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91770,7 +92226,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "098574fa418f",
+                      "id": "ad84cade54e0",
                       "text": "Design Zoom (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91778,7 +92234,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "8f2c08fc1642",
+                      "id": "25ef63485d05",
                       "text": "Design Discord (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91786,7 +92242,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "acbc00adaf8f",
+                      "id": "5d818fb8d57f",
                       "text": "Design an Online Chat Server",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/online_chat/online_chat.py",
                       "tag": "",
@@ -91794,16 +92250,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "40d5fd355390"
+                  "id": "4c758451dda2"
                 }
               ],
-              "id": "d1069525785f"
+              "id": "07fdff7fa20f"
             }
           ],
-          "id": "c1e24fa902f4"
+          "id": "2b229c56685a"
         },
         {
-          "title": "Part 14: Case Studies -- Media, Storage & Streaming",
+          "title": "Part 13: Case Studies -- Media, Storage & Streaming",
           "groups": [
             {
               "title": null,
@@ -91812,7 +92268,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "034916350690",
+                      "id": "9a4262e9dbe6",
                       "text": "Design YouTube",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-youtube",
                       "tag": "",
@@ -91820,7 +92276,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "d9591a6ccdd9",
+                          "id": "8298da04798a",
                           "text": "YouTube",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube",
                           "tag": "",
@@ -91828,25 +92284,43 @@
                           "difficulty": null
                         },
                         {
-                          "id": "c1271b288d44",
+                          "id": "a18669817c5e",
                           "text": "Design YouTube",
                           "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-youtube",
                           "tag": "",
                           "subtag": "Design Gurus",
                           "difficulty": null
+                        },
+                        {
+                          "id": "88d2484256b9",
+                          "text": "FAANG System Design Interview: Design YouTube (with FAANG Senior SWE)",
+                          "url": "https://www.youtube.com/watch?v=hqa2sfoGRlI",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
                         }
                       ]
                     },
                     {
-                      "id": "7526c267ba5c",
+                      "id": "e485f7551f85",
                       "text": "Design Spotify",
                       "url": "https://algomaster.io/learn/system-design-interviews/design-spotify",
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "8d767ed5ae7f",
+                          "text": "Google System Design Interview: Design Spotify (with ex-Google EM)",
+                          "url": "https://www.youtube.com/watch?v=_K-eupuDVEc",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
-                      "id": "313b3977ad02",
+                      "id": "58bff0624abd",
                       "text": "Dropbox",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox",
                       "tag": "",
@@ -91854,7 +92328,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "6294d9c719a9",
+                      "id": "ea59a8160193",
                       "text": "Design Netflix (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91862,7 +92336,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "329bedb19dde",
+                      "id": "24a96c9c6dcf",
                       "text": "Design Google Drive (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91870,7 +92344,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "588e0067bad5",
+                      "id": "ddfd5b8919c2",
                       "text": "Design Gmail (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91878,7 +92352,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "4750103dc27a",
+                      "id": "3f087ac90b7f",
                       "text": "Design Twitch (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91886,7 +92360,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ab16ab270cc5",
+                      "id": "4e5e434785ea",
                       "text": "Design Amazon S3 / S3-like Object Storage (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91894,16 +92368,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "c4a5925a45b0"
+                  "id": "80925ec4a2ef"
                 }
               ],
-              "id": "1abd2e99c063"
+              "id": "405cf83224b8"
             }
           ],
-          "id": "6677b0f3eacf"
+          "id": "950dc7c8715e"
         },
         {
-          "title": "Part 15: Case Studies -- Location-Based Services",
+          "title": "Part 14: Case Studies -- Location-Based Services",
           "groups": [
             {
               "title": null,
@@ -91912,7 +92386,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "0a83768e700f",
+                      "id": "8c9900d340e7",
                       "text": "Design Airbnb",
                       "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-airbnb",
                       "tag": "",
@@ -91920,7 +92394,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "8db3e48394d2",
+                      "id": "cf89f65fb20f",
                       "text": "Uber",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/uber",
                       "tag": "",
@@ -91928,17 +92402,25 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "fe75ba23e49f",
+                          "id": "f3eec9429d5f",
                           "text": "Design Uber/Lyft (yet to be linked)",
                           "url": null,
                           "tag": "",
                           "subtag": "Design Gurus",
                           "difficulty": null
+                        },
+                        {
+                          "id": "b27e46f4c88c",
+                          "text": "Uber System Design: Mock Interview Walk-Through with Dima Korolev (ex-Google)",
+                          "url": "https://www.youtube.com/watch?v=wL-Gx5XE9XE",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
                         }
                       ]
                     },
                     {
-                      "id": "a9e338635a5c",
+                      "id": "5e8a023ea611",
                       "text": "Local Delivery Service (Gopuff)",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/gopuff",
                       "tag": "",
@@ -91946,7 +92428,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "1e5dab83b39f",
+                      "id": "422811524992",
                       "text": "Design Food Delivery Service (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91954,7 +92436,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "790171e16415",
+                      "id": "462619d53e30",
                       "text": "Design Google Maps (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91962,7 +92444,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "80617a039c22",
+                      "id": "7a99b89cccbc",
                       "text": "Design Nearby Friends (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -91970,24 +92452,40 @@
                       "difficulty": null
                     },
                     {
-                      "id": "1dc3851431dc",
+                      "id": "c3038ce669d9",
                       "text": "Proximity Search",
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/proximity-search",
                       "tag": "",
                       "subtag": "Hello Interview",
                       "difficulty": null
+                    },
+                    {
+                      "id": "bed587767b52",
+                      "text": "Design Yelp (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a7c82686c7bf",
+                      "text": "Design Strava (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
                     }
                   ],
-                  "id": "0b7c9abfbbb2"
+                  "id": "48983ea2d22e"
                 }
               ],
-              "id": "1c3a5266bb4d"
+              "id": "777f65c11200"
             }
           ],
-          "id": "14eeddb94a1c"
+          "id": "336e2eadfb0e"
         },
         {
-          "title": "Part 16: Case Studies -- Search & Aggregation",
+          "title": "Part 15: Case Studies -- Search & Aggregation",
           "groups": [
             {
               "title": null,
@@ -91996,7 +92494,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "2ab3da79d3cb",
+                      "id": "4e965e1088ce",
                       "text": "Design a Web Crawler",
                       "url": "https://bytebytego.com/courses/system-design-interview/design-a-web-crawler",
                       "tag": "",
@@ -92004,7 +92502,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "499e8c721e6e",
+                          "id": "92368f63305f",
                           "text": "Web Crawler",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler",
                           "tag": "",
@@ -92012,7 +92510,7 @@
                           "difficulty": null
                         },
                         {
-                          "id": "df6f00fbe3e9",
+                          "id": "a36f766b1c26",
                           "text": "Design a Web Crawler (full worked solution)",
                           "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md",
                           "tag": "",
@@ -92022,7 +92520,7 @@
                       ]
                     },
                     {
-                      "id": "84c7252ef5d6",
+                      "id": "0753449f1bdc",
                       "text": "Design Google Search (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92030,7 +92528,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "9388f98ca4a7",
+                      "id": "bf8ab5b971f1",
                       "text": "Ad Click Aggregator",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator",
                       "tag": "",
@@ -92038,7 +92536,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "a3fdf6deb734",
+                          "id": "d5dfd25c91d8",
                           "text": "Design Ad Click Event Aggregation (yet to be linked)",
                           "url": null,
                           "tag": "",
@@ -92048,7 +92546,7 @@
                       ]
                     },
                     {
-                      "id": "1ee1affbf6e9",
+                      "id": "71349564d69e",
                       "text": "FB Post Search",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-post-search",
                       "tag": "",
@@ -92056,24 +92554,32 @@
                       "difficulty": null
                     },
                     {
-                      "id": "fefb9697a546",
+                      "id": "cb198d673eb1",
                       "text": "Design News Aggregator (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
                       "difficulty": null
+                    },
+                    {
+                      "id": "aff7e44d0b2a",
+                      "text": "Design a Price Tracking Service (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
                     }
                   ],
-                  "id": "ec4f62ccdc5c"
+                  "id": "65ab2b573c1b"
                 }
               ],
-              "id": "87324869c38b"
+              "id": "d3ffc5f6157b"
             }
           ],
-          "id": "d818af6efa4d"
+          "id": "f1a93971e8ed"
         },
         {
-          "title": "Part 17: Case Studies -- E-Commerce, Ticketing & Booking",
+          "title": "Part 16: Case Studies -- E-Commerce, Ticketing & Booking",
           "groups": [
             {
               "title": null,
@@ -92082,7 +92588,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "759d66c5ca16",
+                      "id": "06dc60c55a81",
                       "text": "Hotel Reservation System",
                       "url": "https://bytebytego.com/courses/system-design-interview/hotel-reservation-system",
                       "tag": "",
@@ -92090,7 +92596,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "313bc992d9d2",
+                      "id": "a9d6bea027ba",
                       "text": "Ticketmaster",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster",
                       "tag": "",
@@ -92098,7 +92604,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "114bea68d26c",
+                      "id": "daa41c8442d6",
                       "text": "Design Amazon's Sales Ranking by Category",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md",
                       "tag": "",
@@ -92106,17 +92612,25 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "fb103b7bf1d9",
+                          "id": "5e22a9d0e5ad",
                           "text": "Design Amazon (yet to be linked)",
                           "url": null,
                           "tag": "",
                           "subtag": "AlgoMaster",
                           "difficulty": null
+                        },
+                        {
+                          "id": "156dca9b7a8f",
+                          "text": "Amazon System Design Mock Interview (with Senior SWE)",
+                          "url": "https://www.youtube.com/watch?v=i_RCwKflp3I",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
                         }
                       ]
                     },
                     {
-                      "id": "38aeeda714d0",
+                      "id": "4bb3d6973eac",
                       "text": "Design Amazon Shopping Cart (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92124,7 +92638,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "5931c55474b3",
+                      "id": "ed059c0f0d7b",
                       "text": "Design Shopify (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92132,7 +92646,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "982b7fb1d878",
+                      "id": "ec2120bf4858",
                       "text": "Design Flash Sale (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92140,7 +92654,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ed6b6e7712fe",
+                      "id": "794efc9eba1d",
                       "text": "Design Online Auction System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92148,7 +92662,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "0bb45f4d1710",
+                      "id": "579923b0d33c",
                       "text": "Design Movie Booking System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92156,16 +92670,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "6858d539be37"
+                  "id": "4b393829fe6a"
                 }
               ],
-              "id": "c35e3fe35af4"
+              "id": "0de79c27f528"
             }
           ],
-          "id": "f69c54d2d6b1"
+          "id": "b3e66b3f7d1b"
         },
         {
-          "title": "Part 18: Case Studies -- Payments & Financial Systems",
+          "title": "Part 17: Case Studies -- Payments & Financial Systems",
           "groups": [
             {
               "title": null,
@@ -92174,7 +92688,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "2c38555b23cd",
+                      "id": "d2aeb66ad4ce",
                       "text": "Design Mint.com",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/mint/README.md",
                       "tag": "",
@@ -92182,7 +92696,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "9fffa7cf4476",
+                      "id": "cfbbe892af80",
                       "text": "Design Payment System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92190,7 +92704,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "86e177939af0",
+                      "id": "f7486aedbc10",
                       "text": "Design Stripe Payment Gateway (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92198,7 +92712,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "e65366ffd974",
+                      "id": "2e580fb6dd08",
                       "text": "Design Digital Wallet (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92206,7 +92720,25 @@
                       "difficulty": null
                     },
                     {
-                      "id": "85171a790e50",
+                      "id": "5705bf19d0a9",
+                      "text": "Design Robinhood (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "830eae00ce61",
+                          "text": "System Design Interview: Design Robinhood (with ex-Google SWE)",
+                          "url": "https://www.youtube.com/watch?v=Zvr-ffhvw0Y",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
+                    },
+                    {
+                      "id": "20febbcb8686",
                       "text": "Design Stock Exchange (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92214,16 +92746,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "3f87e7d22b68"
+                  "id": "1ba0639aa5da"
                 }
               ],
-              "id": "66406dd38853"
+              "id": "137764f080e5"
             }
           ],
-          "id": "b984ae8600cb"
+          "id": "547afb457311"
         },
         {
-          "title": "Part 19: Case Studies -- Infrastructure-as-a-Product & Counting Systems",
+          "title": "Part 18: Case Studies -- Infrastructure-as-a-Product & Counting Systems",
           "groups": [
             {
               "title": null,
@@ -92232,7 +92764,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "a299473404b3",
+                      "id": "503730b3828b",
                       "text": "Design a Distributed Message Queue (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92240,7 +92772,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "39f1a53b0866",
+                      "id": "ef47810600a3",
                       "text": "Design a Metrics & Monitoring System (like Datadog/Prometheus) (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92248,7 +92780,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "bdad8981fedb",
+                      "id": "b5666fe6f420",
                       "text": "Design a Distributed Email Service (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92256,15 +92788,15 @@
                       "difficulty": null
                     },
                     {
-                      "id": "740a69a09e2b",
-                      "text": "Design a Notification System (full case study, not just the building block) (yet to be linked)",
-                      "url": null,
+                      "id": "8c91a0491967",
+                      "text": "Design a Notification System / Service",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-notification-service",
                       "tag": "",
-                      "subtag": "ByteByteGo",
+                      "subtag": "AlgoMaster",
                       "difficulty": null
                     },
                     {
-                      "id": "a63c8e9ed93f",
+                      "id": "8c46e4746b23",
                       "text": "Design a Job Scheduler (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92272,7 +92804,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "99798e461fe8",
+                      "id": "bf9918c1422f",
                       "text": "Design a CI/CD Pipeline / Code Deployment System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92280,7 +92812,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "7ec4ce8c02ff",
+                      "id": "0df97b720b18",
                       "text": "Real-time Gaming Leaderboard",
                       "url": "https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard",
                       "tag": "",
@@ -92288,7 +92820,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "e2165cebc607",
+                      "id": "bb6fe28aee84",
                       "text": "YouTube Top K",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/top-k",
                       "tag": "",
@@ -92296,7 +92828,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "d3364182804c",
+                      "id": "cbeead102573",
                       "text": "Design Likes Counting System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92304,16 +92836,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "36e7314b8d18"
+                  "id": "cf9a61f68c9a"
                 }
               ],
-              "id": "ab2a189018ee"
+              "id": "e6b0dc7fdce2"
             }
           ],
-          "id": "efed31428852"
+          "id": "248e3bb1f1b7"
         },
         {
-          "title": "Part 20: Case Studies -- Specialized Systems",
+          "title": "Part 19: Case Studies -- Specialized Systems",
           "groups": [
             {
               "title": null,
@@ -92322,7 +92854,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "5dd3440248f4",
+                      "id": "ed49e44d003e",
                       "text": "LeetCode",
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode",
                       "tag": "",
@@ -92330,7 +92862,7 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "de6f09782395",
+                          "id": "43e9e33d2d2c",
                           "text": "Design LeetCode (yet to be linked)",
                           "url": null,
                           "tag": "",
@@ -92340,7 +92872,7 @@
                       ]
                     },
                     {
-                      "id": "65cecb92d8b5",
+                      "id": "c9f9493fca7c",
                       "text": "Design Calendar System (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92348,7 +92880,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "51a390fc2b0b",
+                      "id": "ed2a79b33593",
                       "text": "Design Online Chess (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92356,7 +92888,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "30f63ab1b9ae",
+                      "id": "f4d890a0a066",
                       "text": "Design ChatGPT (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92364,15 +92896,25 @@
                       "difficulty": null
                     },
                     {
-                      "id": "333d69542cce",
+                      "id": "a4e0150ef431",
                       "text": "Design Google Ads (yet to be linked)",
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "2bf250872d4d",
+                          "text": "Google / Meta System Design Interview: \"Design Google Ads\" (with ex-Meta Staff SWE)",
+                          "url": "https://www.youtube.com/watch?v=efaBYHvNvbA",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
-                      "id": "247a637cb703",
+                      "id": "5022fbd2025d",
                       "text": "Design Amazon Lambda (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92380,7 +92922,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b70fa33b98cc",
+                      "id": "5bf59ea96966",
                       "text": "Design Typeahead/Autocomplete (yet to be linked)",
                       "url": null,
                       "tag": "",
@@ -92388,16 +92930,16 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "293b39cc1939"
+                  "id": "7a6eb13d28b7"
                 }
               ],
-              "id": "02123c84544b"
+              "id": "10d278a220f6"
             }
           ],
-          "id": "07ddf2db6e6c"
+          "id": "916531a2e791"
         },
         {
-          "title": "Part 21: Object-Oriented / Low-Level Design",
+          "title": "Part 20: Object-Oriented / Low-Level Design",
           "groups": [
             {
               "title": null,
@@ -92406,7 +92948,7 @@
                   "title": null,
                   "items": [
                     {
-                      "id": "55481636b6ca",
+                      "id": "19d6d936fc1a",
                       "text": "Design a Hash Map",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.py",
                       "tag": "",
@@ -92414,7 +92956,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "03eb92335e7e",
+                      "id": "7b8c2b34c2d3",
                       "text": "Design a Least Recently Used Cache",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/lru_cache/lru_cache.py",
                       "tag": "",
@@ -92422,7 +92964,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "dc17f0e9724c",
+                      "id": "8e55ba317ce4",
                       "text": "Design a Call Center",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/call_center/call_center.py",
                       "tag": "",
@@ -92430,7 +92972,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b40123d6ae5c",
+                      "id": "029c11618345",
                       "text": "Design a Deck of Cards",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/deck_of_cards/deck_of_cards.py",
                       "tag": "",
@@ -92438,7 +92980,7 @@
                       "difficulty": null
                     },
                     {
-                      "id": "7332367a52a2",
+                      "id": "68ac2f7858c6",
                       "text": "Design a Parking Lot",
                       "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.py",
                       "tag": "",
@@ -92446,13 +92988,13 @@
                       "difficulty": null
                     }
                   ],
-                  "id": "e148317d443d"
+                  "id": "e7e1aaf03de1"
                 }
               ],
-              "id": "17ca31bc4e18"
+              "id": "e3aa0a5d7d8a"
             }
           ],
-          "id": "a3b978231c50"
+          "id": "45a36ca8f400"
         },
         {
           "title": "General References",
