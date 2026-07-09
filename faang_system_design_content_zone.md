@@ -206,7 +206,8 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 5. [Bulkhead](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead) {roadmap.sh}
 6. [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) {roadmap.sh}
 7. [Event Sourcing](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing) {roadmap.sh}
-8. Saga / [Choreography Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) {roadmap.sh}
+8. [Saga Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga) {roadmap.sh}
+   - [Choreography Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) {roadmap.sh}
 9. Removing Single Points of Failure (yet to be linked) {Hello Interview}
 10. Handling Failures / Failure Detection (yet to be linked) {Hello Interview}
 11. Timeouts (yet to be linked) {roadmap.sh}
