@@ -79632,7 +79632,7 @@
       "title": "SQL Mastery",
       "description": "This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked. Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage: working through this sheet should leave nothing on either platform's free tier looking unfamiliar. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.",
       "category": "sql",
-      "totalItems": 237,
+      "totalItems": 252,
       "sections": [
         {
           "title": "SQL Basics",
@@ -79876,6 +79876,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "8196bab5aebb",
+                      "text": "Customer Placing the Largest Number of Orders",
+                      "url": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6a1eb22ee596",
+                      "text": "Top Travellers",
+                      "url": "https://leetcode.com/problems/top-travellers/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "4e8e75874074",
                       "text": "Nth Highest Salary",
                       "url": "https://leetcode.com/problems/nth-highest-salary/",
@@ -80065,6 +80081,22 @@
                       "id": "9e3386b79a3c",
                       "text": "What Type of Triangle (HackerRank -- string classification via CASE)",
                       "url": "https://www.hackerrank.com/challenges/what-type-of-triangle/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cec374d037e6",
+                      "text": "Find Valid Emails",
+                      "url": "https://leetcode.com/problems/find-valid-emails/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "401d4591b9d3",
+                      "text": "Find Products with Valid Serial Numbers",
+                      "url": "https://leetcode.com/problems/find-products-with-valid-serial-numbers/",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80324,6 +80356,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "36b8dd37cbe9",
+                      "text": "Swap Sex of Employees",
+                      "url": "https://leetcode.com/problems/swap-sex-of-employees/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "db490d94938c",
                       "text": "Count Salary Categories",
                       "url": "https://leetcode.com/problems/count-salary-categories/",
@@ -80375,6 +80415,14 @@
                       "id": "165d8bd7e717",
                       "text": "Advertiser Status (DataLemur -- multi-condition CASE-derived status)",
                       "url": "https://datalemur.com/questions/updated-status",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9a9b69dac8f2",
+                      "text": "Capital Gain/Loss",
+                      "url": "https://leetcode.com/problems/capital-gainloss/",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80478,6 +80526,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "7b60e6cf3db0",
+                      "text": "The Latest Login in 2020",
+                      "url": "https://leetcode.com/problems/the-latest-login-in-2020/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "8ae287e4e8dd",
                       "text": "Percentage of Users Attended a Contest",
                       "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
@@ -80532,6 +80588,22 @@
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
+                    },
+                    {
+                      "id": "066be0624f95",
+                      "text": "Biggest Single Number",
+                      "url": "https://leetcode.com/problems/biggest-single-number/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5db7a0a9711f",
+                      "text": "Investments in 2016",
+                      "url": "https://leetcode.com/problems/investments-in-2016/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
                     }
                   ],
                   "id": "a9fcc69d7593"
@@ -80559,6 +80631,14 @@
                       "id": "81bed12620ab",
                       "text": "Number Of Units Per Nationality (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10156-number-of-units-per-nationality",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6e6fb790b664",
+                      "text": "Daily Leads and Partners",
+                      "url": "https://leetcode.com/problems/daily-leads-and-partners/",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -80735,6 +80815,14 @@
                       "id": "eae76241fd08",
                       "text": "Order Details (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9913-order-details",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eef8fafa1c05",
+                      "text": "Project Employees I",
+                      "url": "https://leetcode.com/problems/project-employees-i/",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -81166,6 +81254,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "59c008d23b00",
+                      "text": "Product Price at a Given Date",
+                      "url": "https://leetcode.com/problems/product-price-at-a-given-date/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "b8a07fa62f3f",
                       "text": "Challenges (HackerRank -- correlated subquery with a tie-breaking rule)",
                       "url": "https://www.hackerrank.com/challenges/challenges/problem",
@@ -81197,6 +81293,14 @@
                       "id": "6c68ff813994",
                       "text": "Data Science Skills (DataLemur -- candidates who have every required skill)",
                       "url": "https://datalemur.com/questions/matching-skills",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8b1477a42f79",
+                      "text": "Customers Who Bought All Products",
+                      "url": "https://leetcode.com/problems/customers-who-bought-all-products/",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -81257,6 +81361,14 @@
                       "id": "be8c955831f3",
                       "text": "Number of violations (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9728-inspections-that-resulted-in-violations",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c819715eda3f",
+                      "text": "Find Books with No Available Copies",
+                      "url": "https://leetcode.com/problems/find-books-with-no-available-copies/",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -81847,6 +81959,14 @@
                       "id": "95589b6f6fa2",
                       "text": "Card Launch Success (DataLemur -- rate calculation gated by a time window)",
                       "url": "https://datalemur.com/questions/card-launch-success",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "029b8fa202cb",
+                      "text": "Trips and Users (the classic multi-join banned-users ratio problem)",
+                      "url": "https://leetcode.com/problems/trips-and-users/",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null

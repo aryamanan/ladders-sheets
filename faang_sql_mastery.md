@@ -69,6 +69,8 @@ Foundation:
 1. [Second Highest Salary](https://leetcode.com/problems/second-highest-salary/)
 2. [Workers With The Highest Salaries (StrataScratch)](https://platform.stratascratch.com/coding/10353-workers-with-the-highest-salaries)
 3. [Top Cool Votes (StrataScratch)](https://platform.stratascratch.com/coding/10060-top-cool-votes)
+4. [Customer Placing the Largest Number of Orders](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/)
+5. [Top Travellers](https://leetcode.com/problems/top-travellers/)
 
 Reinforcement:
 
@@ -120,6 +122,8 @@ Reinforcement:
 
 1. [Find Users With Valid E-Mails](https://leetcode.com/problems/find-users-with-valid-e-mails/)
 2. [What Type of Triangle (HackerRank -- string classification via CASE)](https://www.hackerrank.com/challenges/what-type-of-triangle/problem)
+3. [Find Valid Emails](https://leetcode.com/problems/find-valid-emails/)
+4. [Find Products with Valid Serial Numbers](https://leetcode.com/problems/find-products-with-valid-serial-numbers/)
 3. [Count Occurrences Of Words In Drafts (StrataScratch)](https://platform.stratascratch.com/coding/9817-find-the-number-of-times-each-word-appears-in-drafts)
 
 Boss:
@@ -195,6 +199,7 @@ Foundation:
 1. [Triangle Judgement](https://leetcode.com/problems/triangle-judgement/)
 2. [Calculate Samantha's and Lisa's total sales revenue (StrataScratch)](https://platform.stratascratch.com/coding/10127-calculate-samanthas-and-lisas-total-sales-revenue)
 3. [Laptop vs. Mobile Viewership (DataLemur)](https://datalemur.com/questions/laptop-mobile-viewership)
+4. [Swap Sex of Employees](https://leetcode.com/problems/swap-sex-of-employees/)
 
 Reinforcement:
 
@@ -208,6 +213,7 @@ Boss:
 1. [Exchange Seats](https://leetcode.com/problems/exchange-seats/)
 2. [Titanic Survivors and Non-Survivors (StrataScratch -- CASE WHEN pivot into columns)](https://platform.stratascratch.com/coding/9881-make-a-report-showing-the-number-of-survivors-and-non-survivors-by-passenger-class)
 3. [Advertiser Status (DataLemur -- multi-condition CASE-derived status)](https://datalemur.com/questions/updated-status)
+4. [Capital Gain/Loss](https://leetcode.com/problems/capital-gainloss/)
 
 #### Three-Valued Logic Gotchas (NULL in WHERE/JOIN/NOT IN)
 
@@ -238,6 +244,7 @@ Foundation:
 2. [Revising Aggregations - The Count Function (HackerRank)](https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem)
 3. [Revising Aggregations - Sum (HackerRank)](https://www.hackerrank.com/challenges/revising-aggregations-sum/problem)
 4. [Total Cost Of Orders (StrataScratch)](https://platform.stratascratch.com/coding/10183-total-cost-of-orders)
+5. [The Latest Login in 2020](https://leetcode.com/problems/the-latest-login-in-2020/)
 
 Reinforcement:
 
@@ -251,6 +258,8 @@ Boss:
 
 1. [Department Top Three Salaries](https://leetcode.com/problems/department-top-three-salaries/)
 2. [The Blunder (HackerRank -- aggregate comparison against a formula-corrupted column)](https://www.hackerrank.com/challenges/the-blunder/problem)
+3. [Biggest Single Number](https://leetcode.com/problems/biggest-single-number/)
+4. [Investments in 2016](https://leetcode.com/problems/investments-in-2016/)
 
 #### GROUP BY Multiple Columns
 
@@ -260,6 +269,7 @@ Foundation:
 
 1. [Actors and Directors Who Cooperated At Least Three Times](https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/)
 2. [Number Of Units Per Nationality (StrataScratch)](https://platform.stratascratch.com/coding/10156-number-of-units-per-nationality)
+3. [Daily Leads and Partners](https://leetcode.com/problems/daily-leads-and-partners/)
 
 Reinforcement:
 
@@ -307,6 +317,7 @@ Foundation:
 
 1. [Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i/)
 2. [Order Details (StrataScratch)](https://platform.stratascratch.com/coding/9913-order-details)
+3. [Project Employees I](https://leetcode.com/problems/project-employees-i/)
 
 Reinforcement:
 
@@ -422,6 +433,7 @@ Foundation:
 Reinforcement:
 
 1. [Contest Leaderboard (HackerRank)](https://www.hackerrank.com/challenges/contest-leaderboard/problem)
+2. [Product Price at a Given Date](https://leetcode.com/problems/product-price-at-a-given-date/)
 
 Boss:
 
@@ -436,6 +448,7 @@ Boss:
 Foundation:
 
 1. [Data Science Skills (DataLemur -- candidates who have every required skill)](https://datalemur.com/questions/matching-skills)
+2. [Customers Who Bought All Products](https://leetcode.com/problems/customers-who-bought-all-products/)
 
 Boss:
 
@@ -460,6 +473,7 @@ Boss:
 Foundation:
 
 1. [Number of violations (StrataScratch)](https://platform.stratascratch.com/coding/9728-inspections-that-resulted-in-violations)
+2. [Find Books with No Available Copies](https://leetcode.com/problems/find-books-with-no-available-copies/)
 
 Boss:
 
@@ -664,3 +678,4 @@ Boss:
 
 1. [Share of Active Users (StrataScratch)](https://platform.stratascratch.com/coding/2005-share-of-active-users)
 2. [Card Launch Success (DataLemur -- rate calculation gated by a time window)](https://datalemur.com/questions/card-launch-success)
+3. [Trips and Users (the classic multi-join banned-users ratio problem)](https://leetcode.com/problems/trips-and-users/)
