@@ -79630,9 +79630,9 @@
       "id": "faang-sql-mastery",
       "file": "faang_sql_mastery.md",
       "title": "SQL Mastery",
-      "description": "This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set and HackerRank's SQL domain -- every problem link was checked to make sure it's real, free, and not premium-locked. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.",
+      "description": "This is the SQL counterpart to the DSA sheets: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked. Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage: working through this sheet should leave nothing on either platform's free tier looking unfamiliar. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.",
       "category": "sql",
-      "totalItems": 121,
+      "totalItems": 237,
       "sections": [
         {
           "title": "SQL Basics",
@@ -79676,6 +79676,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "b815a7df7210",
+                      "text": "Japanese Cities' Names (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/japanese-cities-name/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "58faa78b355d",
                       "text": "Weather Observation Station 1 (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
@@ -79692,9 +79700,41 @@
                       "difficulty": null
                     },
                     {
+                      "id": "9bb8164b6bc6",
+                      "text": "Revising the Select Query I (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/revising-the-select-query/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "527d616fd8bf",
+                      "text": "Revising the Select Query II (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/revising-the-select-query-2/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c65bc47b20d0",
+                      "text": "Salary of Employees (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/salary-of-employees/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "8a49a7b86949",
                       "text": "Higher Than 75 Marks (HackerRank -- WHERE + ORDER BY combined)",
                       "url": "https://www.hackerrank.com/challenges/more-than-75-marks/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0c50132b2dcb",
+                      "text": "Name of Employees (HackerRank -- string + ORDER BY)",
+                      "url": "https://www.hackerrank.com/challenges/name-of-employees/problem",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -79750,6 +79790,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "a1c59404f6a9",
+                      "text": "Finding Updated Records (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10299-finding-updated-records",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "3fea40122b09",
                       "text": "Invalid Tweets",
                       "url": "https://leetcode.com/problems/invalid-tweets/",
@@ -79758,9 +79806,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "feed94c27164",
+                      "text": "Find all athletes who were older than 40 years when they won either Bronze or Silver medals (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9937-find-all-athletes-who-were-older-than-40-years-when-they-won-either-bronze-or-silver-medals",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c279506c6775",
+                      "text": "April Admin Employees (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9845-find-the-number-of-employees-working-in-the-admin-department",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "fce3978574dd",
                       "text": "Not Boring Movies",
                       "url": "https://leetcode.com/problems/not-boring-movies/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7cbe6003691b",
+                      "text": "Risky Projects (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10304-risky-projects",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -79788,6 +79860,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "43abbf296545",
+                      "text": "Workers With The Highest Salaries (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10353-workers-with-the-highest-salaries",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d361b8ae2b3d",
+                      "text": "Top Cool Votes (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10060-top-cool-votes",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "4e8e75874074",
                       "text": "Nth Highest Salary",
                       "url": "https://leetcode.com/problems/nth-highest-salary/",
@@ -79804,9 +79892,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "99b7aec340bf",
+                      "text": "Best Selling Item (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10172-best-selling-item",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5e6b7de337e3",
+                      "text": "Top Businesses With Most Reviews (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10048-top-businesses-with-most-reviews",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "230cace865fa",
                       "text": "Rank Scores",
                       "url": "https://leetcode.com/problems/rank-scores/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "af0899547008",
+                      "text": "Hour Of Highest Gas Expense (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10005-hour-of-highest-gas-expense",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -79829,6 +79941,14 @@
                       "id": "d877ecb32db1",
                       "text": "Duplicate Emails",
                       "url": "https://leetcode.com/problems/duplicate-emails/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6e6c82a62c72",
+                      "text": "Unique Users Per Client Per Month (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2024-unique-users-per-client-per-month",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -79858,9 +79978,25 @@
                       "difficulty": null
                     },
                     {
+                      "id": "ae790d51fde6",
+                      "text": "Duplicate Job Listings (DataLemur)",
+                      "url": "https://datalemur.com/questions/duplicate-job-listings",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "264bdb83ed01",
                       "text": "Consecutive Numbers",
                       "url": "https://leetcode.com/problems/consecutive-numbers/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f013bca78cc7",
+                      "text": "Employees With the Same Salary (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9856-find-employees-with-the-same-salary",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -79902,6 +80038,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "79c1e1ea3f46",
+                      "text": "First Names With Six Letters Ending in 'h' (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9842-find-all-workers-whose-first-name-contains-6-letters-and-also-ends-with-the-letter-h",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e2c4e5be6f32",
+                      "text": "Find drafts which contains the word 'optimism' (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9805-find-drafts-which-contains-the-word-optimism",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "99c32adff398",
                       "text": "Find Users With Valid E-Mails",
                       "url": "https://leetcode.com/problems/find-users-with-valid-e-mails/",
@@ -79910,9 +80062,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "9e3386b79a3c",
+                      "text": "What Type of Triangle (HackerRank -- string classification via CASE)",
+                      "url": "https://www.hackerrank.com/challenges/what-type-of-triangle/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f8115a7d3361",
+                      "text": "Count Occurrences Of Words In Drafts (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9817-find-the-number-of-times-each-word-appears-in-drafts",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "1e94d19fdc2b",
                       "text": "Calculate Special Bonus",
                       "url": "https://leetcode.com/problems/calculate-special-bonus/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0706fe184e8f",
+                      "text": "Counting Instances in Text (StrataScratch -- text/word frequency, hard)",
+                      "url": "https://platform.stratascratch.com/coding/9814-counting-instances-in-text",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -79940,6 +80116,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "4979beda851a",
+                      "text": "Churro Activity Date (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9688-churro-activity-date",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "cabcc22d414d",
                       "text": "User Activity for the Past 30 Days I",
                       "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-i/",
@@ -79951,6 +80135,14 @@
                       "id": "b55b822b16b8",
                       "text": "Average Time of Process per Machine",
                       "url": "https://leetcode.com/problems/average-time-of-process-per-machine/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7cf8da247a30",
+                      "text": "Average Post Hiatus Part 1 (DataLemur -- LAG for gap between a user's posts)",
+                      "url": "https://datalemur.com/questions/sql-average-post-hiatus-1",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -79986,6 +80178,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "d799909ca4b2",
+                      "text": "Number of Shipments Per Month (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2056-number-of-shipments-per-month",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "f9ad03ed6c13",
                       "text": "Monthly Transactions I",
                       "url": "https://leetcode.com/problems/monthly-transactions-i/",
@@ -79997,6 +80197,14 @@
                       "id": "da3d7a4d6a3a",
                       "text": "Immediate Food Delivery II",
                       "url": "https://leetcode.com/problems/immediate-food-delivery-ii/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6fbb6e389fb7",
+                      "text": "Average Review Ratings (DataLemur -- monthly bucketing + AVG)",
+                      "url": "https://datalemur.com/questions/sql-avg-review-ratings",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80038,6 +80246,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "fa1c6b74d55d",
+                      "text": "Contact Information Completeness (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2169-contact-information-completeness",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "c2f6f15a8643",
                       "text": "Replace Employee ID With The Unique Identifier",
                       "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
@@ -80049,6 +80265,14 @@
                       "id": "fab5423081a9",
                       "text": "Confirmation Rate",
                       "url": "https://leetcode.com/problems/confirmation-rate/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "38bdf489ebe2",
+                      "text": "Users Missing Phone Numbers (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2168-users-missing-phone-numbers",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80084,6 +80308,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "2f7dcd7755f3",
+                      "text": "Calculate Samantha's and Lisa's total sales revenue (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10127-calculate-samanthas-and-lisas-total-sales-revenue",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b6f185da8e1b",
+                      "text": "Laptop vs. Mobile Viewership (DataLemur)",
+                      "url": "https://datalemur.com/questions/laptop-mobile-viewership",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "db490d94938c",
                       "text": "Count Salary Categories",
                       "url": "https://leetcode.com/problems/count-salary-categories/",
@@ -80100,9 +80340,41 @@
                       "difficulty": null
                     },
                     {
+                      "id": "4f489fed5475",
+                      "text": "Maximum of Two Numbers (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2101-maximum-of-two-numbers",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3bce3e08cf03",
+                      "text": "Swapped Food Delivery (DataLemur -- CASE-driven swap logic)",
+                      "url": "https://datalemur.com/questions/sql-swapped-food-delivery",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "e3882012b031",
                       "text": "Exchange Seats",
                       "url": "https://leetcode.com/problems/exchange-seats/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e15d2cd3131d",
+                      "text": "Titanic Survivors and Non-Survivors (StrataScratch -- CASE WHEN pivot into columns)",
+                      "url": "https://platform.stratascratch.com/coding/9881-make-a-report-showing-the-number-of-survivors-and-non-survivors-by-passenger-class",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "165d8bd7e717",
+                      "text": "Advertiser Status (DataLemur -- multi-condition CASE-derived status)",
+                      "url": "https://datalemur.com/questions/updated-status",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80182,6 +80454,30 @@
                       "difficulty": null
                     },
                     {
+                      "id": "fa662e906b96",
+                      "text": "Revising Aggregations - The Count Function (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fc184171589c",
+                      "text": "Revising Aggregations - Sum (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/revising-aggregations-sum/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fdd7c056fa44",
+                      "text": "Total Cost Of Orders (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10183-total-cost-of-orders",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "8ae287e4e8dd",
                       "text": "Percentage of Users Attended a Contest",
                       "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
@@ -80198,9 +80494,41 @@
                       "difficulty": null
                     },
                     {
+                      "id": "8c2f66cb96a6",
+                      "text": "Revising Aggregations - The Average Function (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-average-function/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "12715e662acc",
+                      "text": "Average Salaries (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9917-average-salaries",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "444e3b84f745",
+                      "text": "IBM db2 Product Analytics (DataLemur)",
+                      "url": "https://datalemur.com/questions/sql-ibm-db2-product-analytics",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "57f26ec2cec1",
                       "text": "Department Top Three Salaries",
                       "url": "https://leetcode.com/problems/department-top-three-salaries/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a952b378e818",
+                      "text": "The Blunder (HackerRank -- aggregate comparison against a formula-corrupted column)",
+                      "url": "https://www.hackerrank.com/challenges/the-blunder/problem",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80228,6 +80556,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "81bed12620ab",
+                      "text": "Number Of Units Per Nationality (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10156-number-of-units-per-nationality",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "4206ad10b6f8",
                       "text": "Market Analysis I",
                       "url": "https://leetcode.com/problems/market-analysis-i/",
@@ -80244,9 +80580,41 @@
                       "difficulty": null
                     },
                     {
+                      "id": "1f29ef26decd",
+                      "text": "Income By Title and Gender (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10077-income-by-title-and-gender",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "30a35db1d897",
+                      "text": "Find the number of inspections for each risk category by inspection type (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10130-find-the-number-of-inspections-for-each-risk-category-by-inspection-type",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c96a8c772353",
+                      "text": "Histogram of Users and Purchases (DataLemur)",
+                      "url": "https://datalemur.com/questions/histogram-users-purchases",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "3a034ed5b6fa",
                       "text": "Friend Requests II: Who Has the Most Friends",
                       "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4b0d6787ed53",
+                      "text": "Department Workforce Analysis (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2170-department-workforce-analysis",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80274,6 +80642,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "27fe3ac3262d",
+                      "text": "Departments With 5 Employees (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9911-departments-with-5-employees",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "6a9364a78050",
                       "text": "Managers with at Least 5 Direct Reports",
                       "url": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/",
@@ -80293,6 +80669,22 @@
                       "id": "50e449fb895b",
                       "text": "Bank Account Summary II",
                       "url": "https://leetcode.com/problems/bank-account-summary-ii/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8ae80f04da02",
+                      "text": "Customers with Large Orders (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2172-customers-with-large-orders",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "23e308308b0e",
+                      "text": "Teams Power Users (DataLemur)",
+                      "url": "https://datalemur.com/questions/teams-power-users",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80340,6 +80732,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "eae76241fd08",
+                      "text": "Order Details (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9913-order-details",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "7ebba44e0554",
                       "text": "Average Selling Price",
                       "url": "https://leetcode.com/problems/average-selling-price/",
@@ -80356,9 +80756,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "3b611131c2bf",
+                      "text": "Cities With Completed Trades (DataLemur)",
+                      "url": "https://datalemur.com/questions/completed-trades",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a373877e6fcf",
+                      "text": "Find all Lyft rides which happened on rainy days before noon (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10004-find-all-lyft-rides-which-happened-on-rainy-days-before-noon",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "1b5e44cc9d69",
                       "text": "Tree Node",
                       "url": "https://leetcode.com/problems/tree-node/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "de4af3c3328d",
+                      "text": "High Earners in Support Departments (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2167-high-earners-in-support-departments",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80386,6 +80810,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "37cba5348b64",
+                      "text": "Page With No Likes (DataLemur)",
+                      "url": "https://datalemur.com/questions/sql-page-with-no-likes",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "38fb395c178b",
                       "text": "Customer Who Visited but Did Not Make Any Transactions",
                       "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
@@ -80397,6 +80829,14 @@
                       "id": "1d5eaaad0079",
                       "text": "Employees With Missing Information",
                       "url": "https://leetcode.com/problems/employees-with-missing-information/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "710db3ab0761",
+                      "text": "Unfinished Parts (DataLemur)",
+                      "url": "https://datalemur.com/questions/tesla-unfinished-parts",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80446,6 +80886,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "73f99466d460",
+                      "text": "Well Paid Employees (DataLemur -- self-join to a manager's salary)",
+                      "url": "https://datalemur.com/questions/sql-well-paid-employees",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d3425d3eae73",
+                      "text": "Employee and Manager Salaries (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9894-employee-and-manager-salaries",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "2e9d845ac6fc",
                       "text": "Human Traffic of Stadium",
                       "url": "https://leetcode.com/problems/human-traffic-of-stadium/",
@@ -80454,9 +80910,57 @@
                       "difficulty": null
                     },
                     {
+                      "id": "85c3da3eac9d",
+                      "text": "Matching Similar Hosts and Guests (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10078-find-matching-hosts-and-guests-in-a-way-that-they-are-both-of-the-same-gender-and-nationality",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a38f4c5485e5",
+                      "text": "Highest Target Under Manager (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9905-highest-target-under-manager",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e164b41ea1a5",
+                      "text": "Cards Issued Difference (DataLemur -- self-join comparing two card versions)",
+                      "url": "https://datalemur.com/questions/cards-issued-difference",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "d71e99331795",
                       "text": "Binary Tree Nodes (HackerRank -- self-referencing parent/child table)",
                       "url": "https://www.hackerrank.com/challenges/binary-search-tree-1/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "420c65c619e8",
+                      "text": "The Company (HackerRank -- 3-level self-referencing hierarchy)",
+                      "url": "https://www.hackerrank.com/challenges/the-company/problem",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8ca90ab9d1df",
+                      "text": "3-Topping Pizzas (DataLemur -- 3-way self-join for combinations)",
+                      "url": "https://datalemur.com/questions/pizzas-topping-cost",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "04eb142914e4",
+                      "text": "Repeated Payments (DataLemur -- self-join within a date window)",
+                      "url": "https://datalemur.com/questions/repeated-payments",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80492,6 +80996,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "b62d84748205",
+                      "text": "Asian Population (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/asian-population/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "0faed3237e23",
                       "text": "Interviews (HackerRank -- 4-table join)",
                       "url": "https://www.hackerrank.com/challenges/interviews/problem",
@@ -80500,9 +81012,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "05ba4cd9d418",
+                      "text": "Average Population of Each Continent (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/average-population-of-each-continent/problem",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a443466f3166",
+                      "text": "Meta/Facebook Matching Users Pairs (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10085-facebook-matching-users-pairs",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "3e6880f7d0b4",
                       "text": "Restaurant Growth",
                       "url": "https://leetcode.com/problems/restaurant-growth/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5cce453bdbda",
+                      "text": "The Report (HackerRank -- multi-table join with grade-based CASE bucketing)",
+                      "url": "https://www.hackerrank.com/challenges/the-report/problem",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80544,6 +81080,14 @@
                       "difficulty": null
                     },
                     {
+                      "id": "002568e100ed",
+                      "text": "Most Profitable Financial Company (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9663-find-the-most-profitable-company-in-the-financial-sector-of-the-entire-world-along-with-its-continent",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "8153aa45e613",
                       "text": "The PADS (HackerRank -- subquery-built label per row)",
                       "url": "https://www.hackerrank.com/challenges/the-pads/problem",
@@ -80552,9 +81096,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "3c103099949a",
+                      "text": "Salary Less Than Twice The Average (StrataScratch -- WHERE against an aggregate subquery)",
+                      "url": "https://platform.stratascratch.com/coding/2110-salary-less-than-twice-the-average",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b783865570fa",
+                      "text": "Finding Purchases (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10553-finding-purchases",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "e1da7c03a740",
                       "text": "Find the Team Size",
                       "url": "https://leetcode.com/problems/find-the-team-size/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5bfc6e110954",
+                      "text": "Harry Potter and Wands (HackerRank -- subquery + multi-condition filtering)",
+                      "url": "https://www.hackerrank.com/challenges/harry-potter-and-wands/problem",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80577,6 +81145,14 @@
                       "id": "4cb24ce5cceb",
                       "text": "Top Competitors (HackerRank -- correlated count per contestant)",
                       "url": "https://www.hackerrank.com/challenges/full-score/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b01b3cbf7fdb",
+                      "text": "Finding User Purchases (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10322-finding-user-purchases",
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
@@ -80607,6 +81183,36 @@
               "title": "EXISTS / NOT EXISTS / IN / ANY / ALL",
               "subgroups": [
                 {
+                  "title": "Relational Division (\"Has ALL Of X\")",
+                  "items": [
+                    {
+                      "id": "ff0e51cbd684",
+                      "text": "Invariant: \"find entities that have every item in a set\" (all skills, all products) can't be done with a single equality check -- it's a `HAVING COUNT(DISTINCT matched_item) = (total items required)` pattern, or an aggregate-comparison subquery, not a simple WHERE filter.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6c68ff813994",
+                      "text": "Data Science Skills (DataLemur -- candidates who have every required skill)",
+                      "url": "https://datalemur.com/questions/matching-skills",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d21252891f48",
+                      "text": "Supercloud Customer (DataLemur -- customer who purchased every product)",
+                      "url": "https://datalemur.com/questions/supercloud-customer",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "c80c77bb9b92"
+                },
+                {
                   "title": "EXISTS vs IN for NULL-Safety",
                   "items": [
                     {
@@ -80614,6 +81220,14 @@
                       "text": "Invariant: `NOT IN` against a subquery that can produce even one NULL silently returns an empty result for the whole query (three-valued logic strikes again), while `NOT EXISTS` is immune because it only ever tests row existence, never compares against the NULL value itself.",
                       "url": null,
                       "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8d97cf9aec6b",
+                      "text": "Find all posts which were reacted to with a heart (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10087-find-all-posts-which-were-reacted-to-with-a-heart",
+                      "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
                     },
@@ -80636,6 +81250,14 @@
                       "text": "Invariant: \"find rows in A with no match in B\" is the same shape whether you write it as `NOT EXISTS`, `LEFT JOIN ... WHERE B.key IS NULL`, or `NOT IN` -- pick based on NULL-safety and the query planner, not because one is \"more correct.\"",
                       "url": null,
                       "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "be8c955831f3",
+                      "text": "Number of violations (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9728-inspections-that-resulted-in-violations",
+                      "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
                     },
@@ -80674,6 +81296,22 @@
                       "difficulty": null
                     },
                     {
+                      "id": "c75155917b1d",
+                      "text": "Second Highest Salary (StrataScratch -- solve with DENSE_RANK instead of LIMIT/OFFSET)",
+                      "url": "https://platform.stratascratch.com/coding/9892-second-highest-salary",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "479057206167",
+                      "text": "Second Highest Salary (DataLemur)",
+                      "url": "https://datalemur.com/questions/sql-second-highest-salary",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "100bb50ed03b",
                       "text": "Rank Teams by Votes",
                       "url": "https://leetcode.com/problems/rank-teams-by-votes/",
@@ -80682,9 +81320,57 @@
                       "difficulty": null
                     },
                     {
+                      "id": "f79003cd29c8",
+                      "text": "Rank Variance Per Country (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2007-rank-variance-per-country",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7092c8a7d026",
+                      "text": "Top Ranked Songs (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9991-top-ranked-songs",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1de20afe81cc",
+                      "text": "User's Third Transaction (DataLemur -- ROW_NUMBER = 3 per user)",
+                      "url": "https://datalemur.com/questions/sql-third-transaction",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "9bfd6a220fb1",
                       "text": "The Most Recent Orders for Each Product",
                       "url": "https://leetcode.com/problems/the-most-recent-orders-for-each-product/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4c618cddebca",
+                      "text": "Highest Salary In Department (StrataScratch -- top-N per group via window ranking)",
+                      "url": "https://platform.stratascratch.com/coding/9897-highest-salary-in-department",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "461c20b7ca4c",
+                      "text": "Top Three Salaries (DataLemur)",
+                      "url": "https://datalemur.com/questions/sql-top-three-salaries",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "512b081da3cc",
+                      "text": "Highest-Grossing Items (DataLemur -- rank <= 2 per category)",
+                      "url": "https://datalemur.com/questions/sql-highest-grossing",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80714,6 +81400,22 @@
                       "text": "Biggest Window Between Visits",
                       "url": "https://leetcode.com/problems/biggest-window-between-visits/",
                       "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0c1752796c8b",
+                      "text": "Monthly Percentage Difference (StrataScratch -- LAG for month-over-month change)",
+                      "url": "https://platform.stratascratch.com/coding/10319-monthly-percentage-difference",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fe09e1b42095",
+                      "text": "Y-on-Y Growth Rate (DataLemur)",
+                      "url": "https://datalemur.com/questions/yoy-growth-rate",
+                      "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
                     },
@@ -80754,9 +81456,33 @@
                       "difficulty": null
                     },
                     {
+                      "id": "d01ad1ed3ee8",
+                      "text": "Consecutive Days (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2054-consecutive-days",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "236425325f76",
                       "text": "Team Scores in Football Tournament",
                       "url": "https://leetcode.com/problems/team-scores-in-football-tournament/",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7c67ec327929",
+                      "text": "User Shopping Sprees (DataLemur -- consecutive-day purchase streaks)",
+                      "url": "https://datalemur.com/questions/amazon-shopping-spree",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "13a7ce084c3d",
+                      "text": "15 Days of Learning SQL (HackerRank -- consecutive-day submission streak)",
+                      "url": "https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem",
                       "tag": "Reinforcement",
                       "subtag": null,
                       "difficulty": null
@@ -80768,12 +81494,72 @@
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
+                    },
+                    {
+                      "id": "40e5addd43f1",
+                      "text": "Consecutive Filing Years (DataLemur)",
+                      "url": "https://datalemur.com/questions/consecutive-filing-years",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "94fe4cad86af",
+                      "text": "Marketing Touch Streak (DataLemur)",
+                      "url": "https://datalemur.com/questions/marketing-touch-streak",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
                     }
                   ],
                   "id": "33b10ce11065"
                 }
               ],
               "id": "09a5644b8f52"
+            },
+            {
+              "title": "Percentiles & Statistical Aggregates",
+              "subgroups": [
+                {
+                  "title": "Median and Mode Without a Native Function",
+                  "items": [
+                    {
+                      "id": "e44da37eace8",
+                      "text": "Invariant: without a native `MEDIAN()`, the median is \"sort the values, then average the one or two values sitting at the middle rank\" -- built from ROW_NUMBER/PERCENTILE_CONT plus a COUNT to locate the middle, not a single built-in call in most engines that matter for interviews.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0acfd11d1998",
+                      "text": "Compressed Mean (DataLemur -- weighted average from a bucketed representation)",
+                      "url": "https://datalemur.com/questions/alibaba-compressed-mean",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "30f79a5775a9",
+                      "text": "Median Google Search Frequency (DataLemur)",
+                      "url": "https://datalemur.com/questions/median-search-freq",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7847dc967f39",
+                      "text": "Compressed Mode (DataLemur -- statistical mode via GROUP BY + ORDER BY + LIMIT)",
+                      "url": "https://datalemur.com/questions/alibaba-compressed-mode",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "f32282e45664"
+                }
+              ],
+              "id": "c34f50a7a7da"
             }
           ],
           "id": "5d49114cba34"
@@ -80812,9 +81598,25 @@
                       "difficulty": null
                     },
                     {
+                      "id": "29125974d597",
+                      "text": "Spotify Streaming History (DataLemur -- multi-step CTE chain)",
+                      "url": "https://datalemur.com/questions/spotify-streaming-history",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
                       "id": "1b17a0537660",
                       "text": "Monthly Transactions II",
                       "url": "https://leetcode.com/problems/monthly-transactions-ii/",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d3512a0ac343",
+                      "text": "Senior Managers (DataLemur -- CTE + self-join over a reporting hierarchy)",
+                      "url": "https://datalemur.com/questions/senior-managers-reportees",
                       "tag": "Boss",
                       "subtag": null,
                       "difficulty": null
@@ -80846,6 +81648,30 @@
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
+                    },
+                    {
+                      "id": "b2bacc00d09d",
+                      "text": "Duplicate HR Department Employees (StrataScratch -- UNION ALL to intentionally duplicate rows)",
+                      "url": "https://platform.stratascratch.com/coding/9858-find-employees-in-the-hr-department-and-output-the-result-with-one-duplicate",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "38f49f7f5565",
+                      "text": "Make the friends network symmetric (StrataScratch -- UNION to mirror a relationship both directions)",
+                      "url": "https://platform.stratascratch.com/coding/9813-make-the-friends-network-symmetric",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "de43b44fc8d4",
+                      "text": "Find all possible varieties which occur in either of the winemag datasets (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10025-find-all-possible-varieties-which-occur-in-either-of-the-winemag-datasets",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
                     }
                   ],
                   "id": "6b4e9ab9044a"
@@ -80874,6 +81700,22 @@
                       "tag": "Foundation",
                       "subtag": null,
                       "difficulty": null
+                    },
+                    {
+                      "id": "509cfcb0c7cc",
+                      "text": "Occupations (HackerRank -- same pivot concept, different engine/dataset)",
+                      "url": "https://www.hackerrank.com/challenges/occupations/problem",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "45b87dc4880a",
+                      "text": "Odd and Even Measurements (DataLemur -- pivot with a per-day aggregation twist)",
+                      "url": "https://datalemur.com/questions/odd-even-measurements",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
                     }
                   ],
                   "id": "217fdcfc97dc"
@@ -80883,6 +81725,140 @@
             }
           ],
           "id": "40f3684821a9"
+        },
+        {
+          "title": "Cohort, Retention & Growth Analysis",
+          "groups": [
+            {
+              "title": "Retention, Reactivation & Activation",
+              "subgroups": [
+                {
+                  "title": "Did the Same User Come Back?",
+                  "items": [
+                    {
+                      "id": "af101bd23ef5",
+                      "text": "Invariant: \"retention\" and \"reactivation\" questions are a self-join (or LAG) of a user's activity in period N against their activity in period N-1 or their very first period -- there's no single-row answer, the comparison IS the query.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3541b9240506",
+                      "text": "Second Day Confirmation (DataLemur -- did the user act again exactly one day later)",
+                      "url": "https://datalemur.com/questions/second-day-confirmation",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "56288a2ca7d3",
+                      "text": "Signup Activation Rate (DataLemur)",
+                      "url": "https://datalemur.com/questions/signup-confirmation-rate",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4ccdfa6fb679",
+                      "text": "Active User Retention (DataLemur)",
+                      "url": "https://datalemur.com/questions/user-retention",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eee1953519f8",
+                      "text": "Reactivated Users (DataLemur -- came back after a long gap)",
+                      "url": "https://datalemur.com/questions/reactivated-users",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "de064b5e1d62"
+                }
+              ],
+              "id": "d731cb8c6c14"
+            },
+            {
+              "title": "Ratios, Percentages & Rate Calculations",
+              "subgroups": [
+                {
+                  "title": "Turning Two Counts Into a Rate",
+                  "items": [
+                    {
+                      "id": "8784338b13f0",
+                      "text": "Invariant: every \"percentage\" or \"rate\" question is two aggregates (a numerator COUNT/SUM and a denominator COUNT/SUM) divided against each other, almost always with an explicit numeric CAST to avoid integer division silently truncating to 0.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fc2bdec799cb",
+                      "text": "App Click-through Rate (CTR) (DataLemur)",
+                      "url": "https://datalemur.com/questions/click-through-rate",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1b8403452126",
+                      "text": "Find the percentage of shipable orders (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10090-find-the-percentage-of-shipable-orders",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f169735ff9cd",
+                      "text": "International Call Percentage (DataLemur)",
+                      "url": "https://datalemur.com/questions/international-call-percentage",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "48ab2200fee6",
+                      "text": "Processed Ticket Rate By Type (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9781-find-the-rate-of-processed-tickets-for-each-type",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "94a19fbc79be",
+                      "text": "Acceptance Rate By Date (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10285-acceptance-rate-by-date",
+                      "tag": "Reinforcement",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c8e343d94ea3",
+                      "text": "Share of Active Users (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2005-share-of-active-users",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "95589b6f6fa2",
+                      "text": "Card Launch Success (DataLemur -- rate calculation gated by a time window)",
+                      "url": "https://datalemur.com/questions/card-launch-success",
+                      "tag": "Boss",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "e81071824a0c"
+                }
+              ],
+              "id": "264efa6e685a"
+            }
+          ],
+          "id": "0219d5aab236"
         }
       ]
     }
