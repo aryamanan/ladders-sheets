@@ -200,12 +200,15 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 7: Reliability Patterns
 
 1. [Circuit Breaker](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) {roadmap.sh}
+   - [Circuit Breaker (Martin Fowler)](https://martinfowler.com/bliki/CircuitBreaker.html) {Martin Fowler}
 2. [Retry Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry) {roadmap.sh}
 3. Retry Storm (yet to be linked) {roadmap.sh}
 4. [Throttling](https://learn.microsoft.com/en-us/azure/architecture/patterns/throttling) {roadmap.sh}
 5. [Bulkhead](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead) {roadmap.sh}
 6. [CQRS](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs) {roadmap.sh}
+   - [CQRS (Martin Fowler)](https://martinfowler.com/bliki/CQRS.html) {Martin Fowler}
 7. [Event Sourcing](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing) {roadmap.sh}
+   - [Event Sourcing (Martin Fowler)](https://martinfowler.com/eaaDev/EventSourcing.html) {Martin Fowler}
 8. [Saga Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga) {roadmap.sh}
    - [Choreography Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) {roadmap.sh}
 9. Removing Single Points of Failure (yet to be linked) {Hello Interview}
@@ -223,6 +226,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 3. [Back Pressure](https://github.com/donnemartin/system-design-primer#back-pressure) {System Design Primer}
 4. [Publisher/Subscriber Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber) {roadmap.sh}
 5. [Event-Driven Architecture](https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers) {roadmap.sh}
+   - [What do you mean by 'Event-Driven'? (Martin Fowler)](https://martinfowler.com/articles/201701-event-driven.html) {Martin Fowler}
 6. Amazon SQS (yet to be linked) {Hello Interview}
 7. Delivery Guarantees -- At-most-once, At-least-once, Exactly-once (yet to be linked) {roadmap.sh}
 8. Ordering Guarantees (yet to be linked) {roadmap.sh}

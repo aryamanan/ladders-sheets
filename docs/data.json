@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 346,
+      "totalItems": 350,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -91675,7 +91675,17 @@
                       "url": "https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "c519c480a4d5",
+                          "text": "Circuit Breaker (Martin Fowler)",
+                          "url": "https://martinfowler.com/bliki/CircuitBreaker.html",
+                          "tag": "",
+                          "subtag": "Martin Fowler",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "472ba731d068",
@@ -91715,7 +91725,17 @@
                       "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "4e4c24637118",
+                          "text": "CQRS (Martin Fowler)",
+                          "url": "https://martinfowler.com/bliki/CQRS.html",
+                          "tag": "",
+                          "subtag": "Martin Fowler",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "d30d08f59fa0",
@@ -91723,7 +91743,17 @@
                       "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "2593d5a5d877",
+                          "text": "Event Sourcing (Martin Fowler)",
+                          "url": "https://martinfowler.com/eaaDev/EventSourcing.html",
+                          "tag": "",
+                          "subtag": "Martin Fowler",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "363524103e78",
@@ -91857,7 +91887,17 @@
                       "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "5a07bfc4f9a9",
+                          "text": "What do you mean by 'Event-Driven'? (Martin Fowler)",
+                          "url": "https://martinfowler.com/articles/201701-event-driven.html",
+                          "tag": "",
+                          "subtag": "Martin Fowler",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "e9a73782818e",
