@@ -690,6 +690,21 @@ a.recap-text:hover { text-decoration: underline; }
   padding-left: 1px;
 }
 
+/* Small "study this from here" book-chapter citation icon -- the chapter/
+   topic note only ever shows up in the native hover tooltip (title attr),
+   never spelled out inline, so a row with several book refs doesn't turn
+   into a wall of text. */
+.book-ref-icon {
+  font-size: 0.85rem;
+  cursor: help;
+  margin-left: 2px;
+}
+.book-legend {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+}
+
 .star-btn {
   flex: none;
   background: none;

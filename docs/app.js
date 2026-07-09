@@ -6,6 +6,24 @@ const PRACTICE_LOG_KEY = "practice-tracker-practice-log-v1";
 const RECAP_SKIPPED_KEY = "practice-tracker-recap-skipped-v1";
 const FIREBASE_SDK = "https://www.gstatic.com/firebasejs/10.13.0";
 
+// "Study this from here" citations into classic books, authored as
+// `<<Book: chapter/topic note>>` in the .md source. Rendered as a small
+// icon (rather than spelling the book name out on every row) once an item
+// carries more than one -- the note itself only ever shows up in the
+// hover tooltip, via the native `title` attribute.
+const BOOK_ICONS = {
+  DDIA: "📘",
+  "Alex Xu": "📕",
+  "Google SRE": "📗",
+  "Release It!": "📙",
+};
+const BOOK_LABELS = {
+  DDIA: "Designing Data-Intensive Applications (Kleppmann)",
+  "Alex Xu": "System Design Interview -- An Insider's Guide (Alex Xu)",
+  "Google SRE": "Site Reliability Engineering (Google)",
+  "Release It!": "Release It! (Michael Nygard)",
+};
+
 const appEl = document.getElementById("app");
 const syncStatusEl = document.getElementById("sync-status");
 const signinBtn = document.getElementById("signin-btn");
@@ -928,12 +946,32 @@ let currentSheetId = null;
 let hideSolved = false;
 let searchQuery = "";
 
+function sheetBookRefBooks(sheet) {
+  const books = new Set();
+  for (const sec of sheet.sections) {
+    for (const g of sec.groups) {
+      for (const sg of g.subgroups) {
+        for (const it of flatItems(sg.items)) {
+          for (const r of it.bookRefs || []) books.add(r.book);
+        }
+      }
+    }
+  }
+  return books;
+}
+
 function renderSheet(sheet) {
   currentSheetId = sheet.id;
   hideSolved = false;
   searchQuery = "";
 
   const { total, done } = sheetStats(sheet);
+  const bookRefBooks = sheetBookRefBooks(sheet);
+  const bookLegendHtml = bookRefBooks.size
+    ? `<div class="book-legend">${[...bookRefBooks]
+        .map((b) => `<span>${BOOK_ICONS[b] || "📖"} ${escapeHtml(BOOK_LABELS[b] || b)}</span>`)
+        .join(" &nbsp; ")}</div>`
+    : "";
 
   const parts = [];
   parts.push(`
@@ -943,6 +981,7 @@ function renderSheet(sheet) {
         <div>
           <h1>${escapeHtml(sheet.title)}</h1>
           <div class="desc">${escapeHtml(sheet.description || "")}</div>
+          ${bookLegendHtml}
           <div class="sheet-stats">
             <span><strong id="sheet-done-count">${done}</strong> / ${total} solved</span>
             <button class="btn btn-small" id="expand-all">Expand all</button>
@@ -1136,6 +1175,13 @@ function renderItemRow(item, originLabel) {
   // same item in practice, but show both if they ever are.
   const badgeText = [item.tag, item.subtag].filter(Boolean).join(" · ");
   const tagHtml = badgeText ? `<span class="item-tag">${escapeHtml(badgeText)}</span>` : "";
+  const bookRefsHtml = (item.bookRefs || [])
+    .map((r) => {
+      const icon = BOOK_ICONS[r.book] || "📖";
+      const tooltip = `${BOOK_LABELS[r.book] || r.book} -- ${r.note}`;
+      return `<span class="book-ref-icon" title="${escapeAttr(tooltip)}" aria-label="${escapeAttr(tooltip)}">${icon}</span>`;
+    })
+    .join("");
   // Only used by the Starred view, to show which sheet/topic a starred item
   // came from since it's no longer sitting inside that sheet's own section.
   const originHtml = originLabel ? `<span class="item-origin">${escapeHtml(originLabel)}</span>` : "";
@@ -1174,6 +1220,7 @@ function renderItemRow(item, originLabel) {
       ${lastTouchedHtml}
       ${practiceHtml}
       ${tagHtml}
+      ${bookRefsHtml}
       <button type="button" class="star-btn${isStarred ? " is-starred" : ""}" data-star-id="${item.id}" title="${isStarred ? "Unstar" : "Star for later"}" aria-label="${isStarred ? "Unstar" : "Star for later"}">★</button>
     </div>
   `;

@@ -126,6 +126,12 @@ LIST_ITEM_RE = re.compile(r"^(\s*)(?:[-*]|\d+\.)\s+(.+?)\s*$")
 # `tag`/cur_label) so retrofitting badges onto a sheet's existing items never
 # changes their ids and never orphans saved checkmarks.
 SUBTAG_RE = re.compile(r"^(.*\S)\s*\{([^{}]{1,60})\}\s*$")
+# A trailing `<<Book: chapter/topic note>>` (one or more, anywhere on the
+# line) is a "study this from here" citation into a classic book (DDIA, Alex
+# Xu's System Design Interview, Google SRE, Release It!, ...). Stripped out
+# of item_text and carried separately as `bookRefs` so the renderer can show
+# it as a small hover-tooltip icon instead of cluttering the row with prose.
+BOOK_REF_RE = re.compile(r"<<\s*([^:<>]+?)\s*:\s*([^<>]+?)\s*>>")
 # Matches both a bare "Label:" line (group 2 empty) and an inline
 # "Label: rest of line" (group 2 non-empty), e.g. "Frontier unlock: [X](url)"
 # or "Technique family: binary search" (no link -> treated as ignorable
@@ -148,6 +154,11 @@ IGNORABLE_METADATA_LABELS = {
 
 def strip_links(text):
     return LINK_RE.sub(lambda m: m.group(1), text).strip(" -–—")
+
+
+def extract_book_refs(text):
+    refs = [{"book": b.strip(), "note": n.strip()} for b, n in BOOK_REF_RE.findall(text)]
+    return BOOK_REF_RE.sub("", text).strip(), refs
 
 
 def is_excluded(title):
@@ -262,7 +273,7 @@ def parse_file(path):
             group["subgroups"].append(cur_subgroup)
         return cur_subgroup
 
-    def add_item(item_text, url, subtag=None):
+    def add_item(item_text, url, subtag=None, book_refs=None):
         if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
             return None
         item_text = item_text.strip()
@@ -286,11 +297,12 @@ def parse_file(path):
             "tag": tag,
             "subtag": subtag,
             "difficulty": difficulty_for(url),
+            "bookRefs": book_refs or [],
         }
         subgroup["items"].append(item)
         return item
 
-    def add_child_item(parent_item, item_text, url, subtag=None):
+    def add_child_item(parent_item, item_text, url, subtag=None, book_refs=None):
         # A sub-item nested under `parent_item` (an indented bullet directly
         # below a top-level item) -- same shape as a normal item, individually
         # checkable, but rendered indented beneath its parent instead of as
@@ -315,6 +327,7 @@ def parse_file(path):
             "tag": tag,
             "subtag": subtag,
             "difficulty": difficulty_for(url),
+            "bookRefs": book_refs or [],
         }
         parent_item.setdefault("children", []).append(child)
         return child
@@ -474,6 +487,7 @@ def parse_file(path):
         if list_match:
             indent, item_text = list_match.group(1), list_match.group(2)
             is_child = bool(indent) and last_top_item is not None
+            item_text, book_refs = extract_book_refs(item_text)
             subtag_match = SUBTAG_RE.match(item_text)
             subtag = None
             if subtag_match:
@@ -490,9 +504,9 @@ def parse_file(path):
             # the anchor text since strip_links(item_text) == that text.
             text, url = strip_links(item_text), (links[0][1] if links else None)
             if is_child:
-                add_child_item(last_top_item, text, url, subtag)
+                add_child_item(last_top_item, text, url, subtag, book_refs)
             else:
-                last_top_item = add_item(text, url, subtag)
+                last_top_item = add_item(text, url, subtag, book_refs)
             continue
 
         if handle_labelish(line):
