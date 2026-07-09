@@ -43778,12 +43778,12 @@
       "id": "faang-sql-mastery",
       "file": "faang_sql_mastery.md",
       "title": "SQL Gauntlet",
-      "description": "This is the SQL counterpart to the DSA Gauntlet: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked. Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage of the free tier: working through this sheet should leave nothing free on either platform looking unfamiliar. For the premium-locked problems too (StrataScratch's are still solvable without a subscription, just not auto-graded), see the SQL Extreme Mastery sheet. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly.",
+      "description": "This is the SQL counterpart to the DSA Gauntlet: real, verified, free practice problems organized by concept into Foundation/Reinforcement/Boss ladders. Sources: LeetCode's Database problem set, HackerRank's SQL domain, StrataScratch's free problem set, and DataLemur's free problem set -- every problem link was checked to make sure it's real, free, and not premium-locked. Neither StrataScratch nor DataLemur tags problems by SQL technique the way this sheet does -- every problem from those two sources was categorized by hand based on what it actually tests, not by a site-provided tag. The goal is full-platform coverage of the free tier: working through this sheet should leave nothing free on either platform looking unfamiliar. For the premium-locked problems too (StrataScratch's are still solvable without a subscription, just not auto-graded), see the SQL Extreme Mastery sheet. Pure practice ladders only for now -- the theory side (indexing, normalization, transactions, query optimization, and reading references) will come back as its own separate sheet once there's real source material to build it from properly. **Organized by pattern, not syntax.** Interviewers don't think \"this is a ROW_NUMBER question\" -- they think \"this is a latest-record-per-user problem.\" Sections below are grouped by the shape of the question you'll actually be asked, matching the SQL Extreme Mastery sheet's organization. Every problem still carries a `{tag}` naming the specific syntax/technique that solves it, so you can jump straight to \"everything that uses LAG\" if that's what you're drilling. The one exception is the opening Fundamentals section -- those are the atoms (SELECT, WHERE, string/date functions) that every pattern below is built out of, so syntax *is* the pattern at that level.",
       "category": "sql",
-      "totalItems": 252,
+      "totalItems": 254,
       "sections": [
         {
-          "title": "SQL Basics",
+          "title": "SQL Fundamentals",
           "groups": [
             {
               "title": "Your First Queries",
@@ -43792,7 +43792,7 @@
                   "title": "Plain SELECT & WHERE, No Joins",
                   "items": [
                     {
-                      "id": "76e368b64a3f",
+                      "id": "b8aba74264ca",
                       "text": "Invariant: before touching a single join, aggregate, or subquery, you need SELECT/WHERE/ORDER BY to be pure muscle memory on one table -- everything else in this sheet is built on top of this.",
                       "url": null,
                       "tag": "",
@@ -43800,113 +43800,107 @@
                       "difficulty": null
                     },
                     {
-                      "id": "436e4ce96b14",
+                      "id": "4cba4a648d3c",
                       "text": "SELECT All (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/select-all-sql/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SELECT",
                       "difficulty": null
                     },
                     {
-                      "id": "d7d047f2921d",
+                      "id": "6589e07ac813",
                       "text": "SELECT By ID (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/select-by-id/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SELECT/WHERE",
                       "difficulty": null
                     },
                     {
-                      "id": "d4edf98ffbc8",
+                      "id": "f30fbf50fef2",
                       "text": "Japanese Cities' Attributes (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/japanese-cities-attributes/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SELECT/WHERE",
                       "difficulty": null
                     },
                     {
-                      "id": "b815a7df7210",
+                      "id": "46471245a433",
                       "text": "Japanese Cities' Names (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/japanese-cities-name/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SELECT/WHERE",
                       "difficulty": null
                     },
                     {
-                      "id": "58faa78b355d",
+                      "id": "2b63e032d422",
                       "text": "Weather Observation Station 1 (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "SELECT",
                       "difficulty": null
                     },
                     {
-                      "id": "18b31d5ac331",
+                      "id": "d5ecd7cff6fd",
                       "text": "Weather Observation Station 3 (HackerRank -- WHERE with a modulo condition)",
                       "url": "https://www.hackerrank.com/challenges/weather-observation-station-3/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "WHERE + modulo",
                       "difficulty": null
                     },
                     {
-                      "id": "9bb8164b6bc6",
+                      "id": "cddfca2b155e",
                       "text": "Revising the Select Query I (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/revising-the-select-query/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "SELECT/WHERE",
                       "difficulty": null
                     },
                     {
-                      "id": "527d616fd8bf",
+                      "id": "89e823430500",
                       "text": "Revising the Select Query II (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/revising-the-select-query-2/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "SELECT/WHERE",
                       "difficulty": null
                     },
                     {
-                      "id": "c65bc47b20d0",
+                      "id": "8a2130351960",
                       "text": "Salary of Employees (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/salary-of-employees/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "WHERE/ORDER BY",
                       "difficulty": null
                     },
                     {
-                      "id": "8a49a7b86949",
+                      "id": "e87bdd45f5a9",
                       "text": "Higher Than 75 Marks (HackerRank -- WHERE + ORDER BY combined)",
                       "url": "https://www.hackerrank.com/challenges/more-than-75-marks/problem",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "WHERE/ORDER BY",
                       "difficulty": null
                     },
                     {
-                      "id": "0c50132b2dcb",
+                      "id": "7bf4c6188214",
                       "text": "Name of Employees (HackerRank -- string + ORDER BY)",
                       "url": "https://www.hackerrank.com/challenges/name-of-employees/problem",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "ORDER BY",
                       "difficulty": null
                     }
                   ],
-                  "id": "e27cc6e3c93d"
+                  "id": "380f596a9e7a"
                 }
               ],
-              "id": "feb6ca3670af"
-            }
-          ],
-          "id": "cd704b09cc9a"
-        },
-        {
-          "title": "Core Query Fundamentals",
-          "groups": [
+              "id": "fac56530cbec"
+            },
             {
-              "title": "Basic Filtering & Sorting",
+              "title": "Multi-Condition Filtering",
               "subgroups": [
                 {
-                  "title": "Multi-condition WHERE Filtering",
+                  "title": "Boolean Composition in WHERE",
                   "items": [
                     {
-                      "id": "b9c2d47f4b64",
+                      "id": "0833711a9f6e",
                       "text": "Invariant: AND/OR predicates in WHERE are evaluated row-by-row before any grouping or sorting happens, so getting the right rows back is a matter of correct boolean composition, not which columns you SELECT.",
                       "url": null,
                       "tag": "",
@@ -43914,262 +43908,82 @@
                       "difficulty": null
                     },
                     {
-                      "id": "54f661c47068",
+                      "id": "eea25321c94d",
                       "text": "Recyclable and Low Fat Products",
                       "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "WHERE AND",
                       "difficulty": null
                     },
                     {
-                      "id": "f767537dae91",
+                      "id": "6edfaa054d75",
                       "text": "Find Customer Referee",
                       "url": "https://leetcode.com/problems/find-customer-referee/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "WHERE OR + NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "bf4df718c5be",
+                      "id": "90aa40e1aafb",
                       "text": "Big Countries",
                       "url": "https://leetcode.com/problems/big-countries/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "WHERE OR",
                       "difficulty": null
                     },
                     {
-                      "id": "a1c59404f6a9",
+                      "id": "8b047a26593b",
                       "text": "Finding Updated Records (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10299-finding-updated-records",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "WHERE AND",
                       "difficulty": null
                     },
                     {
-                      "id": "3fea40122b09",
+                      "id": "5b951931d16e",
                       "text": "Invalid Tweets",
                       "url": "https://leetcode.com/problems/invalid-tweets/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "WHERE + LENGTH",
                       "difficulty": null
                     },
                     {
-                      "id": "feed94c27164",
+                      "id": "b5e67baf2189",
                       "text": "Find all athletes who were older than 40 years when they won either Bronze or Silver medals (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9937-find-all-athletes-who-were-older-than-40-years-when-they-won-either-bronze-or-silver-medals",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "WHERE AND/OR",
                       "difficulty": null
                     },
                     {
-                      "id": "c279506c6775",
+                      "id": "5b85e4736564",
                       "text": "April Admin Employees (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9845-find-the-number-of-employees-working-in-the-admin-department",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "WHERE + COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "fce3978574dd",
+                      "id": "095714f6a22f",
                       "text": "Not Boring Movies",
                       "url": "https://leetcode.com/problems/not-boring-movies/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "WHERE + modulo",
                       "difficulty": null
                     },
                     {
-                      "id": "7cbe6003691b",
+                      "id": "38ac7c6f5f32",
                       "text": "Risky Projects (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10304-risky-projects",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "WHERE + date math",
                       "difficulty": null
                     }
                   ],
-                  "id": "e8726110a331"
-                },
-                {
-                  "title": "ORDER BY, LIMIT & Top-N / Pagination",
-                  "items": [
-                    {
-                      "id": "6c7842cd075e",
-                      "text": "Invariant: LIMIT/OFFSET simply chop the already-sorted result set, so safely returning \"the Nth highest value\" requires collapsing duplicates (DISTINCT) or ranking with a window/subquery -- a naive `LIMIT N-1,1` silently gives the wrong row whenever ties exist.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "51d956b3e769",
-                      "text": "Second Highest Salary",
-                      "url": "https://leetcode.com/problems/second-highest-salary/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "43abbf296545",
-                      "text": "Workers With The Highest Salaries (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10353-workers-with-the-highest-salaries",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d361b8ae2b3d",
-                      "text": "Top Cool Votes (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10060-top-cool-votes",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8196bab5aebb",
-                      "text": "Customer Placing the Largest Number of Orders",
-                      "url": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6a1eb22ee596",
-                      "text": "Top Travellers",
-                      "url": "https://leetcode.com/problems/top-travellers/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4e8e75874074",
-                      "text": "Nth Highest Salary",
-                      "url": "https://leetcode.com/problems/nth-highest-salary/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1e44d668ff55",
-                      "text": "Department Highest Salary",
-                      "url": "https://leetcode.com/problems/department-highest-salary/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "99b7aec340bf",
-                      "text": "Best Selling Item (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10172-best-selling-item",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5e6b7de337e3",
-                      "text": "Top Businesses With Most Reviews (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10048-top-businesses-with-most-reviews",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "230cace865fa",
-                      "text": "Rank Scores",
-                      "url": "https://leetcode.com/problems/rank-scores/",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "af0899547008",
-                      "text": "Hour Of Highest Gas Expense (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10005-hour-of-highest-gas-expense",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "51ee82133e16"
-                },
-                {
-                  "title": "DISTINCT & Duplicate Detection",
-                  "items": [
-                    {
-                      "id": "78dc6afe527f",
-                      "text": "Invariant: DISTINCT and COUNT(DISTINCT ...) collapse rows down to unique values before you count or list them, so \"find the duplicates\" or \"find the unmatched items\" problems hinge on precisely what set membership means for the data, not on filtering individual rows.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d877ecb32db1",
-                      "text": "Duplicate Emails",
-                      "url": "https://leetcode.com/problems/duplicate-emails/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6e6c82a62c72",
-                      "text": "Unique Users Per Client Per Month (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/2024-unique-users-per-client-per-month",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d392afec92a4",
-                      "text": "Customers Who Never Order",
-                      "url": "https://leetcode.com/problems/customers-who-never-order/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "15d1ba1bdcbc",
-                      "text": "Article Views I",
-                      "url": "https://leetcode.com/problems/article-views-i/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3858444bc5ef",
-                      "text": "Number of Unique Subjects Taught by Each Teacher",
-                      "url": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "ae790d51fde6",
-                      "text": "Duplicate Job Listings (DataLemur)",
-                      "url": "https://datalemur.com/questions/duplicate-job-listings",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "264bdb83ed01",
-                      "text": "Consecutive Numbers",
-                      "url": "https://leetcode.com/problems/consecutive-numbers/",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "f013bca78cc7",
-                      "text": "Employees With the Same Salary (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/9856-find-employees-with-the-same-salary",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "9596c3f4db70"
+                  "id": "4d0dfb6f2d59"
                 }
               ],
-              "id": "4153a5a1308e"
+              "id": "f7e45c7ac758"
             },
             {
               "title": "String & Date Functions",
@@ -44178,7 +43992,7 @@
                   "title": "String Manipulation & Pattern Matching",
                   "items": [
                     {
-                      "id": "f15170ae02ea",
+                      "id": "955ee9a37ce1",
                       "text": "Invariant: String functions like SUBSTR/CONCAT/LIKE/REGEXP operate on the literal contents of a column, so a pattern that \"looks right\" (e.g. `'DIAB1%'`) can silently miss valid matches unless you account for every position the target substring is allowed to appear in.",
                       "url": null,
                       "tag": "",
@@ -44186,101 +44000,101 @@
                       "difficulty": null
                     },
                     {
-                      "id": "7bc7f7bde8cd",
+                      "id": "1cc86e1c7fc7",
                       "text": "Fix Names in a Table",
                       "url": "https://leetcode.com/problems/fix-names-in-a-table/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CONCAT/UPPER/LOWER",
                       "difficulty": null
                     },
                     {
-                      "id": "7b5245012d89",
+                      "id": "3f1eeb4a311b",
                       "text": "Patients With a Condition",
                       "url": "https://leetcode.com/problems/patients-with-a-condition/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LIKE",
                       "difficulty": null
                     },
                     {
-                      "id": "79c1e1ea3f46",
+                      "id": "2029bac27c1f",
                       "text": "First Names With Six Letters Ending in 'h' (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9842-find-all-workers-whose-first-name-contains-6-letters-and-also-ends-with-the-letter-h",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LIKE/LENGTH",
                       "difficulty": null
                     },
                     {
-                      "id": "e2c4e5be6f32",
+                      "id": "000f69867f98",
                       "text": "Find drafts which contains the word 'optimism' (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9805-find-drafts-which-contains-the-word-optimism",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LIKE",
                       "difficulty": null
                     },
                     {
-                      "id": "99c32adff398",
+                      "id": "8d154ea64525",
                       "text": "Find Users With Valid E-Mails",
                       "url": "https://leetcode.com/problems/find-users-with-valid-e-mails/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "REGEXP",
                       "difficulty": null
                     },
                     {
-                      "id": "9e3386b79a3c",
+                      "id": "896685f361e0",
                       "text": "What Type of Triangle (HackerRank -- string classification via CASE)",
                       "url": "https://www.hackerrank.com/challenges/what-type-of-triangle/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "cec374d037e6",
+                      "id": "93a8dbd4d151",
                       "text": "Find Valid Emails",
                       "url": "https://leetcode.com/problems/find-valid-emails/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "REGEXP",
                       "difficulty": null
                     },
                     {
-                      "id": "401d4591b9d3",
+                      "id": "e1aa327fbc06",
                       "text": "Find Products with Valid Serial Numbers",
                       "url": "https://leetcode.com/problems/find-products-with-valid-serial-numbers/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "REGEXP",
                       "difficulty": null
                     },
                     {
-                      "id": "f8115a7d3361",
+                      "id": "ef24cc63135e",
                       "text": "Count Occurrences Of Words In Drafts (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9817-find-the-number-of-times-each-word-appears-in-drafts",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "String split + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "1e94d19fdc2b",
+                      "id": "d5d4802b0e54",
                       "text": "Calculate Special Bonus",
                       "url": "https://leetcode.com/problems/calculate-special-bonus/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CASE WHEN + modulo + LIKE",
                       "difficulty": null
                     },
                     {
-                      "id": "0706fe184e8f",
+                      "id": "56f89a408abd",
                       "text": "Counting Instances in Text (StrataScratch -- text/word frequency, hard)",
                       "url": "https://platform.stratascratch.com/coding/9814-counting-instances-in-text",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "String split + COUNT",
                       "difficulty": null
                     }
                   ],
-                  "id": "71ebd86868d6"
+                  "id": "6f78dd72ddd2"
                 },
                 {
                   "title": "Date Arithmetic (Differences, Equality, Elapsed Time)",
                   "items": [
                     {
-                      "id": "97e5efa70113",
+                      "id": "56f4b63e37c4",
                       "text": "Invariant: Date/time arithmetic (DATEDIFF, timestamp subtraction) only compares two values you've already lined up in the same row, so \"yesterday vs. today\" or \"time to complete a process\" problems usually need a self-join or window function before any subtraction can happen.",
                       "url": null,
                       "tag": "",
@@ -44288,61 +44102,61 @@
                       "difficulty": null
                     },
                     {
-                      "id": "28eff4b0e1bf",
+                      "id": "bed200125cf4",
                       "text": "Immediate Food Delivery I",
                       "url": "https://leetcode.com/problems/immediate-food-delivery-i/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DATEDIFF",
                       "difficulty": null
                     },
                     {
-                      "id": "4979beda851a",
+                      "id": "e875de7cf4e7",
                       "text": "Churro Activity Date (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9688-churro-activity-date",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DATEDIFF",
                       "difficulty": null
                     },
                     {
-                      "id": "cabcc22d414d",
+                      "id": "b571cd1f2e59",
                       "text": "User Activity for the Past 30 Days I",
                       "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-i/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "DATEDIFF + COUNT DISTINCT",
                       "difficulty": null
                     },
                     {
-                      "id": "b55b822b16b8",
+                      "id": "8949c24b27a6",
                       "text": "Average Time of Process per Machine",
                       "url": "https://leetcode.com/problems/average-time-of-process-per-machine/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "Self-Join + timestamp math",
                       "difficulty": null
                     },
                     {
-                      "id": "7cf8da247a30",
+                      "id": "5b64b638ce5b",
                       "text": "Average Post Hiatus Part 1 (DataLemur -- LAG for gap between a user's posts)",
                       "url": "https://datalemur.com/questions/sql-average-post-hiatus-1",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LAG + DATEDIFF",
                       "difficulty": null
                     },
                     {
-                      "id": "e55a24e8064f",
+                      "id": "b0425f5a56f5",
                       "text": "Rising Temperature",
                       "url": "https://leetcode.com/problems/rising-temperature/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Self-Join on DATE_ADD",
                       "difficulty": null
                     }
                   ],
-                  "id": "7239d3e0a403"
+                  "id": "82b298b93f8b"
                 },
                 {
                   "title": "Date Truncation, Formatting & Extraction",
                   "items": [
                     {
-                      "id": "88379ce060c1",
+                      "id": "6d6732796c62",
                       "text": "Invariant: Truncating a date to a coarser grain (DATE_FORMAT to year-month, pulling out the month) is what lets you GROUP BY or pivot on a period instead of an exact timestamp -- get the truncation expression wrong and every row ends up in its own bucket.",
                       "url": null,
                       "tag": "",
@@ -44350,67 +44164,67 @@
                       "difficulty": null
                     },
                     {
-                      "id": "0daf8fcc4da8",
+                      "id": "e0a2ce967963",
                       "text": "Sales Analysis III",
                       "url": "https://leetcode.com/problems/sales-analysis-iii/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DATE range + GROUP BY HAVING",
                       "difficulty": null
                     },
                     {
-                      "id": "d799909ca4b2",
+                      "id": "35d664446885",
                       "text": "Number of Shipments Per Month (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2056-number-of-shipments-per-month",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DATE_FORMAT + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "f9ad03ed6c13",
+                      "id": "0c2cd90064f1",
                       "text": "Monthly Transactions I",
                       "url": "https://leetcode.com/problems/monthly-transactions-i/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "DATE_FORMAT + conditional aggregation",
                       "difficulty": null
                     },
                     {
-                      "id": "da3d7a4d6a3a",
+                      "id": "ea030302ed50",
                       "text": "Immediate Food Delivery II",
                       "url": "https://leetcode.com/problems/immediate-food-delivery-ii/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "DATE_FORMAT + correlated subquery",
                       "difficulty": null
                     },
                     {
-                      "id": "6fbb6e389fb7",
+                      "id": "7a9d243b17af",
                       "text": "Average Review Ratings (DataLemur -- monthly bucketing + AVG)",
                       "url": "https://datalemur.com/questions/sql-avg-review-ratings",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "EXTRACT/DATE_FORMAT + AVG",
                       "difficulty": null
                     },
                     {
-                      "id": "57243b7a1706",
+                      "id": "39c9cbd7575b",
                       "text": "Reformat Department Table",
                       "url": "https://leetcode.com/problems/reformat-department-table/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Conditional aggregation pivot",
                       "difficulty": null
                     }
                   ],
-                  "id": "fb10e481cc67"
+                  "id": "9f1a7b228b23"
                 }
               ],
-              "id": "6ff6b3a461b0"
+              "id": "9d30c57bdb96"
             },
             {
-              "title": "NULL Handling & Conditional Logic",
+              "title": "NULL-Safe Expressions & Conditional Logic",
               "subgroups": [
                 {
                   "title": "COALESCE/IFNULL for Missing Values & Safe Division",
                   "items": [
                     {
-                      "id": "7acfd9a937d5",
+                      "id": "faf2e6b18c66",
                       "text": "Invariant: A LEFT JOIN manufactures NULLs for every unmatched row, so any arithmetic, ratio, or display built on the joined column must explicitly convert NULL with COALESCE/IFNULL or the NULL silently propagates and poisons the result.",
                       "url": null,
                       "tag": "",
@@ -44418,61 +44232,61 @@
                       "difficulty": null
                     },
                     {
-                      "id": "a0295d2822b0",
+                      "id": "93e9d79a8235",
                       "text": "Combine Two Tables",
                       "url": "https://leetcode.com/problems/combine-two-tables/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN",
                       "difficulty": null
                     },
                     {
-                      "id": "fa1c6b74d55d",
+                      "id": "4928e15922ef",
                       "text": "Contact Information Completeness (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2169-contact-information-completeness",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "COALESCE",
                       "difficulty": null
                     },
                     {
-                      "id": "c2f6f15a8643",
+                      "id": "7987417a1ca9",
                       "text": "Replace Employee ID With The Unique Identifier",
                       "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN",
                       "difficulty": null
                     },
                     {
-                      "id": "fab5423081a9",
+                      "id": "766b06db88dc",
                       "text": "Confirmation Rate",
                       "url": "https://leetcode.com/problems/confirmation-rate/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + COALESCE + ratio",
                       "difficulty": null
                     },
                     {
-                      "id": "38bdf489ebe2",
+                      "id": "5b96b2c83dde",
                       "text": "Users Missing Phone Numbers (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2168-users-missing-phone-numbers",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "IS NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "923372663313",
+                      "id": "a0e7abc51bcb",
                       "text": "Game Play Analysis IV",
                       "url": "https://leetcode.com/problems/game-play-analysis-iv/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + DATEDIFF + ratio",
                       "difficulty": null
                     }
                   ],
-                  "id": "bd71a0e823e4"
+                  "id": "31ed6a557a1a"
                 },
                 {
                   "title": "CASE WHEN Bucketing & Derived Categories",
                   "items": [
                     {
-                      "id": "20dffc4a78ae",
+                      "id": "974cf3307013",
                       "text": "Invariant: CASE WHEN evaluates its branches in order and returns NULL for any row that matches no WHEN and has no ELSE, so a bucketing/categorization query has to be checked for exhaustiveness, not just the correctness of each individual branch.",
                       "url": null,
                       "tag": "",
@@ -44480,109 +44294,109 @@
                       "difficulty": null
                     },
                     {
-                      "id": "f7517cc02564",
+                      "id": "267f2c83b300",
                       "text": "Triangle Judgement",
                       "url": "https://leetcode.com/problems/triangle-judgement/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "2f7dcd7755f3",
+                      "id": "8dea780aa65b",
                       "text": "Calculate Samantha's and Lisa's total sales revenue (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10127-calculate-samanthas-and-lisas-total-sales-revenue",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CASE WHEN + SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "b6f185da8e1b",
+                      "id": "0022ab8c4479",
                       "text": "Laptop vs. Mobile Viewership (DataLemur)",
                       "url": "https://datalemur.com/questions/laptop-mobile-viewership",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SUM(CASE WHEN)",
                       "difficulty": null
                     },
                     {
-                      "id": "36b8dd37cbe9",
+                      "id": "b40039d1fc79",
                       "text": "Swap Sex of Employees",
                       "url": "https://leetcode.com/problems/swap-sex-of-employees/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CASE WHEN UPDATE",
                       "difficulty": null
                     },
                     {
-                      "id": "db490d94938c",
+                      "id": "3dd36f9785bf",
                       "text": "Count Salary Categories",
                       "url": "https://leetcode.com/problems/count-salary-categories/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN + COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "72137c17fc5f",
+                      "id": "abce017db010",
                       "text": "Create a Session Bar Chart",
                       "url": "https://leetcode.com/problems/create-a-session-bar-chart/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN buckets + UNION",
                       "difficulty": null
                     },
                     {
-                      "id": "4f489fed5475",
+                      "id": "7389f5419486",
                       "text": "Maximum of Two Numbers (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2101-maximum-of-two-numbers",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "3bce3e08cf03",
+                      "id": "ef7423b5702b",
                       "text": "Swapped Food Delivery (DataLemur -- CASE-driven swap logic)",
                       "url": "https://datalemur.com/questions/sql-swapped-food-delivery",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "e3882012b031",
+                      "id": "7394123314b9",
                       "text": "Exchange Seats",
                       "url": "https://leetcode.com/problems/exchange-seats/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CASE WHEN + modulo",
                       "difficulty": null
                     },
                     {
-                      "id": "e15d2cd3131d",
+                      "id": "96e6fcf439a1",
                       "text": "Titanic Survivors and Non-Survivors (StrataScratch -- CASE WHEN pivot into columns)",
                       "url": "https://platform.stratascratch.com/coding/9881-make-a-report-showing-the-number-of-survivors-and-non-survivors-by-passenger-class",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "SUM(CASE WHEN) pivot",
                       "difficulty": null
                     },
                     {
-                      "id": "165d8bd7e717",
+                      "id": "65131578fd66",
                       "text": "Advertiser Status (DataLemur -- multi-condition CASE-derived status)",
                       "url": "https://datalemur.com/questions/updated-status",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "9a9b69dac8f2",
+                      "id": "e8889d9e55b2",
                       "text": "Capital Gain/Loss",
                       "url": "https://leetcode.com/problems/capital-gainloss/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "SUM(CASE WHEN)",
                       "difficulty": null
                     }
                   ],
-                  "id": "a4344a4fbcdd"
+                  "id": "071ad9c05f0a"
                 },
                 {
                   "title": "Three-Valued Logic Gotchas (NULL in WHERE/JOIN/NOT IN)",
                   "items": [
                     {
-                      "id": "f458424c5069",
+                      "id": "7b60c59d2161",
                       "text": "Invariant: NULL is neither TRUE nor FALSE -- `column <> NULL` and `NOT IN (subquery containing a NULL)` both quietly evaluate to UNKNOWN/empty instead of erroring, so the safe fix is explicit `IS NULL` checks or `NOT EXISTS` rather than negated equality/IN.",
                       "url": null,
                       "tag": "",
@@ -44590,51 +44404,57 @@
                       "difficulty": null
                     },
                     {
-                      "id": "725b84dae8bf",
+                      "id": "185c9cd54aad",
                       "text": "Employees Earning More Than Their Managers",
                       "url": "https://leetcode.com/problems/employees-earning-more-than-their-managers/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "Self-Join",
                       "difficulty": null
                     },
                     {
-                      "id": "4400ad10b5c7",
+                      "id": "7fc789272b50",
                       "text": "Employee Bonus",
                       "url": "https://leetcode.com/problems/employee-bonus/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + IS NULL/OR",
                       "difficulty": null
                     },
                     {
-                      "id": "57a8d08e2544",
+                      "id": "9bf788ea8946",
                       "text": "Sales Person",
                       "url": "https://leetcode.com/problems/sales-person/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "NOT IN pitfall",
                       "difficulty": null
                     },
                     {
-                      "id": "83b81101ccaa",
+                      "id": "292981482647",
                       "text": "Employees Whose Manager Left the Company",
                       "url": "https://leetcode.com/problems/employees-whose-manager-left-the-company/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "NOT IN pitfall",
                       "difficulty": null
                     }
                   ],
-                  "id": "c0e8f39cf4bb"
+                  "id": "dab9193a203b"
                 }
               ],
-              "id": "2234bcb2eded"
-            },
+              "id": "b9b2c187edd3"
+            }
+          ],
+          "id": "42968afe9c48"
+        },
+        {
+          "title": "Aggregation Patterns",
+          "groups": [
             {
-              "title": "Aggregation & GROUP BY/HAVING",
+              "title": "Collapsing Rows to One Value",
               "subgroups": [
                 {
                   "title": "Basic Aggregates (COUNT/SUM/AVG/MIN/MAX)",
                   "items": [
                     {
-                      "id": "195f86b1cb84",
+                      "id": "02f27f092d52",
                       "text": "Invariant: Aggregate functions collapse many rows into one per group, so the choice of MIN/MAX/AVG/SUM determines which underlying row (or blend of rows) the answer actually represents -- the wrong aggregate gives a plausible-looking but incorrect number.",
                       "url": null,
                       "tag": "",
@@ -44642,125 +44462,131 @@
                       "difficulty": null
                     },
                     {
-                      "id": "ef2462ae93a3",
+                      "id": "380724a50b9f",
                       "text": "Game Play Analysis I",
                       "url": "https://leetcode.com/problems/game-play-analysis-i/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "MIN + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "fa662e906b96",
+                      "id": "a6ef01b26417",
                       "text": "Revising Aggregations - The Count Function (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "fc184171589c",
+                      "id": "9a3222930c07",
                       "text": "Revising Aggregations - Sum (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/revising-aggregations-sum/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "fdd7c056fa44",
+                      "id": "fd56790a4397",
                       "text": "Total Cost Of Orders (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10183-total-cost-of-orders",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "7b60e6cf3db0",
+                      "id": "859a8df949da",
                       "text": "The Latest Login in 2020",
                       "url": "https://leetcode.com/problems/the-latest-login-in-2020/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "MAX + GROUP BY -- latest-record-per-entity",
                       "difficulty": null
                     },
                     {
-                      "id": "8ae287e4e8dd",
+                      "id": "1c9f855b9a6a",
                       "text": "Percentage of Users Attended a Contest",
                       "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "COUNT + ratio",
                       "difficulty": null
                     },
                     {
-                      "id": "0503bdcb2443",
+                      "id": "d3e98d8e584f",
                       "text": "Queries Quality and Percentage",
                       "url": "https://leetcode.com/problems/queries-quality-and-percentage/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "AVG + CASE WHEN ratio",
                       "difficulty": null
                     },
                     {
-                      "id": "8c2f66cb96a6",
+                      "id": "493b040490e5",
                       "text": "Revising Aggregations - The Average Function (HackerRank)",
                       "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-average-function/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "AVG",
                       "difficulty": null
                     },
                     {
-                      "id": "12715e662acc",
+                      "id": "77d8da345f36",
                       "text": "Average Salaries (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9917-average-salaries",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "AVG + CASE WHEN bucket",
                       "difficulty": null
                     },
                     {
-                      "id": "444e3b84f745",
+                      "id": "c2e0f7c48054",
                       "text": "IBM db2 Product Analytics (DataLemur)",
                       "url": "https://datalemur.com/questions/sql-ibm-db2-product-analytics",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "COUNT DISTINCT",
                       "difficulty": null
                     },
                     {
-                      "id": "57f26ec2cec1",
+                      "id": "45ef4216fe9d",
                       "text": "Department Top Three Salaries",
                       "url": "https://leetcode.com/problems/department-top-three-salaries/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "DENSE_RANK per group",
                       "difficulty": null
                     },
                     {
-                      "id": "a952b378e818",
+                      "id": "f8d63534f318",
                       "text": "The Blunder (HackerRank -- aggregate comparison against a formula-corrupted column)",
                       "url": "https://www.hackerrank.com/challenges/the-blunder/problem",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "SUM + REPLACE",
                       "difficulty": null
                     },
                     {
-                      "id": "066be0624f95",
+                      "id": "10c636a3fa1d",
                       "text": "Biggest Single Number",
                       "url": "https://leetcode.com/problems/biggest-single-number/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "GROUP BY HAVING COUNT = 1 + MAX",
                       "difficulty": null
                     },
                     {
-                      "id": "5db7a0a9711f",
+                      "id": "554c1f496bfe",
                       "text": "Investments in 2016",
                       "url": "https://leetcode.com/problems/investments-in-2016/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "SUM + GROUP BY HAVING COUNT > 1",
                       "difficulty": null
                     }
                   ],
-                  "id": "a9fcc69d7593"
-                },
+                  "id": "698da981ec4a"
+                }
+              ],
+              "id": "bf10c4718978"
+            },
+            {
+              "title": "Multi-Dimensional Grouping",
+              "subgroups": [
                 {
                   "title": "GROUP BY Multiple Columns",
                   "items": [
                     {
-                      "id": "a2189e3f3512",
+                      "id": "c6e4cbbbc6c3",
                       "text": "Invariant: Grouping by a combination of columns treats each unique tuple as its own bucket, so a `HAVING COUNT(*) >= k` threshold is really asking \"how many rows share this whole combination of values,\" not just one column in isolation.",
                       "url": null,
                       "tag": "",
@@ -44768,93 +44594,99 @@
                       "difficulty": null
                     },
                     {
-                      "id": "3aa44515f28b",
+                      "id": "9973997be2c1",
                       "text": "Actors and Directors Who Cooperated At Least Three Times",
                       "url": "https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "GROUP BY 2 cols + HAVING",
                       "difficulty": null
                     },
                     {
-                      "id": "81bed12620ab",
+                      "id": "6bfa18210269",
                       "text": "Number Of Units Per Nationality (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10156-number-of-units-per-nationality",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "GROUP BY 2 cols",
                       "difficulty": null
                     },
                     {
-                      "id": "6e6fb790b664",
+                      "id": "d21ebc1d9e1a",
                       "text": "Daily Leads and Partners",
                       "url": "https://leetcode.com/problems/daily-leads-and-partners/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "GROUP BY 2 cols + COUNT DISTINCT",
                       "difficulty": null
                     },
                     {
-                      "id": "4206ad10b6f8",
+                      "id": "21cf74d053fe",
                       "text": "Market Analysis I",
                       "url": "https://leetcode.com/problems/market-analysis-i/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "89f358982301",
+                      "id": "d3bde4095c50",
                       "text": "Group Sold Products By The Date",
                       "url": "https://leetcode.com/problems/group-sold-products-by-the-date/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY + GROUP_CONCAT",
                       "difficulty": null
                     },
                     {
-                      "id": "1f29ef26decd",
+                      "id": "b57d87a3f133",
                       "text": "Income By Title and Gender (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10077-income-by-title-and-gender",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY 2 cols",
                       "difficulty": null
                     },
                     {
-                      "id": "30a35db1d897",
+                      "id": "16cd0bd13651",
                       "text": "Find the number of inspections for each risk category by inspection type (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10130-find-the-number-of-inspections-for-each-risk-category-by-inspection-type",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY 2 cols",
                       "difficulty": null
                     },
                     {
-                      "id": "c96a8c772353",
+                      "id": "a8980dc96ba9",
                       "text": "Histogram of Users and Purchases (DataLemur)",
                       "url": "https://datalemur.com/questions/histogram-users-purchases",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY + COUNT bucket",
                       "difficulty": null
                     },
                     {
-                      "id": "3a034ed5b6fa",
+                      "id": "eb5d83687707",
                       "text": "Friend Requests II: Who Has the Most Friends",
                       "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "UNION + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "4b0d6787ed53",
+                      "id": "25e59696eeb3",
                       "text": "Department Workforce Analysis (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2170-department-workforce-analysis",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "GROUP BY + JOIN",
                       "difficulty": null
                     }
                   ],
-                  "id": "69dc2cd39818"
-                },
+                  "id": "d83d31eeafba"
+                }
+              ],
+              "id": "9e1b65a1eba1"
+            },
+            {
+              "title": "Filtering Groups, Not Rows",
+              "subgroups": [
                 {
                   "title": "HAVING vs. WHERE",
                   "items": [
                     {
-                      "id": "588370ee1e98",
+                      "id": "68e896c411f0",
                       "text": "Invariant: WHERE filters raw rows before aggregation runs, while HAVING filters the already-aggregated groups afterward, so any condition that references an aggregate (COUNT, SUM) has to live in HAVING -- putting it in WHERE either errors or silently filters on the wrong thing.",
                       "url": null,
                       "tag": "",
@@ -44862,89 +44694,139 @@
                       "difficulty": null
                     },
                     {
-                      "id": "95fd236ae826",
+                      "id": "adf5677551cc",
                       "text": "Classes More Than 5 Students",
                       "url": "https://leetcode.com/problems/classes-more-than-5-students/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "GROUP BY HAVING COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "27fe3ac3262d",
+                      "id": "24350c6d2529",
                       "text": "Departments With 5 Employees (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9911-departments-with-5-employees",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "GROUP BY HAVING COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "6a9364a78050",
+                      "id": "cef0b6eeef23",
                       "text": "Managers with at Least 5 Direct Reports",
                       "url": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "Self-Join + HAVING",
                       "difficulty": null
                     },
                     {
-                      "id": "f33c5a2357b2",
+                      "id": "34c9be37b4e3",
                       "text": "List the Products Ordered in a Period",
                       "url": "https://leetcode.com/problems/list-the-products-ordered-in-a-period/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "JOIN + HAVING SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "50e449fb895b",
+                      "id": "7d1f2fc9f1e9",
                       "text": "Bank Account Summary II",
                       "url": "https://leetcode.com/problems/bank-account-summary-ii/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY HAVING SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "8ae80f04da02",
+                      "id": "f081cffc6f0b",
                       "text": "Customers with Large Orders (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2172-customers-with-large-orders",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "HAVING SUM",
                       "difficulty": null
                     },
                     {
-                      "id": "23e308308b0e",
+                      "id": "7c224840affa",
                       "text": "Teams Power Users (DataLemur)",
                       "url": "https://datalemur.com/questions/teams-power-users",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY HAVING COUNT",
                       "difficulty": null
                     },
                     {
-                      "id": "b33ecf5ce926",
+                      "id": "ee24f4cb760f",
                       "text": "Primary Department for Each Employee",
                       "url": "https://leetcode.com/problems/primary-department-for-each-employee/",
                       "tag": "Boss",
+                      "subtag": "UNION + HAVING COUNT = 1",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "df0a2f21d591"
+                }
+              ],
+              "id": "0f9c4536bd6b"
+            },
+            {
+              "title": "Conditional Aggregation & Pivoting",
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "13c5b575de46",
+                      "text": "Invariant: `SUM(CASE WHEN category = 'x' THEN value ELSE 0 END)` turns one row-per-category table into one column-per-category row without a native PIVOT operator -- each CASE branch is a hand-built column. This is one of the single most-used techniques in real interviews: any time the output needs \"one row per entity, one column per category,\" conditional aggregation is almost always the answer.",
+                      "url": null,
+                      "tag": "",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "6f5a494332f2"
+                  "id": "1456e39dd757"
+                },
+                {
+                  "title": "SUM(CASE WHEN...) / COUNT(CASE WHEN...) as Hand-Built Columns",
+                  "items": [
+                    {
+                      "id": "71cab0fe2350",
+                      "text": "Occupations",
+                      "url": "https://leetcode.com/problems/occupations/",
+                      "tag": "Foundation",
+                      "subtag": "CASE WHEN + ROW_NUMBER pivot",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "92410e64583e",
+                      "text": "Occupations (HackerRank -- same pivot concept, different engine/dataset)",
+                      "url": "https://www.hackerrank.com/challenges/occupations/problem",
+                      "tag": "Foundation",
+                      "subtag": "CASE WHEN pivot",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d05f6dd04461",
+                      "text": "Odd and Even Measurements (DataLemur -- pivot with a per-day aggregation twist)",
+                      "url": "https://datalemur.com/questions/odd-even-measurements",
+                      "tag": "Boss",
+                      "subtag": "SUM(CASE WHEN) + date bucket",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "98160cc26d0f"
                 }
               ],
-              "id": "09cac893633f"
+              "id": "870599725bb4"
             }
           ],
-          "id": "5a41bc204517"
+          "id": "09a566fc94cf"
         },
         {
-          "title": "Joins & Relational Composition",
+          "title": "Matched, Unmatched & Missing Rows",
           "groups": [
             {
-              "title": "Inner & Outer Joins",
+              "title": "Complete Records Only",
               "subgroups": [
                 {
                   "title": "INNER JOIN -- Combining Matched Rows",
                   "items": [
                     {
-                      "id": "f9d2ebfde694",
+                      "id": "8370af49eb6b",
                       "text": "Invariant: INNER JOIN keeps only rows with a matching key on both sides, so any row whose foreign key doesn't exist in the other table silently disappears from the result -- exactly what you want for \"complete records only,\" and exactly the bug when you don't notice the drop.",
                       "url": null,
                       "tag": "",
@@ -44952,85 +44834,91 @@
                       "difficulty": null
                     },
                     {
-                      "id": "c48d8d4fba44",
+                      "id": "08566049ea20",
                       "text": "Product Sales Analysis I",
                       "url": "https://leetcode.com/problems/product-sales-analysis-i/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "INNER JOIN",
                       "difficulty": null
                     },
                     {
-                      "id": "eae76241fd08",
+                      "id": "1d473b61b529",
                       "text": "Order Details (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9913-order-details",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "INNER JOIN",
                       "difficulty": null
                     },
                     {
-                      "id": "eef8fafa1c05",
+                      "id": "d593566c8f7f",
                       "text": "Project Employees I",
                       "url": "https://leetcode.com/problems/project-employees-i/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "INNER JOIN + AVG",
                       "difficulty": null
                     },
                     {
-                      "id": "7ebba44e0554",
+                      "id": "da492f722011",
                       "text": "Average Selling Price",
                       "url": "https://leetcode.com/problems/average-selling-price/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + weighted AVG",
                       "difficulty": null
                     },
                     {
-                      "id": "dd556b954186",
+                      "id": "55f0cbe0b0ad",
                       "text": "The Number of Employees Which Report to Each Employee",
                       "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "Self-Join + AVG",
                       "difficulty": null
                     },
                     {
-                      "id": "3b611131c2bf",
+                      "id": "01370dedb4b5",
                       "text": "Cities With Completed Trades (DataLemur)",
                       "url": "https://datalemur.com/questions/completed-trades",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "INNER JOIN + date filter",
                       "difficulty": null
                     },
                     {
-                      "id": "a373877e6fcf",
+                      "id": "17d9e961987f",
                       "text": "Find all Lyft rides which happened on rainy days before noon (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10004-find-all-lyft-rides-which-happened-on-rainy-days-before-noon",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "INNER JOIN + time filter",
                       "difficulty": null
                     },
                     {
-                      "id": "1b5e44cc9d69",
+                      "id": "bcef0cbf5529",
                       "text": "Tree Node",
                       "url": "https://leetcode.com/problems/tree-node/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Self-Join + CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "de4af3c3328d",
+                      "id": "21401758f6ad",
                       "text": "High Earners in Support Departments (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2167-high-earners-in-support-departments",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "INNER JOIN + RANK",
                       "difficulty": null
                     }
                   ],
-                  "id": "c5e043902029"
-                },
+                  "id": "bed37af74a3f"
+                }
+              ],
+              "id": "01079894be40"
+            },
+            {
+              "title": "Rows With No Match (Anti-Join)",
+              "subgroups": [
                 {
                   "title": "LEFT/RIGHT/FULL OUTER JOIN & Finding Unmatched Rows",
                   "items": [
                     {
-                      "id": "1af52ac27410",
+                      "id": "c4bbe4edace8",
                       "text": "Invariant: A LEFT/RIGHT/FULL OUTER JOIN preserves the non-matching side's rows and fills the other side with NULL, so \"find rows with no match\" and \"count including zeros\" both reduce to filtering or aggregating over those NULL-filled rows instead of trying to enumerate absence directly.",
                       "url": null,
                       "tag": "",
@@ -45038,437 +44926,61 @@
                       "difficulty": null
                     },
                     {
-                      "id": "bc9c626c31b2",
+                      "id": "7a6096dd63c2",
                       "text": "Sellers With No Sales",
                       "url": "https://leetcode.com/problems/sellers-with-no-sales/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + IS NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "37cba5348b64",
+                      "id": "f9116fdcbd8c",
                       "text": "Page With No Likes (DataLemur)",
                       "url": "https://datalemur.com/questions/sql-page-with-no-likes",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + IS NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "38fb395c178b",
+                      "id": "d1fcf8e823ac",
                       "text": "Customer Who Visited but Did Not Make Any Transactions",
                       "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + IS NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "1d5eaaad0079",
+                      "id": "6d7374287346",
                       "text": "Employees With Missing Information",
                       "url": "https://leetcode.com/problems/employees-with-missing-information/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "FULL OUTER JOIN emulation (UNION)",
                       "difficulty": null
                     },
                     {
-                      "id": "710db3ab0761",
+                      "id": "3891705dda74",
                       "text": "Unfinished Parts (DataLemur)",
                       "url": "https://datalemur.com/questions/tesla-unfinished-parts",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + IS NULL",
                       "difficulty": null
                     },
                     {
-                      "id": "58677922d761",
+                      "id": "ddcc859f3191",
                       "text": "Students and Examinations",
                       "url": "https://leetcode.com/problems/students-and-examinations/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CROSS JOIN + LEFT JOIN",
                       "difficulty": null
                     }
                   ],
-                  "id": "35cb2df8b409"
-                }
-              ],
-              "id": "4dd04049c963"
-            },
-            {
-              "title": "Self Joins & Multi-Table Joins",
-              "subgroups": [
-                {
-                  "title": "Same-Table Row Comparison",
-                  "items": [
-                    {
-                      "id": "8044a0f623c1",
-                      "text": "Invariant: joining a table to itself under two different aliases lets you compare each row against a related row in the same table (a manager, the previous day, a duplicate email) as if they were separate tables.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "eaaab3cbccc4",
-                      "text": "Delete Duplicate Emails",
-                      "url": "https://leetcode.com/problems/delete-duplicate-emails/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2e2da80eada7",
-                      "text": "Symmetric Pairs (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/symmetric-pairs/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "73f99466d460",
-                      "text": "Well Paid Employees (DataLemur -- self-join to a manager's salary)",
-                      "url": "https://datalemur.com/questions/sql-well-paid-employees",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d3425d3eae73",
-                      "text": "Employee and Manager Salaries (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/9894-employee-and-manager-salaries",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2e9d845ac6fc",
-                      "text": "Human Traffic of Stadium",
-                      "url": "https://leetcode.com/problems/human-traffic-of-stadium/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "85c3da3eac9d",
-                      "text": "Matching Similar Hosts and Guests (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10078-find-matching-hosts-and-guests-in-a-way-that-they-are-both-of-the-same-gender-and-nationality",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a38f4c5485e5",
-                      "text": "Highest Target Under Manager (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/9905-highest-target-under-manager",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e164b41ea1a5",
-                      "text": "Cards Issued Difference (DataLemur -- self-join comparing two card versions)",
-                      "url": "https://datalemur.com/questions/cards-issued-difference",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d71e99331795",
-                      "text": "Binary Tree Nodes (HackerRank -- self-referencing parent/child table)",
-                      "url": "https://www.hackerrank.com/challenges/binary-search-tree-1/problem",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "420c65c619e8",
-                      "text": "The Company (HackerRank -- 3-level self-referencing hierarchy)",
-                      "url": "https://www.hackerrank.com/challenges/the-company/problem",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8ca90ab9d1df",
-                      "text": "3-Topping Pizzas (DataLemur -- 3-way self-join for combinations)",
-                      "url": "https://datalemur.com/questions/pizzas-topping-cost",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "04eb142914e4",
-                      "text": "Repeated Payments (DataLemur -- self-join within a date window)",
-                      "url": "https://datalemur.com/questions/repeated-payments",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "f9412478147f"
-                },
-                {
-                  "title": "Multi-Table Joins (3+ Tables)",
-                  "items": [
-                    {
-                      "id": "3b01bd9434d0",
-                      "text": "Invariant: chaining several JOINs pulls related facts scattered across normalized tables back into one row, but each additional join can silently multiply row counts if the join keys aren't as unique as assumed.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "589339c328be",
-                      "text": "Rearrange Products Table",
-                      "url": "https://leetcode.com/problems/rearrange-products-table/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "2a0b724bfea9",
-                      "text": "African Cities (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/african-cities/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b62d84748205",
-                      "text": "Asian Population (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/asian-population/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "0faed3237e23",
-                      "text": "Interviews (HackerRank -- 4-table join)",
-                      "url": "https://www.hackerrank.com/challenges/interviews/problem",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "05ba4cd9d418",
-                      "text": "Average Population of Each Continent (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/average-population-of-each-continent/problem",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "a443466f3166",
-                      "text": "Meta/Facebook Matching Users Pairs (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10085-facebook-matching-users-pairs",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3e6880f7d0b4",
-                      "text": "Restaurant Growth",
-                      "url": "https://leetcode.com/problems/restaurant-growth/",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5cce453bdbda",
-                      "text": "The Report (HackerRank -- multi-table join with grade-based CASE bucketing)",
-                      "url": "https://www.hackerrank.com/challenges/the-report/problem",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "fd88c0bd6861"
-                }
-              ],
-              "id": "43d85bf5350a"
-            },
-            {
-              "title": "Subqueries (Nested & Correlated)",
-              "subgroups": [
-                {
-                  "title": "Scalar and Nested Subqueries",
-                  "items": [
-                    {
-                      "id": "88397c94d0cb",
-                      "text": "Invariant: a subquery in SELECT or WHERE runs first and collapses to a single value (or a set IN can test against), so the outer query never needs to know how that value was computed.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "1a663b9814a4",
-                      "text": "Article Views II",
-                      "url": "https://leetcode.com/problems/article-views-ii/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8ebc409d396e",
-                      "text": "Weather Observation Station 13 (HackerRank -- scalar subquery inside a range check)",
-                      "url": "https://www.hackerrank.com/challenges/weather-observation-station-13/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "002568e100ed",
-                      "text": "Most Profitable Financial Company (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/9663-find-the-most-profitable-company-in-the-financial-sector-of-the-entire-world-along-with-its-continent",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8153aa45e613",
-                      "text": "The PADS (HackerRank -- subquery-built label per row)",
-                      "url": "https://www.hackerrank.com/challenges/the-pads/problem",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "3c103099949a",
-                      "text": "Salary Less Than Twice The Average (StrataScratch -- WHERE against an aggregate subquery)",
-                      "url": "https://platform.stratascratch.com/coding/2110-salary-less-than-twice-the-average",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b783865570fa",
-                      "text": "Finding Purchases (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10553-finding-purchases",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "e1da7c03a740",
-                      "text": "Find the Team Size",
-                      "url": "https://leetcode.com/problems/find-the-team-size/",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "5bfc6e110954",
-                      "text": "Harry Potter and Wands (HackerRank -- subquery + multi-condition filtering)",
-                      "url": "https://www.hackerrank.com/challenges/harry-potter-and-wands/problem",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "5f068d67583e"
-                },
-                {
-                  "title": "Correlated Subqueries",
-                  "items": [
-                    {
-                      "id": "cbe3365aa730",
-                      "text": "Invariant: a correlated subquery re-runs once per outer row because it references a column from the outer query, so it's really a per-row lookup in disguise -- correct but potentially slow if the inner query itself isn't cheap.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "4cb24ce5cceb",
-                      "text": "Top Competitors (HackerRank -- correlated count per contestant)",
-                      "url": "https://www.hackerrank.com/challenges/full-score/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b01b3cbf7fdb",
-                      "text": "Finding User Purchases (StrataScratch)",
-                      "url": "https://platform.stratascratch.com/coding/10322-finding-user-purchases",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8749fe653b44",
-                      "text": "Contest Leaderboard (HackerRank)",
-                      "url": "https://www.hackerrank.com/challenges/contest-leaderboard/problem",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "59c008d23b00",
-                      "text": "Product Price at a Given Date",
-                      "url": "https://leetcode.com/problems/product-price-at-a-given-date/",
-                      "tag": "Reinforcement",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "b8a07fa62f3f",
-                      "text": "Challenges (HackerRank -- correlated subquery with a tie-breaking rule)",
-                      "url": "https://www.hackerrank.com/challenges/challenges/problem",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "9948841af13a"
-                }
-              ],
-              "id": "35185f42d5a0"
-            },
-            {
-              "title": "EXISTS / NOT EXISTS / IN / ANY / ALL",
-              "subgroups": [
-                {
-                  "title": "Relational Division (\"Has ALL Of X\")",
-                  "items": [
-                    {
-                      "id": "ff0e51cbd684",
-                      "text": "Invariant: \"find entities that have every item in a set\" (all skills, all products) can't be done with a single equality check -- it's a `HAVING COUNT(DISTINCT matched_item) = (total items required)` pattern, or an aggregate-comparison subquery, not a simple WHERE filter.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "6c68ff813994",
-                      "text": "Data Science Skills (DataLemur -- candidates who have every required skill)",
-                      "url": "https://datalemur.com/questions/matching-skills",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "8b1477a42f79",
-                      "text": "Customers Who Bought All Products",
-                      "url": "https://leetcode.com/problems/customers-who-bought-all-products/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d21252891f48",
-                      "text": "Supercloud Customer (DataLemur -- customer who purchased every product)",
-                      "url": "https://datalemur.com/questions/supercloud-customer",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "c80c77bb9b92"
+                  "id": "0044d8618ded"
                 },
                 {
                   "title": "EXISTS vs IN for NULL-Safety",
                   "items": [
                     {
-                      "id": "9584294c4243",
+                      "id": "2a7d086dd06c",
                       "text": "Invariant: `NOT IN` against a subquery that can produce even one NULL silently returns an empty result for the whole query (three-valued logic strikes again), while `NOT EXISTS` is immune because it only ever tests row existence, never compares against the NULL value itself.",
                       "url": null,
                       "tag": "",
@@ -45476,29 +44988,29 @@
                       "difficulty": null
                     },
                     {
-                      "id": "8d97cf9aec6b",
+                      "id": "d7cf7eb973e0",
                       "text": "Find all posts which were reacted to with a heart (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10087-find-all-posts-which-were-reacted-to-with-a-heart",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "EXISTS",
                       "difficulty": null
                     },
                     {
-                      "id": "8d784cd106c5",
+                      "id": "0bf1973cd354",
                       "text": "Find Customers With Positive Revenue this Year",
                       "url": "https://leetcode.com/problems/find-customers-with-positive-revenue-this-year/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "NOT EXISTS",
                       "difficulty": null
                     }
                   ],
-                  "id": "c8900545a010"
+                  "id": "dd521aca08f2"
                 },
                 {
                   "title": "Anti-Join Patterns (Finding Rows With No Match)",
                   "items": [
                     {
-                      "id": "d08bfac2dabb",
+                      "id": "2d369d123f5a",
                       "text": "Invariant: \"find rows in A with no match in B\" is the same shape whether you write it as `NOT EXISTS`, `LEFT JOIN ... WHERE B.key IS NULL`, or `NOT IN` -- pick based on NULL-safety and the query planner, not because one is \"more correct.\"",
                       "url": null,
                       "tag": "",
@@ -45506,201 +45018,827 @@
                       "difficulty": null
                     },
                     {
-                      "id": "be8c955831f3",
+                      "id": "7d0a83179832",
                       "text": "Number of violations (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9728-inspections-that-resulted-in-violations",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "NOT EXISTS",
                       "difficulty": null
                     },
                     {
-                      "id": "c819715eda3f",
+                      "id": "a432ca71619c",
                       "text": "Find Books with No Available Copies",
                       "url": "https://leetcode.com/problems/find-books-with-no-available-copies/",
                       "tag": "Foundation",
+                      "subtag": "LEFT JOIN + IS NULL / NOT EXISTS",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5a69ca3e65b9",
+                      "text": "Placements (HackerRank -- anti-join style filtering across 3 joined tables)",
+                      "url": "https://www.hackerrank.com/challenges/placements/problem",
+                      "tag": "Boss",
+                      "subtag": "Multi-Join + Self-Join",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "46a29f6f5f23"
+                }
+              ],
+              "id": "64ac862b3818"
+            },
+            {
+              "title": "Has-Everything Pattern (Relational Division)",
+              "subgroups": [
+                {
+                  "title": "Relational Division (\"Has ALL Of X\")",
+                  "items": [
+                    {
+                      "id": "235beecf3097",
+                      "text": "Invariant: \"find entities that have every item in a set\" (all skills, all products) can't be done with a single equality check -- it's a `HAVING COUNT(DISTINCT matched_item) = (total items required)` pattern, or an aggregate-comparison subquery, not a simple WHERE filter.",
+                      "url": null,
+                      "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "c204044d06bb",
-                      "text": "Placements (HackerRank -- anti-join style filtering across 3 joined tables)",
-                      "url": "https://www.hackerrank.com/challenges/placements/problem",
+                      "id": "39151bd0303e",
+                      "text": "Data Science Skills (DataLemur -- candidates who have every required skill)",
+                      "url": "https://datalemur.com/questions/matching-skills",
+                      "tag": "Foundation",
+                      "subtag": "HAVING COUNT DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9dcc1d2a20e5",
+                      "text": "Customers Who Bought All Products",
+                      "url": "https://leetcode.com/problems/customers-who-bought-all-products/",
+                      "tag": "Foundation",
+                      "subtag": "HAVING COUNT DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b3acc539a8bb",
+                      "text": "Supercloud Customer (DataLemur -- customer who purchased every product)",
+                      "url": "https://datalemur.com/questions/supercloud-customer",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "HAVING COUNT DISTINCT",
                       "difficulty": null
                     }
                   ],
-                  "id": "eb142bb9486e"
+                  "id": "9131dbc8d119"
                 }
               ],
-              "id": "436ea4ae8e87"
+              "id": "7c3f25ccf3ac"
             }
           ],
-          "id": "2b31c89fa204"
+          "id": "79e63f59e66a"
         },
         {
-          "title": "Window Functions & Advanced Patterns",
+          "title": "Same-Entity & Multi-Entity Composition",
           "groups": [
             {
-              "title": "Window Functions: Ranking",
+              "title": "Same-Table Row Comparison (Self-Joins)",
+              "subgroups": [
+                {
+                  "title": "Comparing a Row to a Related Row in the Same Table",
+                  "items": [
+                    {
+                      "id": "9152f0a37cf7",
+                      "text": "Invariant: joining a table to itself under two different aliases lets you compare each row against a related row in the same table (a manager, the previous day, a duplicate email) as if they were separate tables.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1d5d89b8ac93",
+                      "text": "Delete Duplicate Emails",
+                      "url": "https://leetcode.com/problems/delete-duplicate-emails/",
+                      "tag": "Foundation",
+                      "subtag": "Self-Join DELETE",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4f0e1fd2324a",
+                      "text": "Symmetric Pairs (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/symmetric-pairs/problem",
+                      "tag": "Foundation",
+                      "subtag": "Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cadd82f94877",
+                      "text": "Well Paid Employees (DataLemur -- self-join to a manager's salary)",
+                      "url": "https://datalemur.com/questions/sql-well-paid-employees",
+                      "tag": "Foundation",
+                      "subtag": "Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1cad16317d3a",
+                      "text": "Employee and Manager Salaries (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9894-employee-and-manager-salaries",
+                      "tag": "Foundation",
+                      "subtag": "Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1c68d43c92be",
+                      "text": "Human Traffic of Stadium",
+                      "url": "https://leetcode.com/problems/human-traffic-of-stadium/",
+                      "tag": "Reinforcement",
+                      "subtag": "Self-Join for consecutive rows",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3c5f38f435e5",
+                      "text": "Matching Similar Hosts and Guests (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10078-find-matching-hosts-and-guests-in-a-way-that-they-are-both-of-the-same-gender-and-nationality",
+                      "tag": "Reinforcement",
+                      "subtag": "Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7a933ddfa4ce",
+                      "text": "Highest Target Under Manager (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9905-highest-target-under-manager",
+                      "tag": "Reinforcement",
+                      "subtag": "Self-Join + MAX",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "81c5bef8d699",
+                      "text": "Cards Issued Difference (DataLemur -- self-join comparing two card versions)",
+                      "url": "https://datalemur.com/questions/cards-issued-difference",
+                      "tag": "Reinforcement",
+                      "subtag": "Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "814a6be5c549",
+                      "text": "Binary Tree Nodes (HackerRank -- self-referencing parent/child table)",
+                      "url": "https://www.hackerrank.com/challenges/binary-search-tree-1/problem",
+                      "tag": "Boss",
+                      "subtag": "Self-Join + CASE WHEN",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1afa776c87ff",
+                      "text": "The Company (HackerRank -- 3-level self-referencing hierarchy)",
+                      "url": "https://www.hackerrank.com/challenges/the-company/problem",
+                      "tag": "Boss",
+                      "subtag": "3-way Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8bc80c07422c",
+                      "text": "3-Topping Pizzas (DataLemur -- 3-way self-join for combinations)",
+                      "url": "https://datalemur.com/questions/pizzas-topping-cost",
+                      "tag": "Boss",
+                      "subtag": "3-way Self-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d1d3b5f8ae93",
+                      "text": "Repeated Payments (DataLemur -- self-join within a date window)",
+                      "url": "https://datalemur.com/questions/repeated-payments",
+                      "tag": "Boss",
+                      "subtag": "Self-Join + date window",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "361078c3a7d5"
+                }
+              ],
+              "id": "e8f907790f4a"
+            },
+            {
+              "title": "Multi-Entity Composition (3+ Tables)",
+              "subgroups": [
+                {
+                  "title": "Multi-Table Joins",
+                  "items": [
+                    {
+                      "id": "023c2e2be5a4",
+                      "text": "Invariant: chaining several JOINs pulls related facts scattered across normalized tables back into one row, but each additional join can silently multiply row counts if the join keys aren't as unique as assumed.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3b924ccad3ed",
+                      "text": "Rearrange Products Table",
+                      "url": "https://leetcode.com/problems/rearrange-products-table/",
+                      "tag": "Foundation",
+                      "subtag": "UNPIVOT via UNION",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f68ba9d18e87",
+                      "text": "African Cities (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/african-cities/problem",
+                      "tag": "Foundation",
+                      "subtag": "Multi-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "64d293287720",
+                      "text": "Asian Population (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/asian-population/problem",
+                      "tag": "Foundation",
+                      "subtag": "Multi-Join + SUM",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8e769b33560a",
+                      "text": "Interviews (HackerRank -- 4-table join)",
+                      "url": "https://www.hackerrank.com/challenges/interviews/problem",
+                      "tag": "Reinforcement",
+                      "subtag": "4-table Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b754bdfbb715",
+                      "text": "Average Population of Each Continent (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/average-population-of-each-continent/problem",
+                      "tag": "Reinforcement",
+                      "subtag": "Multi-Join + AVG",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b95daf513098",
+                      "text": "Meta/Facebook Matching Users Pairs (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10085-facebook-matching-users-pairs",
+                      "tag": "Reinforcement",
+                      "subtag": "Self-Join + Multi-Join",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9cb5b825f3a9",
+                      "text": "Restaurant Growth",
+                      "url": "https://leetcode.com/problems/restaurant-growth/",
+                      "tag": "Boss",
+                      "subtag": "Window Frame SUM/AVG",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "280a15e9c208",
+                      "text": "The Report (HackerRank -- multi-table join with grade-based CASE bucketing)",
+                      "url": "https://www.hackerrank.com/challenges/the-report/problem",
+                      "tag": "Boss",
+                      "subtag": "Multi-Join + CASE WHEN",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "2d9c84b7e5c5"
+                }
+              ],
+              "id": "6a57c9235d4b"
+            },
+            {
+              "title": "Scalar & Per-Row Lookups",
+              "subgroups": [
+                {
+                  "title": "Scalar and Nested Subqueries",
+                  "items": [
+                    {
+                      "id": "a261aff6a821",
+                      "text": "Invariant: a subquery in SELECT or WHERE runs first and collapses to a single value (or a set IN can test against), so the outer query never needs to know how that value was computed.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0bf4135955ac",
+                      "text": "Article Views II",
+                      "url": "https://leetcode.com/problems/article-views-ii/",
+                      "tag": "Foundation",
+                      "subtag": "Self-Join / subquery + DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b0ced1abc740",
+                      "text": "Weather Observation Station 13 (HackerRank -- scalar subquery inside a range check)",
+                      "url": "https://www.hackerrank.com/challenges/weather-observation-station-13/problem",
+                      "tag": "Foundation",
+                      "subtag": "Scalar Subquery",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c287c5bd6481",
+                      "text": "Most Profitable Financial Company (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9663-find-the-most-profitable-company-in-the-financial-sector-of-the-entire-world-along-with-its-continent",
+                      "tag": "Foundation",
+                      "subtag": "Subquery + MAX",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e935c9fc12d4",
+                      "text": "The PADS (HackerRank -- subquery-built label per row)",
+                      "url": "https://www.hackerrank.com/challenges/the-pads/problem",
+                      "tag": "Reinforcement",
+                      "subtag": "Subquery + CONCAT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8063426b4153",
+                      "text": "Salary Less Than Twice The Average (StrataScratch -- WHERE against an aggregate subquery)",
+                      "url": "https://platform.stratascratch.com/coding/2110-salary-less-than-twice-the-average",
+                      "tag": "Reinforcement",
+                      "subtag": "Scalar Subquery",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "858c5b9419f2",
+                      "text": "Finding Purchases (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10553-finding-purchases",
+                      "tag": "Reinforcement",
+                      "subtag": "Subquery + IN",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e5e77859ed92",
+                      "text": "Find the Team Size",
+                      "url": "https://leetcode.com/problems/find-the-team-size/",
+                      "tag": "Boss",
+                      "subtag": "Correlated Subquery",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9a5a89177343",
+                      "text": "Harry Potter and Wands (HackerRank -- subquery + multi-condition filtering)",
+                      "url": "https://www.hackerrank.com/challenges/harry-potter-and-wands/problem",
+                      "tag": "Boss",
+                      "subtag": "Subquery + Multi-Join",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "bb8b5be35567"
+                },
+                {
+                  "title": "Correlated Subqueries (Per-Row Lookups in Disguise)",
+                  "items": [
+                    {
+                      "id": "3513392ec053",
+                      "text": "Invariant: a correlated subquery re-runs once per outer row because it references a column from the outer query, so it's really a per-row lookup in disguise -- correct but potentially slow if the inner query itself isn't cheap.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4c4ee99bfb01",
+                      "text": "Top Competitors (HackerRank -- correlated count per contestant)",
+                      "url": "https://www.hackerrank.com/challenges/full-score/problem",
+                      "tag": "Foundation",
+                      "subtag": "Correlated Subquery",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2a4bcaaead33",
+                      "text": "Finding User Purchases (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10322-finding-user-purchases",
+                      "tag": "Foundation",
+                      "subtag": "Correlated Subquery",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "dbf8f8263080",
+                      "text": "Contest Leaderboard (HackerRank)",
+                      "url": "https://www.hackerrank.com/challenges/contest-leaderboard/problem",
+                      "tag": "Reinforcement",
+                      "subtag": "Correlated Subquery + GROUP BY",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0ce43d4ce6ac",
+                      "text": "Product Price at a Given Date",
+                      "url": "https://leetcode.com/problems/product-price-at-a-given-date/",
+                      "tag": "Reinforcement",
+                      "subtag": "Correlated Subquery -- latest-record-as-of-date",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8fa901ad0924",
+                      "text": "Challenges (HackerRank -- correlated subquery with a tie-breaking rule)",
+                      "url": "https://www.hackerrank.com/challenges/challenges/problem",
+                      "tag": "Boss",
+                      "subtag": "Correlated Subquery + tie-break",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "0f9ef908d839"
+                }
+              ],
+              "id": "31a61d44c0ae"
+            }
+          ],
+          "id": "724084bb926b"
+        },
+        {
+          "title": "Ranking, Top-N & Deduplication",
+          "groups": [
+            {
+              "title": "Naive Top-N via ORDER BY / LIMIT",
+              "subgroups": [
+                {
+                  "title": "ORDER BY, LIMIT & Top-N / Pagination",
+                  "items": [
+                    {
+                      "id": "f6cb9897bde1",
+                      "text": "Invariant: LIMIT/OFFSET simply chop the already-sorted result set, so safely returning \"the Nth highest value\" requires collapsing duplicates (DISTINCT) or ranking with a window/subquery -- a naive `LIMIT N-1,1` silently gives the wrong row whenever ties exist.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5153c4d30bf0",
+                      "text": "Second Highest Salary",
+                      "url": "https://leetcode.com/problems/second-highest-salary/",
+                      "tag": "Foundation",
+                      "subtag": "LIMIT/OFFSET or subquery MAX",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "12f1a23ac498",
+                      "text": "Workers With The Highest Salaries (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10353-workers-with-the-highest-salaries",
+                      "tag": "Foundation",
+                      "subtag": "ORDER BY/LIMIT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "42c9b4813bc5",
+                      "text": "Top Cool Votes (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10060-top-cool-votes",
+                      "tag": "Foundation",
+                      "subtag": "ORDER BY/LIMIT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f2d7a9688f24",
+                      "text": "Customer Placing the Largest Number of Orders",
+                      "url": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/",
+                      "tag": "Foundation",
+                      "subtag": "GROUP BY + ORDER BY/LIMIT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3aba32d6ec5a",
+                      "text": "Top Travellers",
+                      "url": "https://leetcode.com/problems/top-travellers/",
+                      "tag": "Foundation",
+                      "subtag": "LEFT JOIN + ORDER BY",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f2790001d148",
+                      "text": "Nth Highest Salary",
+                      "url": "https://leetcode.com/problems/nth-highest-salary/",
+                      "tag": "Reinforcement",
+                      "subtag": "LIMIT/OFFSET function",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "97b73baafeb1",
+                      "text": "Department Highest Salary",
+                      "url": "https://leetcode.com/problems/department-highest-salary/",
+                      "tag": "Reinforcement",
+                      "subtag": "Correlated Subquery -- Top-N per group without a window fn",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9bcdffee3031",
+                      "text": "Best Selling Item (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10172-best-selling-item",
+                      "tag": "Reinforcement",
+                      "subtag": "GROUP BY + ORDER BY/LIMIT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6683765e1ae4",
+                      "text": "Top Businesses With Most Reviews (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10048-top-businesses-with-most-reviews",
+                      "tag": "Reinforcement",
+                      "subtag": "GROUP BY + ORDER BY/LIMIT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a7bdad129fda",
+                      "text": "Rank Scores",
+                      "url": "https://leetcode.com/problems/rank-scores/",
+                      "tag": "Boss",
+                      "subtag": "DENSE_RANK",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "498797408b08",
+                      "text": "Hour Of Highest Gas Expense (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/10005-hour-of-highest-gas-expense",
+                      "tag": "Boss",
+                      "subtag": "GROUP BY + ORDER BY/LIMIT",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "cf163e0f8ddd"
+                }
+              ],
+              "id": "04316c9f0afe"
+            },
+            {
+              "title": "Deduplication & Duplicate Detection",
+              "subgroups": [
+                {
+                  "title": "DISTINCT & Duplicate Detection",
+                  "items": [
+                    {
+                      "id": "a74bac4af115",
+                      "text": "Invariant: DISTINCT and COUNT(DISTINCT ...) collapse rows down to unique values before you count or list them, so \"find the duplicates\" or \"find the unmatched items\" problems hinge on precisely what set membership means for the data, not on filtering individual rows.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1404f14da1d3",
+                      "text": "Duplicate Emails",
+                      "url": "https://leetcode.com/problems/duplicate-emails/",
+                      "tag": "Foundation",
+                      "subtag": "GROUP BY HAVING COUNT > 1",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "db547a7f026f",
+                      "text": "Unique Users Per Client Per Month (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/2024-unique-users-per-client-per-month",
+                      "tag": "Foundation",
+                      "subtag": "COUNT DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8fb23bb247d9",
+                      "text": "Customers Who Never Order",
+                      "url": "https://leetcode.com/problems/customers-who-never-order/",
+                      "tag": "Reinforcement",
+                      "subtag": "LEFT JOIN + IS NULL",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8cdb48552888",
+                      "text": "Article Views I",
+                      "url": "https://leetcode.com/problems/article-views-i/",
+                      "tag": "Reinforcement",
+                      "subtag": "SELECT DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a05d67d34c68",
+                      "text": "Number of Unique Subjects Taught by Each Teacher",
+                      "url": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
+                      "tag": "Reinforcement",
+                      "subtag": "COUNT DISTINCT",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fa23acc672fd",
+                      "text": "Duplicate Job Listings (DataLemur)",
+                      "url": "https://datalemur.com/questions/duplicate-job-listings",
+                      "tag": "Reinforcement",
+                      "subtag": "GROUP BY HAVING COUNT > 1",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ac50a63a73fc",
+                      "text": "Consecutive Numbers",
+                      "url": "https://leetcode.com/problems/consecutive-numbers/",
+                      "tag": "Boss",
+                      "subtag": "Self-Join for 3 consecutive duplicates",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "67ea0fcef460",
+                      "text": "Employees With the Same Salary (StrataScratch)",
+                      "url": "https://platform.stratascratch.com/coding/9856-find-employees-with-the-same-salary",
+                      "tag": "Boss",
+                      "subtag": "Self-Join or window PARTITION",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "d58afa792c3e"
+                }
+              ],
+              "id": "9f503878d30b"
+            },
+            {
+              "title": "Greatest-N-Per-Group",
               "subgroups": [
                 {
                   "title": "ROW_NUMBER, RANK, DENSE_RANK",
                   "items": [
                     {
-                      "id": "03ed4cdb9cbb",
-                      "text": "Invariant: ROW_NUMBER always breaks ties arbitrarily into distinct integers, RANK leaves gaps after a tie (1,1,3), and DENSE_RANK doesn't (1,1,2) -- picking the wrong one silently changes which row \"wins\" a tie or how many distinct tiers exist.",
+                      "id": "616a1d9d9d3a",
+                      "text": "Invariant: ROW_NUMBER always breaks ties arbitrarily into distinct integers, RANK leaves gaps after a tie (1,1,3), and DENSE_RANK doesn't (1,1,2) -- picking the wrong one silently changes which row \"wins\" a tie or how many distinct tiers exist. This is probably the single most common SQL interview pattern: \"highest salary per department,\" \"latest order per customer,\" \"top 3 products per category\" are all the same shape -- PARTITION BY the group, ORDER BY the tiebreaker, filter to rank <= N.",
                       "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "c75155917b1d",
+                      "id": "71f8b7c312f2",
                       "text": "Second Highest Salary (StrataScratch -- solve with DENSE_RANK instead of LIMIT/OFFSET)",
                       "url": "https://platform.stratascratch.com/coding/9892-second-highest-salary",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DENSE_RANK",
                       "difficulty": null
                     },
                     {
-                      "id": "479057206167",
+                      "id": "10f32fd982f4",
                       "text": "Second Highest Salary (DataLemur)",
                       "url": "https://datalemur.com/questions/sql-second-highest-salary",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "DENSE_RANK",
                       "difficulty": null
                     },
                     {
-                      "id": "100bb50ed03b",
+                      "id": "6321bb707965",
                       "text": "Rank Teams by Votes",
                       "url": "https://leetcode.com/problems/rank-teams-by-votes/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "ORDER BY multi-column tally",
                       "difficulty": null
                     },
                     {
-                      "id": "f79003cd29c8",
+                      "id": "3214b41927ea",
                       "text": "Rank Variance Per Country (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2007-rank-variance-per-country",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "RANK + PARTITION BY",
                       "difficulty": null
                     },
                     {
-                      "id": "7092c8a7d026",
+                      "id": "ec8319aabb88",
                       "text": "Top Ranked Songs (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9991-top-ranked-songs",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "RANK",
                       "difficulty": null
                     },
                     {
-                      "id": "1de20afe81cc",
+                      "id": "54c49ddd4d0a",
                       "text": "User's Third Transaction (DataLemur -- ROW_NUMBER = 3 per user)",
                       "url": "https://datalemur.com/questions/sql-third-transaction",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER + PARTITION BY",
                       "difficulty": null
                     },
                     {
-                      "id": "9bfd6a220fb1",
+                      "id": "70bbdbedebc0",
                       "text": "The Most Recent Orders for Each Product",
                       "url": "https://leetcode.com/problems/the-most-recent-orders-for-each-product/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "RANK + PARTITION BY",
                       "difficulty": null
                     },
                     {
-                      "id": "4c618cddebca",
+                      "id": "e99188834cb2",
                       "text": "Highest Salary In Department (StrataScratch -- top-N per group via window ranking)",
                       "url": "https://platform.stratascratch.com/coding/9897-highest-salary-in-department",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER/RANK + PARTITION BY",
                       "difficulty": null
                     },
                     {
-                      "id": "461c20b7ca4c",
+                      "id": "a6e51bbd8424",
                       "text": "Top Three Salaries (DataLemur)",
                       "url": "https://datalemur.com/questions/sql-top-three-salaries",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "DENSE_RANK + PARTITION BY",
                       "difficulty": null
                     },
                     {
-                      "id": "512b081da3cc",
+                      "id": "41604000b93d",
                       "text": "Highest-Grossing Items (DataLemur -- rank <= 2 per category)",
                       "url": "https://datalemur.com/questions/sql-highest-grossing",
                       "tag": "Boss",
+                      "subtag": "RANK + PARTITION BY",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "8e72ce6d513e"
+                }
+              ],
+              "id": "3ffbacaa646f"
+            }
+          ],
+          "id": "bd03a8152b79"
+        },
+        {
+          "title": "First/Last & Latest-Record Patterns",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "dd09825c3dc3",
+                      "text": "Invariant: \"the most recent X per Y\" and \"the first X per Y\" are the same shape as greatest-N-per-group with N=1, but they show up so often as their own phrasing (\"latest login,\" \"first purchase,\" \"most recent activity\") that it's worth drilling as its own reflex: MAX/MIN + GROUP BY when you only need the value, ROW_NUMBER/FIRST_VALUE + PARTITION BY when you need the whole row.",
+                      "url": null,
+                      "tag": "",
                       "subtag": null,
                       "difficulty": null
                     }
                   ],
-                  "id": "d112f7ebadce"
-                }
-              ],
-              "id": "61c56adcdfdf"
-            },
-            {
-              "title": "Window Functions: Running Aggregates & Offsets",
-              "subgroups": [
+                  "id": "a6418ddf7b28"
+                },
                 {
-                  "title": "LAG/LEAD for Row-to-Row Comparison",
+                  "title": "Latest-Record-Per-Entity",
                   "items": [
                     {
-                      "id": "bfcc53aac48f",
-                      "text": "Invariant: LAG/LEAD fetch a value from a different row within the same ordered partition without a self-join -- the offset (default 1) is how many rows away, and a missing neighbor (start/end of partition) returns NULL unless a default is given.",
+                      "id": "36588960ed42",
+                      "text": "Rising Temperature {Self-Join on DATE_ADD -- day-over-day, see Time-Series section}",
+                      "url": "https://leetcode.com/problems/rising-temperature/",
+                      "tag": "Foundation",
+                      "subtag": null,
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "2b0a09bed7ad"
+                }
+              ],
+              "id": "8ccd6270228d"
+            }
+          ],
+          "id": "f15fd53bd35e"
+        },
+        {
+          "title": "Time-Series & Row-to-Row Patterns",
+          "groups": [
+            {
+              "title": "LAG/LEAD Row-to-Row Comparison & Change Detection",
+              "subgroups": [
+                {
+                  "title": "Comparing a Row to Its Neighbor, and Spotting When a Value Changes",
+                  "items": [
+                    {
+                      "id": "7dbf1961f2f3",
+                      "text": "Invariant: LAG/LEAD fetch a value from a different row within the same ordered partition without a self-join -- the offset (default 1) is how many rows away, and a missing neighbor (start/end of partition) returns NULL unless a default is given. The same function underlies two distinct interview phrasings: \"compare this row to the previous one\" (period-over-period change, time between events) and \"did this value change from the last time we saw it\" (status transitions, salary changes) -- both are `LAG(col) OVER (PARTITION BY entity ORDER BY time) <> col`.",
                       "url": null,
                       "tag": "",
                       "subtag": null,
                       "difficulty": null
                     },
                     {
-                      "id": "3d8509f9a0d1",
+                      "id": "5e9c9f3ad323",
                       "text": "Biggest Window Between Visits",
                       "url": "https://leetcode.com/problems/biggest-window-between-visits/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LAG + DATEDIFF",
                       "difficulty": null
                     },
                     {
-                      "id": "0c1752796c8b",
+                      "id": "64be29e39915",
                       "text": "Monthly Percentage Difference (StrataScratch -- LAG for month-over-month change)",
                       "url": "https://platform.stratascratch.com/coding/10319-monthly-percentage-difference",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LAG",
                       "difficulty": null
                     },
                     {
-                      "id": "fe09e1b42095",
+                      "id": "3eaca3df0ddb",
                       "text": "Y-on-Y Growth Rate (DataLemur)",
                       "url": "https://datalemur.com/questions/yoy-growth-rate",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LAG",
                       "difficulty": null
                     },
                     {
-                      "id": "c5480a2cfa0b",
+                      "id": "16d2e056b5e8",
                       "text": "Movie Rating",
                       "url": "https://leetcode.com/problems/movie-rating/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "UNION + GROUP BY/ORDER BY (no LAG needed, but same ladder)",
                       "difficulty": null
                     }
                   ],
-                  "id": "f399bf03fa95"
+                  "id": "fd82c958da3c"
                 }
               ],
-              "id": "2af2d5ac04b8"
+              "id": "916e4996ae28"
             },
             {
-              "title": "Deduplication & Gaps-and-Islands",
+              "title": "Gaps and Islands (Consecutive Groups & Streaks)",
               "subgroups": [
                 {
-                  "title": "Gaps and Islands (Consecutive Groups)",
+                  "title": "Finding Where a Sequence of Consecutive Values Breaks",
                   "items": [
                     {
-                      "id": "2f72f9343279",
+                      "id": "58a40ac95030",
                       "text": "Invariant: subtracting a row's own rank/row-number from its ordered value collapses every run of consecutive values to the same constant -- that constant becomes a free grouping key for \"find each island of consecutive rows.\"",
                       "url": null,
                       "tag": "",
@@ -45708,83 +45846,89 @@
                       "difficulty": null
                     },
                     {
-                      "id": "92ea9c1bbdcb",
+                      "id": "490db5992fe7",
                       "text": "SQL Project Planning (HackerRank -- the canonical gaps-and-islands problem)",
                       "url": "https://www.hackerrank.com/challenges/sql-projects/problem",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER date-diff trick",
                       "difficulty": null
                     },
                     {
-                      "id": "d01ad1ed3ee8",
+                      "id": "2295c6c1a2b6",
                       "text": "Consecutive Days (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2054-consecutive-days",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER date-diff trick",
                       "difficulty": null
                     },
                     {
-                      "id": "236425325f76",
+                      "id": "25dc1381889a",
                       "text": "Team Scores in Football Tournament",
                       "url": "https://leetcode.com/problems/team-scores-in-football-tournament/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "UNION + GROUP BY",
                       "difficulty": null
                     },
                     {
-                      "id": "7c67ec327929",
+                      "id": "28395e5ee82b",
                       "text": "User Shopping Sprees (DataLemur -- consecutive-day purchase streaks)",
                       "url": "https://datalemur.com/questions/amazon-shopping-spree",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER date-diff trick",
                       "difficulty": null
                     },
                     {
-                      "id": "13a7ce084c3d",
+                      "id": "3c0455f6d9b3",
                       "text": "15 Days of Learning SQL (HackerRank -- consecutive-day submission streak)",
                       "url": "https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "Correlated Subquery + streak count",
                       "difficulty": null
                     },
                     {
-                      "id": "34d99cd69f51",
+                      "id": "5510f55815dc",
                       "text": "Number of Transactions per Visit",
                       "url": "https://leetcode.com/problems/number-of-transactions-per-visit/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Recursive CTE + LEFT JOIN",
                       "difficulty": null
                     },
                     {
-                      "id": "40e5addd43f1",
+                      "id": "362a089a8b16",
                       "text": "Consecutive Filing Years (DataLemur)",
                       "url": "https://datalemur.com/questions/consecutive-filing-years",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "LAG date-diff",
                       "difficulty": null
                     },
                     {
-                      "id": "94fe4cad86af",
+                      "id": "f09a220ce1c5",
                       "text": "Marketing Touch Streak (DataLemur)",
                       "url": "https://datalemur.com/questions/marketing-touch-streak",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER date-diff trick",
                       "difficulty": null
                     }
                   ],
-                  "id": "33b10ce11065"
+                  "id": "4d513c7edd1d"
                 }
               ],
-              "id": "09a5644b8f52"
-            },
+              "id": "e88aa39d6303"
+            }
+          ],
+          "id": "972e75d8b6e2"
+        },
+        {
+          "title": "Statistical Distribution Patterns",
+          "groups": [
             {
-              "title": "Percentiles & Statistical Aggregates",
+              "title": "Median and Mode Without a Native Function",
               "subgroups": [
                 {
-                  "title": "Median and Mode Without a Native Function",
+                  "title": "Finding the Middle or Most-Frequent Value By Hand",
                   "items": [
                     {
-                      "id": "e44da37eace8",
+                      "id": "caec6be50212",
                       "text": "Invariant: without a native `MEDIAN()`, the median is \"sort the values, then average the one or two values sitting at the middle rank\" -- built from ROW_NUMBER/PERCENTILE_CONT plus a COUNT to locate the middle, not a single built-in call in most engines that matter for interviews.",
                       "url": null,
                       "tag": "",
@@ -45792,40 +45936,40 @@
                       "difficulty": null
                     },
                     {
-                      "id": "0acfd11d1998",
+                      "id": "6c6e5e1b32ab",
                       "text": "Compressed Mean (DataLemur -- weighted average from a bucketed representation)",
                       "url": "https://datalemur.com/questions/alibaba-compressed-mean",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "Weighted AVG via SUM(x*count)/SUM(count)",
                       "difficulty": null
                     },
                     {
-                      "id": "30f79a5775a9",
+                      "id": "7c458e9cd7bd",
                       "text": "Median Google Search Frequency (DataLemur)",
                       "url": "https://datalemur.com/questions/median-search-freq",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "ROW_NUMBER + COUNT midpoint",
                       "difficulty": null
                     },
                     {
-                      "id": "7847dc967f39",
+                      "id": "b780be7eb182",
                       "text": "Compressed Mode (DataLemur -- statistical mode via GROUP BY + ORDER BY + LIMIT)",
                       "url": "https://datalemur.com/questions/alibaba-compressed-mode",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "GROUP BY + ORDER BY COUNT DESC",
                       "difficulty": null
                     }
                   ],
-                  "id": "f32282e45664"
+                  "id": "51575697a0be"
                 }
               ],
-              "id": "c34f50a7a7da"
+              "id": "2c81128c43b1"
             }
           ],
-          "id": "5d49114cba34"
+          "id": "8673d8ba6cab"
         },
         {
-          "title": "CTEs, Set Operations & Reshaping",
+          "title": "Multi-Step Query Composition",
           "groups": [
             {
               "title": "Common Table Expressions (CTEs)",
@@ -45834,7 +45978,7 @@
                   "title": "CTEs for Readable Multi-Step Queries",
                   "items": [
                     {
-                      "id": "500640b6f763",
+                      "id": "a238d77e4ccc",
                       "text": "Invariant: a CTE is just a named, reusable subquery scoped to one statement -- it doesn't change what's computable, only how readable the multi-step logic is, and it can be referenced more than once without repeating the subquery text.",
                       "url": null,
                       "tag": "",
@@ -45842,50 +45986,50 @@
                       "difficulty": null
                     },
                     {
-                      "id": "045054b331cf",
+                      "id": "a8ed5722ba7f",
                       "text": "Advertiser Analysis",
                       "url": "https://leetcode.com/problems/advertiser-analysis/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CTE + CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "2c00ce7ad518",
+                      "id": "6f3fe8f3f779",
                       "text": "Find Followers Count",
                       "url": "https://leetcode.com/problems/find-followers-count/",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "GROUP BY (CTE-able)",
                       "difficulty": null
                     },
                     {
-                      "id": "29125974d597",
+                      "id": "5ddecc02be4e",
                       "text": "Spotify Streaming History (DataLemur -- multi-step CTE chain)",
                       "url": "https://datalemur.com/questions/spotify-streaming-history",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CTE chain",
                       "difficulty": null
                     },
                     {
-                      "id": "1b17a0537660",
+                      "id": "a1ad2365a849",
                       "text": "Monthly Transactions II",
                       "url": "https://leetcode.com/problems/monthly-transactions-ii/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CTE + UNION + CASE WHEN",
                       "difficulty": null
                     },
                     {
-                      "id": "d3512a0ac343",
+                      "id": "5b08f9aeceb5",
                       "text": "Senior Managers (DataLemur -- CTE + self-join over a reporting hierarchy)",
                       "url": "https://datalemur.com/questions/senior-managers-reportees",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CTE + Self-Join",
                       "difficulty": null
                     }
                   ],
-                  "id": "cb6707b1a336"
+                  "id": "7c2f6ea72feb"
                 }
               ],
-              "id": "41dc0fcb4c75"
+              "id": "3e32454faffa"
             },
             {
               "title": "Set Operations",
@@ -45894,7 +46038,7 @@
                   "title": "UNION vs UNION ALL & Combining Differently-Shaped Result Sets",
                   "items": [
                     {
-                      "id": "e58e2347df50",
+                      "id": "614449ea26eb",
                       "text": "Invariant: UNION implicitly deduplicates its combined result (an expensive sort/hash step) while UNION ALL keeps every row including duplicates; and when the two source tables don't naturally share a shape, you build that shared shape explicitly with literal/placeholder columns before unioning.",
                       "url": null,
                       "tag": "",
@@ -45902,89 +46046,45 @@
                       "difficulty": null
                     },
                     {
-                      "id": "c80c6f00fbe4",
+                      "id": "ec8844bfa0cb",
                       "text": "User Activity for the Past 30 Days II",
                       "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + COALESCE (UNION-adjacent shape problem)",
                       "difficulty": null
                     },
                     {
-                      "id": "b2bacc00d09d",
+                      "id": "d6acec43dc04",
                       "text": "Duplicate HR Department Employees (StrataScratch -- UNION ALL to intentionally duplicate rows)",
                       "url": "https://platform.stratascratch.com/coding/9858-find-employees-in-the-hr-department-and-output-the-result-with-one-duplicate",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "UNION ALL",
                       "difficulty": null
                     },
                     {
-                      "id": "38f49f7f5565",
+                      "id": "113eb7e18a6b",
                       "text": "Make the friends network symmetric (StrataScratch -- UNION to mirror a relationship both directions)",
                       "url": "https://platform.stratascratch.com/coding/9813-make-the-friends-network-symmetric",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "UNION",
                       "difficulty": null
                     },
                     {
-                      "id": "de43b44fc8d4",
+                      "id": "9c3bc3a4f979",
                       "text": "Find all possible varieties which occur in either of the winemag datasets (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10025-find-all-possible-varieties-which-occur-in-either-of-the-winemag-datasets",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "UNION",
                       "difficulty": null
                     }
                   ],
-                  "id": "6b4e9ab9044a"
+                  "id": "3a8e9657b419"
                 }
               ],
-              "id": "5d6ddc3f4b9c"
-            },
-            {
-              "title": "Pivoting & Data Reshaping",
-              "subgroups": [
-                {
-                  "title": "Conditional Aggregation for Pivot-Style Reports",
-                  "items": [
-                    {
-                      "id": "fa99bd53a7f8",
-                      "text": "Invariant: `SUM(CASE WHEN category = 'x' THEN value ELSE 0 END)` turns one row-per-category table into one column-per-category row without a native PIVOT operator -- each CASE branch is a hand-built column.",
-                      "url": null,
-                      "tag": "",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "fe73db06f83e",
-                      "text": "Occupations",
-                      "url": "https://leetcode.com/problems/occupations/",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "509cfcb0c7cc",
-                      "text": "Occupations (HackerRank -- same pivot concept, different engine/dataset)",
-                      "url": "https://www.hackerrank.com/challenges/occupations/problem",
-                      "tag": "Foundation",
-                      "subtag": null,
-                      "difficulty": null
-                    },
-                    {
-                      "id": "45b87dc4880a",
-                      "text": "Odd and Even Measurements (DataLemur -- pivot with a per-day aggregation twist)",
-                      "url": "https://datalemur.com/questions/odd-even-measurements",
-                      "tag": "Boss",
-                      "subtag": null,
-                      "difficulty": null
-                    }
-                  ],
-                  "id": "217fdcfc97dc"
-                }
-              ],
-              "id": "5a2cdf175e3e"
+              "id": "ba71da386f09"
             }
           ],
-          "id": "40f3684821a9"
+          "id": "60600df3b22d"
         },
         {
           "title": "Cohort, Retention & Growth Analysis",
@@ -46008,7 +46108,7 @@
                       "text": "Second Day Confirmation (DataLemur -- did the user act again exactly one day later)",
                       "url": "https://datalemur.com/questions/second-day-confirmation",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "Self-Join on date+1",
                       "difficulty": null
                     },
                     {
@@ -46016,7 +46116,7 @@
                       "text": "Signup Activation Rate (DataLemur)",
                       "url": "https://datalemur.com/questions/signup-confirmation-rate",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "LEFT JOIN + ratio",
                       "difficulty": null
                     },
                     {
@@ -46024,7 +46124,7 @@
                       "text": "Active User Retention (DataLemur)",
                       "url": "https://datalemur.com/questions/user-retention",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Self-Join across month windows",
                       "difficulty": null
                     },
                     {
@@ -46032,7 +46132,7 @@
                       "text": "Reactivated Users (DataLemur -- came back after a long gap)",
                       "url": "https://datalemur.com/questions/reactivated-users",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "LAG + date-gap threshold",
                       "difficulty": null
                     }
                   ],
@@ -46060,7 +46160,7 @@
                       "text": "App Click-through Rate (CTR) (DataLemur)",
                       "url": "https://datalemur.com/questions/click-through-rate",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "SUM(CASE WHEN)/COUNT ratio",
                       "difficulty": null
                     },
                     {
@@ -46068,7 +46168,7 @@
                       "text": "Find the percentage of shipable orders (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10090-find-the-percentage-of-shipable-orders",
                       "tag": "Foundation",
-                      "subtag": null,
+                      "subtag": "CASE WHEN ratio",
                       "difficulty": null
                     },
                     {
@@ -46076,7 +46176,7 @@
                       "text": "International Call Percentage (DataLemur)",
                       "url": "https://datalemur.com/questions/international-call-percentage",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "SUM(CASE WHEN)/COUNT ratio",
                       "difficulty": null
                     },
                     {
@@ -46084,7 +46184,7 @@
                       "text": "Processed Ticket Rate By Type (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/9781-find-the-rate-of-processed-tickets-for-each-type",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "CASE WHEN ratio + GROUP BY",
                       "difficulty": null
                     },
                     {
@@ -46092,7 +46192,7 @@
                       "text": "Acceptance Rate By Date (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/10285-acceptance-rate-by-date",
                       "tag": "Reinforcement",
-                      "subtag": null,
+                      "subtag": "Self-Join + ratio",
                       "difficulty": null
                     },
                     {
@@ -46100,7 +46200,7 @@
                       "text": "Share of Active Users (StrataScratch)",
                       "url": "https://platform.stratascratch.com/coding/2005-share-of-active-users",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "CASE WHEN ratio + GROUP BY",
                       "difficulty": null
                     },
                     {
@@ -46108,7 +46208,7 @@
                       "text": "Card Launch Success (DataLemur -- rate calculation gated by a time window)",
                       "url": "https://datalemur.com/questions/card-launch-success",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "DATEDIFF-gated ratio",
                       "difficulty": null
                     },
                     {
@@ -46116,7 +46216,7 @@
                       "text": "Trips and Users (the classic multi-join banned-users ratio problem)",
                       "url": "https://leetcode.com/problems/trips-and-users/",
                       "tag": "Boss",
-                      "subtag": null,
+                      "subtag": "Multi-Join + CASE WHEN ratio",
                       "difficulty": null
                     }
                   ],
