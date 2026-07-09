@@ -14,6 +14,8 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 7. [Back-of-the-envelope Estimation](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation) {ByteByteGo}
    - [Numbers Every Engineer Should Know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know) {System Design Primer}
    - [Powers of Two Table](https://github.com/donnemartin/system-design-primer#powers-of-two-table) {System Design Primer}
+   - [Latency Numbers Programmer Should Know: Crash Course System Design #1](https://www.youtube.com/watch?v=FqR5vESuKe0) {ByteByteGo}
+   - [Back-Of-The-Envelope Estimation / Capacity Planning](https://www.youtube.com/watch?v=UC5xf8FbdJc) {ByteByteGo}
 8. Diagramming Tips (yet to be linked) {Hello Interview}
    - [System Design Interviews: 10 Key Principles (with ex-Google EM)](https://www.youtube.com/watch?v=8dG0qzNAVXI) {IGotAnOffer}
    - [System Design Interviews: 10 Ways to IMPRESS Your Interviewer (with ex-Google EM)](https://www.youtube.com/watch?v=PSYdvx0lwLg) {IGotAnOffer}
@@ -31,14 +33,19 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 1. [Domain Name System (DNS)](https://github.com/donnemartin/system-design-primer#domain-name-system) {System Design Primer}
    - [Introduction to Domain Name System (DNS)](https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-domain-name-system-dns) {Grokking}
    - [How the Domain Name System Works](https://www.educative.io/courses/grokking-the-system-design-interview/how-the-domain-name-system-works) {Grokking}
+   - [Everything You Need to Know About DNS: Crash Course System Design #4](https://www.youtube.com/watch?v=27r4Bzuj5NQ) {ByteByteGo}
 2. [TCP vs. UDP](https://github.com/donnemartin/system-design-primer#transmission-control-protocol-tcp) {System Design Primer}
 3. [HTTP / HTTPS](https://github.com/donnemartin/system-design-primer#hypertext-transfer-protocol-http) {System Design Primer}
    - [Everything You Need to Know About HTTP](https://cs.fyi/guide/http-in-depth) {roadmap.sh}
 4. TLS (yet to be linked) {roadmap.sh}
+   - [SSL, TLS, HTTPS Explained](https://www.youtube.com/watch?v=j9QmMEWmcfo) {ByteByteGo}
 5. HTTP/2 & HTTP/3 (yet to be linked) {roadmap.sh}
+   - [HTTP/1 to HTTP/2 to HTTP/3](https://www.youtube.com/watch?v=a-sBfyiXysI) {ByteByteGo}
 6. [REST vs. RPC](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) {System Design Primer}
 7. [GraphQL](https://www.howtographql.com/basics/3-big-picture/) {roadmap.sh}
+   - [What Is GraphQL? REST vs. GraphQL](https://www.youtube.com/watch?v=yWzKJPw_VzM) {ByteByteGo}
 8. [gRPC](https://www.wallarm.com/what/the-concept-of-grpc) {roadmap.sh}
+   - [What is RPC? gRPC Introduction](https://www.youtube.com/watch?v=gnchfOojMk4) {ByteByteGo}
 9. WebSockets (yet to be linked) {roadmap.sh}
 10. SSE / Long Polling (yet to be linked) {roadmap.sh}
 11. [Networking Essentials](https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials) {Hello Interview}
@@ -48,6 +55,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [API Design](https://www.hellointerview.com/learn/system-design/core-concepts/api-design) {Hello Interview}
    - [API Design in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=DQ57zYedMdQ) {Hello Interview}
+   - [Good APIs Vs Bad APIs: 7 Tips for API Design](https://www.youtube.com/watch?v=_gQaygjm_hg) {ByteByteGo}
 2. [Data Modeling](https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling) {Hello Interview}
    - [Data Modeling in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=TUcPS6dsWx4) {Hello Interview}
 3. Scalability (Performance vs. Scalability) (yet to be linked) {roadmap.sh}
@@ -57,6 +65,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 1. [Caching](https://www.hellointerview.com/learn/system-design/core-concepts/caching) {Hello Interview}
    - [Caching in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=1NngTUYPdpI) {Hello Interview}
    - [Distributed Caching Primer](https://www.youtube.com/watch?v=JIAAlb3AtjA) {Jordan Has No Life}
+   - [Cache Systems Every Developer Should Know](https://www.youtube.com/watch?v=dGAgxozNWFE) {ByteByteGo}
 2. [Cache Placement -- Client, CDN, Web Server, Database, Application](https://github.com/donnemartin/system-design-primer#cache) {System Design Primer}
 3. [Cache-Aside Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside) {roadmap.sh}
 4. [Write-Through](https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside) {roadmap.sh}
@@ -78,6 +87,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 2. [Sharding](https://www.hellointerview.com/learn/system-design/core-concepts/sharding) {Hello Interview}
    - [Sharding in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=L521gizea4s) {Hello Interview}
    - [What is DATABASE SHARDING?](https://www.youtube.com/watch?v=5faMjKuB9bc) {Gaurav Sen}
+   - [7 Must-know Strategies to Scale Your Database](https://www.youtube.com/watch?v=_1IKwnbscQU) {ByteByteGo}
 
 ### Consistency & Availability
 
@@ -126,6 +136,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 4: Scalability & Traffic Distribution
 
 1. Vertical vs. Horizontal Scaling (yet to be linked) {roadmap.sh}
+   - [Vertical Vs Horizontal Scaling: Key Differences You Should Know](https://www.youtube.com/watch?v=dvRFHG2-uYs) {ByteByteGo}
 2. Microservices & Application Layer [aws.amazon.com](https://aws.amazon.com/microservices/) {roadmap.sh}
 3. [Service Discovery](https://github.com/donnemartin/system-design-primer#service-discovery) {System Design Primer}
 4. Auto Scaling (yet to be linked) {roadmap.sh}
@@ -174,16 +185,23 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Load Balancer vs. Reverse Proxy](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/) {roadmap.sh}
    - [What is LOAD BALANCING?](https://www.youtube.com/watch?v=K0Ta65OqQkY) {Gaurav Sen}
    - [Load Balancing -- The Right Way To Do It](https://www.youtube.com/watch?v=PERKHUJYotM) {Jordan Has No Life}
+   - [What is a LOAD BALANCER Really About?](https://www.youtube.com/watch?v=LQuuoHTyYz8) {ByteByteGo}
 3. [Content Delivery Network -- Push vs. Pull CDNs](https://github.com/donnemartin/system-design-primer#content-delivery-network) {System Design Primer}
 4. [Redis](https://www.hellointerview.com/learn/system-design/deep-dives/redis) {Hello Interview}
    - [Redis Deep Dive w/ a Ex-Meta Senior Manager](https://www.youtube.com/watch?v=fmT5nlEkl3U) {Hello Interview}
    - [Redis vs. Memcached -- Who Wins?](https://www.youtube.com/watch?v=Gyy1SiE8avE) {Jordan Has No Life}
+   - [What Is Redis Really About? Why Is It So Popular?](https://www.youtube.com/watch?v=z_NbVtbgBJw) {ByteByteGo}
+   - [System Design: Why Is Single-Threaded Redis So Fast?](https://www.youtube.com/watch?v=5TRFpFBccQM) {ByteByteGo}
 5. [Kafka](https://www.hellointerview.com/learn/system-design/deep-dives/kafka) {Hello Interview}
    - [Kafka System Design Deep Dive w/ a Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=DU8o-OTeoCc) {Hello Interview}
    - [Apache Kafka: a Distributed Messaging System for Log Processing](https://www.youtube.com/watch?v=hNDjd9I_VGA) {Gaurav Sen}
    - [Kafka vs. RabbitMQ -- Who Wins and Why?](https://www.youtube.com/watch?v=_5mu7lZz5X4) {Jordan Has No Life}
+   - [Apache Kafka Fundamentals You Should Know](https://www.youtube.com/watch?v=-RDyEFvnTXI) {ByteByteGo}
+   - [System Design: Why Is Kafka Fast?](https://www.youtube.com/watch?v=UNUz1-msbOM) {ByteByteGo}
+   - [Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar](https://www.youtube.com/watch?v=x4k1XEjNzYQ) {ByteByteGo}
 6. RabbitMQ (yet to be linked) {Hello Interview}
    - [Kafka vs. RabbitMQ -- Who Wins and Why?](https://www.youtube.com/watch?v=_5mu7lZz5X4) {Jordan Has No Life}
+   - [Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar](https://www.youtube.com/watch?v=x4k1XEjNzYQ) {ByteByteGo}
 7. [Elasticsearch](https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch) {Hello Interview}
    - [Elasticsearch Deep Dive w/ an Ex-Meta Senior Manager](https://www.youtube.com/watch?v=PuZvF2EyfBM) {Hello Interview}
    - [What's ElasticSearch Used For? Search Indexes](https://www.youtube.com/watch?v=wmCWCVAl1Us) {Jordan Has No Life}
@@ -206,9 +224,12 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 18. Amazon S3 (yet to be linked) {Hello Interview}
     - [Amazon S3 (Object Stores) -- In Practice](https://www.youtube.com/watch?v=zplIwqWBhwg) {Jordan Has No Life}
 19. AWS Lambda (yet to be linked) {Hello Interview}
+    - [Amazon Prime Video Ditches AWS Serverless, Saves 90%](https://www.youtube.com/watch?v=JTp0TY_2hXM) {ByteByteGo}
 20. Nginx (yet to be linked) {Hello Interview}
 21. Docker (yet to be linked) {Hello Interview}
+    - [System Design: Why Is Docker Important?](https://www.youtube.com/watch?v=QEzbZKtLi-g) {ByteByteGo}
 22. Kubernetes (yet to be linked) {Hello Interview}
+    - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc) {ByteByteGo}
 23. Prometheus (yet to be linked) {Hello Interview}
 24. etcd (yet to be linked) {roadmap.sh}
 25. Envoy (yet to be linked) {roadmap.sh}
@@ -351,6 +372,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Design FB Live Comments: Hello Interview Mock](https://www.youtube.com/watch?v=tgSe27eoBG0) {Hello Interview}
    - Design Live Comment Streaming Service (Twitch Chat) (yet to be linked) {Design Gurus}
 3. Design Slack (yet to be linked) {AlgoMaster}
+   - [FAANG System Design Interview: Design A Chat System (WhatsApp, Facebook Messenger, Discord, Slack)](https://www.youtube.com/watch?v=okrR1KXNLtA) {ByteByteGo}
 4. Design Google Docs (yet to be linked) {Design Gurus / AlgoMaster}
    - [Design Google Docs/Real Time Text Editor](https://www.youtube.com/watch?v=YCjVIDv0zQY) {Jordan Has No Life}
    - [Collaborative Text Editing (Operational Transform v. CRDT)](https://www.youtube.com/watch?v=uOKrTc3Q0D0) {Jordan Has No Life}
@@ -358,6 +380,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 6. Design Zoom (yet to be linked) {AlgoMaster}
    - [Video/Conference Calling (Zoom)](https://www.youtube.com/watch?v=7KO7o55dcuw) {Jordan Has No Life}
 7. Design Discord (yet to be linked) {Design Gurus}
+   - [How Discord Stores TRILLIONS of Messages](https://www.youtube.com/watch?v=O3PwuzCvAjI) {ByteByteGo}
 8. [Design an Online Chat Server](https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/online_chat/online_chat.py) {System Design Primer}
 
 ## Part 13: Case Studies -- Media, Storage & Streaming
@@ -377,6 +400,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 4. Design Netflix (yet to be linked) {Design Gurus}
    - [How NETFLIX Onboards New Content: Video Processing at Scale](https://www.youtube.com/watch?v=x9Hrn0oNmJM) {Gaurav Sen}
    - [Netflix + YouTube](https://www.youtube.com/watch?v=43bB7oSn190) {Jordan Has No Life}
+   - [Demystifying the Unusual Evolution of the Netflix API Architecture](https://www.youtube.com/watch?v=Uu32ggF-DWg) {ByteByteGo}
 5. Design Google Drive (yet to be linked) {AlgoMaster}
 6. Design Gmail (yet to be linked) {AlgoMaster}
 7. Design Twitch (yet to be linked) {AlgoMaster}
@@ -467,6 +491,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 5. Design a Job Scheduler (yet to be linked) {AlgoMaster}
    - [Distributed Job Scheduler Design Deep Dive](https://www.youtube.com/watch?v=WTxG5880EH8) {Jordan Has No Life}
 6. Design a CI/CD Pipeline / Code Deployment System (yet to be linked) {AlgoMaster / Design Gurus}
+   - [CI/CD In 5 Minutes | Is It Worth The Hassle?](https://www.youtube.com/watch?v=42UP1fxi2SY) {ByteByteGo}
 7. [Real-time Gaming Leaderboard](https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard) {ByteByteGo}
    - [Top K Leaderboard | Systems Design Interview Questions With Ex-Google SWE](https://www.youtube.com/watch?v=nQpkRONzEQI) {Jordan Has No Life}
 8. [YouTube Top K](https://www.hellointerview.com/learn/system-design/problem-breakdowns/top-k) {Hello Interview}
@@ -483,6 +508,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 2. Design Calendar System (yet to be linked) {AlgoMaster}
 3. Design Online Chess (yet to be linked) {AlgoMaster}
 4. Design ChatGPT (yet to be linked) {Design Gurus}
+   - [How ChatGPT Works Technically | ChatGPT Architecture](https://www.youtube.com/watch?v=bSvTVREwSNw) {ByteByteGo}
 5. Design Google Ads (yet to be linked) {Design Gurus}
    - [Google / Meta System Design Interview: "Design Google Ads" (with ex-Meta Staff SWE)](https://www.youtube.com/watch?v=efaBYHvNvbA) {IGotAnOffer}
 6. Design Amazon Lambda (yet to be linked) {Design Gurus}

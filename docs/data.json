@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 411,
+      "totalItems": 437,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90281,6 +90281,22 @@
                           "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table",
                           "tag": "",
                           "subtag": "System Design Primer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "9e4278fa8507",
+                          "text": "Latency Numbers Programmer Should Know: Crash Course System Design #1",
+                          "url": "https://www.youtube.com/watch?v=FqR5vESuKe0",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f6506eba74f5",
+                          "text": "Back-Of-The-Envelope Estimation / Capacity Planning",
+                          "url": "https://www.youtube.com/watch?v=UC5xf8FbdJc",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -90416,6 +90432,14 @@
                           "tag": "",
                           "subtag": "Grokking",
                           "difficulty": null
+                        },
+                        {
+                          "id": "b83426dc3c8e",
+                          "text": "Everything You Need to Know About DNS: Crash Course System Design #4",
+                          "url": "https://www.youtube.com/watch?v=27r4Bzuj5NQ",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90451,7 +90475,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "b592cb843b16",
+                          "text": "SSL, TLS, HTTPS Explained",
+                          "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "3761e2532e8c",
@@ -90459,7 +90493,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "617749f22cb7",
+                          "text": "HTTP/1 to HTTP/2 to HTTP/3",
+                          "url": "https://www.youtube.com/watch?v=a-sBfyiXysI",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "f00edc9a1a87",
@@ -90475,7 +90519,17 @@
                       "url": "https://www.howtographql.com/basics/3-big-picture/",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "b2f0e1525561",
+                          "text": "What Is GraphQL? REST vs. GraphQL",
+                          "url": "https://www.youtube.com/watch?v=yWzKJPw_VzM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "810e15e075e3",
@@ -90483,7 +90537,17 @@
                       "url": "https://www.wallarm.com/what/the-concept-of-grpc",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "674474f9758a",
+                          "text": "What is RPC? gRPC Introduction",
+                          "url": "https://www.youtube.com/watch?v=gnchfOojMk4",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "1d42680191a8",
@@ -90552,6 +90616,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "06bd7109bfdf",
+                          "text": "Good APIs Vs Bad APIs: 7 Tips for API Design",
+                          "url": "https://www.youtube.com/watch?v=_gQaygjm_hg",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90615,6 +90687,14 @@
                           "url": "https://www.youtube.com/watch?v=JIAAlb3AtjA",
                           "tag": "",
                           "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "a7323d67122d",
+                          "text": "Cache Systems Every Developer Should Know",
+                          "url": "https://www.youtube.com/watch?v=dGAgxozNWFE",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -90777,6 +90857,14 @@
                           "url": "https://www.youtube.com/watch?v=5faMjKuB9bc",
                           "tag": "",
                           "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "ad2580b339cb",
+                          "text": "7 Must-know Strategies to Scale Your Database",
+                          "url": "https://www.youtube.com/watch?v=_1IKwnbscQU",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -91133,7 +91221,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "be2b6f5d1759",
+                          "text": "Vertical Vs Horizontal Scaling: Key Differences You Should Know",
+                          "url": "https://www.youtube.com/watch?v=dvRFHG2-uYs",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "57cc3a05468b",
@@ -91464,6 +91562,14 @@
                           "tag": "",
                           "subtag": "Jordan Has No Life",
                           "difficulty": null
+                        },
+                        {
+                          "id": "2fe4f5a75026",
+                          "text": "What is a LOAD BALANCER Really About?",
+                          "url": "https://www.youtube.com/watch?v=LQuuoHTyYz8",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91497,6 +91603,22 @@
                           "url": "https://www.youtube.com/watch?v=Gyy1SiE8avE",
                           "tag": "",
                           "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "241c9b6c7b0e",
+                          "text": "What Is Redis Really About? Why Is It So Popular?",
+                          "url": "https://www.youtube.com/watch?v=z_NbVtbgBJw",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "14459ca4761e",
+                          "text": "System Design: Why Is Single-Threaded Redis So Fast?",
+                          "url": "https://www.youtube.com/watch?v=5TRFpFBccQM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -91532,6 +91654,30 @@
                           "tag": "",
                           "subtag": "Jordan Has No Life",
                           "difficulty": null
+                        },
+                        {
+                          "id": "6d8d5b353a59",
+                          "text": "Apache Kafka Fundamentals You Should Know",
+                          "url": "https://www.youtube.com/watch?v=-RDyEFvnTXI",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f4f8d63f6aa9",
+                          "text": "System Design: Why Is Kafka Fast?",
+                          "url": "https://www.youtube.com/watch?v=UNUz1-msbOM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "4826f0ba817e",
+                          "text": "Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar",
+                          "url": "https://www.youtube.com/watch?v=x4k1XEjNzYQ",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91549,6 +91695,14 @@
                           "url": "https://www.youtube.com/watch?v=_5mu7lZz5X4",
                           "tag": "",
                           "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "0a70174acab0",
+                          "text": "Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar",
+                          "url": "https://www.youtube.com/watch?v=x4k1XEjNzYQ",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -91739,7 +91893,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "52980f96691a",
+                          "text": "Amazon Prime Video Ditches AWS Serverless, Saves 90%",
+                          "url": "https://www.youtube.com/watch?v=JTp0TY_2hXM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "dc60ef303a5a",
@@ -91755,7 +91919,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "5dd85f680159",
+                          "text": "System Design: Why Is Docker Important?",
+                          "url": "https://www.youtube.com/watch?v=QEzbZKtLi-g",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "7119840a4999",
@@ -91763,7 +91937,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "c2d438d6d82d",
+                          "text": "Kubernetes Explained in 6 Minutes | k8s Architecture",
+                          "url": "https://www.youtube.com/watch?v=TlHvYWVUZyc",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "fd14182d7b4c",
@@ -92911,7 +93095,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "49f118b1793c",
+                          "text": "FAANG System Design Interview: Design A Chat System (WhatsApp, Facebook Messenger, Discord, Slack)",
+                          "url": "https://www.youtube.com/watch?v=okrR1KXNLtA",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "f2bc38158d16",
@@ -92971,7 +93165,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "616de873020d",
+                          "text": "How Discord Stores TRILLIONS of Messages",
+                          "url": "https://www.youtube.com/watch?v=O3PwuzCvAjI",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "5d818fb8d57f",
@@ -93123,6 +93327,14 @@
                           "url": "https://www.youtube.com/watch?v=43bB7oSn190",
                           "tag": "",
                           "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "c30fbc645a4b",
+                          "text": "Demystifying the Unusual Evolution of the Netflix API Architecture",
+                          "url": "https://www.youtube.com/watch?v=Uu32ggF-DWg",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -93851,7 +94063,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster / Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "1349cadfe76b",
+                          "text": "CI/CD In 5 Minutes | Is It Worth The Hassle?",
+                          "url": "https://www.youtube.com/watch?v=42UP1fxi2SY",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "0df97b720b18",
@@ -93979,7 +94201,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "6f90d839d5e1",
+                          "text": "How ChatGPT Works Technically | ChatGPT Architecture",
+                          "url": "https://www.youtube.com/watch?v=bSvTVREwSNw",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "a4e0150ef431",
