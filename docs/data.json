@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 234,
+      "totalItems": 233,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90218,30 +90218,6 @@
                       "difficulty": null
                     },
                     {
-                      "id": "002e5ddc1dee",
-                      "text": "A Framework For System Design Interviews",
-                      "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews",
-                      "tag": "",
-                      "subtag": "ByteByteGo",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "d518e105e5ad",
-                      "text": "Delivery Framework",
-                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery",
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "9dab17701593",
-                      "text": "Answering Framework",
-                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction",
-                      "tag": "",
-                      "subtag": "Hello Interview",
-                      "difficulty": null
-                    },
-                    {
                       "id": "48a3c0cf62d6",
                       "text": "Types of System Design Questions",
                       "url": "https://algomaster.io/learn/system-design-interviews/question-types",
@@ -90258,9 +90234,35 @@
                       "difficulty": null
                     },
                     {
-                      "id": "b46473258db5",
-                      "text": "Performance vs. Scalability",
-                      "url": "https://www.slideshare.net/jboner/scalability-availability-stability-patterns/",
+                      "id": "002e5ddc1dee",
+                      "text": "A Framework For System Design Interviews",
+                      "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "2dc0a83ccc1b",
+                          "text": "Delivery Framework",
+                          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "e21477373fdf",
+                          "text": "Core Concepts (In a Hurry)",
+                          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
+                    },
+                    {
+                      "id": "47e48213231e",
+                      "text": "Performance vs. Scalability (yet to be linked)",
+                      "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
                       "difficulty": null
@@ -90282,30 +90284,22 @@
                       "difficulty": null,
                       "children": [
                         {
-                          "id": "26ea8abd0f3b",
-                          "text": "Estimation Cheatsheet",
-                          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
+                          "id": "ff7eabb87339",
+                          "text": "Numbers Every Engineer Should Know",
+                          "url": "https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know",
                           "tag": "",
-                          "subtag": "Hello Interview",
+                          "subtag": "System Design Primer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "ec1ca27ecd93",
+                          "text": "Powers of Two Table",
+                          "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table",
+                          "tag": "",
+                          "subtag": "System Design Primer",
                           "difficulty": null
                         }
                       ]
-                    },
-                    {
-                      "id": "c5bbd3fcac74",
-                      "text": "Numbers Every Engineer Should Know",
-                      "url": "https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
-                    },
-                    {
-                      "id": "93daae55a000",
-                      "text": "Powers of Two Table",
-                      "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table",
-                      "tag": "",
-                      "subtag": "System Design Primer",
-                      "difficulty": null
                     },
                     {
                       "id": "1312afd803c9",
