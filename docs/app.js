@@ -286,13 +286,27 @@ function findSheet(id) {
   return data.sheets.find((s) => s.id === id);
 }
 
+// A parent item's `children` (same-concept links from other platforms,
+// nested under the highest-priority one) count as real, independently
+// checkable items everywhere stats/search/lookups care about items --
+// this flattens one level of nesting so every such call site doesn't have
+// to re-implement "also walk into .children".
+function flatItems(items) {
+  const out = [];
+  for (const it of items) {
+    out.push(it);
+    if (it.children) out.push(...it.children);
+  }
+  return out;
+}
+
 function sheetStats(sheet) {
   let total = 0;
   let done = 0;
   for (const sec of sheet.sections) {
     for (const g of sec.groups) {
       for (const sg of g.subgroups) {
-        for (const it of sg.items) {
+        for (const it of flatItems(sg.items)) {
           total++;
           if (solved[it.id]) done++;
         }
@@ -314,7 +328,7 @@ function sheetDifficultyStats(sheet) {
   for (const sec of sheet.sections) {
     for (const g of sec.groups) {
       for (const sg of g.subgroups) {
-        for (const it of sg.items) {
+        for (const it of flatItems(sg.items)) {
           if (!it.difficulty || !stats[it.difficulty]) continue;
           stats[it.difficulty].total++;
           if (solved[it.id]) stats[it.difficulty].done++;
@@ -375,7 +389,7 @@ function sectionStats(section) {
   let done = 0;
   for (const g of section.groups) {
     for (const sg of g.subgroups) {
-      for (const it of sg.items) {
+      for (const it of flatItems(sg.items)) {
         total++;
         if (solved[it.id]) done++;
       }
@@ -492,7 +506,7 @@ function allSolvedEntries() {
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
         for (const sg of g.subgroups) {
-          for (const it of sg.items) {
+          for (const it of flatItems(sg.items)) {
             const ts = solved[it.id];
             if (typeof ts === "number") entries.push({ item: it, sheet, section: sec, group: g, subgroup: sg, ts });
           }
@@ -748,7 +762,7 @@ function collectStarredEntries() {
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
         for (const sg of g.subgroups) {
-          for (const it of sg.items) {
+          for (const it of flatItems(sg.items)) {
             if (starred[it.id]) entries.push({ item: it, sheet, group: g, subgroup: sg });
           }
         }
@@ -848,7 +862,7 @@ function renderMostPracticed() {
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
         for (const sg of g.subgroups) {
-          for (const it of sg.items) {
+          for (const it of flatItems(sg.items)) {
             const count = practiceCount(it.id);
             if (count > 0) entries.push({ item: it, sheet, group: g, subgroup: sg, count });
           }
@@ -977,7 +991,7 @@ function renderSheet(sheet) {
     for (const sec of sheet.sections) {
       for (const g of sec.groups) {
         for (const sg of g.subgroups) {
-          for (const it of sg.items) delete solved[it.id];
+          for (const it of flatItems(sg.items)) delete solved[it.id];
         }
       }
     }
@@ -1020,7 +1034,7 @@ function flattenItems(sheet) {
   for (const sec of sheet.sections) {
     for (const g of sec.groups) {
       for (const sg of g.subgroups) {
-        for (const it of sg.items) {
+        for (const it of flatItems(sg.items)) {
           const isInvariant = !it.url && /^Invariant:\s*/i.test(it.text);
           if (!isInvariant) items.push(it);
         }
@@ -1071,8 +1085,16 @@ function renderSubgroup(sg) {
   // "Fast/Slow Pointers" stand out as a title you can actually remember,
   // instead of being buried as a same-row badge on every item.
   const titleHtml = sg.title ? `<div class="subgroup-title">${escapeHtml(sg.title)}</div>` : "";
-  const rows = sg.items.map((it) => renderItemRow(it)).join("");
+  const rows = sg.items.map((it) => renderItemRow(it) + renderChildRows(it)).join("");
   return `<div class="subgroup">${titleHtml}${rows}</div>`;
+}
+
+// Children are the same concept covered by lower-priority platforms --
+// same shape as a normal item row, indented and visually subordinate to
+// their parent, each independently checkable/starrable like any other item.
+function renderChildRows(item) {
+  if (!item.children || !item.children.length) return "";
+  return `<div class="item-children">${item.children.map((c) => renderItemRow(c)).join("")}</div>`;
 }
 
 const DIFF_LABEL = { E: "Easy", M: "Medium", H: "Hard" };
@@ -1154,7 +1176,7 @@ function findItemById(sheet, id) {
   for (const sec of sheet.sections) {
     for (const g of sec.groups) {
       for (const sg of g.subgroups) {
-        for (const it of sg.items) {
+        for (const it of flatItems(sg.items)) {
           if (it.id === id) return it;
         }
       }

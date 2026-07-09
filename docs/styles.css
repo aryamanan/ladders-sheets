@@ -564,6 +564,22 @@ a.recap-text:hover { text-decoration: underline; }
 .item-row.is-solved .item-text { color: var(--fg-muted); text-decoration: line-through; }
 .item-row.is-hidden { display: none; }
 
+/* Children are the same concept from a lower-priority platform, nested
+   under their parent's row instead of listed as another flat sibling --
+   indented, with a connecting rule on the left so the "this is a variant
+   of the row above" relationship reads at a glance without needing a
+   second explanatory heading. */
+.item-children {
+  margin-left: 28px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+.item-children .item-row {
+  padding: 5px 16px 5px 0;
+  font-size: 0.92rem;
+}
+.item-children .item-row:first-child { border-top: none; }
+
 /* A solved row gets a full-block difficulty color -- Easy/Medium/Hard --
    instead of the plain muted strikethrough, so scanning a sheet shows at a
    glance how much Hard-tier ground has actually been covered. Only applies

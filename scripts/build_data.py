@@ -117,7 +117,10 @@ EXCLUDE_HEADINGS_EXACT = [
 ]
 
 HEADING_RE = re.compile(r"^(#{1,4})\s+(.*)$")
-LIST_ITEM_RE = re.compile(r"^\s*(?:[-*]|\d+\.)\s+(.+?)\s*$")
+# Group 1 captures leading indentation so a nested `   - [Y](url)` under a
+# top-level `1. [X](url)` can be told apart from another top-level item --
+# see the indent-tracking logic around `last_top_item` in parse_file.
+LIST_ITEM_RE = re.compile(r"^(\s*)(?:[-*]|\d+\.)\s+(.+?)\s*$")
 # A trailing `{Some Tag}` on a list item is a purely cosmetic per-item badge
 # (e.g. "Frequency Map") -- deliberately kept OUT of the id hash (unlike
 # `tag`/cur_label) so retrofitting badges onto a sheet's existing items never
@@ -226,6 +229,12 @@ def parse_file(path):
     seen_h1 = False
     seen_h2 = False
     desc_lines = []
+    # The most recently added top-level (zero-indent) item -- an indented
+    # list line immediately following it becomes one of its `children`
+    # instead of another flat sibling. Reset on every heading change and
+    # every blank line, so children can only ever attach to the item
+    # directly above them, never to something several paragraphs back.
+    last_top_item = None
 
     table_header = None
     awaiting_separator = False
@@ -255,10 +264,10 @@ def parse_file(path):
 
     def add_item(item_text, url, subtag=None):
         if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
-            return
+            return None
         item_text = item_text.strip()
         if not item_text:
-            return
+            return None
         subgroup = ensure_subgroup()
         tag = current_tag()
         # Only fold h4 into the hash when it's actually in use, so sheets
@@ -270,16 +279,45 @@ def parse_file(path):
             id_parts.append(cur_h4)
         id_parts += [tag, item_text, url or ""]
         item_id = make_id(*id_parts)
-        subgroup["items"].append(
-            {
-                "id": item_id,
-                "text": item_text,
-                "url": url,
-                "tag": tag,
-                "subtag": subtag,
-                "difficulty": difficulty_for(url),
-            }
-        )
+        item = {
+            "id": item_id,
+            "text": item_text,
+            "url": url,
+            "tag": tag,
+            "subtag": subtag,
+            "difficulty": difficulty_for(url),
+        }
+        subgroup["items"].append(item)
+        return item
+
+    def add_child_item(parent_item, item_text, url, subtag=None):
+        # A sub-item nested under `parent_item` (an indented bullet directly
+        # below a top-level item) -- same shape as a normal item, individually
+        # checkable, but rendered indented beneath its parent instead of as
+        # another flat sibling row. Used for "same concept, different source"
+        # clusters: the parent carries the highest-priority link, children
+        # carry the rest.
+        if cur_section is None or cur_section["excluded"] or cur_h3_excluded or cur_h4_excluded:
+            return None
+        item_text = item_text.strip()
+        if not item_text:
+            return None
+        tag = current_tag()
+        id_parts = [path.name, cur_section["title"]]
+        if cur_h4:
+            id_parts.append(cur_h4)
+        id_parts += ["child", parent_item["id"], tag, item_text, url or ""]
+        item_id = make_id(*id_parts)
+        child = {
+            "id": item_id,
+            "text": item_text,
+            "url": url,
+            "tag": tag,
+            "subtag": subtag,
+            "difficulty": difficulty_for(url),
+        }
+        parent_item.setdefault("children", []).append(child)
+        return child
 
     def handle_labelish(text):
         """Try to interpret `text` as a "Label:" or "Label: rest" line,
@@ -348,6 +386,7 @@ def parse_file(path):
                 cur_h4_excluded = False
                 cur_group = None
                 cur_subgroup = None
+                last_top_item = None
                 for link_text, url in heading_links:
                     add_item(link_text, url)
                 continue
@@ -358,6 +397,7 @@ def parse_file(path):
                 cur_h4_excluded = False
                 cur_group = None
                 cur_subgroup = None
+                last_top_item = None
                 for link_text, url in heading_links:
                     add_item(link_text, url)
                 continue
@@ -365,6 +405,7 @@ def parse_file(path):
                 cur_h4 = title
                 cur_h4_excluded = is_excluded(title)
                 cur_subgroup = None
+                last_top_item = None
                 for link_text, url in heading_links:
                     add_item(link_text, url)
                 continue
@@ -372,6 +413,7 @@ def parse_file(path):
         if not line.strip():
             table_header = None
             awaiting_separator = False
+            last_top_item = None
             if not seen_h2 and desc_lines:
                 # blank line after first description paragraph
                 pass
@@ -430,26 +472,27 @@ def parse_file(path):
 
         list_match = LIST_ITEM_RE.match(line)
         if list_match:
-            item_text = list_match.group(1)
+            indent, item_text = list_match.group(1), list_match.group(2)
+            is_child = bool(indent) and last_top_item is not None
             subtag_match = SUBTAG_RE.match(item_text)
             subtag = None
             if subtag_match:
                 subtag = subtag_match.group(2).strip()
                 item_text = subtag_match.group(1).strip()
-            if handle_labelish(item_text):
+            if not is_child and handle_labelish(item_text):
                 continue
             links = LINK_RE.findall(item_text)
-            if links:
-                # Keep the whole line (link syntax stripped) as the item
-                # text, not just the linked fragment's anchor text -- a
-                # quote like `"..." -- Author, [Article](url)` must not lose
-                # everything outside the brackets. For the common simple
-                # case (`- [Problem](url)` with nothing else on the line)
-                # this reduces to exactly the old behavior since
-                # strip_links(item_text) == the link's own anchor text.
-                add_item(strip_links(item_text), links[0][1], subtag)
+            # Keep the whole line (link syntax stripped) as the item text,
+            # not just the linked fragment's anchor text -- a quote like
+            # `"..." -- Author, [Article](url)` must not lose everything
+            # outside the brackets. For the common simple case (`- [Problem]
+            # (url)` with nothing else on the line) this reduces to exactly
+            # the anchor text since strip_links(item_text) == that text.
+            text, url = strip_links(item_text), (links[0][1] if links else None)
+            if is_child:
+                add_child_item(last_top_item, text, url, subtag)
             else:
-                add_item(strip_links(item_text), None, subtag)
+                last_top_item = add_item(text, url, subtag)
             continue
 
         if handle_labelish(line):
@@ -480,7 +523,10 @@ def parse_file(path):
     category = CATEGORY_OVERRIDES.get(path.name, "dsa" if "dsa" in path.stem else "system-design")
     sheet_id = path.stem.replace("_", "-")
     total_items = sum(
-        len(sg["items"]) for s in sections for g in s["groups"] for sg in g["subgroups"]
+        len(sg["items"]) + sum(len(it.get("children") or []) for it in sg["items"])
+        for s in sections
+        for g in s["groups"]
+        for sg in g["subgroups"]
     )
 
     return {
