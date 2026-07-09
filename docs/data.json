@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 307,
+      "totalItems": 345,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90507,7 +90507,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "686f123c82c2",
+                          "text": "Networking Essentials for System Design Interviews w/ Ex Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=SHkbPm1Wrno",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "cd8be4a6808e"
@@ -90533,7 +90543,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/api-design",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "0c36bc89a7aa",
+                          "text": "API Design in System Design Interviews w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=DQ57zYedMdQ",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "a1bd0459ea72",
@@ -90541,7 +90561,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "f97d60c185bc",
+                          "text": "Data Modeling in System Design Interviews w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=TUcPS6dsWx4",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "ffb73596c414",
@@ -90569,7 +90599,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/caching",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "b3e73917875b",
+                          "text": "Caching in System Design Interviews w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=1NngTUYPdpI",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "35b80bdac05d",
@@ -90695,7 +90735,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/core-concepts/sharding",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "58d66039fcdd",
+                          "text": "Sharding in System Design Interviews w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=L521gizea4s",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "286150a8818d"
@@ -90717,6 +90767,22 @@
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "5cba64aab465",
+                          "text": "CAP Theorem in System Design Interviews",
+                          "url": "https://www.youtube.com/watch?v=VdrEq0cODu4",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "92e232e87f26",
+                          "text": "CAP Theorem Simplified",
+                          "url": "https://www.youtube.com/watch?v=BHqjEjzAicA",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
                         {
                           "id": "90343055b47d",
                           "text": "CAP FAQ",
@@ -90784,6 +90850,22 @@
                           "tag": "",
                           "subtag": "ByteByteGo",
                           "difficulty": null
+                        },
+                        {
+                          "id": "cd890f742dd7",
+                          "text": "Consistent Hashing: Easy Explanation for System Design Interviews",
+                          "url": "https://www.youtube.com/watch?v=vccwdhfqIrI",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "bd05e3f5b3f9",
+                          "text": "Consistent Hashing | Algorithms You Should Know #1",
+                          "url": "https://www.youtube.com/watch?v=UF9Iqmg94tk",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90801,7 +90883,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "8fc40a6cdd8f",
+                          "text": "Distributed Transactions Explained: 2 Phase Commit vs Saga Pattern",
+                          "url": "https://www.youtube.com/watch?v=DOFflggE_0Q",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "63a6e237365e",
@@ -91039,7 +91131,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "4e18b067e829",
+                          "text": "How To Choose The Right Database?",
+                          "url": "https://www.youtube.com/watch?v=kkeFE6iRfMM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "4e6b668142e3"
@@ -91075,7 +91177,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "98cc158790e6",
+                          "text": "DB Indexing in System Design Interviews -- B-tree, Geospatial, Inverted Index, and more!",
+                          "url": "https://www.youtube.com/watch?v=BHCSL_ZifI0",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "2629cf341e7f",
@@ -91163,7 +91275,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus / ByteByteGo",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "d16c5f302060",
+                          "text": "Object Storage in System Design Interviews w/ Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=RvaMHMxHjp4",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "dd7c6498a4ba"
@@ -91189,7 +91311,25 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "c946642ac64a",
+                          "text": "API Gateways in System Design Interviews w/ Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=7-6F3b14baA",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "60dd5aefd28a",
+                          "text": "What is API Gateway?",
+                          "url": "https://www.youtube.com/watch?v=6ULyxuHKxg8",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "73670faa6b9e",
@@ -91247,7 +91387,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/redis",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "0322a24653c2",
+                          "text": "Redis Deep Dive w/ a Ex-Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=fmT5nlEkl3U",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "855a8d6c5951",
@@ -91255,7 +91405,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/kafka",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "8787cda62bf9",
+                          "text": "Kafka System Design Deep Dive w/ a Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=DU8o-OTeoCc",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "6779fae929b2",
@@ -91289,7 +91449,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/cassandra",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "e7bc8c4f6384",
+                          "text": "Cassandra Deep Dive w/ a Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=TD3-INhm60Q",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "c3725e95e08a",
@@ -91297,7 +91467,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/dynamodb",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "5b41db1e9130",
+                          "text": "DynamoDB Deep Dive w/ a Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=2X2SO3Y-af8",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "cae93ebf98b8",
@@ -91329,7 +91509,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/time-series-databases",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "3a8c69e7e400",
+                          "text": "How do Time Series Databases Work?",
+                          "url": "https://www.youtube.com/watch?v=Qd76ZmfRs_Q",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "800008416ba9",
@@ -91441,7 +91631,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "495f88e31b75",
+                          "text": "Data Structures for Big Data in Interviews -- Bloom Filters, Count-Min Sketch, HyperLogLog",
+                          "url": "https://www.youtube.com/watch?v=IgyU0iFIoqM",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "0ec7c49f2551",
+                          "text": "Bloom Filters | Algorithms You Should Know #2",
+                          "url": "https://www.youtube.com/watch?v=V3pzxngeLqw",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "af42ca643566"
@@ -91597,7 +91805,17 @@
                       "url": "https://redis.io/",
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "96b9246c9854",
+                          "text": "Message Queues in System Design Interviews w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=1ISRd0bS714",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "165a5834dcdf",
@@ -91898,6 +92116,14 @@
                           "tag": "",
                           "subtag": "Design Gurus",
                           "difficulty": null
+                        },
+                        {
+                          "id": "2416ea8fc54a",
+                          "text": "Rate Limiter System Design: Token Bucket, Leaky Bucket, Scaling",
+                          "url": "https://www.youtube.com/watch?v=YXkOdWBwqaA",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91909,6 +92135,14 @@
                       "subtag": "ByteByteGo",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "2aadf48f0be4",
+                          "text": "How Key Value Stores Work (Redis, DynamoDB, Memcached)?",
+                          "url": "https://www.youtube.com/watch?v=Dwt8R0KPu7k",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
                         {
                           "id": "face63848539",
                           "text": "Design a Key-Value Store for a Search Engine (LRU query cache)",
@@ -91981,6 +92215,14 @@
                           "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md",
                           "tag": "",
                           "subtag": "System Design Primer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "dbc46c363102",
+                          "text": "How Does a URL Shortener Work?",
+                          "url": "https://www.youtube.com/watch?v=HHUi8F_qAXM",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
                           "difficulty": null
                         }
                       ]
@@ -92127,7 +92369,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/tinder",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "1580f75d7852",
+                          "text": "System Design Interview: Design Tinder w/ a Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=18Fg5Akhkqw",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "974ec9067fd3",
@@ -92232,6 +92484,14 @@
                           "difficulty": null
                         },
                         {
+                          "id": "d98ff555d90d",
+                          "text": "Design WhatsApp: System Design Interview w/ a Ex-Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=cr6p0n0N-VA",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
                           "id": "574399289746",
                           "text": "Design WhatsApp",
                           "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-whatsapp",
@@ -92269,6 +92529,14 @@
                           "id": "7f21a5cff21a",
                           "text": "Design Live Comments w/ an Ex-Meta Staff Engineer",
                           "url": "https://www.youtube.com/watch?v=LjLx0fCd1k8",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "8699b59bddf8",
+                          "text": "Design FB Live Comments: Hello Interview Mock",
+                          "url": "https://www.youtube.com/watch?v=tgSe27eoBG0",
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
@@ -92581,7 +92849,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/proximity-search",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "de36fd5a5235",
+                          "text": "Proximity Search & Geospatial Indexes Explained",
+                          "url": "https://www.youtube.com/watch?v=dQXdSxn7d1g",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "bed587767b52",
@@ -92589,7 +92867,33 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "04d443289104",
+                          "text": "System Design Mock Interview: Design Yelp w/ Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=yz1jtze4qr8",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "b01728ae682e",
+                          "text": "Design Yelp, Meta Staff Product Architecture: Hello Interview Mock",
+                          "url": "https://www.youtube.com/watch?v=pFTyGG4mORk",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "b8e190ba6f98",
+                          "text": "FAANG System Design Interview: Design A Location Based Service (Yelp, Google Places)",
+                          "url": "https://www.youtube.com/watch?v=M4lR_Va97cQ",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "a7c82686c7bf",
@@ -92648,6 +92952,14 @@
                           "tag": "",
                           "subtag": "System Design Primer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "100dd66dc436",
+                          "text": "Design a Web Crawler: FAANG Interview Question",
+                          "url": "https://www.youtube.com/watch?v=6u25GckPhLU",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92668,6 +92980,14 @@
                       "difficulty": null,
                       "children": [
                         {
+                          "id": "49d707abaade",
+                          "text": "Design an Ad Click Aggregator w/ a Ex-Meta Staff Engineer System Design Interview",
+                          "url": "https://www.youtube.com/watch?v=Zcv_899yqhI",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
                           "id": "d5dfd25c91d8",
                           "text": "Design Ad Click Event Aggregation (yet to be linked)",
                           "url": null,
@@ -92683,7 +93003,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-post-search",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "118d57b79a6b",
+                          "text": "Design FB Post Search: System Design Interview breakdown w/ ex Meta Interviewer",
+                          "url": "https://www.youtube.com/watch?v=l38XL9914fs",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "cb198d673eb1",
@@ -92801,7 +93131,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "d8ebc8a744c3",
+                          "text": "OpenAI & Meta Senior/Staff System Design Mock Interview: Design Online Auction",
+                          "url": "https://www.youtube.com/watch?v=o8nSXW-B7Rw",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "579923b0d33c",
@@ -92967,7 +93307,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/top-k",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "128079a6e582",
+                          "text": "Top-K System Design Interview Breakdown w/ Ex-Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=y-tA2NW4LNY",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "cbeead102573",
