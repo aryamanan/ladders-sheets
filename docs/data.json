@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 350,
+      "totalItems": 411,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90608,6 +90608,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "1dc73e09c985",
+                          "text": "Distributed Caching Primer",
+                          "url": "https://www.youtube.com/watch?v=JIAAlb3AtjA",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90657,7 +90665,25 @@
                       "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-cache-like-redis",
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "7599df65fdc7",
+                          "text": "What are Distributed CACHES and how do they manage DATA CONSISTENCY?",
+                          "url": "https://www.youtube.com/watch?v=U3RkDLtS7uY",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f4bfe2452601",
+                          "text": "Introduction to Distributed Caching",
+                          "url": "https://www.youtube.com/watch?v=crPoHnhkjFE",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "73bd6cf0c174",
@@ -90743,6 +90769,14 @@
                           "url": "https://www.youtube.com/watch?v=L521gizea4s",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "78b98424f39a",
+                          "text": "What is DATABASE SHARDING?",
+                          "url": "https://www.youtube.com/watch?v=5faMjKuB9bc",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
                           "difficulty": null
                         }
                       ]
@@ -90866,6 +90900,14 @@
                           "tag": "",
                           "subtag": "ByteByteGo",
                           "difficulty": null
+                        },
+                        {
+                          "id": "1e278ca16ba2",
+                          "text": "What is CONSISTENT HASHING and Where is it used?",
+                          "url": "https://www.youtube.com/watch?v=zaRkONvyGr8",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90892,6 +90934,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "ec8d1c3e650b",
+                          "text": "Two Phase Commit -- Distributed Transactions",
+                          "url": "https://www.youtube.com/watch?v=7DoT2sTGulc",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -90901,7 +90951,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "23b0abc4cd88",
+                          "text": "Distributed Consensus -- Raft Leader Election",
+                          "url": "https://www.youtube.com/watch?v=Al2JNJBGG30",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "03106a0bd6c3",
@@ -90909,7 +90969,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "roadmap.sh",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "a90f4da6f1ea",
+                          "text": "Distributed Consensus -- Raft Writes",
+                          "url": "https://www.youtube.com/watch?v=FByzF2D_-KU",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "0b67c6a856f7",
+                          "text": "Raft in 15 Minutes",
+                          "url": "https://www.youtube.com/watch?v=YOMgi7T823E",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "b776fce9d91e",
@@ -91370,6 +91448,22 @@
                           "tag": "",
                           "subtag": "roadmap.sh",
                           "difficulty": null
+                        },
+                        {
+                          "id": "6368ba3c0507",
+                          "text": "What is LOAD BALANCING?",
+                          "url": "https://www.youtube.com/watch?v=K0Ta65OqQkY",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "dd5e59d8e151",
+                          "text": "Load Balancing -- The Right Way To Do It",
+                          "url": "https://www.youtube.com/watch?v=PERKHUJYotM",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91396,6 +91490,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "d209afeb9955",
+                          "text": "Redis vs. Memcached -- Who Wins?",
+                          "url": "https://www.youtube.com/watch?v=Gyy1SiE8avE",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91414,6 +91516,22 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "3388d9ae3d4e",
+                          "text": "Apache Kafka: a Distributed Messaging System for Log Processing",
+                          "url": "https://www.youtube.com/watch?v=hNDjd9I_VGA",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "5fd4fcccc524",
+                          "text": "Kafka vs. RabbitMQ -- Who Wins and Why?",
+                          "url": "https://www.youtube.com/watch?v=_5mu7lZz5X4",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91423,7 +91541,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "60c1e2259d35",
+                          "text": "Kafka vs. RabbitMQ -- Who Wins and Why?",
+                          "url": "https://www.youtube.com/watch?v=_5mu7lZz5X4",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "89e3ca8ca3c7",
@@ -91439,6 +91567,14 @@
                           "url": "https://www.youtube.com/watch?v=PuZvF2EyfBM",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "1aa0e3871a68",
+                          "text": "What's ElasticSearch Used For? Search Indexes",
+                          "url": "https://www.youtube.com/watch?v=wmCWCVAl1Us",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
                           "difficulty": null
                         }
                       ]
@@ -91458,6 +91594,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "cd95fabae4ba",
+                          "text": "Apache Cassandra -- Just a Dynamo Clone??",
+                          "url": "https://www.youtube.com/watch?v=ddw7_fp05pU",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -91475,6 +91619,14 @@
                           "url": "https://www.youtube.com/watch?v=2X2SO3Y-af8",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "acafc321cc1e",
+                          "text": "Amazon DynamoDB: A Scalable, Predictably Performant, and Fully Managed NoSQL Database Service",
+                          "url": "https://www.youtube.com/watch?v=cU01EnyBwQI",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
                           "difficulty": null
                         }
                       ]
@@ -91535,7 +91687,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "c3ad766995cd",
+                          "text": "What is ZooKeeper? -- Coordination Services",
+                          "url": "https://www.youtube.com/watch?v=F06tdYgcz_A",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "7cf1a2258c22",
@@ -91559,7 +91721,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "e98a45b25e4e",
+                          "text": "Amazon S3 (Object Stores) -- In Practice",
+                          "url": "https://www.youtube.com/watch?v=zplIwqWBhwg",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "4533b0b64db2",
@@ -92174,6 +92346,14 @@
                           "tag": "",
                           "subtag": "ByteByteGo",
                           "difficulty": null
+                        },
+                        {
+                          "id": "40171fd24b0f",
+                          "text": "Design a Rate Limiter | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=VzW41m4USGs",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92274,6 +92454,14 @@
                           "tag": "",
                           "subtag": "ByteByteGo",
                           "difficulty": null
+                        },
+                        {
+                          "id": "833360ea4e4c",
+                          "text": "Design a URL Shortener (TinyURL, Bit.ly)",
+                          "url": "https://www.youtube.com/watch?v=xFeWVugaouk",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92283,7 +92471,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "ByteByteGo",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "14433c9d832b",
+                          "text": "Snowflake -- Power With No Tuning",
+                          "url": "https://www.youtube.com/watch?v=wFfDbN7wTxU",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "d4d535047119",
@@ -92291,7 +92489,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "447c4315056a",
+                          "text": "What is an API Gateway?",
+                          "url": "https://www.youtube.com/watch?v=RbMxB_Cyx6A",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "42e6d642edee",
@@ -92299,7 +92507,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "71d44e5d993e",
+                          "text": "Chubby -- Eventual Consistency Is Too Hard...",
+                          "url": "https://www.youtube.com/watch?v=Sj8vo4YmUZI",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "215bd2a2017e",
+                          "text": "Distributed Locking | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=Lp8oITg0MiI",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "a3114173d4b3",
@@ -92307,7 +92533,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "07050342c0d2",
+                          "text": "Distributed Job Scheduler | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=pzDwYHRzEnk",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "07e0f8af4172",
@@ -92315,7 +92551,17 @@
                       "url": "https://algomaster.io/learn/system-design-interviews/design-search-autocomplete-system",
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "d57a8cad12b6",
+                          "text": "Typeahead Suggestion + Google Search Bar",
+                          "url": "https://www.youtube.com/watch?v=MCKX3n4-UR4",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "86e873306db1"
@@ -92358,6 +92604,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "18aff03c44ac",
+                          "text": "Designing INSTAGRAM: System Design of News Feed",
+                          "url": "https://www.youtube.com/watch?v=QmX2NPkJTKg",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92392,6 +92646,14 @@
                           "tag": "",
                           "subtag": "IGotAnOffer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "a5d9937d706d",
+                          "text": "Design Twitter Post Search",
+                          "url": "https://www.youtube.com/watch?v=D0g_zEsRPYw",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92409,6 +92671,14 @@
                           "url": "https://www.youtube.com/watch?v=DXpJCh5_KT4",
                           "tag": "",
                           "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "9cea8e8f2322",
+                          "text": "Instagram + Twitter + Facebook + Reddit",
+                          "url": "https://www.youtube.com/watch?v=S2y9_XYOZsg",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
                           "difficulty": null
                         }
                       ]
@@ -92428,6 +92698,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "f9ea1f3f9080",
+                          "text": "System Design: TINDER as a Microservice Architecture",
+                          "url": "https://www.youtube.com/watch?v=tndzLznxq40",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92446,6 +92724,14 @@
                           "tag": "",
                           "subtag": "IGotAnOffer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "ea894c3882be",
+                          "text": "System Design Interview: TikTok Architecture",
+                          "url": "https://www.youtube.com/watch?v=07BVxmVFDGY",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92455,7 +92741,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "2bcd1a07bf62",
+                          "text": "Reddit Comments",
+                          "url": "https://www.youtube.com/watch?v=BO2gRisnBcA",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "5eb60387d4d0",
@@ -92487,6 +92783,14 @@
                           "url": "https://www.youtube.com/watch?v=ICu8g9auh8E",
                           "tag": "",
                           "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f27da2091887",
+                          "text": "Find the Distance Between Friends/Connections -- LinkedIn System Design",
+                          "url": "https://www.youtube.com/watch?v=OXLDI8gibPw",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
                           "difficulty": null
                         }
                       ]
@@ -92615,7 +92919,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus / AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "59e59adbfc15",
+                          "text": "Design Google Docs/Real Time Text Editor",
+                          "url": "https://www.youtube.com/watch?v=YCjVIDv0zQY",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "15eefa0c4115",
+                          "text": "Collaborative Text Editing (Operational Transform v. CRDT)",
+                          "url": "https://www.youtube.com/watch?v=uOKrTc3Q0D0",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "0250d6b941ae",
@@ -92631,7 +92953,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "9427bc6a1bba",
+                          "text": "Video/Conference Calling (Zoom)",
+                          "url": "https://www.youtube.com/watch?v=7KO7o55dcuw",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "25ef63485d05",
@@ -92758,6 +93090,14 @@
                           "tag": "",
                           "subtag": "IGotAnOffer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "9855e56fba7c",
+                          "text": "Design Dropbox/Google Drive",
+                          "url": "https://www.youtube.com/watch?v=Qi3Kzq_rlKQ",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92767,7 +93107,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "c8aa34fb3703",
+                          "text": "How NETFLIX Onboards New Content: Video Processing at Scale",
+                          "url": "https://www.youtube.com/watch?v=x9Hrn0oNmJM",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "da48419cbf87",
+                          "text": "Netflix + YouTube",
+                          "url": "https://www.youtube.com/watch?v=43bB7oSn190",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "24a96c9c6dcf",
@@ -92791,7 +93149,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "0cb4a3f82cc8",
+                          "text": "System Design: Live Streaming Events like ESPN and Hotstar",
+                          "url": "https://www.youtube.com/watch?v=yKgWAHqmAwk",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "f5acee2ea812",
+                          "text": "Live Streaming (Twitch)",
+                          "url": "https://www.youtube.com/watch?v=MWjQs9I7clo",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "4e5e434785ea",
@@ -92858,6 +93234,14 @@
                           "tag": "",
                           "subtag": "IGotAnOffer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "1ab0993b2301",
+                          "text": "Design Uber/Lyft (Part 1)",
+                          "url": "https://www.youtube.com/watch?v=rUAdeHpCPq8",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92883,7 +93267,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "ae9dbfa7041f",
+                          "text": "Google Maps",
+                          "url": "https://www.youtube.com/watch?v=1pmcoh4hc_A",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "7a99b89cccbc",
@@ -93010,6 +93404,14 @@
                           "tag": "",
                           "subtag": "ByteByteGo",
                           "difficulty": null
+                        },
+                        {
+                          "id": "096ad26fc355",
+                          "text": "Design a Web Crawler | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=MdWvMX4J-Vc",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -93035,6 +93437,14 @@
                           "url": "https://www.youtube.com/watch?v=Zcv_899yqhI",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "07ec7c26da6f",
+                          "text": "Design an Ad Click Aggregator | Systems Design Questions 3.0",
+                          "url": "https://www.youtube.com/watch?v=6TroztUV3f8",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
                           "difficulty": null
                         },
                         {
@@ -93122,6 +93532,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "df2f5133f3b3",
+                          "text": "Design TicketMaster/StubHub",
+                          "url": "https://www.youtube.com/watch?v=sMgxHf9AU_U",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -93157,7 +93575,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "7edd2ccef2af",
+                          "text": "Amazon/Flipkart Ecommerce Design Deep Dive",
+                          "url": "https://www.youtube.com/watch?v=vNDz6jqtR40",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "ed059c0f0d7b",
@@ -93189,6 +93617,14 @@
                           "url": "https://www.youtube.com/watch?v=o8nSXW-B7Rw",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "cae32f49740d",
+                          "text": "Bidding Platform (eBay)",
+                          "url": "https://www.youtube.com/watch?v=3aX-lC5_P1M",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
                           "difficulty": null
                         }
                       ]
@@ -93233,7 +93669,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "6d040d768a67",
+                          "text": "Amazon Payment Gateway",
+                          "url": "https://www.youtube.com/watch?v=rT4sS4l51PY",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "f7486aedbc10",
@@ -93266,6 +93712,14 @@
                           "tag": "",
                           "subtag": "IGotAnOffer",
                           "difficulty": null
+                        },
+                        {
+                          "id": "8c593b039df2",
+                          "text": "Robinhood Stock Trading Platform",
+                          "url": "https://www.youtube.com/watch?v=SAa6xFyATcw",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -93275,7 +93729,25 @@
                       "url": null,
                       "tag": "",
                       "subtag": "Design Gurus",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "a62a51facbf5",
+                          "text": "High Throughput Stock Exchange",
+                          "url": "https://www.youtube.com/watch?v=dGYfpO3WJ1o",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "74c29ea9964d",
+                          "text": "Low Latency Stock Exchange Design Deep Dive",
+                          "url": "https://www.youtube.com/watch?v=erusCJu6CQY",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     }
                   ],
                   "id": "1ba0639aa5da"
@@ -93301,7 +93773,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "ByteByteGo",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "b8378af1a6d1",
+                          "text": "What is a MESSAGE QUEUE and Where is it Used?",
+                          "url": "https://www.youtube.com/watch?v=oUJbuFMyBDk",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "ef47810600a3",
@@ -93325,7 +93807,25 @@
                       "url": "https://algomaster.io/learn/system-design-interviews/design-notification-service",
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "251475661b37",
+                          "text": "Design a Notification Service (OneSignal)",
+                          "url": "https://www.youtube.com/watch?v=IScGMqojqKE",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "5061956e74a6",
+                          "text": "Notification Service | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=J-5JozlYIqI",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "8c46e4746b23",
@@ -93333,7 +93833,17 @@
                       "url": null,
                       "tag": "",
                       "subtag": "AlgoMaster",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "03349decd3db",
+                          "text": "Distributed Job Scheduler Design Deep Dive",
+                          "url": "https://www.youtube.com/watch?v=WTxG5880EH8",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "bf9918c1422f",
@@ -93349,7 +93859,17 @@
                       "url": "https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard",
                       "tag": "",
                       "subtag": "ByteByteGo",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "3ad3ae2e1ab1",
+                          "text": "Top K Leaderboard | Systems Design Interview Questions With Ex-Google SWE",
+                          "url": "https://www.youtube.com/watch?v=nQpkRONzEQI",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "bb6fe28aee84",
@@ -93365,6 +93885,14 @@
                           "url": "https://www.youtube.com/watch?v=y-tA2NW4LNY",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "e624a58cd1b0",
+                          "text": "Top K Leaderboard Design Deep Dive",
+                          "url": "https://www.youtube.com/watch?v=XbkjEX-jgj0",
+                          "tag": "",
+                          "subtag": "Jordan Has No Life",
                           "difficulty": null
                         }
                       ]
@@ -93409,6 +93937,14 @@
                           "url": "https://www.youtube.com/watch?v=1xHADtekTNg",
                           "tag": "",
                           "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "fda386f40444",
+                          "text": "System Design: Online Judge for Coding Contests",
+                          "url": "https://www.youtube.com/watch?v=eg0nlYcbLpo",
+                          "tag": "",
+                          "subtag": "Gaurav Sen",
                           "difficulty": null
                         },
                         {
