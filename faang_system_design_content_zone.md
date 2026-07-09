@@ -68,9 +68,10 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Cache Systems Every Developer Should Know](https://www.youtube.com/watch?v=dGAgxozNWFE) {ByteByteGo}
 2. [Cache Placement -- Client, CDN, Web Server, Database, Application](https://github.com/donnemartin/system-design-primer#cache) {System Design Primer}
 3. [Cache-Aside Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside) {roadmap.sh}
-4. [Write-Through](https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside) {roadmap.sh}
-5. [Write-Behind](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/) {roadmap.sh}
-6. [Refresh-Ahead](http://www.slideshare.net/tmatyashovsky/from-cache-to-in-memory-data-grid-introduction-to-hazelcast) {roadmap.sh}
+4. [Write-Through](https://docs.oracle.com/cd/E13924_01/coh.340/e13819/readthrough.htm) {roadmap.sh}
+   - [Caching Patterns -- Database Caching Strategies Using Redis (AWS Whitepaper)](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html) {AWS}
+5. [Write-Behind](https://docs.oracle.com/cd/E13924_01/coh.340/e13819/readthrough.htm) {roadmap.sh}
+6. [Refresh-Ahead](https://docs.oracle.com/cd/E13924_01/coh.340/e13819/readthrough.htm) {roadmap.sh}
 7. [Design a Distributed Cache (like Redis)](https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-cache-like-redis) {Design Gurus}
    - [What are Distributed CACHES and how do they manage DATA CONSISTENCY?](https://www.youtube.com/watch?v=U3RkDLtS7uY) {Gaurav Sen}
    - [Introduction to Distributed Caching](https://www.youtube.com/watch?v=crPoHnhkjFE) {Jordan Has No Life}
