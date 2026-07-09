@@ -17,6 +17,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 8. Diagramming Tips (yet to be linked) {Hello Interview}
    - [System Design Interviews: 10 Key Principles (with ex-Google EM)](https://www.youtube.com/watch?v=8dG0qzNAVXI) {IGotAnOffer}
    - [System Design Interviews: 10 Ways to IMPRESS Your Interviewer (with ex-Google EM)](https://www.youtube.com/watch?v=PSYdvx0lwLg) {IGotAnOffer}
+   - [System Design Interview: A Step-By-Step Guide (ByteByteGo)](https://www.youtube.com/watch?v=i7twT3x5yv8) {ByteByteGo}
+   - [8 Most Important System Design Concepts You Should Know (ByteByteGo)](https://www.youtube.com/watch?v=BTjxUS_PylA) {ByteByteGo}
+   - [How to Prepare for System Design Interviews w/ a Meta Staff Engineer](https://www.youtube.com/watch?v=Ru54dxzCyD0) {Hello Interview}
 9. [Scaling to Millions of Users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) {System Design Primer}
 10. Functional vs. Non-Functional Requirements (yet to be linked) {Hello Interview}
 11. Bottleneck Identification (yet to be linked) {Hello Interview}
@@ -150,6 +153,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 5. [Kafka](https://www.hellointerview.com/learn/system-design/deep-dives/kafka) {Hello Interview}
 6. RabbitMQ (yet to be linked) {Hello Interview}
 7. [Elasticsearch](https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch) {Hello Interview}
+   - [Elasticsearch Deep Dive w/ an Ex-Meta Senior Manager](https://www.youtube.com/watch?v=PuZvF2EyfBM) {Hello Interview}
 8. [Cassandra](https://www.hellointerview.com/learn/system-design/deep-dives/cassandra) {Hello Interview}
 9. [DynamoDB](https://www.hellointerview.com/learn/system-design/deep-dives/dynamodb) {Hello Interview}
 10. [PostgreSQL](https://algomaster.io/learn/system-design-interviews/postgresql) {AlgoMaster}
@@ -228,6 +232,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Design a Rate Limiter](https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter) {ByteByteGo}
    - [Distributed Rate Limiter](https://www.hellointerview.com/learn/system-design/problem-breakdowns/distributed-rate-limiter) {Hello Interview}
+   - [Design a Distributed Rate Limiter w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=MIJFyUPG4Z4) {Hello Interview}
    - [Design a Distributed Rate Limiter](https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-rate-limiter) {Design Gurus}
 2. [Design a Key-Value Store](https://bytebytego.com/courses/system-design-interview/design-a-key-value-store) {ByteByteGo}
    - [Design a Key-Value Store for a Search Engine (LRU query cache)](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/query_cache/README.md) {System Design Primer}
@@ -237,6 +242,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Versioning Data and Achieving Configurability](https://www.educative.io/courses/grokking-the-system-design-interview/versioning-data-and-achieving-configurability) {Grokking}
 3. [Design a URL Shortener](https://bytebytego.com/courses/system-design-interview/design-a-url-shortener) {ByteByteGo}
    - [Bitly](https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly) {Hello Interview}
+   - [Beginner System Design Interview: Design Bitly w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=iUU4O1sWtJA) {Hello Interview}
    - [Design Pastebin.com (or Bit.ly)](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md) {System Design Primer}
 4. Design a Unique ID Generator in Distributed Systems (yet to be linked) {ByteByteGo}
 5. Design an API Gateway (yet to be linked) {Design Gurus}
@@ -248,7 +254,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Design a News Feed System](https://bytebytego.com/courses/system-design-interview/design-a-news-feed-system) {ByteByteGo}
    - [FB News Feed](https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed) {Hello Interview}
+   - [Design FB News Feed System Design Interview w/ ex-Meta Senior Manager](https://www.youtube.com/watch?v=Qj4-GruzyDU) {Hello Interview}
 2. [Design the Twitter Timeline and Search](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md) {System Design Primer}
+   - [System Design Interview Walkthrough: Design Twitter](https://www.youtube.com/watch?v=Nfa-uUHuFHg) {Hello Interview}
    - Design Twitter Timeline (yet to be linked) {Design Gurus}
    - [Twitter System Design Mock Interview (with Senior Software Engineer)](https://www.youtube.com/watch?v=3yW856jAbZA) {IGotAnOffer}
 3. [Design Instagram](https://algomaster.io/learn/system-design-interviews/design-instagram) {AlgoMaster}
@@ -265,11 +273,13 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 12: Case Studies -- Messaging & Real-Time Communication
 
 1. [Design a Chat System](https://bytebytego.com/courses/system-design-interview/design-a-chat-system) {ByteByteGo}
+   - [FAANG System Design Interview: Design a Chat System (WhatsApp, Messenger, Discord, Slack)](https://www.youtube.com/watch?v=okrR1KXNLtA) {ByteByteGo}
    - [WhatsApp](https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp) {Hello Interview}
    - [Design WhatsApp](https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-whatsapp) {Design Gurus}
    - [System Design Mock Interview: "Design WhatsApp or Telegram" (with ex-Google EM)](https://www.youtube.com/watch?v=M6UZ7pVD-rQ) {IGotAnOffer}
    - [Design WhatsApp](https://algomaster.io/learn/system-design-interviews/design-whatsapp) {AlgoMaster}
 2. [FB Live Comments](https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments) {Hello Interview}
+   - [Design Live Comments w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=LjLx0fCd1k8) {Hello Interview}
    - Design Live Comment Streaming Service (Twitch Chat) (yet to be linked) {Design Gurus}
 3. Design Slack (yet to be linked) {AlgoMaster}
 4. Design Google Docs (yet to be linked) {Design Gurus / AlgoMaster}
@@ -281,12 +291,16 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 13: Case Studies -- Media, Storage & Streaming
 
 1. [Design YouTube](https://bytebytego.com/courses/system-design-interview/design-youtube) {ByteByteGo}
+   - [System Design: Design YouTube (ByteByteGo)](https://www.youtube.com/watch?v=jWRW2xGMqSw) {ByteByteGo}
+   - [System Design Interview: Design YouTube w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=IUrQ5_g3XKs) {Hello Interview}
    - [YouTube](https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube) {Hello Interview}
    - [Design YouTube](https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-youtube) {Design Gurus}
    - [FAANG System Design Interview: Design YouTube (with FAANG Senior SWE)](https://www.youtube.com/watch?v=hqa2sfoGRlI) {IGotAnOffer}
 2. [Design Spotify](https://algomaster.io/learn/system-design-interviews/design-spotify) {AlgoMaster}
    - [Google System Design Interview: Design Spotify (with ex-Google EM)](https://www.youtube.com/watch?v=_K-eupuDVEc) {IGotAnOffer}
 3. [Dropbox](https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox) {Hello Interview}
+   - [Design Dropbox or Google Drive w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=_UZ1ngy-kOI) {Hello Interview}
+   - [Design a File-Sharing System Like Google Drive / Dropbox](https://www.youtube.com/watch?v=4_qu1F9BXow) {IGotAnOffer}
 4. Design Netflix (yet to be linked) {Design Gurus}
 5. Design Google Drive (yet to be linked) {AlgoMaster}
 6. Design Gmail (yet to be linked) {AlgoMaster}
@@ -297,6 +311,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Design Airbnb](https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-airbnb) {Design Gurus}
 2. [Uber](https://www.hellointerview.com/learn/system-design/problem-breakdowns/uber) {Hello Interview}
+   - [Design Uber w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=lsKU38RKQSo) {Hello Interview}
    - Design Uber/Lyft (yet to be linked) {Design Gurus}
    - [Uber System Design: Mock Interview Walk-Through with Dima Korolev (ex-Google)](https://www.youtube.com/watch?v=wL-Gx5XE9XE) {IGotAnOffer}
 3. [Local Delivery Service (Gopuff)](https://www.hellointerview.com/learn/system-design/problem-breakdowns/gopuff) {Hello Interview}
@@ -311,6 +326,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Design a Web Crawler](https://bytebytego.com/courses/system-design-interview/design-a-web-crawler) {ByteByteGo}
    - [Web Crawler](https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler) {Hello Interview}
+   - [Design a Web Crawler w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=krsuaUp__pM) {Hello Interview}
    - [Design a Web Crawler (full worked solution)](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md) {System Design Primer}
 2. Design Google Search (yet to be linked) {Design Gurus}
 3. [Ad Click Aggregator](https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator) {Hello Interview}
@@ -323,6 +339,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Hotel Reservation System](https://bytebytego.com/courses/system-design-interview/hotel-reservation-system) {ByteByteGo}
 2. [Ticketmaster](https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster) {Hello Interview}
+   - [Design Ticketmaster w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=fhdPyoO6aXI) {Hello Interview}
 3. [Design Amazon's Sales Ranking by Category](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md) {System Design Primer}
    - Design Amazon (yet to be linked) {AlgoMaster}
    - [Amazon System Design Mock Interview (with Senior SWE)](https://www.youtube.com/watch?v=i_RCwKflp3I) {IGotAnOffer}
@@ -357,6 +374,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 19: Case Studies -- Specialized Systems
 
 1. [LeetCode](https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode) {Hello Interview}
+   - [Design LeetCode (Online Judge) w/ an Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=1xHADtekTNg) {Hello Interview}
    - Design LeetCode (yet to be linked) {AlgoMaster}
 2. Design Calendar System (yet to be linked) {AlgoMaster}
 3. Design Online Chess (yet to be linked) {AlgoMaster}

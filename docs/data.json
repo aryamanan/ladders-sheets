@@ -90190,7 +90190,7 @@
       "title": "System Design Content Zone",
       "description": "Curriculum-first system design index across ByteByteGo, Hello Interview, the System Design Primer, roadmap.sh, Educative's Grokking course, Design Gurus, and AlgoMaster. Where the same concept is covered by multiple sources, the top checkbox carries the highest-priority link (ByteByteGo > Hello Interview > Primer > roadmap.sh > Grokking > Design Gurus > AlgoMaster) and the other sources nest underneath it as their own checkable rows. `(yet to be linked)` marks real gaps.",
       "category": "system-design",
-      "totalItems": 289,
+      "totalItems": 307,
       "sections": [
         {
           "title": "Part 1: Foundations & Interview Approach",
@@ -90307,6 +90307,30 @@
                           "url": "https://www.youtube.com/watch?v=PSYdvx0lwLg",
                           "tag": "",
                           "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "8025b978b883",
+                          "text": "System Design Interview: A Step-By-Step Guide (ByteByteGo)",
+                          "url": "https://www.youtube.com/watch?v=i7twT3x5yv8",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "d4feabe08157",
+                          "text": "8 Most Important System Design Concepts You Should Know (ByteByteGo)",
+                          "url": "https://www.youtube.com/watch?v=BTjxUS_PylA",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "8159f0c097e4",
+                          "text": "How to Prepare for System Design Interviews w/ a Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=Ru54dxzCyD0",
+                          "tag": "",
+                          "subtag": "Hello Interview",
                           "difficulty": null
                         }
                       ]
@@ -91247,7 +91271,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "d01efce1c41b",
+                          "text": "Elasticsearch Deep Dive w/ an Ex-Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=PuZvF2EyfBM",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "9ff0acaf3aa3",
@@ -91850,6 +91884,14 @@
                           "difficulty": null
                         },
                         {
+                          "id": "fe987d6a97a1",
+                          "text": "Design a Distributed Rate Limiter w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=MIJFyUPG4Z4",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
                           "id": "bb9d7500f58b",
                           "text": "Design a Distributed Rate Limiter",
                           "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-rate-limiter",
@@ -91921,6 +91963,14 @@
                           "id": "9e9542c649ee",
                           "text": "Bitly",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "971683af37c4",
+                          "text": "Beginner System Design Interview: Design Bitly w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=iUU4O1sWtJA",
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
@@ -92008,6 +92058,14 @@
                           "tag": "",
                           "subtag": "Hello Interview",
                           "difficulty": null
+                        },
+                        {
+                          "id": "68e2272ab0b8",
+                          "text": "Design FB News Feed System Design Interview w/ ex-Meta Senior Manager",
+                          "url": "https://www.youtube.com/watch?v=Qj4-GruzyDU",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
                         }
                       ]
                     },
@@ -92019,6 +92077,14 @@
                       "subtag": "System Design Primer",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "5ddbb380e387",
+                          "text": "System Design Interview Walkthrough: Design Twitter",
+                          "url": "https://www.youtube.com/watch?v=Nfa-uUHuFHg",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
                         {
                           "id": "3489ee9bb055",
                           "text": "Design Twitter Timeline (yet to be linked)",
@@ -92150,6 +92216,14 @@
                       "difficulty": null,
                       "children": [
                         {
+                          "id": "37cb7d461cea",
+                          "text": "FAANG System Design Interview: Design a Chat System (WhatsApp, Messenger, Discord, Slack)",
+                          "url": "https://www.youtube.com/watch?v=okrR1KXNLtA",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
                           "id": "f531e2bfb902",
                           "text": "WhatsApp",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp",
@@ -92191,6 +92265,14 @@
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "7f21a5cff21a",
+                          "text": "Design Live Comments w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=LjLx0fCd1k8",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
                         {
                           "id": "f9ffdc2b1114",
                           "text": "Design Live Comment Streaming Service (Twitch Chat) (yet to be linked)",
@@ -92276,6 +92358,22 @@
                       "difficulty": null,
                       "children": [
                         {
+                          "id": "4ed443634ab3",
+                          "text": "System Design: Design YouTube (ByteByteGo)",
+                          "url": "https://www.youtube.com/watch?v=jWRW2xGMqSw",
+                          "tag": "",
+                          "subtag": "ByteByteGo",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "64eda61cbe2a",
+                          "text": "System Design Interview: Design YouTube w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=IUrQ5_g3XKs",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
                           "id": "8298da04798a",
                           "text": "YouTube",
                           "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube",
@@ -92325,7 +92423,25 @@
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "b6ce57cc1b27",
+                          "text": "Design Dropbox or Google Drive w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=_UZ1ngy-kOI",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
+                          "id": "8dec2ccc2ff6",
+                          "text": "Design a File-Sharing System Like Google Drive / Dropbox",
+                          "url": "https://www.youtube.com/watch?v=4_qu1F9BXow",
+                          "tag": "",
+                          "subtag": "IGotAnOffer",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "ea59a8160193",
@@ -92401,6 +92517,14 @@
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "1b0c8a7eddbb",
+                          "text": "Design Uber w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=lsKU38RKQSo",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
                         {
                           "id": "f3eec9429d5f",
                           "text": "Design Uber/Lyft (yet to be linked)",
@@ -92510,6 +92634,14 @@
                           "difficulty": null
                         },
                         {
+                          "id": "80c304742c74",
+                          "text": "Design a Web Crawler w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=krsuaUp__pM",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
+                        {
                           "id": "a36f766b1c26",
                           "text": "Design a Web Crawler (full worked solution)",
                           "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md",
@@ -92601,7 +92733,17 @@
                       "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster",
                       "tag": "",
                       "subtag": "Hello Interview",
-                      "difficulty": null
+                      "difficulty": null,
+                      "children": [
+                        {
+                          "id": "9a4982181265",
+                          "text": "Design Ticketmaster w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=fhdPyoO6aXI",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        }
+                      ]
                     },
                     {
                       "id": "daa41c8442d6",
@@ -92861,6 +93003,14 @@
                       "subtag": "Hello Interview",
                       "difficulty": null,
                       "children": [
+                        {
+                          "id": "56292744cd5a",
+                          "text": "Design LeetCode (Online Judge) w/ an Ex-Meta Staff Engineer",
+                          "url": "https://www.youtube.com/watch?v=1xHADtekTNg",
+                          "tag": "",
+                          "subtag": "Hello Interview",
+                          "difficulty": null
+                        },
                         {
                           "id": "43e9e33d2d2c",
                           "text": "Design LeetCode (yet to be linked)",

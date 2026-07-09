@@ -1121,8 +1121,15 @@ function renderItemRow(item, originLabel) {
     `;
   }
   const isSolved = !!solved[item.id];
+  // A YouTube (or other video-host) link gets a distinct icon from a plain
+  // external-link arrow -- signals "this is something to watch" before you
+  // click, since that changes how/when you'd actually work through it.
+  const isVideo = item.url && /(?:youtube\.com\/watch|youtu\.be\/|vimeo\.com\/)/i.test(item.url);
+  const linkIconHtml = isVideo
+    ? `<span class="video-icon" title="Video resource" aria-label="Video resource">▶</span>`
+    : `<span class="ext-icon">↗</span>`;
   const textHtml = item.url
-    ? `<a class="item-text" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.text)} <span class="ext-icon">↗</span></a>`
+    ? `<a class="item-text" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.text)} ${linkIconHtml}</a>`
     : `<span class="item-text plain">${escapeHtml(item.text)}</span>`;
   // `tag` (Foundation/Boss/Round labels) and `subtag` (a cosmetic per-item
   // technique badge, e.g. "Frequency Map") are never both present on the

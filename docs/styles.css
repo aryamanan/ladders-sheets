@@ -676,6 +676,19 @@ a.recap-text:hover { text-decoration: underline; }
   max-width: 220px;
 }
 .ext-icon { color: var(--fg-muted); font-size: 0.75rem; }
+.video-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.55rem;
+  line-height: 1;
+  padding-left: 1px;
+}
 
 .star-btn {
   flex: none;
