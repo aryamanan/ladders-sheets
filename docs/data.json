@@ -89383,6 +89383,2316 @@
           "id": "e6320942e6f8"
         }
       ]
+    },
+    {
+      "id": "faang-system-design-content-zone",
+      "file": "faang_system_design_content_zone.md",
+      "title": "System Design Content Zone",
+      "description": "An exhaustive topic index across the major system design prep platforms -- fundamentals, key technologies, interview patterns, and case studies -- organized into one curriculum instead of five separate course outlines. Every linked title points to a genuinely free page (compiled by hand, not scraped): ByteByteGo's free course chapters, Design Gurus' free crash-course docs, Educative's free preview lessons from Grokking the System Design Interview, Hello Interview's free guide, AlgoMaster's free system design track, the System Design Primer (fully open, CC BY 4.0), and karanpratapsingh/system-design as a general reference. Topics with no verified free link yet are marked `(yet to be linked)` -- bring a URL and it gets slotted in. Style matches the Extreme Mastery sheets: broad topic buckets, no Foundation/Reinforcement/Boss ladders, `{Platform}` tag per item.",
+      "category": "system-design",
+      "totalItems": 247,
+      "sections": [
+        {
+          "title": "Interview Framework & Fundamentals",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "5cfd216a4560",
+                      "text": "Invariant: before any specific system, you need the vocabulary and the process -- how to scope a question, how to estimate scale by hand, and what \"good\" looks like at your level.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "35b2d053b968",
+                      "text": "Why Every Developer Should Learn System Design",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/why-every-developer-should-learn-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2d8258a0b7bc",
+                      "text": "Introduction to Modern System Design",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-modern-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8714d5f645eb",
+                      "text": "Getting Ready for the System Design Interview",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/getting-ready-for-the-system-design-interview",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a81482ff9c59",
+                      "text": "System Design Interview Trap: Why Engineers Fail and Succeed",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/system-design-interview-trap-why-engineers-fail-and-succeed",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "700fccc60060",
+                      "text": "How Long Does It Take to Prepare for a System Design Interview",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/how-long-does-it-take-to-prepare-for-a-system-design-interview",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ee5c1c84159e",
+                      "text": "System Design Mock Interviews",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/system-design-mock-interviews",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "59b37e01a710",
+                      "text": "Let AI Evaluate Your System Design Interview Preparation",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/let-ai-evaluate-your-system-design-interview-preparation",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "56787d1125eb",
+                      "text": "Non-Functional Requirements for System Design Interviews",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/non-functional-requirements-for-system-design-interviews",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fb6dcf587970",
+                      "text": "Key Concepts to Prepare for the System Design Interview",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/key-concepts-to-prepare-for-the-system-design-interview",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ea2a24ddb59a",
+                      "text": "System Analysis vs. System Design",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/system-analysis-vs-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d98568f059b1",
+                      "text": "API Design Interview vs. System Design Interview",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/api-design-interview-vs-system-design-interview",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c59119e489f9",
+                      "text": "5 System Design Fundamentals for Technical Product Managers",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/5-system-design-fundamentals-for-technical-product-managers",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2a4e3c0abb35",
+                      "text": "Design Interview Guide: Low-Level OOD to Advanced System Design",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/design-interview-guide-low-level-ood-to-advanced-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0752e29d54b3",
+                      "text": "The All-in-One System Design Master Template",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/the-all-in-one-system-design-master-template",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8b407e9a9743",
+                      "text": "A Framework For System Design Interviews",
+                      "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5a29d0ccd9dd",
+                      "text": "Scale From Zero To Millions Of Users",
+                      "url": "https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2f5d2055d0d3",
+                      "text": "Back-of-the-envelope Estimation",
+                      "url": "https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4dc1a47c7987",
+                      "text": "Put Back-of-the-Envelope Numbers in Perspective",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/put-back-of-the-envelope-numbers-in-perspective",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "90c8f9fb02fa",
+                      "text": "Examples of Resource Estimation",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/examples-of-resource-estimation",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "babf1211821d",
+                      "text": "Introduction (In a Hurry)",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a48f1d421da3",
+                      "text": "How to Prepare",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "548383c16b9e",
+                      "text": "Delivery Framework",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "abd17ff9cbf8",
+                      "text": "Core Concepts (In a Hurry)",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fce09c06909c",
+                      "text": "Common Patterns (In a Hurry)",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/patterns",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cc2e1f34152b",
+                      "text": "Question Breakdowns (In a Hurry)",
+                      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/problem-breakdowns",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2670a9bb5ffd",
+                      "text": "Introduction to System Design Interviews",
+                      "url": "https://algomaster.io/learn/system-design-interviews/introduction",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cb838abe3c4d",
+                      "text": "Types of System Design Questions AlgoMaster version",
+                      "url": "https://algomaster.io/learn/system-design-interviews/question-types",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a4f89624de95",
+                      "text": "Expectations by Level/YoE",
+                      "url": "https://algomaster.io/learn/system-design-interviews/expectations-by-level",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "212ce305797c",
+                      "text": "How to Approach a System Design Interview Question (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview / Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9b3794b507ff",
+                      "text": "Answering Framework (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e20ccb774665",
+                      "text": "Estimation Cheatsheet (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "28d59c7017ef",
+                      "text": "Diagramming Tips (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e55e9aaadf38",
+                      "text": "Choosing the Right Database (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3ac4317758ff",
+                      "text": "Scaling to Millions of Users on AWS -- iterative scale-up walkthrough System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "e5d1be31df7e"
+                }
+              ],
+              "id": "d5286e85f0d0"
+            }
+          ],
+          "id": "97cb4b7cdf1c"
+        },
+        {
+          "title": "Core Concepts",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "5e5bdb915786",
+                      "text": "Invariant: the tradeoffs (consistency vs. availability, latency vs. throughput) and building blocks (DNS, load balancers, databases) that every case study below draws on.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3a61b5f9273e",
+                      "text": "Scalability",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/scalability",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ff065858427f",
+                      "text": "Scalable Systems 101",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/scalable-systems-101",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cd587ed39c8d",
+                      "text": "Fault Tolerance",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/fault-tolerance",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6e2ce9cc0b9d",
+                      "text": "Best Practices for Achieving Low Latency",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/best-practices-for-achieving-low-latency-in-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cfdf4d26f1bd",
+                      "text": "Performance vs. Scalability System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#performance-vs-scalability",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6797fdbd61f5",
+                      "text": "Latency vs. Throughput System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#latency-vs-throughput",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "14fe7165e427",
+                      "text": "Introduction to Building Blocks for Modern System Design",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-building-blocks-for-modern-system-design",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1629e362b5c7",
+                      "text": "Networking Essentials",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f153381a4c24",
+                      "text": "Introduction to Domain Name System (DNS)",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-domain-name-system-dns",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0fda7ea2c6be",
+                      "text": "How the Domain Name System Works",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/how-the-domain-name-system-works",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "09de4980be63",
+                      "text": "Domain Name System System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#domain-name-system",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a9508f525719",
+                      "text": "Content Delivery Network (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#content-delivery-network",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "527b1e9396a2",
+                      "text": "Introduction to Load Balancers",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-load-balancers",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c98949d9340f",
+                      "text": "Load Balancer System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#load-balancer",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "87e81089eb7e",
+                      "text": "Reverse Proxy (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b4388d30ad03",
+                      "text": "API Design",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/api-design",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "67369861ac63",
+                      "text": "Data Modeling",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2ff322b3fe97",
+                      "text": "Introduction to Databases",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/introduction-to-databases",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3b60e7bae63e",
+                      "text": "Types of Databases",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/types-of-databases",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d852af0ad0f8",
+                      "text": "Data Replication",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/data-replication",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7a2610c000c5",
+                      "text": "Relational Database Management System (RDBMS) (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "be539e427667",
+                      "text": "System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#nosql",
+                      "tag": "NoSQL",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4e41e6169b38",
+                      "text": "SQL or NoSQL (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#sql-or-nosql",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "de3527740979",
+                      "text": "Database Indexing (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2fc8b6c46eb9",
+                      "text": "Caching",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/caching",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8d28ef8da138",
+                      "text": "Cache -- update strategies (cache-aside, write-through, write-behind, refresh-ahead) (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#cache",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5d5b57c8e1d1",
+                      "text": "Sharding",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/sharding",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cfeb8335a0dd",
+                      "text": "Federation / Denormalization / SQL Tuning (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#federation",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0a3e55310337",
+                      "text": "Consistent Hashing",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/consistent-hashing",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d5e508822495",
+                      "text": "Design Consistent Hashing",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-consistent-hashing",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "175d48d628aa",
+                      "text": "CAP Theorem",
+                      "url": "https://www.hellointerview.com/learn/system-design/core-concepts/cap-theorem",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2d0321795f3b",
+                      "text": "Availability vs. Consistency / CAP Theorem System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer#availability-vs-consistency",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6438b7ee4294",
+                      "text": "Consistency Patterns (weak, eventual, strong) (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#consistency-patterns",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "268a360c2fc5",
+                      "text": "Availability Patterns (fail-over, replication, 9s) (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#availability-patterns",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "325c0fdd9f37",
+                      "text": "Asynchronism -- Message Queues, Task Queues, Back Pressure (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#asynchronism",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "58d0b8c9f07c",
+                      "text": "Communication -- HTTP, TCP, UDP, RPC, REST (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#communication",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1a2d4a78be40",
+                      "text": "Application Layer -- Microservices, Service Discovery (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#application-layer",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7ae9e45e38c6",
+                      "text": "Security Basics (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#security",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f8b1708a21df",
+                      "text": "Numbers to Know / Latency Numbers Every Programmer Should Know (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "bd7496dd41eb",
+                      "text": "Powers of Two Table (yet to be linked -- also see System Design Primer)",
+                      "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c1a1d238eb2e",
+                      "text": "Distributed System Design Patterns",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/distributed-system-design-patterns",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "674c54797667",
+                      "text": "Must-Know Concepts",
+                      "url": "https://algomaster.io/learn/system-design-interviews/concepts",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "9afea7f49179"
+                }
+              ],
+              "id": "e50fae7f2921"
+            }
+          ],
+          "id": "bac942d7809c"
+        },
+        {
+          "title": "Key Technologies (Deep Dives)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "9182f071466d",
+                      "text": "Invariant: the actual systems (databases, caches, queues) whose internals interviewers expect you to reason about, not just name-drop.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "15f1d88e52f0",
+                      "text": "Must-Know Technologies",
+                      "url": "https://algomaster.io/learn/system-design-interviews/technologies",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4ed3c7a3f5a5",
+                      "text": "Redis",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/redis",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6c5f42836c13",
+                      "text": "Elasticsearch",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c9aad9c29e9e",
+                      "text": "Kafka",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/kafka",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "861f367254f0",
+                      "text": "API Gateway",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a1274b8b6720",
+                      "text": "Cassandra",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/cassandra",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e9c61ed08c00",
+                      "text": "DynamoDB",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/dynamodb",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e3d8c530eeb0",
+                      "text": "Proximity Search",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/proximity-search",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "64dda8a72a85",
+                      "text": "Time Series Databases",
+                      "url": "https://www.hellointerview.com/learn/system-design/deep-dives/time-series-databases",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6e7d3e06d50d",
+                      "text": "PostgreSQL",
+                      "url": "https://algomaster.io/learn/system-design-interviews/postgresql",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6f682dbe1d44",
+                      "text": "MySQL",
+                      "url": "https://algomaster.io/learn/system-design-interviews/mysql",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3078576a3123",
+                      "text": "MongoDB",
+                      "url": "https://algomaster.io/learn/system-design-interviews/mongodb",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3315253098b5",
+                      "text": "Memcached (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a930b884b213",
+                      "text": "RabbitMQ (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b4470029950e",
+                      "text": "Amazon SQS (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d59f90a9f109",
+                      "text": "Flink (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4f3020b4b2a6",
+                      "text": "Spark (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a155b42c6c02",
+                      "text": "Amazon S3 (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cd7a648fd0af",
+                      "text": "AWS Lambda (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a5d03649b9d5",
+                      "text": "Nginx (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "53a0b517099b",
+                      "text": "Zookeeper (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cefe5e168103",
+                      "text": "Docker (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f71a3d9984a8",
+                      "text": "Kubernetes (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0389c3f0011c",
+                      "text": "Prometheus (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4ce27996af66",
+                      "text": "Vector Databases (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "d2640be4b310"
+                }
+              ],
+              "id": "eed84cfa7ca8"
+            }
+          ],
+          "id": "6787cde87c76"
+        },
+        {
+          "title": "Interview Patterns",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "6774d875a5bd",
+                      "text": "Invariant: the reusable shapes that show up across dozens of different case studies -- fanout, hot keys, leader election -- worth drilling as patterns, not per-problem trivia.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9da6382ea650",
+                      "text": "Realtime Updates",
+                      "url": "https://algomaster.io/learn/system-design-interviews/realtime-updates",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3d82d571f037",
+                      "text": "Distributed System Design Patterns",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/distributed-system-design-patterns",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "46bf4a5dc3d8",
+                      "text": "Enable Fault Tolerance and Failure Detection",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/enable-fault-tolerance-and-failure-detection",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "407043e39a22",
+                      "text": "Fanout Pattern (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4204f2b7bd77",
+                      "text": "High Read Traffic (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6aef2ba95afc",
+                      "text": "High Write Traffic (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "01f3bda448cc",
+                      "text": "Handling Hot Keys (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "84ce1f492d6b",
+                      "text": "Handling Traffic Spikes (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2bd36a9c41fa",
+                      "text": "Handling Large Files / Blobs (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "236b42e05f56",
+                      "text": "Media Streaming (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "592bbfd50fb8",
+                      "text": "Handling Location Data (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "81b7cdb0dc28",
+                      "text": "Generating Unique IDs (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "639ef22667f9",
+                      "text": "Distributed Counting (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "27cd3d409283",
+                      "text": "Leader Election (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fe9a5cb8b691",
+                      "text": "Failure Detection (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "17322598e769",
+                      "text": "Handling Failures (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1b127ec2ee76",
+                      "text": "Recommendations (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5e84451af962",
+                      "text": "Multi-Tenancy (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5c1f1b397bb5",
+                      "text": "Multi-Region Architecture (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4522eecbba45",
+                      "text": "Deduplicating Data (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3146fdc966b9",
+                      "text": "Distributed Transactions (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a89e6b66e2db",
+                      "text": "Removing Single Points of Failure (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f224bf17b9ae",
+                      "text": "Dealing with Contention (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "79380eb2ca30",
+                      "text": "Multi-Step Processes (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6ddb2bd34512",
+                      "text": "Scaling Reads (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6bec29923d40",
+                      "text": "Scaling Writes (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f3c584d68526",
+                      "text": "Managing Long-Running Tasks (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "2e70080ef029"
+                }
+              ],
+              "id": "e1c804a4ef68"
+            }
+          ],
+          "id": "8decc96b8624"
+        },
+        {
+          "title": "Case Studies: Basics",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "6a4020b800e4",
+                      "text": "Design a URL Shortener",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-url-shortener",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cac12876255b",
+                      "text": "Design Pastebin.com (or Bit.ly) -- full worked solution with schema and code System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2d761737918c",
+                      "text": "Bitly",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1dc677accb66",
+                      "text": "Design a Rate Limiter",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fc7928baad9f",
+                      "text": "Design a Distributed Rate Limiter",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-rate-limiter",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "89d4bebf478e",
+                      "text": "Distributed Rate Limiter",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/distributed-rate-limiter",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "673b11cf2375"
+                }
+              ],
+              "id": "26d188669f98"
+            }
+          ],
+          "id": "c53e2246c381"
+        },
+        {
+          "title": "Case Studies: Real-Time Communication",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "7c6a44232e24",
+                      "text": "Design a Chat System",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-chat-system",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "06a429183da2",
+                      "text": "Design WhatsApp",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-whatsapp",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ae760e383bdd",
+                      "text": "WhatsApp",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ce1130d705a5",
+                      "text": "Design WhatsApp",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-whatsapp",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8b57201c4962",
+                      "text": "FB Live Comments",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "eea84494d3a3",
+                      "text": "Design Slack (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4b2f5578ab43",
+                      "text": "Design Live Comment Streaming Service (Twitch Chat) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3eea166eb8df",
+                      "text": "Design Google Docs (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus / AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d2bcc15972a0",
+                      "text": "Design a Collaborative Whiteboard (Miro) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d14fcbbfcf2c",
+                      "text": "Design Zoom (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1cb7734d4d3b",
+                      "text": "Design Discord (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "58bbae71c966"
+                }
+              ],
+              "id": "b66bacecb66b"
+            }
+          ],
+          "id": "caa8106f00f6"
+        },
+        {
+          "title": "Case Studies: Social Media",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "43854c74e248",
+                      "text": "Design a News Feed System",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-news-feed-system",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "06f277e015a8",
+                      "text": "FB News Feed",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "80c0b3c62ce0",
+                      "text": "Tinder",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/tinder",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "95cce4baefef",
+                      "text": "Design Instagram",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-instagram",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7590ea6294b7",
+                      "text": "Design the Twitter Timeline and Search -- full worked solution with fanout design System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1b9f6d2013b1",
+                      "text": "Design Twitter Timeline (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "947a38c8634e",
+                      "text": "Design TikTok (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6206edfde709",
+                      "text": "Design Reddit (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a7f1309b94c7",
+                      "text": "Design Facebook \"People You May Know\" (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cd0b5fd355af",
+                      "text": "Design LinkedIn Connections (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "ffede32b287d"
+                }
+              ],
+              "id": "ba1fdabf2dab"
+            }
+          ],
+          "id": "ee941687c7b3"
+        },
+        {
+          "title": "Case Studies: Media Streaming & Storage",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "cde8ab2a26f7",
+                      "text": "Design YouTube",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-youtube",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c2814b57600e",
+                      "text": "Design YouTube",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-youtube",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "047896115a87",
+                      "text": "YouTube",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "7d9f49233a5f",
+                      "text": "Design Spotify",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-spotify",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a498d3be3823",
+                      "text": "Dropbox",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1f0381d64881",
+                      "text": "Design Netflix (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "71a4a47d20bc",
+                      "text": "Design Google Drive (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "707f367fc6f9",
+                      "text": "Design Gmail (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "59679e7b4c39",
+                      "text": "Design Twitch (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "b0432cda405c"
+                }
+              ],
+              "id": "086cb4abd35a"
+            }
+          ],
+          "id": "dde1e403ede4"
+        },
+        {
+          "title": "Case Studies: Location-Based Services",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "8a39ce450d84",
+                      "text": "Design Airbnb",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-airbnb",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "de5b9df10a9a",
+                      "text": "Uber",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/uber",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "cd8e9f830bfa",
+                      "text": "Local Delivery Service (Gopuff)",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/gopuff",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "77c4fd444047",
+                      "text": "Design the Data Structures for a Social Network (BFS shortest-path over a sharded graph) System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/social_graph/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c1161644e547",
+                      "text": "Design Uber/Lyft (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ef86b2fe9f8c",
+                      "text": "Design Google Maps (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "552d51b29986",
+                      "text": "Design Nearby Friends (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f804ca779402",
+                      "text": "Design Proximity Service (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "275754df4338",
+                      "text": "Design Food Delivery Service (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "b43cb61a9810"
+                }
+              ],
+              "id": "0434be77e5af"
+            }
+          ],
+          "id": "82572a046ab1"
+        },
+        {
+          "title": "Case Studies: Search & Aggregation",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "595db8a603b2",
+                      "text": "Design a Web Crawler",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-web-crawler",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "5947ac1eedcc",
+                      "text": "Web Crawler",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "bdbc98319b63",
+                      "text": "Design a Web Crawler -- full worked solution with crawl-loop and dedup code System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "fb226acfbd37",
+                      "text": "Design Search Autocomplete System",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-search-autocomplete-system",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1e591d18ad68",
+                      "text": "Ad Click Aggregator",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "65d3ad9b2630",
+                      "text": "FB Post Search",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-post-search",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "a19431a2ebc9",
+                      "text": "Design a Key-Value Store for a Search Engine (LRU query cache) System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/query_cache/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9135927daa7c",
+                      "text": "Design News Aggregator (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "80b0235e2d79",
+                      "text": "Design Google Search (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "8aa66453961d"
+                }
+              ],
+              "id": "dead0c358f12"
+            }
+          ],
+          "id": "161d31325a14"
+        },
+        {
+          "title": "Case Studies: E-Commerce & Marketplace",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "9c58a06a4502",
+                      "text": "Hotel Reservation System",
+                      "url": "https://bytebytego.com/courses/system-design-interview/hotel-reservation-system",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2d8f02c7c3f6",
+                      "text": "Ticketmaster",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c1e00d4fb353",
+                      "text": "Design Amazon's Sales Ranking by Category (multi-step MapReduce) System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "befbecc5aa88",
+                      "text": "Design Amazon (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "bede9030c5a2",
+                      "text": "Design Amazon Shopping Cart (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "942a70cd900b",
+                      "text": "Design Shopify (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2a42522a0617",
+                      "text": "Design Flash Sale (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "789e987cb580",
+                      "text": "Design Online Auction System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f93e8a196c89",
+                      "text": "Design Movie Booking System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "16cc57fbba13"
+                }
+              ],
+              "id": "315868fd00ea"
+            }
+          ],
+          "id": "02c5c517a6f5"
+        },
+        {
+          "title": "Case Studies: Payments & Financial",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "19dcf072f112",
+                      "text": "Design Mint.com -- full worked solution with categorization/budget code System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/mint/README.md",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f6d2c890bebc",
+                      "text": "Design Payment System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1acd3593bfb4",
+                      "text": "Design Digital Wallet (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "dbc29dfd1640",
+                      "text": "Design Stock Exchange (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "606fc24781f4",
+                      "text": "Design Stripe Payment Gateway (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "5d9226a322ec"
+                }
+              ],
+              "id": "79b1ec0f58aa"
+            }
+          ],
+          "id": "68f38d68b4ce"
+        },
+        {
+          "title": "Case Studies: Distributed Infrastructure",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "8ec68699a3a2",
+                      "text": "Design a Key-Value Store",
+                      "url": "https://bytebytego.com/courses/system-design-interview/design-a-key-value-store",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8f21a8195d73",
+                      "text": "System Design: The Key-Value Store",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/system-design-the-key-value-store",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d554f6e37a27",
+                      "text": "Design of a Key-Value Store",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/design-of-a-key-value-store",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d081f4de5b07",
+                      "text": "Ensure Scalability and Replication",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/ensure-scalability-and-replication",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1a9519fa9c88",
+                      "text": "Versioning Data and Achieving Configurability",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview/versioning-data-and-achieving-configurability",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "75dc9a64f9b3",
+                      "text": "Design a Distributed Cache (like Redis)",
+                      "url": "https://www.designgurus.io/course-play/system-design-interview-crash-course/doc/design-a-distributed-cache-like-redis",
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6de03346a193",
+                      "text": "Design Load Balancer",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-load-balancer",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d3b848c426f1",
+                      "text": "Design an API Gateway (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4455b0730e90",
+                      "text": "Design a Distributed Lock Manager (like Chubby) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f22e59538548",
+                      "text": "Design a Distributed Job Scheduler (like Cron) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "72d39cd1845f",
+                      "text": "Design a Unique ID Generator in Distributed Systems (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "981aaf13f207",
+                      "text": "Design a Distributed Message Queue (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "ca91774cf605",
+                      "text": "Design a Metrics & Monitoring System (like Datadog/Prometheus) (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c32798e3d83a",
+                      "text": "Design Amazon S3 / S3-like Object Storage (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo / Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "77149e97dea4",
+                      "text": "Design a Distributed Email Service (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f109a26b9b60",
+                      "text": "Design CDN (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "052fccbe9e2e",
+                      "text": "Design Time Series Database (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "4eab31caa3ea",
+                      "text": "Design Locking Service (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "f15ab4bfa888"
+                }
+              ],
+              "id": "78a6e815ee8a"
+            }
+          ],
+          "id": "fea4fae46980"
+        },
+        {
+          "title": "Case Studies: Counting & Ranking",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "25e50f558359",
+                      "text": "Real-time Gaming Leaderboard",
+                      "url": "https://bytebytego.com/courses/system-design-interview/real-time-gaming-leaderboard",
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "9d9a0731d750",
+                      "text": "YouTube Top K",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/top-k",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "28b5f222a6ee",
+                      "text": "Design Likes Counting System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "e78ac4697d64",
+                      "text": "Design Ad Click Event Aggregation (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "eb3661c263ae"
+                }
+              ],
+              "id": "0eab94592640"
+            }
+          ],
+          "id": "13baa720f95a"
+        },
+        {
+          "title": "Case Studies: Asynchronous Systems",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "f1cc6d6e82c1",
+                      "text": "Design Notification Service",
+                      "url": "https://algomaster.io/learn/system-design-interviews/design-notification-service",
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b77373643ebc",
+                      "text": "Design a Notification System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c4777aa2532c",
+                      "text": "Design a Job Scheduler (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "c48d54958a2c",
+                      "text": "Design a CI/CD Pipeline (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "86e3413a0dc4",
+                      "text": "Design a Code Deployment System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8e1ca3313450",
+                      "text": "Design a Monitoring and Alerting System -- Metrics Monitoring and Alerting System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "ByteByteGo / AlgoMaster",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "a2f0a6bd21db"
+                }
+              ],
+              "id": "5db70c09a754"
+            }
+          ],
+          "id": "8209977d588b"
+        },
+        {
+          "title": "Case Studies: Specialized Systems",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "3ab8a49d5a4e",
+                      "text": "LeetCode",
+                      "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/leetcode",
+                      "tag": "",
+                      "subtag": "Hello Interview",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "902006e2c47d",
+                      "text": "Design LeetCode (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b5259c34abb2",
+                      "text": "Design Calendar System (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "32a758db7114",
+                      "text": "Design Online Chess (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "AlgoMaster",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "0f6f674ecc16",
+                      "text": "Design ChatGPT (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "abd03cfbeb53",
+                      "text": "Design Google Ads (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "50e6167c1d48",
+                      "text": "Design Amazon Lambda (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "49e807e8933f",
+                      "text": "Design Google Search (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "b8a78cd6c134",
+                      "text": "Design Typeahead/Autocomplete (yet to be linked)",
+                      "url": null,
+                      "tag": "",
+                      "subtag": "Design Gurus",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "65b9e0cc07ca"
+                }
+              ],
+              "id": "f6c8583e402c"
+            }
+          ],
+          "id": "ea5732ea92e9"
+        },
+        {
+          "title": "Object-Oriented / Low-Level Design",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "d4bf0085abb6",
+                      "text": "Invariant: six small reference solutions from the System Design Primer, each demonstrating one OOD principle through class structure -- full code, not case studies.",
+                      "url": null,
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "f31a28a89760",
+                      "text": "Design a Hash Map System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "d4ef458012af",
+                      "text": "Design a Least Recently Used Cache System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/lru_cache/lru_cache.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "1c4f159a2e27",
+                      "text": "Design a Call Center System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/call_center/call_center.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "3e28c0ccff08",
+                      "text": "Design a Deck of Cards System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/deck_of_cards/deck_of_cards.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "8de24107b772",
+                      "text": "Design a Parking Lot System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "2278f39338f1",
+                      "text": "Design an Online Chat Server System Design Primer",
+                      "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/online_chat/online_chat.py",
+                      "tag": "",
+                      "subtag": "System Design Primer",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "793412158313"
+                }
+              ],
+              "id": "9012ab786346"
+            }
+          ],
+          "id": "5179b74ce468"
+        },
+        {
+          "title": "General References (Not Topic-Mapped)",
+          "groups": [
+            {
+              "title": null,
+              "subgroups": [
+                {
+                  "title": null,
+                  "items": [
+                    {
+                      "id": "e371591a26e4",
+                      "text": "Grokking the System Design Interview -- course landing page",
+                      "url": "https://www.educative.io/courses/grokking-the-system-design-interview",
+                      "tag": "",
+                      "subtag": "Educative",
+                      "difficulty": null
+                    },
+                    {
+                      "id": "446e5756b006",
+                      "text": "karanpratapsingh/system-design {Karan Pratap Singh -- general reference, own license, not CC-licensed like the Primer}",
+                      "url": "https://github.com/karanpratapsingh/system-design",
+                      "tag": "",
+                      "subtag": null,
+                      "difficulty": null
+                    },
+                    {
+                      "id": "6d1be4932c74",
+                      "text": "roadmap.sh -- System Design",
+                      "url": "https://roadmap.sh/system-design",
+                      "tag": "",
+                      "subtag": "roadmap.sh",
+                      "difficulty": null
+                    }
+                  ],
+                  "id": "40da0824f1e1"
+                }
+              ],
+              "id": "d8cf4e1a007a"
+            }
+          ],
+          "id": "e339006e4f66"
+        }
+      ]
     }
   ]
 }
