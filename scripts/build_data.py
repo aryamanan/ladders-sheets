@@ -634,6 +634,11 @@ def assign_tiers(sheet):
             for sg in g["subgroups"]:
                 for it in sg["items"]:
                     it["tier"] = TIER_OVERRIDES.get(it["text"]) or compute_base_tier(it, concepts_text)
+                    # Children inherit the parent's tier -- they're the same
+                    # topic, just a different source, so a solved child
+                    # should glow the same color as its solved parent.
+                    for child in it.get("children") or []:
+                        child["tier"] = it["tier"]
 
 
 def main():
