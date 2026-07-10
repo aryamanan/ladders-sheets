@@ -166,6 +166,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 3. [Service Discovery](https://github.com/donnemartin/system-design-primer#service-discovery) {System Design Primer}
    - [Service Discovery](https://blog.bytebytego.com/p/how-linkedin-built-a-next-gen-service) {ByteByteGo}
 4. [Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html) {roadmap.sh}
+   - [What is Auto Scaling?](https://www.geeksforgeeks.org/system-design/what-is-auto-scaling/) {GeeksforGeeks}
 
 ## Part 5: Storage & Databases
 
@@ -324,9 +325,11 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 ## Part 9: Common Interview-Solving Patterns
 
 1. [Fanout Pattern -- Push vs. Pull](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html) {Hello Interview}
-2. [Realtime Updates](https://algomaster.io/learn/system-design-interviews/realtime-updates) {AlgoMaster}
+2. [Realtime Updates](https://www.hellointerview.com/learn/system-design/patterns/realtime-updates) {Hello Interview}
+   - [Realtime Updates](https://algomaster.io/learn/system-design-interviews/realtime-updates) {AlgoMaster}
 3. [Scaling Reads](https://www.hellointerview.com/learn/system-design/patterns/scaling-reads) {Hello Interview}
-4. [Scaling Writes](https://blog.bytebytego.com/p/how-stripe-scaled-to-5-million-database) {Hello Interview}
+4. [Scaling Writes](https://www.hellointerview.com/learn/system-design/patterns/scaling-writes) {Hello Interview}
+   - [How Stripe Scaled to 5 Million Database Queries Per Second](https://blog.bytebytego.com/p/how-stripe-scaled-to-5-million-database) {ByteByteGo}
 7. [Handling Hot Keys](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html) {Hello Interview}
 8. [Handling Traffic Spikes](https://learn.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling) {Hello Interview}
 9. [Handling Large Files / Blobs](https://www.hellointerview.com/learn/system-design/patterns/large-blobs) {Hello Interview}
