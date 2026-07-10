@@ -554,6 +554,88 @@ def parse_file(path):
     }
 
 
+# Importance tiers for the Content Zone sheet only. Mechanical baseline:
+# gold = 4+ real (linked) children, silver = 2+ children or 3+ videos
+# (main + children combined), bronze = the topic is confirmed present in
+# concepts_and_pages.txt (the user's own compiled curriculum index), else
+# dark. `TIER_OVERRIDES` then hand-corrects the handful of cases where raw
+# resource-count is a bad proxy for interview importance -- absolute
+# fundamentals (TCP vs UDP, ACID, Retry, Timeouts...) that just happen to be
+# link-light get boosted; nothing gets demoted since extra resources on a
+# real topic are never a problem, only a resource-light-but-critical topic is.
+CONTENT_ZONE_FILE = "faang_system_design_content_zone.md"
+VIDEO_HOST_RE = re.compile(r"(?:youtube\.com/watch|youtu\.be/|vimeo\.com/)", re.I)
+
+TIER_OVERRIDES = {
+    "TCP vs. UDP": "silver",
+    "HTTP / HTTPS": "silver",
+    "REST vs. RPC": "silver",
+    "Cache-Aside Pattern": "silver",
+    "Availability vs. Consistency": "silver",
+    "Latency vs. Throughput": "silver",
+    "Vertical vs. Horizontal Scaling": "silver",
+    "SQL vs. NoSQL: The Differences": "silver",
+    "Relational Databases & ACID": "silver",
+    "Retry Pattern": "silver",
+    "Throttling": "silver",
+    "Timeouts": "silver",
+    "Exponential Backoff and Jitter": "silver",
+    "Multi-Region Architecture": "silver",
+    "Pagination": "silver",
+    "Content Delivery Network -- Push vs. Pull CDNs": "silver",
+    "Fanout Pattern -- Push vs. Pull": "silver",
+    "Scaling Reads": "silver",
+    "Scaling Writes": "silver",
+    "CQRS": "silver",
+    "Event Sourcing": "silver",
+    "Bulkhead": "silver",
+    "Leader Election Pattern": "silver",
+    "Auto Scaling": "silver",
+    "SLOs (Service Level Objectives)": "bronze",
+}
+
+
+def _tier_in_concepts(text, concepts_text):
+    t = re.sub(r"^design (a|an|the)?\s*", "", text.lower())
+    words = re.findall(r"[a-z0-9]+", t)
+    if not words:
+        return False
+    return " ".join(words[:3]) in concepts_text or " ".join(words[:2]) in concepts_text
+
+
+def _tier_video_count(item):
+    children = item.get("children") or []
+    count = 0
+    for it in [item] + children:
+        if it.get("url") and VIDEO_HOST_RE.search(it["url"]):
+            count += 1
+    return count
+
+
+def compute_base_tier(item, concepts_text):
+    real_children = [c for c in (item.get("children") or []) if c.get("url")]
+    n = len(real_children)
+    if n >= 4:
+        return "gold"
+    if n >= 2 or _tier_video_count(item) > 2:
+        return "silver"
+    if _tier_in_concepts(item["text"], concepts_text):
+        return "bronze"
+    return "dark"
+
+
+def assign_tiers(sheet):
+    if sheet["file"] != CONTENT_ZONE_FILE:
+        return
+    concepts_path = ROOT / "concepts_and_pages.txt"
+    concepts_text = concepts_path.read_text(encoding="utf-8").lower() if concepts_path.exists() else ""
+    for s in sheet["sections"]:
+        for g in s["groups"]:
+            for sg in g["subgroups"]:
+                for it in sg["items"]:
+                    it["tier"] = TIER_OVERRIDES.get(it["text"]) or compute_base_tier(it, concepts_text)
+
+
 def main():
     files = sorted(
         ROOT.glob("faang_*.md"),
@@ -563,6 +645,8 @@ def main():
         ),
     )
     sheets = [parse_file(f) for f in files]
+    for sheet in sheets:
+        assign_tiers(sheet)
     data = {"sheets": sheets}
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(data, indent=2), encoding="utf-8")

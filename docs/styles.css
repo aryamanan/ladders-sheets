@@ -13,6 +13,10 @@
   --diff-easy-bg: #d6f5e3; --diff-easy-fg: #0f6b3f;
   --diff-medium-bg: #fdecc8; --diff-medium-fg: #8a5a00;
   --diff-hard-bg: #fbdada; --diff-hard-fg: #a3242a;
+  --tier-gold-bg: #fff4cc; --tier-gold-fg: #8a6d00;
+  --tier-silver-bg: #e8e8ec; --tier-silver-fg: #55575c;
+  --tier-bronze-bg: #f0ddc8; --tier-bronze-fg: #8a5a2b;
+  --tier-dark-bg: #ececec; --tier-dark-fg: #8a8a8a;
   --radius: 10px;
   --shadow: 0 1px 2px rgba(20, 20, 30, 0.06);
 }
@@ -32,6 +36,10 @@
     --diff-easy-bg: #163829; --diff-easy-fg: #6fe3a8;
     --diff-medium-bg: #3a2f10; --diff-medium-fg: #f0c05a;
     --diff-hard-bg: #3a1616; --diff-hard-fg: #ff9b9b;
+    --tier-gold-bg: #3a3010; --tier-gold-fg: #f0d060;
+    --tier-silver-bg: #34363c; --tier-silver-fg: #c8c8ce;
+    --tier-bronze-bg: #3a2a18; --tier-bronze-fg: #e0a868;
+    --tier-dark-bg: #202226; --tier-dark-fg: #75787f;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   }
 }
@@ -43,6 +51,10 @@
   --diff-easy-bg: #d6f5e3; --diff-easy-fg: #0f6b3f;
   --diff-medium-bg: #fdecc8; --diff-medium-fg: #8a5a00;
   --diff-hard-bg: #fbdada; --diff-hard-fg: #a3242a;
+  --tier-gold-bg: #fff4cc; --tier-gold-fg: #8a6d00;
+  --tier-silver-bg: #e8e8ec; --tier-silver-fg: #55575c;
+  --tier-bronze-bg: #f0ddc8; --tier-bronze-fg: #8a5a2b;
+  --tier-dark-bg: #ececec; --tier-dark-fg: #8a8a8a;
 }
 :root[data-theme="dark"] {
   --bg: #14161a; --bg-alt: #1b1e24; --fg: #e7e9ee; --fg-muted: #9aa1ad;
@@ -51,6 +63,10 @@
   --diff-easy-bg: #163829; --diff-easy-fg: #6fe3a8;
   --diff-medium-bg: #3a2f10; --diff-medium-fg: #f0c05a;
   --diff-hard-bg: #3a1616; --diff-hard-fg: #ff9b9b;
+  --tier-gold-bg: #3a3010; --tier-gold-fg: #f0d060;
+  --tier-silver-bg: #34363c; --tier-silver-fg: #c8c8ce;
+  --tier-bronze-bg: #3a2a18; --tier-bronze-fg: #e0a868;
+  --tier-dark-bg: #202226; --tier-dark-fg: #75787f;
 }
 
 * { box-sizing: border-box; }
@@ -598,6 +614,25 @@ a.recap-text:hover { text-decoration: underline; }
 .item-row.diff-medium .item-text { color: var(--diff-medium-fg); }
 .item-row.diff-hard .item-text { color: var(--diff-hard-fg); }
 
+/* Same reward-on-solve pattern as difficulty, for the Content Zone's
+   importance tiers (gold/silver/bronze/dark) instead of Easy/Medium/Hard.
+   Never co-occurs with a diff-* class on the same row -- difficulty only
+   ever applies to LeetCode items, tier only to the Content Zone sheet. */
+.item-row.tier-gold { background: var(--tier-gold-bg); }
+.item-row.tier-silver { background: var(--tier-silver-bg); }
+.item-row.tier-bronze { background: var(--tier-bronze-bg); }
+.item-row.tier-dark { background: var(--tier-dark-bg); }
+.item-row.tier-gold .item-text,
+.item-row.tier-silver .item-text,
+.item-row.tier-bronze .item-text,
+.item-row.tier-dark .item-text {
+  text-decoration: line-through;
+}
+.item-row.tier-gold .item-text { color: var(--tier-gold-fg); }
+.item-row.tier-silver .item-text { color: var(--tier-silver-fg); }
+.item-row.tier-bronze .item-text { color: var(--tier-bronze-fg); }
+.item-row.tier-dark .item-text { color: var(--tier-dark-fg); }
+
 /* An invariant is a fact to remember, not a task to complete -- visually
    distinct from every real checkbox row: no checkbox, tinted background,
    a small labeled pill instead, so it reads as "context" at a glance. */
@@ -642,6 +677,21 @@ a.recap-text:hover { text-decoration: underline; }
 .diff-dot.dot-easy { background: var(--diff-easy-fg); }
 .diff-dot.dot-medium { background: var(--diff-medium-fg); }
 .diff-dot.dot-hard { background: var(--diff-hard-fg); }
+
+/* Same idea as .diff-dot, but sits next to the source tag rather than
+   before the checkbox -- signals topic importance (Content Zone only)
+   without competing for the same spot difficulty dots use elsewhere. */
+.tier-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+.tier-dot.dot-gold { background: var(--tier-gold-fg); }
+.tier-dot.dot-silver { background: var(--tier-silver-fg); }
+.tier-dot.dot-bronze { background: var(--tier-bronze-fg); }
+.tier-dot.dot-dark { background: var(--tier-dark-fg); }
 
 .item-checkbox {
   width: 18px;

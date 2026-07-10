@@ -315,11 +315,13 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Understanding the Backpressure Mechanism](https://designgurus.substack.com/p/understanding-backpressure-mechanism) {Design Gurus}
 4. [Publisher/Subscriber Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber) {roadmap.sh}
    - [Pub/Sub Architecture: An In-Depth Overview with Example](https://arindam-das.medium.com/pub-sub-architecture-an-in-depth-overview-with-example-a7e13d5b1292) {Arindam Das}
+   - [Pub/Sub Architecture](https://www.geeksforgeeks.org/system-design/what-is-pub-sub/) {GeeksforGeeks}
 5. [Event-Driven Architecture](https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers) {roadmap.sh}
    - [What do you mean by 'Event-Driven'? (Martin Fowler)](https://martinfowler.com/articles/201701-event-driven.html) {Martin Fowler}
 6. [Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html) {Hello Interview}
 7. [Delivery Guarantees -- At-most-once, At-least-once, Exactly-once](https://exactly-once.github.io/posts/exactly-once-delivery/) {roadmap.sh} <<DDIA: Ch.11 Stream Processing>>
    - [Exactly-Once Delivery Explained](https://www.mydistributed.systems/2021/10/exactly-once-delivery.html) {Alexander Rubin}
+   - [Message Delivery Guarantees for Apache Kafka (At-most-once, At-least-once, Exactly-once)](https://docs.confluent.io/kafka/design/delivery-semantics.html) {Confluent}
 8. [Ordering Guarantees](https://developer.confluent.io/courses/architecture/guarantees/) {roadmap.sh}
 
 ## Part 9: Common Interview-Solving Patterns

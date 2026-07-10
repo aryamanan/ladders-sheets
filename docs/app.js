@@ -1144,6 +1144,14 @@ function difficultyDotHtml(difficulty) {
   return `<span class="diff-dot ${cls}" title="${DIFF_LABEL[difficulty]}" aria-label="${DIFF_LABEL[difficulty]}"></span>`;
 }
 
+const TIER_LABEL = { gold: "Gold", silver: "Silver", bronze: "Bronze", dark: "Dark" };
+
+function tierDotHtml(tier) {
+  if (!tier || !TIER_LABEL[tier]) return "";
+  const label = `${TIER_LABEL[tier]} importance`;
+  return `<span class="tier-dot dot-${tier}" title="${label}" aria-label="${label}"></span>`;
+}
+
 function renderItemRow(item, originLabel) {
   // An invariant is a fact to internalize, not a task to complete -- render
   // it as a distinct callout with no checkbox, so it visually stands apart
@@ -1194,11 +1202,16 @@ function renderItemRow(item, originLabel) {
     isSolved && item.difficulty
       ? { E: " diff-easy", M: " diff-medium", H: " diff-hard" }[item.difficulty] || ""
       : "";
+  // Same reward-on-solve treatment as difficulty, but keyed on the Content
+  // Zone's importance tier instead -- never both at once, since difficulty
+  // only exists for LeetCode items and tier only for the Content Zone sheet.
+  const tierClass = isSolved && item.tier ? ` tier-${item.tier}` : "";
   // A small dot before the checkbox shows difficulty up front, before you've
   // even attempted the problem -- separate from the full-block color, which
   // only appears once solved. Both read the same E/M/H code, just at
   // different moments (deciding whether to attempt vs. celebrating a Hard).
   const dotHtml = difficultyDotHtml(item.difficulty);
+  const tierDot = tierDotHtml(item.tier);
   const isStarred = !!starred[item.id];
   // Last-touched label and the repeat-practice counter only make sense once
   // an item has been solved at least once -- clicking the counter logs
@@ -1212,7 +1225,7 @@ function renderItemRow(item, originLabel) {
     ? `<button type="button" class="practice-btn" data-practice-id="${item.id}" title="Log another practice pass">🔁 ${practiceCount(item.id)}</button>`
     : "";
   return `
-    <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText + " " + (originLabel || "")).toLowerCase())}">
+    <div class="item-row${isSolved ? " is-solved" : ""}${diffClass}${tierClass}" data-item-row="${item.id}" data-search="${escapeAttr((item.text + " " + badgeText + " " + (originLabel || "")).toLowerCase())}">
       ${dotHtml}
       <input type="checkbox" class="item-checkbox" data-id="${item.id}" ${isSolved ? "checked" : ""} />
       ${textHtml}
@@ -1220,6 +1233,7 @@ function renderItemRow(item, originLabel) {
       ${lastTouchedHtml}
       ${practiceHtml}
       ${tagHtml}
+      ${tierDot}
       ${bookRefsHtml}
       <button type="button" class="star-btn${isStarred ? " is-starred" : ""}" data-star-id="${item.id}" title="${isStarred ? "Unstar" : "Star for later"}" aria-label="${isStarred ? "Unstar" : "Star for later"}">★</button>
     </div>
@@ -1252,6 +1266,8 @@ function findItemByIdAnywhere(id) {
 
 const DIFF_CLASSES = ["diff-easy", "diff-medium", "diff-hard"];
 const DIFF_CLASS_BY_CODE = { E: "diff-easy", M: "diff-medium", H: "diff-hard" };
+const TIER_CLASSES = ["tier-gold", "tier-silver", "tier-bronze", "tier-dark"];
+const TIER_CLASS_BY_CODE = { gold: "tier-gold", silver: "tier-silver", bronze: "tier-bronze", dark: "tier-dark" };
 
 function toggleItem(id) {
   if (solved[id]) delete solved[id];
@@ -1269,6 +1285,10 @@ function toggleItem(id) {
     row.classList.remove(...DIFF_CLASSES);
     if (isSolvedNow && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
       row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
+    }
+    row.classList.remove(...TIER_CLASSES);
+    if (isSolvedNow && item && item.tier && TIER_CLASS_BY_CODE[item.tier]) {
+      row.classList.add(TIER_CLASS_BY_CODE[item.tier]);
     }
     // The last-touched label and repeat-practice counter only exist once
     // solved -- inject/remove them live too, same reason as the diff class.
@@ -1354,6 +1374,10 @@ function refreshAllCounts() {
           const item = findItemById(sheet, id);
           if (isSolved && item && item.difficulty && DIFF_CLASS_BY_CODE[item.difficulty]) {
             row.classList.add(DIFF_CLASS_BY_CODE[item.difficulty]);
+          }
+          row.classList.remove(...TIER_CLASSES);
+          if (isSolved && item && item.tier && TIER_CLASS_BY_CODE[item.tier]) {
+            row.classList.add(TIER_CLASS_BY_CODE[item.tier]);
           }
           const starBtn = row.querySelector(".star-btn");
           let touchedEl = row.querySelector(".last-touched");
