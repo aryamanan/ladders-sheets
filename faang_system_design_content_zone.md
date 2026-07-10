@@ -4,7 +4,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 ## Part 1: Foundations & Interview Approach
 
-2. How to Approach a System Design Interview (yet to be linked)
+2. [How to Approach a System Design Interview](https://www.hellointerview.com/learn/system-design/in-a-hurry/how-to-prepare) {Hello Interview}
    - [System Design Interview Prep (2026 Guide)](https://www.tryexponent.com/blog/system-design-interview-guide) {Exponent}
 3. [Types of System Design Questions](https://algomaster.io/learn/system-design-interviews/question-types) {AlgoMaster}
 4. [Expectations by Level/YoE](https://algomaster.io/learn/system-design-interviews/expectations-by-level) {AlgoMaster}
@@ -16,10 +16,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Powers of Two Table](https://github.com/donnemartin/system-design-primer#powers-of-two-table) {System Design Primer}
    - [Latency Numbers Programmer Should Know: Crash Course System Design #1](https://www.youtube.com/watch?v=FqR5vESuKe0) {ByteByteGo}
    - [Back-Of-The-Envelope Estimation / Capacity Planning](https://www.youtube.com/watch?v=UC5xf8FbdJc) {ByteByteGo}
-8. Diagramming Tips (yet to be linked) {Hello Interview}
+8. [Diagramming Tips](https://www.youtube.com/watch?v=i7twT3x5yv8) {ByteByteGo}
    - [System Design Interviews: 10 Key Principles (with ex-Google EM)](https://www.youtube.com/watch?v=8dG0qzNAVXI) {IGotAnOffer}
    - [System Design Interviews: 10 Ways to IMPRESS Your Interviewer (with ex-Google EM)](https://www.youtube.com/watch?v=PSYdvx0lwLg) {IGotAnOffer}
-   - [System Design Interview: A Step-By-Step Guide (ByteByteGo)](https://www.youtube.com/watch?v=i7twT3x5yv8) {ByteByteGo}
    - [8 Most Important System Design Concepts You Should Know (ByteByteGo)](https://www.youtube.com/watch?v=BTjxUS_PylA) {ByteByteGo}
    - [How to Prepare for System Design Interviews w/ a Meta Staff Engineer](https://www.youtube.com/watch?v=Ru54dxzCyD0) {Hello Interview}
 9. [Scaling to Millions of Users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) {System Design Primer}
@@ -34,11 +33,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 2. [TCP vs. UDP](https://github.com/donnemartin/system-design-primer#transmission-control-protocol-tcp) {System Design Primer}
 3. [HTTP / HTTPS](https://github.com/donnemartin/system-design-primer#hypertext-transfer-protocol-http) {System Design Primer}
    - [Everything You Need to Know About HTTP](https://cs.fyi/guide/http-in-depth) {roadmap.sh}
-4. TLS (yet to be linked) {roadmap.sh}
-   - [SSL, TLS, HTTPS Explained](https://www.youtube.com/watch?v=j9QmMEWmcfo) {ByteByteGo}
-5. HTTP/2 & HTTP/3 (yet to be linked) {roadmap.sh}
+4. [TLS](https://www.youtube.com/watch?v=j9QmMEWmcfo) {ByteByteGo}
+5. [HTTP/2 & HTTP/3](https://blog.bytebytego.com/p/ep200-http2-over-tcp-vs-http3-over) {ByteByteGo}
    - [HTTP/1 to HTTP/2 to HTTP/3](https://www.youtube.com/watch?v=a-sBfyiXysI) {ByteByteGo}
-   - [EP200: HTTP/2 over TCP vs HTTP/3 over QUIC](https://blog.bytebytego.com/p/ep200-http2-over-tcp-vs-http3-over) {ByteByteGo}
 6. [REST vs. RPC](https://blog.bytebytego.com/p/ep192-what-is-a-rest-api) {ByteByteGo}
    - [REST vs. RPC](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest) {System Design Primer}
 7. [GraphQL](https://www.youtube.com/watch?v=yWzKJPw_VzM) {ByteByteGo}
@@ -46,8 +43,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 8. [gRPC](https://www.youtube.com/watch?v=gnchfOojMk4) {ByteByteGo}
    - [gRPC](https://www.wallarm.com/what/the-concept-of-grpc) {roadmap.sh}
 9. [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) {roadmap.sh}
-10. SSE / Long Polling (yet to be linked) {roadmap.sh}
-    - [EP100: Polling vs. Webhooks](https://blog.bytebytego.com/p/ep100-polling-vs-webhooks) {ByteByteGo}
+10. [SSE / Long Polling](https://blog.bytebytego.com/p/ep100-polling-vs-webhooks) {ByteByteGo}
 11. [Networking Essentials](https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials) {Hello Interview}
     - [Networking Essentials for System Design Interviews w/ Ex Meta Senior Manager](https://www.youtube.com/watch?v=SHkbPm1Wrno) {Hello Interview}
 
@@ -110,14 +106,14 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Consistent Hashing, Explained](https://bytebytego.com/guides/consistent-hashing/) {ByteByteGo}
    - [Consistent Hashing | Algorithms You Should Know #1](https://www.youtube.com/watch?v=UF9Iqmg94tk) {ByteByteGo}
    - [What is CONSISTENT HASHING and Where is it used?](https://www.youtube.com/watch?v=zaRkONvyGr8) {Gaurav Sen}
-6. Fault Tolerance (yet to be linked) {Hello Interview}
+6. [Fault Tolerance](https://bytebytego.com/guides/a-cheat-sheet-for-designing-fault-tolerant-systems/) {ByteByteGo}
    - [Byzantine Fault](https://en.wikipedia.org/wiki/Byzantine_fault) {Awesome Distributed Systems}
    - [Fallacies of Distributed Computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) {Awesome Distributed Systems}
    - [Impossibility of Distributed Consensus with One Faulty Process (FLP, paper)](https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf) {Awesome Distributed Systems}
-7. Distributed Transactions (yet to be linked) {Hello Interview} <<DDIA: Ch.7 Transactions>>
-   - [Distributed Transactions Explained: 2 Phase Commit vs Saga Pattern](https://www.youtube.com/watch?v=DOFflggE_0Q) {Hello Interview}
+7. [Distributed Transactions](https://www.youtube.com/watch?v=DOFflggE_0Q) {Hello Interview} <<DDIA: Ch.7 Transactions>>
    - [Two Phase Commit -- Distributed Transactions](https://www.youtube.com/watch?v=7DoT2sTGulc) {Jordan Has No Life}
    - [Transactions Across Datacenters](http://snarfed.org/transactions_across_datacenters_io.html) {System Design Interview Repo}
+   - [Distributed Transactions Concepts (Oracle)](https://docs.oracle.com/en/database/oracle/oracle-database/26/admin/distributed-transactions-concepts.html) {Oracle}
 8. [Leader Election Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/leader-election) {Hello Interview} <<DDIA: Ch.9 Consistency and Consensus>>
    - [Distributed Consensus -- Raft Leader Election](https://www.youtube.com/watch?v=Al2JNJBGG30) {Jordan Has No Life}
 9. [Quorum & Consensus (Paxos/Raft)](https://raft.github.io/) {roadmap.sh} <<DDIA: Ch.9 Consistency and Consensus>>
@@ -125,9 +121,8 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Raft in 15 Minutes](https://www.youtube.com/watch?v=YOMgi7T823E) {Jordan Has No Life}
    - [Paxos (computer science)](https://en.wikipedia.org/wiki/Paxos_(computer_science)) {System Design Interview Repo}
    - [Paxos Made Simple (paper)](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf) {System Design Interview Repo}
-10. Vector Clocks / Lamport Clocks (yet to be linked) {roadmap.sh} <<DDIA: Ch.5 Replication (Detecting Concurrent Writes)>>
+10. [Vector Clocks / Lamport Clocks](https://blog.bytebytego.com/p/how-facebook-syncs-time-across-millions) {ByteByteGo} <<DDIA: Ch.5 Replication (Detecting Concurrent Writes)>>
     - [Time, Clocks, and the Ordering of Events in a Distributed System](https://www.microsoft.com/en-us/research/publication/time-clocks-ordering-events-distributed-system/) {Awesome Distributed Systems}
-    - [How Facebook Syncs Time Across Millions of Servers](https://blog.bytebytego.com/p/how-facebook-syncs-time-across-millions) {ByteByteGo}
 
 ### Performance
 
@@ -147,8 +142,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 ## Part 4: Scalability & Traffic Distribution
 
-1. Vertical vs. Horizontal Scaling (yet to be linked) {roadmap.sh}
-   - [Vertical Vs Horizontal Scaling: Key Differences You Should Know](https://www.youtube.com/watch?v=dvRFHG2-uYs) {ByteByteGo}
+1. [Vertical vs. Horizontal Scaling](https://www.youtube.com/watch?v=dvRFHG2-uYs) {ByteByteGo}
    - [Introduction to Architecting Systems for Scale](http://lethain.com/introduction-to-architecting-systems-for-scale/) {System Design Interview Repo}
 2. [Microservices & Application Layer](https://blog.bytebytego.com/p/ep210-monolithic-vs-microservices) {ByteByteGo}
    - Microservices & Application Layer [aws.amazon.com](https://aws.amazon.com/microservices/) {roadmap.sh}
@@ -171,7 +165,8 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 1. [Relational Databases & ACID](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms) {System Design Primer} <<DDIA: Ch.7 Transactions>>
 2. [Transactions -- ACID and BASE Consistency Models](https://dev.to/karanpratapsingh/system-design-acid-and-base-consistency-models-4aid) {roadmap.sh}
-3. Database Indexing (yet to be linked) {Hello Interview}
+3. [Database Indexing](https://blog.bytebytego.com/p/database-indexing-strategies) {ByteByteGo}
+   - [Database Indexing](https://www.hellointerview.com/learn/system-design/core-concepts/db-indexing) {Hello Interview}
    - [DB Indexing in System Design Interviews -- B-tree, Geospatial, Inverted Index, and more!](https://www.youtube.com/watch?v=BHCSL_ZifI0) {Hello Interview}
 4. [Introduction to SQL Tuning (Oracle)](https://docs.oracle.com/en/database/oracle/oracle-database/23/tgsql/introduction-to-sql-tuning.html) {roadmap.sh}
 
@@ -187,8 +182,8 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 2. Document Store [Wikipedia](https://en.wikipedia.org/wiki/Document-oriented_database) {roadmap.sh}
 3. Wide-Column Store [Bigtable architecture](https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf) {roadmap.sh}
 4. Graph Database [Wikipedia](https://en.wikipedia.org/wiki/Graph_database) {roadmap.sh}
-5. Object Storage (S3-like) (yet to be linked) {Design Gurus / ByteByteGo}
-   - [Object Storage in System Design Interviews w/ Ex-Meta Staff Engineer](https://www.youtube.com/watch?v=RvaMHMxHjp4) {Hello Interview}
+5. [Object Storage (S3-like)](https://www.youtube.com/watch?v=RvaMHMxHjp4) {Hello Interview}
+   - [What Is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) {AWS}
 
 ## Part 6: Infrastructure Technologies
 
@@ -217,9 +212,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Kafka vs. RabbitMQ -- Who Wins and Why?](https://www.youtube.com/watch?v=_5mu7lZz5X4) {Jordan Has No Life}
    - [System Design: Why Is Kafka Fast?](https://www.youtube.com/watch?v=UNUz1-msbOM) {ByteByteGo}
    - [Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar](https://www.youtube.com/watch?v=x4k1XEjNzYQ) {ByteByteGo}
-6. RabbitMQ (yet to be linked) {Hello Interview}
+6. [RabbitMQ](https://www.youtube.com/watch?v=x4k1XEjNzYQ) {ByteByteGo}
    - [Kafka vs. RabbitMQ -- Who Wins and Why?](https://www.youtube.com/watch?v=_5mu7lZz5X4) {Jordan Has No Life}
-   - [Kafka vs. RabbitMQ vs. Messaging Middleware vs. Pulsar](https://www.youtube.com/watch?v=x4k1XEjNzYQ) {ByteByteGo}
+   - [RabbitMQ Tutorials](https://www.rabbitmq.com/tutorials) {RabbitMQ}
 7. [Elasticsearch](https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch) {Hello Interview}
    - [Elasticsearch Deep Dive w/ an Ex-Meta Senior Manager](https://www.youtube.com/watch?v=PuZvF2EyfBM) {Hello Interview}
    - [What's ElasticSearch Used For? Search Indexes](https://www.youtube.com/watch?v=wmCWCVAl1Us) {Jordan Has No Life}
@@ -255,10 +250,9 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
     - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc) {ByteByteGo}
 23. [Prometheus](https://prometheus.io/docs/introduction/overview/) {Hello Interview}
 25. [Envoy](https://blog.bytebytego.com/p/how-doordash-moved-to-a-service-mesh) {roadmap.sh}
-27. Data Structures for Big Data (yet to be linked) {Hello Interview}
+27. [Data Structures for Big Data](https://www.youtube.com/watch?v=V3pzxngeLqw) {ByteByteGo}
     - [Bloom Filters -- From the First Principles](https://www.youtube.com/watch?v=mItewjU-YG8) {Arpit Bhayani}
     - [Data Structures for Big Data in Interviews -- Bloom Filters, Count-Min Sketch, HyperLogLog](https://www.youtube.com/watch?v=IgyU0iFIoqM) {Hello Interview}
-    - [Bloom Filters | Algorithms You Should Know #2](https://www.youtube.com/watch?v=V3pzxngeLqw) {ByteByteGo}
 
 ## Part 7: Reliability Patterns
 
