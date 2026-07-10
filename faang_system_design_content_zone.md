@@ -4,7 +4,6 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 ## Part 1: Foundations & Interview Approach
 
-1. What Is System Design (yet to be linked)
 2. How to Approach a System Design Interview (yet to be linked)
    - [System Design Interview Prep (2026 Guide)](https://www.tryexponent.com/blog/system-design-interview-guide) {Exponent}
 3. [Types of System Design Questions](https://algomaster.io/learn/system-design-interviews/question-types) {AlgoMaster}
@@ -24,10 +23,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [8 Most Important System Design Concepts You Should Know (ByteByteGo)](https://www.youtube.com/watch?v=BTjxUS_PylA) {ByteByteGo}
    - [How to Prepare for System Design Interviews w/ a Meta Staff Engineer](https://www.youtube.com/watch?v=Ru54dxzCyD0) {Hello Interview}
 9. [Scaling to Millions of Users on AWS](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md) {System Design Primer}
-10. Functional vs. Non-Functional Requirements (yet to be linked) {Hello Interview}
-11. Bottleneck Identification (yet to be linked) {Hello Interview}
-12. Tradeoff Analysis (yet to be linked) {Hello Interview}
-13. Interview Communication (Thinking Aloud) (yet to be linked) {Hello Interview}
+10. [Functional vs. Non-Functional Requirements](https://www.hellointerview.com/blog/system-design-requirements) {Hello Interview}
 
 ## Part 2: Networking & Communication
 
@@ -49,7 +45,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [What Is GraphQL? REST vs. GraphQL](https://www.youtube.com/watch?v=yWzKJPw_VzM) {ByteByteGo}
 8. [gRPC](https://www.wallarm.com/what/the-concept-of-grpc) {roadmap.sh}
    - [What is RPC? gRPC Introduction](https://www.youtube.com/watch?v=gnchfOojMk4) {ByteByteGo}
-9. WebSockets (yet to be linked) {roadmap.sh}
+9. [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) {roadmap.sh}
 10. SSE / Long Polling (yet to be linked) {roadmap.sh}
     - [EP100: Polling vs. Webhooks](https://blog.bytebytego.com/p/ep100-polling-vs-webhooks) {ByteByteGo}
 11. [Networking Essentials](https://www.hellointerview.com/learn/system-design/core-concepts/networking-essentials) {Hello Interview}
@@ -62,7 +58,6 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Good APIs Vs Bad APIs: 7 Tips for API Design](https://www.youtube.com/watch?v=_gQaygjm_hg) {ByteByteGo}
 2. [Data Modeling](https://www.hellointerview.com/learn/system-design/core-concepts/data-modeling) {Hello Interview}
    - [Data Modeling in System Design Interviews w/ Meta Staff Engineer](https://www.youtube.com/watch?v=TUcPS6dsWx4) {Hello Interview}
-3. Scalability (Performance vs. Scalability) (yet to be linked) {roadmap.sh}
 
 ### Caching
 
@@ -81,10 +76,10 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Introduction to Distributed Caching](https://www.youtube.com/watch?v=crPoHnhkjFE) {Jordan Has No Life}
    - [System Design Interview - Design a Distributed LRU Cache (Full Mock Interview with Sr. MAANG SWE)](https://www.youtube.com/watch?v=lZ5QuFLCVn0) {Exponent}
 8. [Memcached](http://www.slideshare.net/oemebamo/introduction-to-memcached) {Hello Interview}
-9. Cache Eviction Policies (LRU/LFU/FIFO) (yet to be linked) {roadmap.sh}
-10. Cache Invalidation (yet to be linked) {roadmap.sh}
-11. Cache Stampede (yet to be linked) {Hello Interview}
-12. Distributed Cache Consistency (yet to be linked) {Hello Interview}
+9. [Cache Eviction Policies (LRU/LFU/FIFO)](https://redis.io/docs/latest/develop/reference/eviction/) {roadmap.sh}
+10. [Cache Invalidation](https://redis.io/glossary/cache-invalidation/) {roadmap.sh}
+11. [Cache Stampede](https://redis.io/blog/how-to-tame-the-thundering-herd-problem/) {Hello Interview}
+12. [Distributed Cache Consistency](https://redis.io/blog/three-ways-to-maintain-cache-consistency/) {Hello Interview}
 
 ### Replication & Partitioning
 
@@ -144,15 +139,11 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 
 ### Observability
 
-1. Logging (yet to be linked) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
-2. Metrics (yet to be linked) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
+2. [Metrics](https://prometheus.io/docs/concepts/metric_types/) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
 3. [Monitoring -- Observability Fundamentals (Logs, Metrics, Traces)](https://www.sysdesai.com/news/ib5lUYKXgWNv) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
-4. Alerting (yet to be linked) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
-5. Health Checks (yet to be linked) {Hello Interview} <<Google SRE: Ch.20 Load Balancing in the Datacenter>>
-6. Distributed Tracing (yet to be linked) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
-7. SLIs (Service Level Indicators) (yet to be linked) {Hello Interview} <<Google SRE: Ch.4 Service Level Objectives>>
+4. [Alerting](https://prometheus.io/docs/alerting/latest/overview/) {Hello Interview} <<Google SRE: Ch.6 Monitoring Distributed Systems>>
+5. [Health Checks](https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/) {Hello Interview} <<Google SRE: Ch.20 Load Balancing in the Datacenter>>
 8. [SLOs (Service Level Objectives)](https://www.ibm.com/think/topics/service-level-objective) {Hello Interview} <<Google SRE: Ch.4 Service Level Objectives>>
-9. Error Budgets (yet to be linked) {Hello Interview} <<Google SRE: Ch.3 Embracing Risk>>
 
 ## Part 4: Scalability & Traffic Distribution
 
@@ -163,7 +154,7 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [EP210: Monolithic vs Microservices vs Serverless](https://blog.bytebytego.com/p/ep210-monolithic-vs-microservices) {ByteByteGo}
 3. [Service Discovery](https://github.com/donnemartin/system-design-primer#service-discovery) {System Design Primer}
    - [How LinkedIn Built a Next-Gen Service Discovery for 1000s of Services](https://blog.bytebytego.com/p/how-linkedin-built-a-next-gen-service) {ByteByteGo}
-4. Auto Scaling (yet to be linked) {roadmap.sh}
+4. [Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html) {roadmap.sh}
 
 ## Part 5: Storage & Databases
 
@@ -248,24 +239,22 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
     - [Introduction to MongoDB](http://www.slideshare.net/mdirolf/introduction-to-mongodb) {System Design Interview Repo}
 13. [Time Series Databases](https://www.hellointerview.com/learn/system-design/deep-dives/time-series-databases) {Hello Interview}
     - [How do Time Series Databases Work?](https://www.youtube.com/watch?v=Qd76ZmfRs_Q) {Hello Interview}
-14. Vector Databases (yet to be linked) {Hello Interview}
+14. [Vector Databases](https://www.hellointerview.com/learn/system-design/deep-dives/vector-databases) {Hello Interview}
 15. [Zookeeper](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper) {Hello Interview}
     - [What is ZooKeeper? -- Coordination Services](https://www.youtube.com/watch?v=F06tdYgcz_A) {Jordan Has No Life}
-16. Flink (yet to be linked) {Hello Interview}
-17. Spark (yet to be linked) {Hello Interview}
+16. [Flink](https://flink.apache.org/what-is-flink/flink-architecture/) {Hello Interview}
+17. [Spark](https://spark.apache.org/docs/latest/) {Hello Interview}
 18. [Amazon S3](https://blog.bytebytego.com/p/how-amazon-s3-stores-350-trillion) {Hello Interview}
     - [Amazon S3 (Object Stores) -- In Practice](https://www.youtube.com/watch?v=zplIwqWBhwg) {Jordan Has No Life}
 19. [AWS Lambda](https://blog.bytebytego.com/p/how-cloudflare-eliminates-cold-starts) {Hello Interview}
     - [Amazon Prime Video Ditches AWS Serverless, Saves 90%](https://www.youtube.com/watch?v=JTp0TY_2hXM) {ByteByteGo}
-20. Nginx (yet to be linked) {Hello Interview}
+20. [Nginx](https://nginx.org/en/docs/) {Hello Interview}
 21. [Docker](https://blog.bytebytego.com/p/how-uber-built-odin-to-handle-38) {Hello Interview}
     - [System Design: Why Is Docker Important?](https://www.youtube.com/watch?v=QEzbZKtLi-g) {ByteByteGo}
 22. [Kubernetes](https://blog.bytebytego.com/p/ep191-virtualization-vs-containerization) {Hello Interview}
     - [Kubernetes Explained in 6 Minutes | k8s Architecture](https://www.youtube.com/watch?v=TlHvYWVUZyc) {ByteByteGo}
-23. Prometheus (yet to be linked) {Hello Interview}
-24. etcd (yet to be linked) {roadmap.sh}
+23. [Prometheus](https://prometheus.io/docs/introduction/overview/) {Hello Interview}
 25. [Envoy](https://blog.bytebytego.com/p/how-doordash-moved-to-a-service-mesh) {roadmap.sh}
-26. Istio (yet to be linked) {roadmap.sh}
 27. Data Structures for Big Data (yet to be linked) {Hello Interview}
     - [Bloom Filters -- From the First Principles](https://www.youtube.com/watch?v=mItewjU-YG8) {Arpit Bhayani}
     - [Data Structures for Big Data in Interviews -- Bloom Filters, Count-Min Sketch, HyperLogLog](https://www.youtube.com/watch?v=IgyU0iFIoqM) {Hello Interview}
@@ -288,13 +277,14 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 8. [Saga Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga) {roadmap.sh}
    - [Choreography Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/choreography) {roadmap.sh}
    - [Saga Pattern (microservices.io)](https://microservices.io/patterns/data/saga.html) {Chris Richardson}
-9. Removing Single Points of Failure (yet to be linked) {Hello Interview} <<Google SRE: Ch.22 Addressing Cascading Failures>>
+9. [Removing Single Points of Failure](https://learn.microsoft.com/en-us/azure/architecture/guide/design-principles/redundancy) {Hello Interview} <<Google SRE: Ch.22 Addressing Cascading Failures>>
+   - [Architecture Strategies for Failure Mode Analysis](https://learn.microsoft.com/en-us/azure/well-architected/reliability/failure-mode-analysis) {Microsoft}
 10. [Handling Failures / Failure Detection](https://blog.bytebytego.com/p/how-the-google-cloud-outage-crashed) {Hello Interview} <<Google SRE: Ch.22 Addressing Cascading Failures>>
     - [SWIM Protocol Explained](https://asafdav2.github.io/2017/swim-protocol/) {Awesome Distributed Systems}
-11. Timeouts (yet to be linked) {roadmap.sh} <<Release It!: Stability Patterns -- Timeouts>>
+11. [Timeouts](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) {roadmap.sh} <<Release It!: Stability Patterns -- Timeouts>>
 12. [Exponential Backoff and Jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/) {roadmap.sh}
-13. Dead Letter Queue (yet to be linked) {roadmap.sh}
-14. Graceful Degradation (yet to be linked) {roadmap.sh}
+13. [Dead Letter Queue](https://aws.amazon.com/what-is/dead-letter-queue/) {roadmap.sh}
+14. [Graceful Degradation](https://docs.cloud.google.com/architecture/framework/reliability/graceful-degradation) {roadmap.sh}
 
 ## Part 8: Asynchronous Processing & Messaging
 
@@ -309,35 +299,33 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Pub/Sub Architecture: An In-Depth Overview with Example](https://arindam-das.medium.com/pub-sub-architecture-an-in-depth-overview-with-example-a7e13d5b1292) {Arindam Das}
 5. [Event-Driven Architecture](https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs#event-driven-triggers) {roadmap.sh}
    - [What do you mean by 'Event-Driven'? (Martin Fowler)](https://martinfowler.com/articles/201701-event-driven.html) {Martin Fowler}
-6. Amazon SQS (yet to be linked) {Hello Interview}
+6. [Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html) {Hello Interview}
 7. [Delivery Guarantees -- At-most-once, At-least-once, Exactly-once](https://exactly-once.github.io/posts/exactly-once-delivery/) {roadmap.sh} <<DDIA: Ch.11 Stream Processing>>
    - [Exactly-Once Delivery Explained](https://www.mydistributed.systems/2021/10/exactly-once-delivery.html) {Alexander Rubin}
-8. Ordering Guarantees (yet to be linked) {roadmap.sh}
+8. [Ordering Guarantees](https://developer.confluent.io/courses/architecture/guarantees/) {roadmap.sh}
 
 ## Part 9: Common Interview-Solving Patterns
 
-1. Fanout Pattern -- Push vs. Pull (yet to be linked) {Hello Interview}
+1. [Fanout Pattern -- Push vs. Pull](https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html) {Hello Interview}
 2. [Realtime Updates](https://algomaster.io/learn/system-design-interviews/realtime-updates) {AlgoMaster}
-3. Scaling Reads (yet to be linked) {Hello Interview}
+3. [Scaling Reads](https://www.hellointerview.com/learn/system-design/patterns/scaling-reads) {Hello Interview}
 4. [Scaling Writes](https://blog.bytebytego.com/p/how-stripe-scaled-to-5-million-database) {Hello Interview}
-5. Read-Heavy Systems (yet to be linked) {Hello Interview}
-6. Write-Heavy Systems (yet to be linked) {Hello Interview}
-7. Handling Hot Keys (yet to be linked) {Hello Interview}
-8. Handling Traffic Spikes (yet to be linked) {Hello Interview}
-9. Handling Large Files / Blobs (yet to be linked) {Hello Interview}
+7. [Handling Hot Keys](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html) {Hello Interview}
+8. [Handling Traffic Spikes](https://learn.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling) {Hello Interview}
+9. [Handling Large Files / Blobs](https://www.hellointerview.com/learn/system-design/patterns/large-blobs) {Hello Interview}
+   - [Uploading and Copying Objects Using Multipart Upload in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) {AWS}
 10. [Handling Location Data](https://blog.bytebytego.com/p/ep138-how-do-airtags-work) {Hello Interview}
-11. Generating Unique IDs (yet to be linked) {Hello Interview}
+11. [Generating Unique IDs](https://github.com/twitter-archive/snowflake) {Hello Interview}
+    - [Explaining 5 Unique ID Generators](https://bytebytego.com/guides/explaining-5-unique-id-generators-in-distributed-systems/) {ByteByteGo}
 12. [Distributed Counting](https://blog.bytebytego.com/p/counting-billions-of-content-usage) {Hello Interview}
-13. Deduplicating Data (yet to be linked) {Hello Interview}
+13. [Deduplicating Data](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html) {Hello Interview}
 14. [Multi-Region Architecture](https://blog.bytebytego.com/p/how-linear-implemented-multi-region) {Hello Interview}
-15. Multi-Tenancy (yet to be linked) {Hello Interview}
-16. Multi-Step Processes (yet to be linked) {Hello Interview}
-17. Managing Long-Running Tasks (yet to be linked) {Hello Interview}
+15. [Multi-Tenancy](https://learn.microsoft.com/en-us/azure/architecture/guide/saas-multitenant-solution-architecture/) {Hello Interview}
+17. [Managing Long-Running Tasks](https://www.hellointerview.com/learn/system-design/patterns/long-running-tasks) {Hello Interview}
+    - [Asynchronous Request-Reply Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/asynchronous-request-reply) {roadmap.sh}
 18. [Media Streaming](https://blog.bytebytego.com/p/ep139-design-a-live-streaming-system) {Hello Interview}
-19. Scatter-Gather (yet to be linked) {roadmap.sh}
-20. Request Aggregation (yet to be linked) {roadmap.sh}
-21. Leaderboards (yet to be linked) {Hello Interview}
-22. Pagination (yet to be linked) {Hello Interview}
+19. [Scatter-Gather](https://www.enterpriseintegrationpatterns.com/patterns/messaging/BroadcastAggregate.html) {roadmap.sh}
+22. [Pagination](https://docs.stripe.com/api/pagination) {Hello Interview}
 
 ## Part 10: Foundational Building Blocks
 
@@ -403,7 +391,6 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
    - [Reddit Comments](https://www.youtube.com/watch?v=BO2gRisnBcA) {Jordan Has No Life}
    - [Design Reddit: System Design Mock Interview](https://www.youtube.com/watch?v=KYExYE_9nIY) {Exponent}
 7. [Design the Data Structures for a Social Network](https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/social_graph/README.md) {System Design Primer}
-8. Design Facebook "People You May Know" (yet to be linked) {Design Gurus}
 9. Design LinkedIn Connections (yet to be linked) {Design Gurus}
    - ["Design LinkedIn" -- System Design Mock with Senior SWE at Amazon](https://www.youtube.com/watch?v=ICu8g9auh8E) {IGotAnOffer}
    - [Find the Distance Between Friends/Connections -- LinkedIn System Design](https://www.youtube.com/watch?v=OXLDI8gibPw) {Gaurav Sen}
@@ -577,7 +564,6 @@ Curriculum-first system design index across ByteByteGo, Hello Interview, the Sys
 5. Design Google Ads (yet to be linked) {Design Gurus}
    - [Google / Meta System Design Interview: "Design Google Ads" (with ex-Meta Staff SWE)](https://www.youtube.com/watch?v=efaBYHvNvbA) {IGotAnOffer}
 6. Design Amazon Lambda (yet to be linked) {Design Gurus}
-7. Design Typeahead/Autocomplete (yet to be linked) {Design Gurus}
 
 ## Part 20: Object-Oriented / Low-Level Design
 
